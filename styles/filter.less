@@ -1,0 +1,269 @@
+﻿// Libraries for the LESS
+@import "variables";
+
+// Version for a PK
+select, input, label {
+    cursor: pointer;
+}
+form select, form input {
+    margin: 5px 10px;
+    padding: 5px;
+    min-width: 170px;
+    max-width: 200px;
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background-color: #053c5a;
+    text-align: left;
+    font-weight: normal;
+    color: @color_white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:hover {
+        background-color: #003551;
+    }
+}
+form select option {
+    background-color: @color_white;
+    color: @color_dark;
+}
+form select, input[type="button"] {
+    background-image: url('@{path_img}arrow.png');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+}
+
+.details {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 5px -5px #021d27;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin: 10px 0;
+}
+input[type="checkbox"] {
+    display: none;
+}
+.details input[type="checkbox"] + label span {
+    position: relative;
+    display: inline-block;
+    width: 13px !important;
+    height: 13px !important;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-color: #fff !important;
+    background-image: none;
+    border: 2px solid #00527a !important;
+}
+.details input[type="checkbox"]:checked + label span {
+    background-color: #339933 !important;
+    border-color: #339933 !important;
+}
+.details input[type="checkbox"]:checked + label span::after {
+    position: absolute;
+    content: "";
+    left: 2px;
+    top: -2px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.details label {
+    margin-left: 20px;
+}
+input[type="submit"] {
+    display: none;
+    margin: 0;
+    text-align: center;
+    background-color: #045e96;
+    animation: bg-search 2s infinite ease-in-out;
+}
+
+.mark {
+    background-color: #339933 !important;
+    padding: 5px;
+}
+.activeMark {
+    background-color: #1e811e !important;
+    padding: 5px;
+}
+.mark:hover, .activeMark:hover {
+    background-color: #298a29 !important;
+    padding: 5px;
+}
+.active {
+    background-color: #073148;
+}
+.active:hover {
+    background-color: #003551;
+}
+.disabled, .disabled:hover {
+    background-color: #005987;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#filter {
+    display: none; /* !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+}
+#filter form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+#filter aside {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: #224b7a;
+    border-top: 1px solid #275489;
+}
+#filter aside:first-of-type {
+    border-top: none;
+}
+#filter aside:last-of-type {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+#filter aside > div {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#filter aside .partsName, .submit {
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 200px;
+    height: 50px;
+}
+#filter aside .partsName .remove {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 10px 20px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#filter aside .partsName .remove:hover {
+    transform: rotate(360deg);
+    transition: transform 1s;
+}
+#filter aside .partsName .remove::after,
+#filter aside .partsName .remove::before {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    content: "";
+    height: 10px;
+    width: 3px;
+    background-color: #fff;
+}
+#filter aside .partsName .remove::before {
+    transform: rotate(45deg);
+}
+#filter aside .partsName .remove::after {
+    transform: rotate(-45deg);
+}
+#filter aside .partsName .caption {
+    font-size: 12px;
+    color: #fff;
+}
+#filter aside .partsCategories {
+    width: 660px;
+}
+
+// Version for a smartphone
+@media screen and (max-width: 767px) {
+    #parts form {
+        flex-direction: column !important;
+    }
+    #parts form select, #parts form input {
+        width: 100% !important;
+        max-width: 90% !important;
+        background-position: 95% 50% !important;
+    }
+    #parts .details {
+        max-width: 400px !important;
+    }
+    #parts #partsCategories {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    input[type="submit"] {
+        display: block !important;
+        margin: 0 auto !important;
+    }
+
+    #filter {
+        position: static !important;
+    }
+    #filter aside {
+        flex-direction: column !important;
+        border-radius: 0px !important;
+    }
+    #filter aside div {
+        width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    #filter aside .partsName {
+        background-color: #249cd2;
+    }
+    #filter aside .partsName:hover {
+        cursor: pointer;
+    }
+    #filter aside .partsCategories {
+        flex-direction: column !important;
+    }
+}
+@media screen and (min-width: 768px) {
+    .row1 {
+        order: 1;
+    }
+    .row2 {
+        order: 3;
+    }
+    .row3 {
+        order: 5;
+    }
+    .row4 {
+        order: 7;
+    }
+    .row5 {
+        order: 9;
+    }
+    .details:nth-of-type(1), .details:nth-of-type(2), .details:nth-of-type(3) {
+        order: 2;
+    }
+    .details:nth-of-type(4), .details:nth-of-type(5), .details:nth-of-type(6) {
+        order: 4;
+    }
+    .details:nth-of-type(7), .details:nth-of-type(8), .details:nth-of-type(9) {
+        order: 6;
+    }
+    .details:nth-of-type(10), .details:nth-of-type(11), .details:nth-of-type(12) {
+        order: 8;
+    }
+    .details:nth-of-type(13), .details:nth-of-type(14), .details:nth-of-type(15) {
+        order: 10;
+    }
+}

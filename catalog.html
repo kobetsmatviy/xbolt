@@ -1,0 +1,815 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/filter.css">
+    <link rel="stylesheet" type="text/css" href="styles/parts.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/filter_actions.js" async></script>
+    <script src="js/photo_proportion.js" async></script>
+    <script src="js/adaptive_cards.js" async></script>
+</head>
+<body>
+    <header>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            <a href="public/index.html">
+                <img src="images/logo.png" alt="XBOLT" />
+            </a>
+            
+            <div class="interaction">
+                <img src="images/search.png" id="search" />
+                <a href="">
+                    <img src="images/profile.png" />
+                    <span>Профіль</span>
+                </a>
+            </div>
+        </article>
+    </header>
+    <nav>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
+            <section>
+                <div id="filterName" class="choice">ФІЛЬТР</div>
+                <div id="filterCategories">
+                    <span>легкові</span>
+                    <span>Audi</span>
+                    <span>80 B2 1979-1986</span>
+                    <span>передня підвіска</span>
+                    <span>рульове керування</span>
+                    <span>Рівненська обл.</span>
+                    <span>Корецький р-н</span>
+                    <span>Audi</span>
+                    <span>80 B2 1979-1986</span>
+                    <span>передня підвіска</span>
+                    <span>рульове керування</span>
+                    <span>Рівненська обл.</span>
+                    <span>Корецький р-н</span>
+                </div>
+            </section>
+        </article>
+    </nav>
+    <div id="filter">
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
+            <section id="parts">
+                <form action="" method="post">
+                    <aside>
+                        <div class="partsName">
+                            <span class="remove"></span>
+                            <span class="caption">МАРКА, МОДЕЛЬ</span>
+                        </div>
+                        <div class="partsCategories">
+                            <select name="trasnport" id="trasnport" class="trasnport">
+                                <option selected disabled hidden>Транспорт</option>
+                                <option value="cars">Легкові</option>
+                                <option value="trucks">Вантажівки</option>
+                                <option value="autobus">Автобуси</option>
+                                <option value="moto">Мото</option>
+                            </select>
+                            <select name="brand" class="disabled" disabled>
+                                <option selected disabled hidden>Марка</option>
+                                <option value="aston martin">Aston Martin</option>
+                                <option value="audi">AUDI</option>
+                                <option value="bmw">BMW</option>
+                                <option value="opel">OPEL</option>
+                                <option value="toyota">TOYOTA</option>
+                            </select>
+                            <select name="model" class="disabled" disabled>
+                                <option selected disabled hidden>Модель</option>
+                                <option value="80">B2 80 / 1979-1981</option>
+                                <option value="100">B3 90 / 1982-1985</option>
+                                <option value="200">M4 200 / 1994-1996</option>
+                                <option value="A2">A2 / 2001</option>
+                                <option value="A4">A4 / 2004-2005</option>
+                                <option value="TT">TT / 2018</option>
+                            </select>
+                        </div>
+                    </aside>
+                    <aside>
+                        <div class="partsName">
+                            <span class="remove"></span>
+                            <span class="caption">ДЕТАЛІ</span>
+                        </div>
+                        <div class="partsCategories">
+                            <input type="button" value="Двигун і його системи" class="row1">
+                            <div id="engineDIV" class="details">
+                                <input type="checkbox" id="a1" />
+                                <label for="a1">
+                                    <span></span>
+                                    Двигун
+                                </label>
+
+                                <input type="checkbox" id="a2" />
+                                <label for="a2">
+                                    <span></span>
+                                    Блок
+                                </label>
+
+                                <input type="checkbox" id="a3" />
+                                <label for="a3">
+                                    <span></span>
+                                    Головка блока
+                                </label>
+
+                                <input type="checkbox" id="a4" />
+                                <label for="a4">
+                                    <span></span>
+                                    Топливна
+                                </label>
+
+                                <input type="checkbox" id="admissionID" />
+                                <label for="admissionID">
+                                    <span></span>
+                                    Впуск
+                                </label>
+
+                                <input type="checkbox" id="a5" />
+                                <label for="a5">
+                                    <span></span>
+                                    Випуск
+                                </label>
+
+                                <input type="checkbox" id="a6" />
+                                <label for="a6">
+                                    <span></span>
+                                    Охолодження
+                                </label>
+
+                                <input type="checkbox" id="a7" />
+                                <label for="a7">
+                                    <span></span>
+                                    Кронштейн
+                                </label>
+
+                                <input type="checkbox" id="a8" />
+                                <label for="a8">
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Кузов" class="row1">
+                            <div id="bodyDIV" class="details">
+                                <input type="checkbox" id="b1" />
+                                <label for="b1">
+                                    <span></span>
+                                    Скло
+                                </label>
+
+                                <input type="checkbox" id="b2" />
+                                <label for="b2">
+                                    <span></span>
+                                    Бампер
+                                </label>
+
+                                <input type="checkbox" id="b3" />
+                                <label for="b3">
+                                    <span></span>
+                                    Капот
+                                </label>
+
+                                <input type="checkbox" id="b4" />
+                                <label for="b4">
+                                    <span></span>
+                                    Двері
+                                </label>
+
+                                <input type="checkbox" id="b5" />
+                                <label for="b5">
+                                    <span></span>
+                                    Крила
+                                </label>
+
+                                <input type="checkbox" id="b6" />
+                                <label for="b6">
+                                    <span></span>
+                                    Дзеркала
+                                </label>
+
+                                <input type="checkbox" id="b7" />
+                                <label for="b7">
+                                    <span></span>
+                                    Передня частина
+                                </label>
+
+                                <input type="checkbox" id="b8" />
+                                <label for="b8">
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Електрика" class="row1">
+                            <div id="electricityDIV" class="details">
+                                <input type="checkbox" id="c1" />
+                                <label for="c1">
+                                    <span></span>
+                                    Блоки керування
+                                </label>
+
+                                <input type="checkbox" id="c2" />
+                                <label for="c2">
+                                    <span></span>
+                                    Двигун
+                                </label>
+
+                                <input type="checkbox" id="c3" />
+                                <label for="c3">
+                                    <span></span>
+                                    Салон
+                                </label>
+
+                                <input type="checkbox" id="c4" />
+                                <label for="c4">
+                                    <span></span>
+                                    Проводка
+                                </label>
+
+                                <input type="checkbox" id="c5" />
+                                <label for="c5">
+                                    <span></span>
+                                    Сигналізація
+                                </label>
+
+                                <input type="checkbox" id="c6" />
+                                <label for="c6">
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Трансмісія" class="row2">
+                            <div id="transmissionDIV" class="details">
+                                <input type="checkbox" id="d1" />
+                                <label for="d1">
+                                    <span></span>
+                                    Коробка передач
+                                </label>
+
+                                <input type="checkbox" id="d2" />
+                                <label for="d2">
+                                    <span></span>
+                                    Зчіплення
+                                </label>
+
+                                <input type="checkbox" id="d3" />
+                                <label for="d3">
+                                    <span></span>
+                                    Передній міст
+                                </label>
+
+                                <input type="checkbox" id="d4" />
+                                <label for="d4">
+                                    <span></span>
+                                    Задній міст
+                                </label>
+
+                                <input type="checkbox" id="d5" />
+                                <label for="d5">
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Підвіска" class="row2">
+                            <div id="suspensionDIV" class="details">
+                                <input type="checkbox" id="e1" />
+                                <label for="e1">
+                                    <span></span>
+                                    Передня підвіска
+                                </label>
+
+                                <input type="checkbox" id="e2" />
+                                <label for="e2">
+                                    <span></span>
+                                    Задня підвіска
+                                </label>
+
+                                <input type="checkbox" id="e3" />
+                                <label for="e3">
+                                    <span></span>
+                                    Рульове керування
+                                </label>
+                            </div>
+                            <input type="button" value="Салон" class="row2">
+                            <div id="saloonDIV" class="details">
+                                <input type="checkbox" id="f1" />
+                                <label for="f1">
+                                    <span></span>
+                                    wa
+                                </label>
+
+                                <input type="checkbox" id="f2" />
+                                <label for="f2">
+                                    <span></span>
+                                    bv
+                                </label>
+
+                                <input type="checkbox" id="f3" />
+                                <label for="f3">
+                                    <span></span>
+                                    cs
+                                </label>
+                            </div>
+                            <input type="button" value="Отоплення" class="row3">
+                            <div id="heatingID" class="details">
+                                <input type="checkbox" id="g1" />
+                                <label for="g1">
+                                    <span></span>
+                                    ge
+                                </label>
+
+                                <input type="checkbox" id="g2" />
+                                <label for="g2">
+                                    <span></span>
+                                    md
+                                </label>
+
+                                <input type="checkbox" id="g3" />
+                                <label for="g3">
+                                    <span></span>
+                                    ua
+                                </label>
+                            </div>
+                            <input type="button" value="Оптика" class="row3">
+                            <div id="opticsID" class="details">
+                                <input type="checkbox" id="h1" />
+                                <label for="h1">
+                                    <span></span>
+                                    ad
+                                </label>
+
+                                <input type="checkbox" id="h2" />
+                                <label for="h2">
+                                    <span></span>
+                                    da
+                                </label>
+
+                                <input type="checkbox" id="h3" />
+                                <label for="h3">
+                                    <span></span>
+                                    de
+                                </label>
+                            </div>
+                            <input type="button" value="Гальма" class="row3">
+                            <div id="breaksID" class="details">
+                                <input type="checkbox" id="i1" />
+                                <label for="i1">
+                                    <span></span>
+                                    u1
+                                </label>
+
+                                <input type="checkbox" id="i2" />
+                                <label for="i2">
+                                    <span></span>
+                                    kd
+                                </label>
+
+                                <input type="checkbox" id="i3" />
+                                <label for="i3">
+                                    <span></span>
+                                    ud
+                                </label>
+                            </div>
+                            <input type="button" value="Шини" class="row4">
+                            <div id="tiresID" class="details">
+                                <input type="checkbox" id="j1" />
+                                <label for="j1">
+                                    <span></span>
+                                    lp
+                                </label>
+
+                                <input type="checkbox" id="j2" />
+                                <label for="j2">
+                                    <span></span>
+                                    mk
+                                </label>
+
+                                <input type="checkbox" id="j3" />
+                                <label for="j3">
+                                    <span></span>
+                                    l;
+                                </label>
+                            </div>
+                            <input type="button" value="Аксесуари" class="row4">
+                            <div id="accessoriesID" class="details">
+                                <input type="checkbox" id="k1" />
+                                <label for="k1">
+                                    <span></span>
+                                    ho
+                                </label>
+
+                                <input type="checkbox" id="k2" />
+                                <label for="k2">
+                                    <span></span>
+                                    mo
+                                </label>
+
+                                <input type="checkbox" id="k3" />
+                                <label for="k3">
+                                    <span></span>
+                                    ko
+                                </label>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside>
+                        <div class="partsName">
+                            <span class="remove"></span>
+                            <span class="caption">РЕГІОН</span>
+                        </div>
+                        <div class="partsCategories">
+                            <select name="region">
+                                <option selected disabled hidden>Область</option>
+                                <option>Вінницька</option>
+                                <option>Волинська</option>
+                                <option>Дніпропетровська</option>
+                                <option>Донецька</option>
+                                <option>Житомирська</option>
+                                <option>Закарпатська</option>
+                                <option>Запорізька</option>
+                                <option>Івано-Франківська</option>
+                                <option>Київська</option>
+                                <option>Кіровоградська</option>
+                                <option>Крим (АРК)</option>
+                                <option>Луганська</option>
+                                <option>Львівська</option>
+                                <option>Миколаївська</option>
+                                <option>Одеська</option>
+                                <option>Полтавська</option>
+                                <option>Рівненська</option>
+                                <option>Сумська</option>
+                                <option>Тернопільська</option>
+                                <option>Харківська</option>
+                                <option>Херсонська</option>
+                                <option>Хмельницька</option>
+                                <option>Черкаська</option>
+                                <option>Чернівецька</option>
+                                <option>Чернігівська</option>
+                            </select>
+                            <select name="district" class="disabled" disabled>
+                                <option selected disabled hidden>Район</option>
+                                <option>Корець</option>
+                                <option>Гоща</option>
+                                <option>Кузнецовськ</option>
+                                <option>Решитилів</option>
+                                <option>Новоград-Волинськ</option>
+                                <option>Сарни</option>
+                                <option>Острог</option>
+                                <option>Дубно</option>
+                            </select>
+                        </div>
+                    </aside>
+                    <input type="submit" value="ПОШУК" />
+                </form>
+            </section>
+        </article>
+    </div>
+    <main class="clearfix">
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/1.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
+                            <div class="primary">
+                                <div class="caption">
+                                    <a href="">
+                                        <h3>
+                                            Турбина Audi A4 A5 Q5 2.0 TDI Seat Exeo (03L145721A)
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    5999 <sup>грн</sup>
+                                </span>
+                            </div>
+                            <div class="secondary">
+                                <div class="rating">
+                                    <img src="images/full.png" />
+                                    <img src="images/full.png" />
+                                    <img src="images/full.png" />
+                                    <img src="images/full.png" />
+                                    <img src="images/full.png" />
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                    <span>BMW Z4 M 2014-2015</span>
+                                </div>
+                            </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">18.04.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Корець, Рівненська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/2.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
+                            <div class="primary">
+                                <div class="caption">
+                                    <span class="triangle"></span>
+                                    <a href="">
+                                        <h3>
+                                            Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    9600 <sup>грн</sup>
+                                </span>
+                            </div>
+                            <div class="secondary">
+                                <div class="rating">
+                                    <img src="images/full.png" />
+                                    <img src="images/full.png" />
+                                    <img src="images/half.png" />
+                                    <img src="images/empty.png" />
+                                    <img src="images/empty.png" />
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                    <span>BMW Z4 M 2014-2015</span>
+                                </div>
+                            </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">15.04.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Львів, Львівська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/3.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                        <div class="parts">
+                            <span>передняя подвеска</span>
+                            <span>рулевое управление</span>
+                        </div>
+                        <div class="primary">
+                            <div class="caption">
+                                <span class="triangle"></span>
+                                <a href="">
+                                    <h3>
+                                        Турбина VW Passat B3 B4 Golf Vento Audi 80 Seat Ibiza Toledo 1.9 TD
+                                    </h3>
+                                </a>
+                            </div>
+                            <span class="price">
+                                90 <sup>грн</sup>
+                            </span>
+                        </div>
+                        <div class="secondary">
+                            <div class="rating">
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/half.png" />
+                            </div>
+                            <div class="automobiles">
+                                <span>Audi A4 1994-1998</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">15.04.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Новоград-Волинськ, Житомирська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/4.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                        <div class="parts">
+                            <span>передняя подвеска</span>
+                            <span>рулевое управление</span>
+                        </div>
+                        <div class="primary">
+                            <div class="caption">
+                                <span class="triangle"></span>
+                                <a href="">
+                                    <h3>
+                                        Турбіна турбина audi vw 80 1.9 tdi
+                                    </h3>
+                                </a>
+                            </div>
+                            <span class="price">
+                                12050 <sup>грн</sup>
+                            </span>
+                        </div>
+                        <div class="secondary">
+                            <div class="rating">
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/half.png" />
+                            </div>
+                            <div class="automobiles">
+                                <span>Audi A4 1994-1998</span>
+                                <span>Volkswagen 80 1991-1999</span>
+                                <span>Volvo Yakes 1954-1955</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">14.04.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Київ, Київська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/5.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                        <div class="parts">
+                            <span>передняя подвеска</span>
+                            <span>рулевое управление</span>
+                        </div>
+                        <div class="primary">
+                            <div class="caption">
+                                <span class="triangle"></span>
+                                <a href="">
+                                    <h3>
+                                        Турбіна ауді 1,9
+                                    </h3>
+                                </a>
+                            </div>
+                            <span class="price">
+                                1 <sup>грн</sup>
+                            </span>
+                        </div>
+                        <div class="secondary">
+                            <div class="rating">
+                                <img src="images/half.png" />
+                                <img src="images/empty.png" />
+                                <img src="images/empty.png" />
+                                <img src="images/empty.png" />
+                                <img src="images/empty.png" />
+                            </div>
+                            <div class="automobiles">
+                                <span>Audi A4 1994-1998</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">10.04.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Головниця, Рівненська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/6.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                        <div class="parts">
+                            <span>передняя подвеска</span>
+                            <span>рулевое управление</span>
+                        </div>
+                        <div class="primary">
+                            <div class="caption">
+                                <span class="triangle"></span>
+                                <a href="">
+                                    <h3>
+                                        Турбіна Ауді А6 Ц4 Audi A6 C4 2.5TDI AEL 103kW
+                                    </h3>
+                                </a>
+                            </div>
+                            <span class="price">
+                                320 <sup>грн</sup>
+                            </span>
+                        </div>
+                        <div class="secondary">
+                            <div class="rating">
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/half.png" />
+                                <img src="images/empty.png" />
+                                <img src="images/empty.png" />
+                            </div>
+                            <div class="automobiles">
+                                <span>Audi A4 1994-1998</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">02.04.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Млинів, Полтавська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="partCard">
+                <a href="">
+                    <div class="photo">
+                        <img src="images/minimals/7.jpg" />
+                    </div>
+                </a>
+                <div class="content">
+                    <aside class="description">
+                        <div class="parts">
+                            <span>передняя подвеска</span>
+                            <span>рулевое управление</span>
+                        </div>
+                        <div class="primary">
+                            <div class="caption">
+                                <span class="triangle"></span>
+                                <a href="">
+                                    <h3>
+                                        Турбіна турбина audi vw 80 1.9 tdi Турбіна турбина audi vw 80 1.9 tdi
+                                    </h3>
+                                </a>
+                            </div>
+                            <span class="price">
+                                55 <sup>грн</sup>
+                            </span>
+                        </div>
+                        <div class="secondary">
+                            <div class="rating">
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/full.png" />
+                                <img src="images/empty.png" />
+                            </div>
+                            <div class="automobiles">
+                                <span>Audi A4 1994-1998</span>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="tertiary">
+                        <div class="additionalInfo">
+                            <span class="icon icon-clock"></span>
+                            <span class="date">30.03.2018</span>
+                            <span class="icon icon-location"></span>
+                            <span class="location">Роздільна, Одеська обл.</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            ПІДВАЛ - XBOLT &copy;2018
+        </article>
+    </footer>
+</body>
+</html>

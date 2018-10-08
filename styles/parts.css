@@ -1,0 +1,195 @@
+@font-face {
+  font-family: PTSansRegular;
+  src: url('../fonts/PTSansRegular.ttf');
+}
+@font-face {
+  font-family: PTSansItalic;
+  src: url('../fonts/PTSansItalic.ttf');
+}
+@font-face {
+  font-family: PTSansBold;
+  src: url('../fonts/PTSansBold.ttf');
+}
+@font-face {
+  font-family: MyriadProRegular;
+  src: url('../fonts/MyriadProRegular.ttf');
+}
+main article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.partCard {
+  flex-direction: column;
+  flex-grow: 1;
+  border: 1px solid #e3e3e3;
+  margin: 15px 15px 0 0;
+  border-radius: 5px;
+  width: 245px;
+  height: auto;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+.partCard:hover {
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+.partCard .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 175px;
+  background-color: #eeeeee;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+}
+.partCard .photo img {
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+}
+.partCard .content {
+  margin: 0;
+  padding: 0 10px;
+  padding-bottom: 5px;
+  border: none;
+}
+.partCard .description .parts {
+  margin: 2px auto;
+  text-align: center;
+}
+.partCard .description .parts span {
+  font-size: 10px;
+  line-height: 12px;
+  color: #999999;
+}
+.partCard .description .parts span:not(:last-child)::after {
+  content: " \203A";
+  font-size: 10px;
+}
+.partCard .description .primary {
+  flex-direction: column;
+}
+.partCard .description .primary .caption {
+  display: flex;
+  flex-grow: 1;
+}
+.partCard .description .primary .caption span {
+  display: none;
+}
+.partCard .description .primary .caption a {
+  height: 16px;
+  width: 100%;
+  color: #2b2d42;
+  overflow: hidden;
+  transition: color 0.15s ease-in-out;
+}
+.partCard .description .primary .caption a:hover {
+  color: #d10024;
+  transition: color 0.2s ease-in-out;
+}
+.partCard .description .primary .caption a h3 {
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.partCard .description .primary .price {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  color: #d10024;
+  font-family: MyriadProRegular;
+  font-size: 20px;
+  font-weight: bold;
+}
+.partCard .description .primary .price sup {
+  position: relative;
+  top: 0;
+  left: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 14px;
+}
+.partCard .description .primary .price sup::after {
+  content: "\005F";
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.partCard .description .secondary {
+  flex-direction: column;
+  align-items: center;
+}
+.partCard .description .secondary .rating {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.partCard .description .secondary .rating::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e3e3e3;
+  z-index: 1;
+}
+.partCard .description .secondary .rating img {
+  padding-right: 3px;
+  background-color: #ffffff;
+  z-index: 2;
+}
+.partCard .description .secondary .rating img:first-child {
+  padding-left: 10px;
+}
+.partCard .description .secondary .rating img:last-child {
+  padding-right: 10px;
+}
+.partCard .description .secondary .automobiles {
+  margin: 5px 0;
+  text-align: center;
+  line-height: 22px;
+}
+.partCard .description .secondary .automobiles span {
+  background-color: #e1ecf4;
+  color: #39739d;
+  padding: 3px 5px;
+  margin-right: 2px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.partCard .tertiary .additionalInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 12px;
+  color: #999999;
+}
+.partCard .tertiary .additionalInfo .icon {
+  min-width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  background-repeat: no-repeat;
+  background-position: 0;
+}
+.partCard .tertiary .additionalInfo .icon:nth-child(3) {
+  margin-left: 5px;
+  margin-right: 0;
+}
+.partCard .tertiary .additionalInfo .icon-clock {
+  background-image: url('../images/clock.png');
+}
+.partCard .tertiary .additionalInfo .icon-location {
+  background-image: url('../images/location.png');
+}
+@media screen and (max-width: 767px) {
+  .partCard {
+    margin: 10px 5px 0 10px;
+  }
+}
