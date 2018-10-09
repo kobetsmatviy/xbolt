@@ -2,6 +2,8 @@
     // Перемикач фільтру
     $('#filterName').on("click", function () {
         $('#filter').toggle();
+        // Перемкнути темну обкладинку, для більшого фокусу на фільтр / для ПК
+        $('#overlay').toggle();
     });
     $('#search').on("click", function () {
         // Сховати блок по кліку, якщо він у полі зору
@@ -12,10 +14,13 @@
         if (scrollTop + 45 > submitTop) {
             $('#filter').show();
             $('html, body').animate({ scrollTop: 0 }, 500);
+            $('#overlay').show();
+        
         }
         else {
             $('#filter').hide();
-            $('html, body').animate({ scrollTop: 0 }, 500);
+            $('#overlay').hide();
+            // $('html, body').animate({ scrollTop: 0 }, 500);
         }
     });
 
