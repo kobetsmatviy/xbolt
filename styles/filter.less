@@ -1,39 +1,57 @@
 ﻿// Libraries for the LESS
 @import "variables";
 
-// Version for a PK
+//############### Version for a PK
 select, input, label {
     cursor: pointer;
 }
-form select, form input {
-    margin: 5px 10px;
-    padding: 5px;
-    min-width: 170px;
-    max-width: 200px;
-    width: 100%;
-    height: 35px;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    background-color: #053c5a;
-    text-align: left;
-    font-weight: normal;
-    color: @color_white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 
-    &:hover {
-        background-color: #003551;
+form {
+    select, input {
+        margin: 5px 10px;
+        padding: 5px;
+        min-width: 170px;
+        max-width: 200px;
+        width: 100%;
+        height: 35px;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        background-color: #053c5a;
+        text-align: left;
+        font-weight: normal;
+        color: @color_white;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    
+        &:hover {
+            background-color: #003551;
+        }
     }
-}
-form select option {
-    background-color: @color_white;
-    color: @color_dark;
-}
-form select, input[type="button"] {
-    background-image: url('@{path_img}arrow.png');
-    background-repeat: no-repeat;
-    background-position: 90% 50%;
+
+    select, input[type="button"] {
+        background-image: url('@{path_img}arrow.png');
+        background-repeat: no-repeat;
+        background-position: 90% 50%;
+    }
+
+    select option {
+        background-color: @color_white;
+        color: @color_dark;
+    }
+
+    // Exclude standard checkboxes for custom style
+    input[type="checkbox"] {
+        display: none;
+    }
+    // Style for a submit button
+    input[type="submit"] {
+        display: none;
+        margin: 0;
+        text-align: center;
+        background-color: #045e96;
+        animation: bg-search 2s infinite ease-in-out; // need a change of animation
+    }
 }
 
 .details {
@@ -44,47 +62,134 @@ form select, input[type="button"] {
     border: 1px solid #eee;
     padding: 20px;
     margin: 10px 0;
-}
-input[type="checkbox"] {
-    display: none;
-}
-.details input[type="checkbox"] + label span {
-    position: relative;
-    display: inline-block;
-    width: 13px !important;
-    height: 13px !important;
-    margin-right: 5px;
-    vertical-align: middle;
-    background-color: #fff !important;
-    background-image: none;
-    border: 2px solid #00527a !important;
-}
-.details input[type="checkbox"]:checked + label span {
-    background-color: #339933 !important;
-    border-color: #339933 !important;
-}
-.details input[type="checkbox"]:checked + label span::after {
-    position: absolute;
-    content: "";
-    left: 2px;
-    top: -2px;
-    width: 5px;
-    height: 10px;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-.details label {
-    margin-left: 20px;
-}
-input[type="submit"] {
-    display: none;
-    margin: 0;
-    text-align: center;
-    background-color: #045e96;
-    animation: bg-search 2s infinite ease-in-out;
+
+    input[type="checkbox"] + label span {
+        position: relative;
+        display: inline-block;
+        width: 13px !important;
+        height: 13px !important;
+        margin-right: 5px;
+        vertical-align: middle;
+        background-color: #fff !important;
+        background-image: none;
+        border: 2px solid #00527a !important;
+    }
+    input[type="checkbox"]:checked + label span {
+        background-color: #339933 !important;
+        border-color: #339933 !important;
+
+        &::after {
+            position: absolute;
+            content: "";
+            left: 2px;
+            top: -2px;
+            width: 5px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    label {
+        margin-left: 20px;
+    }
 }
 
+#filter {
+    display: none;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        .filterType {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            background-color: #224b7a;
+            border-top: 1px solid #275489;
+
+            &:first-of-type {
+                border-top: none;
+            }
+            &:last-of-type {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            .filterName {
+                .remove {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    margin: 10px 20px;
+                    background-color: #ff6600;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: rotate(360deg);
+                        transition: transform 1s;
+                    }
+
+                    &::after, &::before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: 8px;
+                        content: "";
+                        height: 10px;
+                        width: 3px;
+                        background-color: #fff;
+                    }
+
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+
+                .remove, .caption {
+                    font-size: 12px;
+                    color: #fff;
+                }
+            }
+
+            .filterCategory {
+                width: 660px;
+            }
+        }
+        .filterType > div {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .filterName, .submit {
+            align-items: center;
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 200px;
+            height: 50px;
+        }
+    }
+}
+
+// Classes for jQuery -> "filter_action.js"
 .mark {
     background-color: #339933 !important;
     padding: 5px;
@@ -109,101 +214,22 @@ input[type="submit"] {
     cursor: not-allowed;
 }
 
-#filter {
-    display: none; /* !!!!!!!!!!!!!!!!!!!!!!!!!!! */
-    position: fixed;
-    top: 90px;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-}
-#filter form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-#filter aside {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    background-color: #224b7a;
-    border-top: 1px solid #275489;
-}
-#filter aside:first-of-type {
-    border-top: none;
-}
-#filter aside:last-of-type {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-#filter aside > div {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-#filter aside .partsName, .submit {
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: 200px;
-    height: 50px;
-}
-#filter aside .partsName .remove {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin: 10px 20px;
-    background-color: #ff6600;
-    border-radius: 50%;
-    cursor: pointer;
-}
-#filter aside .partsName .remove:hover {
-    transform: rotate(360deg);
-    transition: transform 1s;
-}
-#filter aside .partsName .remove::after,
-#filter aside .partsName .remove::before {
-    display: inline-block;
-    position: absolute;
-    top: 5px;
-    left: 8px;
-    content: "";
-    height: 10px;
-    width: 3px;
-    background-color: #fff;
-}
-#filter aside .partsName .remove::before {
-    transform: rotate(45deg);
-}
-#filter aside .partsName .remove::after {
-    transform: rotate(-45deg);
-}
-#filter aside .partsName .caption {
-    font-size: 12px;
-    color: #fff;
-}
-#filter aside .partsCategories {
-    width: 660px;
-}
-
-// Version for a smartphone
+//################### Version for a smartphone
 @media screen and (max-width: 767px) {
-    #parts form {
-        flex-direction: column !important;
+    #filter form {
+        width: 80%;
+        align-items: flex-end;
+        flex-direction: column;
     }
-    #parts form select, #parts form input {
+    #filter form select, #filter form input {
         width: 100% !important;
         max-width: 90% !important;
         background-position: 95% 50% !important;
     }
-    #parts .details {
+    #filter .details {
         max-width: 400px !important;
     }
-    #parts #partsCategories {
+    #filter #filterCategory {
         display: flex !important;
         flex-direction: column !important;
     }
@@ -225,13 +251,13 @@ input[type="submit"] {
         align-items: center !important;
         justify-content: center !important;
     }
-    #filter aside .partsName {
+    #filter aside .filterName {
         background-color: #249cd2;
     }
-    #filter aside .partsName:hover {
+    #filter aside .filterName:hover {
         cursor: pointer;
     }
-    #filter aside .partsCategories {
+    #filter aside .filterCategory {
         flex-direction: column !important;
     }
 }

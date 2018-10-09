@@ -21,17 +21,17 @@
 
     // Показати/сховати блоки фільтру залежно від розміру екрану
     if ($(window).width() < 768) {
-        $('.partsName').on("click", function () {
+        $('.filterName').on("click", function () {
             $(this).next().toggle();
         });
         // відмінити дію при кліку по скиданні
-        $('.partsName .remove').on("click", function (e) {
+        $('.filterName .remove').on("click", function (e) {
             e.stopPropagation();
         });
     }
     else {
-        $('.partsCategories').each(function () {
-            $('.partsCategories').show();
+        $('.filterCategory').each(function () {
+            $('.filterCategory').show();
         });
     }
 

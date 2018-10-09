@@ -41,15 +41,25 @@ form select:hover,
 form input:hover {
   background-color: #003551;
 }
+form select,
+form input[type="button"] {
+  background-image: url('../images/arrow.png');
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+}
 form select option {
   background-color: #ffffff;
   color: #2b2d42;
 }
-form select,
-input[type="button"] {
-  background-image: url('../images/arrow.png');
-  background-repeat: no-repeat;
-  background-position: 90% 50%;
+form input[type="checkbox"] {
+  display: none;
+}
+form input[type="submit"] {
+  display: none;
+  margin: 0;
+  text-align: center;
+  background-color: #045e96;
+  animation: bg-search 2s infinite ease-in-out;
 }
 .details {
   display: none;
@@ -59,9 +69,6 @@ input[type="button"] {
   border: 1px solid #eee;
   padding: 20px;
   margin: 10px 0;
-}
-input[type="checkbox"] {
-  display: none;
 }
 .details input[type="checkbox"] + label span {
   position: relative;
@@ -92,12 +99,87 @@ input[type="checkbox"] {
 .details label {
   margin-left: 20px;
 }
-input[type="submit"] {
+#filter {
   display: none;
-  margin: 0;
-  text-align: center;
-  background-color: #045e96;
-  animation: bg-search 2s infinite ease-in-out;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+#filter form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#filter form .filterType {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #224b7a;
+  border-top: 1px solid #275489;
+}
+#filter form .filterType:first-of-type {
+  border-top: none;
+}
+#filter form .filterType:last-of-type {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#filter form .filterType .filterName .remove {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 10px 20px;
+  background-color: #ff6600;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#filter form .filterType .filterName .remove:hover {
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
+#filter form .filterType .filterName .remove::after,
+#filter form .filterType .filterName .remove::before {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  content: "";
+  height: 10px;
+  width: 3px;
+  background-color: #fff;
+}
+#filter form .filterType .filterName .remove::before {
+  transform: rotate(45deg);
+}
+#filter form .filterType .filterName .remove::after {
+  transform: rotate(-45deg);
+}
+#filter form .filterType .filterName .remove,
+#filter form .filterType .filterName .caption {
+  font-size: 12px;
+  color: #fff;
+}
+#filter form .filterType .filterCategory {
+  width: 660px;
+}
+#filter form .filterType > div {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#filter form .filterName,
+#filter form .submit {
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 200px;
+  height: 50px;
 }
 .mark {
   background-color: #339933 !important;
@@ -124,102 +206,22 @@ input[type="submit"] {
   opacity: 0.5;
   cursor: not-allowed;
 }
-#filter {
-  display: none;
-  /* !!!!!!!!!!!!!!!!!!!!!!!!!!! */
-  position: fixed;
-  top: 90px;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-}
-#filter form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-#filter aside {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  background-color: #224b7a;
-  border-top: 1px solid #275489;
-}
-#filter aside:first-of-type {
-  border-top: none;
-}
-#filter aside:last-of-type {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-#filter aside > div {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-#filter aside .partsName,
-.submit {
-  align-items: center;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 200px;
-  height: 50px;
-}
-#filter aside .partsName .remove {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 10px 20px;
-  background-color: #ff6600;
-  border-radius: 50%;
-  cursor: pointer;
-}
-#filter aside .partsName .remove:hover {
-  transform: rotate(360deg);
-  transition: transform 1s;
-}
-#filter aside .partsName .remove::after,
-#filter aside .partsName .remove::before {
-  display: inline-block;
-  position: absolute;
-  top: 5px;
-  left: 8px;
-  content: "";
-  height: 10px;
-  width: 3px;
-  background-color: #fff;
-}
-#filter aside .partsName .remove::before {
-  transform: rotate(45deg);
-}
-#filter aside .partsName .remove::after {
-  transform: rotate(-45deg);
-}
-#filter aside .partsName .caption {
-  font-size: 12px;
-  color: #fff;
-}
-#filter aside .partsCategories {
-  width: 660px;
-}
 @media screen and (max-width: 767px) {
-  #parts form {
-    flex-direction: column !important;
+  #filter form {
+    width: 80%;
+    align-items: flex-end;
+    flex-direction: column;
   }
-  #parts form select,
-  #parts form input {
+  #filter form select,
+  #filter form input {
     width: 100% !important;
     max-width: 90% !important;
     background-position: 95% 50% !important;
   }
-  #parts .details {
+  #filter .details {
     max-width: 400px !important;
   }
-  #parts #partsCategories {
+  #filter #filterCategory {
     display: flex !important;
     flex-direction: column !important;
   }
@@ -239,13 +241,13 @@ input[type="submit"] {
     align-items: center !important;
     justify-content: center !important;
   }
-  #filter aside .partsName {
+  #filter aside .filterName {
     background-color: #249cd2;
   }
-  #filter aside .partsName:hover {
+  #filter aside .filterName:hover {
     cursor: pointer;
   }
-  #filter aside .partsCategories {
+  #filter aside .filterCategory {
     flex-direction: column !important;
   }
 }
