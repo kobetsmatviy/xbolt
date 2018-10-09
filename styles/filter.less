@@ -216,49 +216,51 @@ form {
 
 //################### Version for a smartphone
 @media screen and (max-width: 767px) {
-    #filter form {
-        width: 80%;
-        align-items: flex-end;
-        flex-direction: column;
-    }
-    #filter form select, #filter form input {
-        width: 100% !important;
-        max-width: 90% !important;
-        background-position: 95% 50% !important;
-    }
-    #filter .details {
-        max-width: 400px !important;
-    }
-    #filter #filterCategory {
-        display: flex !important;
-        flex-direction: column !important;
+    #filter {
+        position: static !important;
+        
+        form {
+            width: 80%;
+            align-items: flex-end;
+            flex-direction: column;
+    
+            select, input {
+                width: 100%;
+                max-width: 90%;
+                background-position: 95% 50%;
+            }
+        }
+        .filterType {
+            flex-direction: column !important;
+            border-radius: 0px !important;
+
+            div {
+                width: 100% !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .filterName {
+                background-color: #249cd2;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .filterCategory {
+                display: flex !important;
+                flex-direction: column !important;
+    
+                .details {
+                    max-width: 400px !important;
+                }
+            }
+        }
     }
 
     input[type="submit"] {
         display: block !important;
         margin: 0 auto !important;
-    }
-
-    #filter {
-        position: static !important;
-    }
-    #filter aside {
-        flex-direction: column !important;
-        border-radius: 0px !important;
-    }
-    #filter aside div {
-        width: 100% !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    #filter aside .filterName {
-        background-color: #249cd2;
-    }
-    #filter aside .filterName:hover {
-        cursor: pointer;
-    }
-    #filter aside .filterCategory {
-        flex-direction: column !important;
     }
 }
 @media screen and (min-width: 768px) {

@@ -207,6 +207,9 @@ form input[type="submit"] {
   cursor: not-allowed;
 }
 @media screen and (max-width: 767px) {
+  #filter {
+    position: static !important;
+  }
   #filter form {
     width: 80%;
     align-items: flex-end;
@@ -214,41 +217,35 @@ form input[type="submit"] {
   }
   #filter form select,
   #filter form input {
-    width: 100% !important;
-    max-width: 90% !important;
-    background-position: 95% 50% !important;
+    width: 100%;
+    max-width: 90%;
+    background-position: 95% 50%;
   }
-  #filter .details {
-    max-width: 400px !important;
-  }
-  #filter #filterCategory {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  input[type="submit"] {
-    display: block !important;
-    margin: 0 auto !important;
-  }
-  #filter {
-    position: static !important;
-  }
-  #filter aside {
+  #filter .filterType {
     flex-direction: column !important;
     border-radius: 0px !important;
   }
-  #filter aside div {
+  #filter .filterType div {
     width: 100% !important;
     align-items: center !important;
     justify-content: center !important;
   }
-  #filter aside .filterName {
+  #filter .filterType .filterName {
     background-color: #249cd2;
   }
-  #filter aside .filterName:hover {
+  #filter .filterType .filterName:hover {
     cursor: pointer;
   }
-  #filter aside .filterCategory {
+  #filter .filterType .filterCategory {
+    display: flex !important;
     flex-direction: column !important;
+  }
+  #filter .filterType .filterCategory .details {
+    max-width: 400px !important;
+  }
+  input[type="submit"] {
+    display: block !important;
+    margin: 0 auto !important;
   }
 }
 @media screen and (min-width: 768px) {
