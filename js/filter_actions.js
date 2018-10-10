@@ -8,10 +8,11 @@
     $('#search').on("click", function () {
         // Сховати блок по кліку, якщо він у полі зору
         // інакше скрол догори
-        var submitTop = $('input[type=submit]').offset().top;
+        var filterLastChildHeight = $('.filterType:last-child').height();
+        var filterTop = $('.filterType:last-child').offset().top + filterLastChildHeight;
         var scrollTop = $(document).scrollTop();
         
-        if (scrollTop + 45 > submitTop) {
+        if (scrollTop + 45 > filterTop) {
             $('#filter').show();
             $('html, body').animate({ scrollTop: 0 }, 500);
             $('#overlay').show();

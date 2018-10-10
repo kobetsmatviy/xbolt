@@ -100,7 +100,7 @@ form input[type="submit"] {
   margin-left: 20px;
 }
 #filter {
-  display: none;
+  display: flex;
   position: fixed;
   top: 90px;
   left: 0;
@@ -119,8 +119,8 @@ form input[type="submit"] {
   flex-direction: row;
   width: 100%;
   height: 100%;
-  background-color: #224b7a;
-  border-top: 1px solid #275489;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
 }
 #filter form .filterType:first-of-type {
   border-top: none;
@@ -128,6 +128,9 @@ form input[type="submit"] {
 #filter form .filterType:last-of-type {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+#filter form .filterType .filterName {
+  background-color: #eee;
 }
 #filter form .filterType .filterName .remove {
   position: relative;
@@ -162,7 +165,7 @@ form input[type="submit"] {
 #filter form .filterType .filterName .remove,
 #filter form .filterType .filterName .caption {
   font-size: 12px;
-  color: #fff;
+  color: #555;
 }
 #filter form .filterType .filterCategory {
   width: 660px;
@@ -182,7 +185,7 @@ form input[type="submit"] {
   height: 50px;
 }
 #overlay {
-  display: none;
+  display: block;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -243,9 +246,6 @@ form input[type="submit"] {
   #filter .filterType div {
     width: 100% !important;
     justify-content: flex-start;
-  }
-  #filter .filterType .filterName {
-    background-color: #249cd2;
   }
   #filter .filterType .filterName:hover {
     cursor: pointer;
