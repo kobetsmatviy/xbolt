@@ -7,11 +7,21 @@
 @color_tag: #39739D;
 @color_border: #E3E3E3;
 
+// Colors of filter buttons (select, input)
+@button_color: #0B7CB9;
+@button_mark: #318631;
+// Mixin for button:hover
+.button_hover(@button_color) {
+    background-color: darken(@button_color, 5%);
+}
+
+// Only background colors
 @background_tag: #E1ECF4;
 @background_nav: #33649F;
 @background_filter: #224B7A;
 @background_footer: #DDD;
 
+// The header gradient colors 
 @header_blue_light: #26A2DB;
 @header_blue_dark: #249CD2;
 

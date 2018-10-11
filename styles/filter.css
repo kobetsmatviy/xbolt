@@ -30,7 +30,7 @@ form input {
   outline: none;
   border: none;
   font-size: 16px;
-  background-color: #053c5a;
+  background-color: #0b7cb9;
   text-align: left;
   font-weight: normal;
   color: #ffffff;
@@ -39,7 +39,7 @@ form input {
 }
 form select:hover,
 form input:hover {
-  background-color: #003551;
+  background-color: #0a6ca1;
 }
 form select,
 form input[type="button"] {
@@ -102,7 +102,7 @@ form input[type="submit"] {
 #filter {
   display: flex;
   position: fixed;
-  top: 90px;
+  top: 91px;
   left: 0;
   z-index: 10;
   width: 100%;
@@ -213,7 +213,7 @@ form input[type="submit"] {
 }
 .disabled,
 .disabled:hover {
-  background-color: #005987;
+  background-color: #0b7cb9;
   opacity: 0.5;
   cursor: not-allowed;
 }
