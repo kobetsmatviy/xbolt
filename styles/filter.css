@@ -21,19 +21,22 @@ label {
 }
 form select,
 form input {
-  margin: 5px 10px;
+  display: flex;
+  flex-grow: 1;
+  margin: 5px;
+  margin-right: 0;
   padding: 5px;
-  min-width: 170px;
-  max-width: 200px;
-  width: 100%;
+  width: 200px;
+  max-width: 220px;
   height: 35px;
   outline: none;
   border: none;
-  font-size: 16px;
+  border-radius: 3px;
   background-color: #0b7cb9;
-  text-align: left;
-  font-weight: normal;
   color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -45,7 +48,7 @@ form select,
 form input[type="button"] {
   background-image: url('../images/arrow.png');
   background-repeat: no-repeat;
-  background-position: 90% 50%;
+  background-position: 95% 50%;
 }
 form select option {
   background-color: #ffffff;
@@ -53,13 +56,6 @@ form select option {
 }
 form input[type="checkbox"] {
   display: none;
-}
-form input[type="submit"] {
-  display: none;
-  margin: 0;
-  text-align: center;
-  background-color: #045e96;
-  animation: bg-search 2s infinite ease-in-out;
 }
 .details {
   display: none;
@@ -117,8 +113,9 @@ form input[type="submit"] {
 #filter form .filterType {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  padding-right: 5px;
   background-color: #fff;
   border-top: 1px solid #ccc;
 }
@@ -129,8 +126,16 @@ form input[type="submit"] {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+#filter form .filterType:last-of-type .filterName {
+  border-bottom-left-radius: 15px;
+}
 #filter form .filterType .filterName {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  height: 50px;
   background-color: #eee;
+  margin-bottom: auto;
 }
 #filter form .filterType .filterName .remove {
   position: relative;
@@ -168,21 +173,10 @@ form input[type="submit"] {
   color: #555;
 }
 #filter form .filterType .filterCategory {
-  width: 660px;
-}
-#filter form .filterType > div {
-  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-#filter form .filterName,
-#filter form .submit {
-  align-items: center;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 200px;
-  height: 50px;
+  width: 660px;
 }
 #overlay {
   display: block;
@@ -193,7 +187,7 @@ form input[type="submit"] {
   z-index: 3;
 }
 .mark {
-  background-color: #339933 !important;
+  background-color: #318631 !important;
   padding: 5px;
 }
 .activeMark {
@@ -202,7 +196,7 @@ form input[type="submit"] {
 }
 .mark:hover,
 .activeMark:hover {
-  background-color: #298a29 !important;
+  background-color: #2a732a;
   padding: 5px;
 }
 .active {
@@ -236,12 +230,17 @@ form input[type="submit"] {
   #filter form select,
   #filter form input {
     width: 100%;
-    max-width: 90%;
-    background-position: 95% 50%;
+    max-width: 100%;
+    margin: 5px;
+    margin-top: 0;
+  }
+  #filter form select:first-child,
+  #filter form input:first-child {
+    margin-top: 5px;
   }
   #filter .filterType {
     flex-direction: column !important;
-    border-radius: 0px;
+    border-radius: 0 !important;
   }
   #filter .filterType div {
     width: 100% !important;
