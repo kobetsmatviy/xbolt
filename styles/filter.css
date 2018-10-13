@@ -21,13 +21,10 @@ label {
 }
 form select,
 form input {
-  display: flex;
-  flex-grow: 1;
   margin: 5px;
   margin-right: 0;
   padding: 5px;
   width: 200px;
-  max-width: 220px;
   height: 35px;
   outline: none;
   border: none;

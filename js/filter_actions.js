@@ -25,27 +25,29 @@
         }
     });
     // На телефонах при натисканні поза фільтром ховаємо його
-    if ($(window).width() < 768) {
+    if ($(window).width() <= 750) {
+        $('form').on("click", function (e) {
+            e.stopPropagation();
+        });
+
+        $('#overlay').on("click", function () {            
+            $('#filter').hide();
+            $('#overlay').hide();
+        });
         $('#filter').on("click", function () {
             $('#filter').hide();
             $('#overlay').hide();
-
-            $('form').on("click", function (e) {
-                e.stopPropagation();
-            });
-        });
-        $('#overlay').on("click", function () {
-            $('#filter').hide();
-            $('#overlay').hide();
-
-            $('form').on("click", function (e) {
-                e.stopPropagation();
-            });
         });
     }
+    // На більших екранах коли клацаєш поза межами фільтру
+    // else {
+    //     $('#overlay').on("click", function () {
+    //         $('#filterName').css('background-color', '#0088cc')
+    //     });
+    // }
 
     // Показати/сховати блоки фільтру залежно від розміру екрану
-    if ($(window).width() < 768) {
+    if ($(window).width() <= 750) {
         $('.filterName').on("click", function () {
             $(this).next().toggle();
         });
@@ -123,7 +125,6 @@
     var $markDetails = $('.details input[type=checkbox]');
     $markDetails.on("click", function () {
         if ($(this).parents('.details').find('input[type=checkbox]:checked').length) {
-            //$(this).parents('.details').prev().removeClass('active');
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
             $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
