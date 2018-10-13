@@ -30,7 +30,7 @@
         $('.filterName').on("click", function () {
             $(this).next().toggle();
         });
-        // відмінити дію при кліку по скиданні
+        // окрім кнопки скидання
         $('.filterName .remove').on("click", function (e) {
             e.stopPropagation();
         });
@@ -56,12 +56,14 @@
                 $(this).hide();
             });
         });
+        $(this).css('opacity', '.2');
     });
 
     // Якщо select значення змінено, позначаємо mark
     $('select').change(function () {
         $(this).addClass('mark');
         $(this).next().removeClass('disabled').prop('disabled', false);
+        $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
     });
 
     // Приховуємо/показуємо блоки з деталями, якщо має active
@@ -105,11 +107,19 @@
             //$(this).parents('.details').prev().removeClass('active');
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
+            $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
         }
         else {
             $(this).parents('.details').prev().removeClass('mark');
             $(this).parents('.details').prev().removeClass('activeMark');
             $(this).parents('.details').prev().addClass('active');
+            $(this).parents('.filterType').find('.filterName .remove').css('opacity', '.2');
         }
+        
+        $markDetails.each(function() {
+            if ($markDetails.parents('.details').find('input[type=checkbox]:checked').length) {
+                $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
+            }
+        });
     });
 });
