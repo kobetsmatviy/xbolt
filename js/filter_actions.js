@@ -24,6 +24,25 @@
             // $('html, body').animate({ scrollTop: 0 }, 500);
         }
     });
+    // На телефонах при натисканні поза фільтром ховаємо його
+    if ($(window).width() < 768) {
+        $('#filter').on("click", function () {
+            $('#filter').hide();
+            $('#overlay').hide();
+
+            $('form').on("click", function (e) {
+                e.stopPropagation();
+            });
+        });
+        $('#overlay').on("click", function () {
+            $('#filter').hide();
+            $('#overlay').hide();
+
+            $('form').on("click", function (e) {
+                e.stopPropagation();
+            });
+        });
+    }
 
     // Показати/сховати блоки фільтру залежно від розміру екрану
     if ($(window).width() < 768) {
