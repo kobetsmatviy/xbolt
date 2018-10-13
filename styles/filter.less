@@ -54,11 +54,10 @@ form {
 .details {
     display: none;
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0 5px 5px -5px #021d27;
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
     padding: 20px;
     margin: 10px 0;
+    margin-left: 5px;
 
     input[type="checkbox"] + label span {
         position: relative;
@@ -96,7 +95,7 @@ form {
 #filter {
     display: flex;
     position: fixed;
-    top: 91px;
+    top: 81px;
     left: 0;
     z-index: 10;
     width: 100%;
@@ -210,11 +209,8 @@ form {
     .button_hover(@button_mark);
     padding: 5px;
 }
-.active {
-    background-color: #073148;
-}
-.active:hover {
-    background-color: #003551;
+.active, .active:hover {
+    .button_active(@button_color);
 }
 .disabled, .disabled:hover {
     background-color: @button_color;
@@ -226,7 +222,7 @@ form {
 @media screen and (max-width: 767px) {
     #filter {
         position: absolute;
-        top: 45px;
+        top: 35px;
         z-index: 5;
         
         article {
