@@ -1,4 +1,42 @@
 ﻿$(function () {
+    AdaptiveSelect();
+    $(window).resize(function() {
+        AdaptiveSelect();
+    });
+    
+    // Розміщення блоку деталей під кнопкою (адаптивно для всіх екранів) 
+    function AdaptiveSelect() {
+        if ($(window).width() > 750) {
+            var rowWidth = $(".filterCategory").width();
+            var countItems = Math.floor(rowWidth / (200 + 5));
+            var inputOrder = -1;
+            var detailsOrder = 0;
+
+            // Значення order для кожного input[type=button]
+            $(".filterCategory input[type=button]").each(function() {
+                if (($(this).index()/2) % countItems == 0) {
+                    inputOrder += 2;
+                }
+                else {
+                    inputOrder++;
+                }
+                $(this).css("order", inputOrder);
+            });
+            // Значення order для кожного блоку details
+            $(".details").each(function() {
+                if((($(this).index()-1)/2) % countItems == 0) {
+                    detailsOrder += countItems + 1;
+                }
+                $(this).css("order", detailsOrder);
+            });
+        }
+        else {
+            $(".filterCategory").children().each(function() {
+                $(this).css("order", 0);
+            });
+        }
+    }
+
     // Перемикач фільтру
     $('#filterName').on("click", function () {
         $('#filter').toggle();
@@ -8,20 +46,17 @@
     $('#search').on("click", function () {
         // Сховати блок по кліку, якщо він у полі зору
         // інакше скрол догори
-        var filterLastChildHeight = $('.filterType:last-child').height();
-        var filterTop = $('.filterType:last-child').offset().top + filterLastChildHeight;
+        var submitTop = $('input[type=submit]').offset().top;
         var scrollTop = $(document).scrollTop();
         
-        if (scrollTop + 45 > filterTop) {
+        if (scrollTop + 45 > submitTop) {
             $('#filter').show();
-            $('html, body').animate({ scrollTop: 0 }, 500);
             $('#overlay').show();
-        
+            $('html, body').animate({ scrollTop: 0 }, 500);
         }
         else {
             $('#filter').hide();
             $('#overlay').hide();
-            // $('html, body').animate({ scrollTop: 0 }, 500);
         }
     });
     // На телефонах при натисканні поза фільтром ховаємо його

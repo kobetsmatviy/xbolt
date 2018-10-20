@@ -40,17 +40,16 @@ form {
         color: @color_dark;
     }
 
-    // Exclude standard checkboxes for custom style
-    input[type="checkbox"] {
+    // Exclude standard checkboxes for custom style && Hide a submit button 
+    input[type="checkbox"], input[type="submit"] {
         display: none;
-    }
+    }    
 }
 
 .details {
     display: none;
     width: 100%;
     border-bottom: 1px solid #ddd;
-    // border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
     margin-left: 5px;
@@ -188,7 +187,7 @@ form {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                width: 660px;
+                width: 100%;
             }
         }
     }
@@ -297,37 +296,12 @@ form {
     input[type="submit"] {
         display: block !important;
         margin: 0 auto !important;
-    }
-}
-@media screen and (min-width: 768px) {
-    .row1 {
-        order: 1;
-    }
-    .row2 {
-        order: 3;
-    }
-    .row3 {
-        order: 5;
-    }
-    .row4 {
-        order: 7;
-    }
-    .row5 {
-        order: 9;
-    }
-    .details:nth-of-type(1), .details:nth-of-type(2), .details:nth-of-type(3) {
-        order: 2;
-    }
-    .details:nth-of-type(4), .details:nth-of-type(5), .details:nth-of-type(6) {
-        order: 4;
-    }
-    .details:nth-of-type(7), .details:nth-of-type(8), .details:nth-of-type(9) {
-        order: 6;
-    }
-    .details:nth-of-type(10), .details:nth-of-type(11), .details:nth-of-type(12) {
-        order: 8;
-    }
-    .details:nth-of-type(13), .details:nth-of-type(14), .details:nth-of-type(15) {
-        order: 10;
+        background-color: @header_blue_dark !important;
+        color: @color_white !important;
+        text-align: center;
+
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
