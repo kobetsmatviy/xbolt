@@ -49,9 +49,11 @@ form {
 .details {
     display: none;
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    // border-bottom: 1px solid #ddd;
+    border-left: 2px solid #2299d4;
     padding: 10px;
-    margin-bottom: 10px;
+    padding-left: 0;
+    margin-bottom: 5px;
     margin-left: 5px;
 
     input[type="checkbox"] + label span {
@@ -114,7 +116,7 @@ form {
             min-height: 50px;
             padding-right: 5px;
             background-color: #fff;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #ddd;
 
             &:first-of-type {
                 border-top: none;
@@ -205,20 +207,21 @@ form {
 
 // Classes for jQuery -> "filter_action.js"
 .mark {
-    background-color: @button_mark !important;
-    color: @color_white;
     padding: 5px;
+    background-color: @button_mark;
+    color: @color_white;
 }
 .activeMark {
-    background-color: #1e811e !important;
     padding: 5px;
+    .button_hover(@button_mark) !important;
 }
 .mark:hover, .activeMark:hover {
-    .button_hover(@button_mark);
     padding: 5px;
+    .button_hover(@button_mark) !important;
 }
 .active, .active:hover {
-    .button_active(@button_color);
+    background-color: @button_active;
+    color: @color_white;
 }
 .disabled, .disabled:hover {
     background-color: @button_color;
@@ -283,6 +286,8 @@ form {
             .filterCategory {
                 margin: 0 !important;
                 .details {
+                    margin-right: 5px;
+                    border: none;
                     label {
                         display: flex;
                         flex-direction: row;

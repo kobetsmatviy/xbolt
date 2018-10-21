@@ -1,11 +1,11 @@
 ﻿$(function () {
-    AdaptiveSelect();
+    AdaptiveFilter();
     $(window).resize(function() {
-        AdaptiveSelect();
+        AdaptiveFilter();
     });
     
     // Розміщення блоку деталей під кнопкою (адаптивно для всіх екранів) 
-    function AdaptiveSelect() {
+    function AdaptiveFilter() {
         if ($(window).width() > 750) {
             var rowWidth = $(".filterCategory").width();
             var countItems = Math.floor(rowWidth / (200 + 5));
@@ -29,11 +29,15 @@
                 }
                 $(this).css("order", detailsOrder);
             });
+            // Ширина блоку derails, залежно від кількості елементів у рядку
+            $(".details").width(countItems * 200);
         }
+        // Обнуляємо данні для смартфонів, вони по стандарту потрібні
         else {
             $(".filterCategory").children().each(function() {
                 $(this).css("order", 0);
             });
+            $(".details").width("100%");
         }
     }
 
@@ -111,6 +115,7 @@
             $(this).find('.details').each(function () {
                 $(this).hide();
             });
+            $(this).find('.details').css('border-color', '#2299d4');
         });
         $(this).css('opacity', '.2');
     });
@@ -163,12 +168,14 @@
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
             $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
+            $(this).parents('.details').css('border-color', '#499b42');
         }
         else {
             $(this).parents('.details').prev().removeClass('mark');
             $(this).parents('.details').prev().removeClass('activeMark');
             $(this).parents('.details').prev().addClass('active');
             $(this).parents('.filterType').find('.filterName .remove').css('opacity', '.2');
+            $(this).parents('.details').css('border-color', '#2299d4');
         }
         
         $markDetails.each(function() {
