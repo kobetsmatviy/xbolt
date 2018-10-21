@@ -72,25 +72,25 @@ main article {
 .partCard .description .primary {
   flex-direction: column;
 }
-.partCard .description .primary .caption {
+.partCard .description .primary .title {
   display: flex;
   flex-grow: 1;
 }
-.partCard .description .primary .caption span {
+.partCard .description .primary .title span {
   display: none;
 }
-.partCard .description .primary .caption a {
+.partCard .description .primary .title a {
   height: 16px;
   width: 100%;
   color: #2b2d42;
   overflow: hidden;
   transition: color 0.15s ease-in-out;
 }
-.partCard .description .primary .caption a:hover {
+.partCard .description .primary .title a:hover {
   color: #d10024;
   transition: color 0.2s ease-in-out;
 }
-.partCard .description .primary .caption a h3 {
+.partCard .description .primary .title a h3 {
   line-height: 16px;
   text-transform: uppercase;
 }
