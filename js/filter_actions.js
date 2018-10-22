@@ -50,38 +50,30 @@
     $('#search').on("click", function () {
         // Сховати блок по кліку, якщо він у полі зору
         // інакше скрол догори
-        var submitTop = $('input[type=submit]').offset().top;
+        var filterLastChildHeight = $('.filterType:last-child').height();
+        var filterTop = $('.filterType:last-child').offset().top + filterLastChildHeight;
         var scrollTop = $(document).scrollTop();
         
-        if (scrollTop + 45 > submitTop) {
+        if (scrollTop + 45 > filterTop) {
             $('#filter').show();
             $('#overlay').show();
             $('html, body').animate({ scrollTop: 0 }, 500);
+        
         }
         else {
             $('#filter').hide();
             $('#overlay').hide();
+            // $('html, body').animate({ scrollTop: 0 }, 500);
         }
     });
-    // На телефонах при натисканні поза фільтром ховаємо його
-    if ($(window).width() <= 750) {
-        $('form').on("click", function (e) {
-            e.stopPropagation();
-        });
+    // // На телефонах при натисканні поза фільтром акцентуємо увагу на кнопку пошуку
+    // if ($(window).width() <= 750) {
+    //     $('input[type=submit]').on("click", function (e) {
+    //         e.stopPropagation();
+    //     });
 
-        $('#overlay').on("click", function () {            
-            $('#filter').hide();
-            $('#overlay').hide();
-        });
-        $('#filter').on("click", function () {
-            $('#filter').hide();
-            $('#overlay').hide();
-        });
-    }
-    // На більших екранах коли клацаєш поза межами фільтру
-    // else {
     //     $('#overlay').on("click", function () {
-    //         $('#filterName').css('background-color', '#0088cc')
+    //         $('input[type=submit]').css('transform', 'translateX(5px)')
     //     });
     // }
 
@@ -125,6 +117,7 @@
         $(this).addClass('mark');
         $(this).next().removeClass('disabled').prop('disabled', false);
         $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
+        $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
     });
 
     // Приховуємо/показуємо блоки з деталями, якщо має active

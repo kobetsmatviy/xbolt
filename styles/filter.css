@@ -51,9 +51,49 @@ form select option {
   background-color: #ffffff;
   color: #2b2d42;
 }
-form input[type="checkbox"],
-form input[type="submit"] {
+form input[type="checkbox"] {
   display: none;
+}
+form input[type="submit"] {
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 55px;
+  height: 55px;
+  background-color: rgba(8, 62, 94, 0.2);
+  background-image: url('../images/search.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: submitStandard 5s infinite;
+}
+@keyframes submitStandard {
+  0% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+@keyframes submitMark {
+  0% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);
+    background-color: #499b42;
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.8);
+    background-color: rgba(73, 155, 66, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);
+    background-color: #499b42;
+  }
 }
 .details {
   display: none;
@@ -238,14 +278,14 @@ form input[type="submit"] {
     flex-direction: column;
   }
   #filter form select,
-  #filter form input {
+  #filter form input:not([type="submit"]) {
     width: 100%;
     max-width: 100%;
     margin: 5px;
     margin-top: 0;
   }
   #filter form select:first-child,
-  #filter form input:first-child {
+  #filter form input:not([type="submit"]):first-child {
     margin-top: 5px;
   }
   #filter .filterType {
@@ -284,13 +324,8 @@ form input[type="submit"] {
     align-items: center;
   }
   input[type="submit"] {
-    display: block !important;
-    margin: 0 auto !important;
-    background-color: #249cd2 !important;
-    color: #ffffff !important;
-    text-align: center;
-    border-radius: 0;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    position: fixed;
+    top: 45%;
+    left: 10%;
   }
 }
