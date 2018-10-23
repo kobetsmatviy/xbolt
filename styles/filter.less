@@ -73,6 +73,24 @@ form {
                 background-color: rgba(73, 155, 66, 1);
             }
         }
+        @keyframes submitBlink {
+            0% {
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, .4);
+                background-color: rgba(73, 155, 66, 1);
+            }
+            30% {
+                box-shadow: 0 0 0 15px rgba(255, 255, 255, .1);
+                background-color: rgba(73, 155, 66, .7);
+            }
+            31% {
+                box-shadow: 0 0 0 1px rgba(255, 255, 255, .1);
+                background-color: rgba(73, 155, 66, .7);
+            }
+            100% {
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, .4);
+                background-color: rgba(73, 155, 66, 1);
+            }
+        }
 
         margin: 0 auto;
         margin-top: 25px;
@@ -84,7 +102,6 @@ form {
         background-position: 50%;
         border-radius: 50%;
         box-shadow: 0 0 0 10px rgba(255, 255, 255, .3);
-
         animation: submitStandard 5s infinite;
     }
 }
@@ -92,7 +109,6 @@ form {
 .details {
     display: none;
     width: 100%;
-    // border-bottom: 1px solid #ddd;
     border-left: 2px solid #2299d4;
     padding: 10px;
     padding-left: 0;

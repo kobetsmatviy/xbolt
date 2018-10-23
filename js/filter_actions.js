@@ -50,8 +50,8 @@
     $('#search').on("click", function () {
         // Сховати блок по кліку, якщо він у полі зору
         // інакше скрол догори
-        var filterLastChildHeight = $('.filterType:last-child').height();
-        var filterTop = $('.filterType:last-child').offset().top + filterLastChildHeight;
+        var filterLastChildHeight = $('.filterType').last().height();
+        var filterTop = $('.filterType').last().offset().top + filterLastChildHeight;
         var scrollTop = $(document).scrollTop();
         
         if (scrollTop + 45 > filterTop) {
@@ -63,19 +63,21 @@
         else {
             $('#filter').hide();
             $('#overlay').hide();
-            // $('html, body').animate({ scrollTop: 0 }, 500);
         }
     });
-    // // На телефонах при натисканні поза фільтром акцентуємо увагу на кнопку пошуку
-    // if ($(window).width() <= 750) {
-    //     $('input[type=submit]').on("click", function (e) {
-    //         e.stopPropagation();
-    //     });
+    // На телефонах при натисканні поза фільтром акцентуємо увагу на кнопку пошуку
+    if ($(window).width() <= 750) {
+        $('input[type=submit]').on("click", function (e) {
+            e.stopPropagation();
+        });
 
-    //     $('#overlay').on("click", function () {
-    //         $('input[type=submit]').css('transform', 'translateX(5px)')
-    //     });
-    // }
+        $('#overlay').on("click", function () {
+            $('input[type=submit]').css('animation-name', 'submitBlink').css('animation-duration', '.5s');
+            setTimeout(function(){
+                $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
+            }, 500);
+        });
+    }
 
     // Показати/сховати блоки фільтру залежно від розміру екрану
     if ($(window).width() <= 750) {
@@ -161,6 +163,7 @@
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
             $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
+            $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
             $(this).parents('.details').css('border-color', '#499b42');
         }
         else {
@@ -177,4 +180,17 @@
             }
         });
     });
+
+    // // Якщо активний хоча б один із типів пошуку в фільтрі, то
+    // // анімація в кнопці пошуку буде помічена активною
+    // $(this).each(function() {
+    //     if ($(this).prop('opacity') == '1') {
+    //         $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
+    //         alert(1);
+    //     }
+    //     else {
+    //         $('input[type=submit]').css('animation-name', 'submitStandard').css('animation-duration', '5s');
+    //         alert(0);
+    //     }
+    // });
 });

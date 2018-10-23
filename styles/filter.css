@@ -95,6 +95,24 @@ form input[type="submit"] {
     background-color: #499b42;
   }
 }
+@keyframes submitBlink {
+  0% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);
+    background-color: #499b42;
+  }
+  30% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.1);
+    background-color: rgba(73, 155, 66, 0.7);
+  }
+  31% {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background-color: rgba(73, 155, 66, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);
+    background-color: #499b42;
+  }
+}
 .details {
   display: none;
   width: 100%;
