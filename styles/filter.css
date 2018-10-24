@@ -30,7 +30,7 @@ form input {
   border: none;
   border-radius: 3px;
   background-color: #dddddd;
-  color: #333;
+  color: #333333;
   font-size: 16px;
   font-weight: normal;
   text-align: left;
@@ -59,12 +59,10 @@ form input[type="submit"] {
   margin-top: 25px;
   width: 55px;
   height: 55px;
-  background-color: rgba(8, 62, 94, 0.2);
   background-image: url('../images/search.png');
   background-repeat: no-repeat;
   background-position: 50%;
   border-radius: 50%;
-  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
   animation: submitStandard 5s infinite;
 }
 @keyframes submitStandard {
@@ -116,7 +114,7 @@ form input[type="submit"] {
 .details {
   display: none;
   width: 100%;
-  border-left: 2px solid #2299d4;
+  border-left: 2px solid #59aed8;
   padding: 10px;
   padding-left: 0;
   margin-bottom: 5px;
@@ -130,14 +128,14 @@ form input[type="submit"] {
   margin-right: 5px;
   margin-bottom: 2px;
   vertical-align: middle;
-  background-color: #fff !important;
+  background-color: #ffffff !important;
   background-image: none;
-  border: 2px solid #2299d4 !important;
+  border: 2px solid #59aed8 !important;
   border-radius: 2px;
 }
 .details input[type="checkbox"]:checked + label span {
-  background-color: #339933 !important;
-  border-color: #339933 !important;
+  background-color: #499b42 !important;
+  border-color: #499b42 !important;
 }
 .details input[type="checkbox"]:checked + label span::after {
   position: absolute;
@@ -146,7 +144,7 @@ form input[type="submit"] {
   top: -2px;
   width: 5px;
   height: 10px;
-  border: solid #fff;
+  border: solid #ffffff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -177,8 +175,8 @@ form input[type="submit"] {
   height: 100%;
   min-height: 50px;
   padding-right: 5px;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
+  background-color: #ffffff;
+  border-top: 1px solid #dddddd;
 }
 #filter form .filterType:first-of-type {
   border-top: none;
@@ -200,7 +198,7 @@ form input[type="submit"] {
   right: 0;
   height: 100%;
   width: 200px;
-  background-color: #eee;
+  background-color: #eeeeee;
   margin-bottom: auto;
 }
 #filter form .filterType .filterName .remove {
@@ -226,7 +224,7 @@ form input[type="submit"] {
   content: "";
   height: 10px;
   width: 3px;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 #filter form .filterType .filterName .remove::before {
   transform: rotate(45deg);

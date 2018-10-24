@@ -4,8 +4,11 @@
 @color_grey_light: #EEE;
 @color_dark: #2B2D42;
 @color_red: #D10024;
+@color_orange: #FF6600;
 @color_tag: #39739D;
 @color_border: #E3E3E3;
+@color_select: #333;
+
 
 // Colors of filter buttons (select, input)
 @button_color: #DDD;
@@ -14,6 +17,17 @@
 // Mixin for button:hover
 .button_hover(@button_color) {
     background-color: darken(@button_color, 5%);
+}
+
+// Mixins for transparent colors
+.box_shadow_white(@value, @width: 10px) {
+    box-shadow: 0 0 0 @width rgba(255, 255, 255, @value);
+}
+.background_color_black(@value) {
+    background-color: rgba(0, 0, 0, @value);
+}
+.background_color_green(@value) {
+    background-color: rgba(73, 155, 66, @value);
 }
 
 // Only background colors

@@ -65,21 +65,19 @@
             $('#overlay').hide();
         }
     });
-    // На телефонах при натисканні поза фільтром акцентуємо увагу на кнопку пошуку
-    if ($(window).width() <= 750) {
-        $('input[type=submit]').on("click", function (e) {
-            e.stopPropagation();
-        });
+    // При натисканні поза фільтром акцентуємо увагу на кнопку пошуку
+    $('input[type=submit], #filter form').on("click", function (e) {
+        e.stopPropagation();
+    });
 
-        $('#overlay').on("click", function () {
-            $('input[type=submit]').css('animation-name', 'submitBlink').css('animation-duration', '.5s');
-            setTimeout(function(){
-                $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
-            }, 500);
-        });
-    }
+    $('#overlay, #filter').on("click", function () {
+        $('input[type=submit]').css('animation-name', 'submitBlink').css('animation-duration', '.5s');
+        setTimeout(function(){
+            $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
+        }, 500);
+    });
 
-    // Показати/сховати блоки фільтру залежно від розміру екрану
+    // Перемикач блоків фільтру на смартфонах
     if ($(window).width() <= 750) {
         $('.filterName').on("click", function () {
             $(this).next().toggle();
@@ -95,7 +93,7 @@
         });
     }
 
-    // Скинути значення в кожному блоку
+    // Скинути значення в кожному блоці при кліку на хрестик
     var $resetCategories = $('.remove');
     $resetCategories.on("click", function () {
         $(this).parents('aside div').next().each(function () {
@@ -180,17 +178,4 @@
             }
         });
     });
-
-    // // Якщо активний хоча б один із типів пошуку в фільтрі, то
-    // // анімація в кнопці пошуку буде помічена активною
-    // $(this).each(function() {
-    //     if ($(this).prop('opacity') == '1') {
-    //         $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
-    //         alert(1);
-    //     }
-    //     else {
-    //         $('input[type=submit]').css('animation-name', 'submitStandard').css('animation-duration', '5s');
-    //         alert(0);
-    //     }
-    // });
 });
