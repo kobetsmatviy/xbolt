@@ -1,6 +1,10 @@
 // Libraries for the LESS
 @import "variables";
 
+main {
+    height: 100vh;
+}
+
 // Version for a PK
 #photoView {
     width: 100%;
@@ -40,7 +44,22 @@
             margin: 0 auto;
             height: auto;
             width: 100%;
-            // object-fit: scale-down;
+            object-fit: scale-down;
+        }
+    }
+}
+
+main  {
+    .title {
+        width: 600px;
+        margin: 0 auto;
+        padding: 10px 0;
+        text-transform: uppercase;
+        color: #1e202e;
+        background-color: #eee;
+        
+        h1 {
+            font-size: 20px;
         }
     }
 }

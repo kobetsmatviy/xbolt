@@ -14,6 +14,9 @@
   font-family: MyriadProRegular;
   src: url('../fonts/MyriadProRegular.ttf');
 }
+main {
+  height: 100vh;
+}
 #photoView {
   width: 100%;
   min-height: 500px;
@@ -51,6 +54,18 @@
   margin: 0 auto;
   height: auto;
   width: 100%;
+  object-fit: scale-down;
+}
+main .title {
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-transform: uppercase;
+  color: #1e202e;
+  background-color: #eee;
+}
+main .title h1 {
+  font-size: 20px;
 }
 @media screen and (max-width: 767px) {
   #photoView {
