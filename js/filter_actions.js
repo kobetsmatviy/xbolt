@@ -11,7 +11,7 @@
             var countItems = Math.floor(rowWidth / (200 + 5));
             var inputOrder = -1;
             var detailsOrder = 0;
-
+            
             // Значення order для кожного input[type=button]
             $(".filterCategory input[type=button]").each(function() {
                 if (($(this).index()/2) % countItems == 0) {
@@ -29,10 +29,10 @@
                 }
                 $(this).css("order", detailsOrder);
             });
-            // Ширина блоку derails, залежно від кількості елементів у рядку
+            // Ширина блоку details, залежно від кількості елементів у рядку
             $(".details").width(countItems * 200);
         }
-        // Обнуляємо данні для смартфонів, вони по стандарту потрібні
+        // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
         else {
             $(".filterCategory").children().each(function() {
                 $(this).css("order", 0);
@@ -71,10 +71,8 @@
     });
 
     $('#overlay, #filter').on("click", function () {
-        $('input[type=submit]').css('animation-name', 'submitBlink').css('animation-duration', '.5s');
-        setTimeout(function(){
-            $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
-        }, 500);
+        $('#filter').hide();
+        $('#overlay').hide();
     });
 
     // Перемикач блоків фільтру на смартфонах

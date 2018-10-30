@@ -105,13 +105,13 @@
 	-webkit-tap-highlight-color: transparent
 }
 .fotorama__arr, .fotorama__fullscreen-icon, .fotorama__video-close, .fotorama__video-play {
-	background: url(fotorama.png) no-repeat
+	background: url(../images/fotorama.png) no-repeat
 }
-@media (-webkit-min-device-pixel-ratio:1.5), (min-resolution:2dppx) {
+/* @media (-webkit-min-device-pixel-ratio:1.5), (min-resolution:2dppx) {
 	.fotorama__arr, .fotorama__fullscreen-icon, .fotorama__video-close, .fotorama__video-play {
 		background: url(fotorama@2x.png) 0 0/96px 160px no-repeat
 	}
-}
+} */
 .fotorama__thumb {
 	background-color: #7f7f7f;
 	background-color: rgba(127, 127, 127, .2)
@@ -156,7 +156,7 @@
 }
 .fotorama__wrap {
 	-webkit-text-size-adjust: 100%;
-	position: relative;
+	/* position: relative; */
 	direction: ltr;
 	z-index: 0
 }
@@ -405,11 +405,11 @@
 	margin-top: -16px
 }
 .fotorama__arr--prev {
-	left: 2px;
+	left: 15px;
 	background-position: 0 0
 }
 .fotorama__arr--next {
-	right: 2px;
+	right: 15px;
 	background-position: -32px 0
 }
 .fotorama__arr--disabled {
@@ -421,8 +421,8 @@
 .fotorama__fullscreen-icon {
 	width: 32px;
 	height: 32px;
-	bottom: 2px;
-	right: 2px;
+	top: 15px;
+	right: 15px;
 	background-position: 0 -32px;
 	z-index: 20
 }
@@ -459,8 +459,8 @@
 .fotorama__video-close {
 	width: 32px;
 	height: 32px;
-	top: 0;
-	right: 0;
+	top: 15px;
+	right: 15px;
 	background-position: -64px 0;
 	z-index: 20;
 	opacity: 0
@@ -499,8 +499,8 @@
 	display: none!important
 }
 .fotorama__wrap--css3.fotorama__wrap--no-controls.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__fullscreen-icon:not(:focus) {
-	-webkit-transform: translate3d(32px, 32px, 0);
-	transform: translate3d(32px, 32px, 0)
+	-webkit-transform: translate3d(32px, -32px, 0);
+	transform: translate3d(32px, -32px, 0)
 }
 .fotorama__wrap--css3.fotorama__wrap--no-controls.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__arr--prev:not(:focus) {
 	-webkit-transform: translate3d(-48px, 0, 0);
@@ -557,15 +557,18 @@
 
 
 
-/* .fotorama__nav-wrap {
+.fotorama__nav-wrap {
 	position: absolute;
-	bottom: 5px;
-	padding: 0 30px;
+	bottom: 0;
 	width: 100%;
-} */
-/* .fotorama__thumb {
-	border-bottom: 2px solid #fff;
-} */
+	z-index: 2;
+}
+.fotorama__thumb {
+	outline: 2px solid rgba(0, 0, 0, .7);
+}
 .fotorama__thumb-border {
 	border-bottom: 2px solid #ff2f00;
+}
+.fotorama__fullscreen-icon {
+	padding: 20px;
 }

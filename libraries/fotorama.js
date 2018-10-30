@@ -8,6 +8,7 @@ function fotoramaDevice() {
 			maxheight: '500px',
 			minheight: '300px',
 			nav: 'thumbs',
+			fit: 'contain',
 			allowfullscreen: true,
 			loop: true,
 			keyboard: true,
@@ -19,7 +20,8 @@ function fotoramaDevice() {
 		fotoramaDefaults = {
 			width: '100%',
 			height: '300px',
-			nav: false,
+			nav: 'thumbs',
+			fit: 'cover',
 			allowfullscreen: true,
 			loop: false,
 			keyboard: false,
@@ -28,7 +30,7 @@ function fotoramaDevice() {
 		}
 	}
 }
-// window.onresize = fotoramaDevice();
+window.onresize = fotoramaDevice();
 window.onload = fotoramaDevice();
 
 fotoramaVersion = "4.6.4",
