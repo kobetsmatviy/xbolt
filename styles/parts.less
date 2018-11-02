@@ -11,22 +11,73 @@
 }
 
 main  {
-    .description {     
-        h1 {
+    .description {
+        .heading {
             max-width: 600px;
             margin: 0 auto;
-            padding: 30px 50px;
-            text-transform: uppercase;
-            font-size: 24px;
-            color: #1e202e;
+
+            h1 {
+                margin: 0 auto;
+                padding: 30px 50px;
+                padding-bottom: 10px;
+                text-transform: uppercase;
+                font-size: 24px;
+                color: #1e202e;
+            }
+            .value {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0 50px;
+                margin-bottom: 10px;
+
+                .rating {
+                    display: flex;
+                    align-items: center;
+    
+                    img {
+                        padding-right: 3px;
+                        background-color: @color_white;
+                        z-index: 2;
+                    }
+                }
+
+                .price {
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: right;
+                    color: @color_red;
+                    font-family: MyriadProRegular;
+                    font-size: 20px;
+                    font-weight: bold;
+    
+                    sup {
+                        position: relative;
+                        top: 0;
+                        left: 5px;
+                        font-size: 14px;
+                        font-weight: normal;
+                        line-height: 14px;
+    
+                        &::after {
+                            content: "\005F";
+                            position: absolute;
+                            top: 5px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
         }
 
         .brief {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            color: #737c81;
 
             div {
                 display: flex;
@@ -49,7 +100,7 @@ main  {
                     height: 18px;
                     background-repeat: no-repeat;
                     background-position: 50%;
-                    background-size: auto;
+                    background-size: 18px;
                     position: absolute;
                     left: -23px;
                 }
@@ -60,22 +111,18 @@ main  {
                     margin-left: 23px;
 
                     &::before {
-                        background-image: url('../images/user.png');
-                        background-size: auto 18px;
+                        background-image: url('@{path_img}user.svg');
                     }
-                }
-                .location, time {
-                    color: #737c81;
                 }
                 .location {
                     &::before {
-                        background-image: url('../images/location.png');
+                        background-image: url('@{path_img}location.svg');
                     }
                 }
                 time {
                     margin-right: 5px;
                     &::before {
-                        background-image: url('../images/clock.png');
+                        background-image: url('@{path_img}clock.svg');
                     }
                 }
             }
@@ -88,19 +135,17 @@ main  {
 
                 .views {
                     &::before {
-                        background-image: url('https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/34-512.png');
-                        background-size: 18px;
+                        background-image: url('@{path_img}views.svg');
                     }
                 }
                 .comments {
                     &::before {
-                        background-image: url('https://www.lafishblog.com/wp-content/uploads/Commenting-is-here.png');
-                        background-size: 20px;
+                        background-image: url('@{path_img}comments.svg');
                     }
                 }
                 .share {
                     &::before {
-                        background-image: url('../images/share.png');
+                        background-image: url('../images/share.svg');
                         background-size: 16px;
                     }
                 }
@@ -115,27 +160,29 @@ main  {
         min-height: 300px;
     }
 
-    .brief {
-        justify-content: space-between !important;
-        padding: 3px 0;
-        
-        div {
-            flex-direction: column;
-            height: 100% !important;
-        }
-        div > * {
-            margin: 2px 0;
-        }
-
-        .person {
-            align-items: flex-start !important;
-        }
-        .person > * {
-            margin-left: 23px !important;
-        }
-        .act {
-            align-items: flex-start !important;
-            flex: 0 !important;
+    .description {
+        .brief {
+            justify-content: space-between !important;
+            padding: 3px 0;
+            
+            div {
+                flex-direction: column;
+                height: 100% !important;
+            }
+            div > * {
+                margin: 2px 0;
+            }
+    
+            .person {
+                align-items: flex-start !important;
+            }
+            .person > * {
+                margin-left: 23px !important;
+            }
+            .act {
+                align-items: flex-start !important;
+                flex: 0 !important;
+            }
         }
     }
 }

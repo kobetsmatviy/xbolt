@@ -176,4 +176,13 @@
             }
         });
     });
+
+    // Якщо курсор наведений на кнопку пошуку, то
+    // пришвидшуємо анімацію для показу дії
+    $('input[type=submit]').mouseover(function() {
+        $(this).css('animation-duration', '1s');
+    });
+    $('input[type=submit]').mouseout(function() {
+        $(this).css('animation-duration', '3s');
+    });
 });

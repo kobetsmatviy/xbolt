@@ -21,20 +21,65 @@
   background-color: #0d1216;
   overflow: hidden;
 }
-main .description h1 {
+main .description .heading {
   max-width: 600px;
   margin: 0 auto;
+}
+main .description .heading h1 {
+  margin: 0 auto;
   padding: 30px 50px;
+  padding-bottom: 10px;
   text-transform: uppercase;
   font-size: 24px;
   color: #1e202e;
+}
+main .description .heading .value {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 50px;
+  margin-bottom: 10px;
+}
+main .description .heading .value .rating {
+  display: flex;
+  align-items: center;
+}
+main .description .heading .value .rating img {
+  padding-right: 3px;
+  background-color: #ffffff;
+  z-index: 2;
+}
+main .description .heading .value .price {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  color: #d10024;
+  font-family: MyriadProRegular;
+  font-size: 20px;
+  font-weight: bold;
+}
+main .description .heading .value .price sup {
+  position: relative;
+  top: 0;
+  left: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 14px;
+}
+main .description .heading .value .price sup::after {
+  content: "\005F";
+  position: absolute;
+  top: 5px;
+  left: 0;
 }
 main .description .brief {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #737c81;
 }
 main .description .brief div {
   display: flex;
@@ -56,7 +101,7 @@ main .description .brief div > *::before {
   height: 18px;
   background-repeat: no-repeat;
   background-position: 50%;
-  background-size: auto;
+  background-size: 18px;
   position: absolute;
   left: -23px;
 }
@@ -64,21 +109,16 @@ main .description .brief .person .owner {
   margin-left: 23px;
 }
 main .description .brief .person .owner::before {
-  background-image: url('../images/user.png');
-  background-size: auto 18px;
-}
-main .description .brief .person .location,
-main .description .brief .person time {
-  color: #737c81;
+  background-image: url('../images/user.svg');
 }
 main .description .brief .person .location::before {
-  background-image: url('../images/location.png');
+  background-image: url('../images/location.svg');
 }
 main .description .brief .person time {
   margin-right: 5px;
 }
 main .description .brief .person time::before {
-  background-image: url('../images/clock.png');
+  background-image: url('../images/clock.svg');
 }
 main .description .brief .act {
   justify-content: flex-end;
@@ -88,39 +128,37 @@ main .description .brief .act .act > * {
   margin-right: 40px;
 }
 main .description .brief .act .views::before {
-  background-image: url('https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/34-512.png');
-  background-size: 18px;
+  background-image: url('../images/views.svg');
 }
 main .description .brief .act .comments::before {
-  background-image: url('https://www.lafishblog.com/wp-content/uploads/Commenting-is-here.png');
-  background-size: 20px;
+  background-image: url('../images/comments.svg');
 }
 main .description .brief .act .share::before {
-  background-image: url('../images/share.png');
+  background-image: url('../images/share.svg');
   background-size: 16px;
 }
 @media screen and (max-width: 767px) {
   #photoView {
     min-height: 300px;
   }
-  .brief {
+  .description .brief {
     justify-content: space-between !important;
     padding: 3px 0;
   }
-  .brief div {
+  .description .brief div {
     flex-direction: column;
     height: 100% !important;
   }
-  .brief div > * {
+  .description .brief div > * {
     margin: 2px 0;
   }
-  .brief .person {
+  .description .brief .person {
     align-items: flex-start !important;
   }
-  .brief .person > * {
+  .description .brief .person > * {
     margin-left: 23px !important;
   }
-  .brief .act {
+  .description .brief .act {
     align-items: flex-start !important;
     flex: 0 !important;
   }
