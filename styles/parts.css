@@ -21,24 +21,110 @@
   background-color: #0d1216;
   overflow: hidden;
 }
-main .title {
-  width: 600px;
+main .description h1 {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 30px 50px;
   text-transform: uppercase;
+  font-size: 24px;
   color: #1e202e;
-  background-color: #eee;
 }
-main .title h1 {
-  font-size: 20px;
+main .description .brief {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+main .description .brief div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  height: 45px;
+}
+main .description .brief div > * {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: 40px;
+  position: relative;
+}
+main .description .brief div > *::before {
+  content: " ";
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: auto;
+  position: absolute;
+  left: -23px;
+}
+main .description .brief .person .owner {
+  margin-left: 23px;
+  font-weight: bold;
+}
+main .description .brief .person .owner::before {
+  background-image: url('../images/user.png');
+  background-size: auto 18px;
+}
+main .description .brief .person .location,
+main .description .brief .person time {
+  color: #737c81;
+}
+main .description .brief .person .location::before {
+  background-image: url('../images/location.png');
+}
+main .description .brief .person time {
+  margin-right: 5px;
+}
+main .description .brief .person time::before {
+  background-image: url('../images/clock.png');
+}
+main .description .brief .act {
+  justify-content: flex-end;
+}
+main .description .brief .act .act > * {
+  margin-left: 0;
+  margin-right: 40px;
+}
+main .description .brief .act .views::before {
+  background-image: url('https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/34-512.png');
+  background-size: 18px;
+}
+main .description .brief .act .comments::before {
+  background-image: url('https://www.lafishblog.com/wp-content/uploads/Commenting-is-here.png');
+  background-size: 20px;
+}
+main .description .brief .act .share {
+  font-weight: bold;
+}
+main .description .brief .act .share::before {
+  background-image: url('../images/share.png');
+  background-size: 16px;
 }
 @media screen and (max-width: 767px) {
   #photoView {
     min-height: 300px;
   }
-  #photoView .arrow {
-    width: 40px !important;
-    height: 40px !important;
-    background-size: 15px;
+  .brief {
+    justify-content: space-between !important;
+  }
+  .brief div {
+    flex-direction: column;
+    height: 100% !important;
+  }
+  .brief div > * {
+    margin: 3px 0;
+  }
+  .brief .person {
+    align-items: flex-start !important;
+  }
+  .brief .person > * {
+    margin-left: 23px !important;
+  }
+  .brief .act {
+    align-items: flex-start !important;
+    flex: 0 !important;
   }
 }

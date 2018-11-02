@@ -11,16 +11,107 @@
 }
 
 main  {
-    .title {
-        width: 600px;
-        margin: 0 auto;
-        padding: 10px 0;
-        text-transform: uppercase;
-        color: #1e202e;
-        background-color: #eee;
+    .description {
+        // margin: 20px 0;
+        // background-color: #ddd;
         
         h1 {
-            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px 50px;
+            text-transform: uppercase;
+            font-size: 24px;
+            // font-family: ; **************
+            color: #1e202e;
+            // background: #e8f1f8;
+        }
+
+        .brief {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            div { // ***********************************************************
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                flex-grow: 1;
+                height: 45px;
+            }
+            
+            div > * {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                margin-left: 40px;
+                position: relative;
+
+                &::before {
+                    content: " ";
+                    width: 18px;
+                    height: 18px;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    background-size: auto;
+                    position: absolute;
+                    left: -23px;
+                }
+            }
+
+            .person {
+                .owner {
+                    margin-left: 23px;
+                    font-weight: bold;
+
+                    &::before {
+                        background-image: url('../images/user.png');
+                        background-size: auto 18px;
+                    }
+                }
+                .location, time {
+                    color: #737c81;
+                }
+                .location {
+                    &::before {
+                        background-image: url('../images/location.png');
+                    }
+                }
+                time {
+                    margin-right: 5px;
+                    &::before {
+                        background-image: url('../images/clock.png');
+                    }
+                }
+            }
+            .act {
+                .act > * {
+                    margin-left: 0;
+                    margin-right: 40px;
+                }
+                justify-content: flex-end;
+
+                .views {
+                    &::before {
+                        background-image: url('https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/34-512.png');
+                        background-size: 18px;
+                    }
+                }
+                .comments {
+                    &::before {
+                        background-image: url('https://www.lafishblog.com/wp-content/uploads/Commenting-is-here.png');
+                        background-size: 20px;
+                    }
+                }
+                .share {
+                    font-weight: bold;
+                    &::before {
+                        background-image: url('../images/share.png');
+                        background-size: 16px;
+                    }
+                }
+            }
         }
     }
 }
@@ -29,11 +120,28 @@ main  {
 @media screen and (max-width: 767px) {
     #photoView {
         min-height: 300px;
+    }
 
-        .arrow {
-            width: 40px !important;
-            height: 40px !important;
-            background-size: 15px;
+    .brief {
+        justify-content: space-between !important;
+        
+        div {
+            flex-direction: column;
+            height: 100% !important;
+        }
+        div > * {
+            margin: 3px 0;
+        }
+
+        .person {
+            align-items: flex-start !important;
+        }
+        .person > * {
+            margin-left: 23px !important;
+        }
+        .act {
+            align-items: flex-start !important;
+            flex: 0 !important;
         }
     }
 }
