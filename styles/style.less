@@ -10,8 +10,9 @@ body {
     padding: 0;
 }
 a, a:hover, a:link, a:active, a:visited {
-    color: @color_white;
+    color: @background_filter;
     text-decoration: none;
+    font-family: PTSansBold;
 }
 h1, h2, h3, h4, h5, h6 {
     padding: 0;
@@ -61,6 +62,11 @@ header {
                 display: none;
             }
         }
+    }
+
+    a {
+        font-family: PTSansRegular !important;
+        color: @color_white !important;
     }
 }
 

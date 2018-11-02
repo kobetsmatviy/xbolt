@@ -11,19 +11,14 @@
 }
 
 main  {
-    .description {
-        // margin: 20px 0;
-        // background-color: #ddd;
-        
+    .description {     
         h1 {
             max-width: 600px;
             margin: 0 auto;
             padding: 30px 50px;
             text-transform: uppercase;
             font-size: 24px;
-            // font-family: ; **************
             color: #1e202e;
-            // background: #e8f1f8;
         }
 
         .brief {
@@ -33,7 +28,7 @@ main  {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
 
-            div { // ***********************************************************
+            div {
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
@@ -63,7 +58,6 @@ main  {
             .person {
                 .owner {
                     margin-left: 23px;
-                    font-weight: bold;
 
                     &::before {
                         background-image: url('../images/user.png');
@@ -105,7 +99,6 @@ main  {
                     }
                 }
                 .share {
-                    font-weight: bold;
                     &::before {
                         background-image: url('../images/share.png');
                         background-size: 16px;
@@ -124,13 +117,14 @@ main  {
 
     .brief {
         justify-content: space-between !important;
+        padding: 3px 0;
         
         div {
             flex-direction: column;
             height: 100% !important;
         }
         div > * {
-            margin: 3px 0;
+            margin: 2px 0;
         }
 
         .person {

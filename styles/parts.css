@@ -62,7 +62,6 @@ main .description .brief div > *::before {
 }
 main .description .brief .person .owner {
   margin-left: 23px;
-  font-weight: bold;
 }
 main .description .brief .person .owner::before {
   background-image: url('../images/user.png');
@@ -96,9 +95,6 @@ main .description .brief .act .comments::before {
   background-image: url('https://www.lafishblog.com/wp-content/uploads/Commenting-is-here.png');
   background-size: 20px;
 }
-main .description .brief .act .share {
-  font-weight: bold;
-}
 main .description .brief .act .share::before {
   background-image: url('../images/share.png');
   background-size: 16px;
@@ -109,13 +105,14 @@ main .description .brief .act .share::before {
   }
   .brief {
     justify-content: space-between !important;
+    padding: 3px 0;
   }
   .brief div {
     flex-direction: column;
     height: 100% !important;
   }
   .brief div > * {
-    margin: 3px 0;
+    margin: 2px 0;
   }
   .brief .person {
     align-items: flex-start !important;

@@ -26,8 +26,9 @@ a:hover,
 a:link,
 a:active,
 a:visited {
-  color: #ffffff;
+  color: #224b7a;
   text-decoration: none;
+  font-family: PTSansBold;
 }
 h1,
 h2,
@@ -78,6 +79,10 @@ header article .interaction {
 }
 header article .interaction #search {
   display: none;
+}
+header a {
+  font-family: PTSansRegular !important;
+  color: #ffffff !important;
 }
 nav {
   position: sticky;
