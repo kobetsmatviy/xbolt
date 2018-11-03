@@ -167,26 +167,28 @@ main article {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-  font-size: 12px;
+  align-items: center;
   color: #999999;
+  font-size: 12px;
+  line-height: 11px;
 }
 .partCard .tertiary .additionalInfo .icon {
   min-width: 15px;
   height: 15px;
-  margin-right: 3px;
+  margin-right: 5px;
   background-repeat: no-repeat;
   background-position: 0;
+  background-size: 15px;
 }
 .partCard .tertiary .additionalInfo .icon:nth-child(3) {
   margin-left: 5px;
   margin-right: 0;
 }
 .partCard .tertiary .additionalInfo .icon-clock {
-  background-image: url('../images/clock.png');
+  background-image: url('../images/clock.svg');
 }
 .partCard .tertiary .additionalInfo .icon-location {
-  background-image: url('../images/location.png');
+  background-image: url('../images/location.svg');
 }
 @media screen and (max-width: 767px) {
   .partCard {

@@ -27,7 +27,7 @@ main .description .heading {
 }
 main .description .heading h1 {
   margin: 0 auto;
-  padding: 30px 50px;
+  padding: 30px 20px;
   padding-bottom: 10px;
   text-transform: uppercase;
   font-size: 24px;
@@ -37,7 +37,7 @@ main .description .heading .value {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 50px;
+  margin: 0 20px;
   margin-bottom: 10px;
 }
 main .description .heading .value .rating {
@@ -55,13 +55,12 @@ main .description .heading .value .price {
   justify-content: center;
   text-align: right;
   color: #d10024;
-  font-family: MyriadProRegular;
-  font-size: 20px;
-  font-weight: bold;
+  font-family: PTSansBold;
+  font-size: 22px;
 }
 main .description .heading .value .price sup {
   position: relative;
-  top: 0;
+  top: 2px;
   left: 5px;
   font-size: 14px;
   font-weight: normal;
@@ -70,7 +69,7 @@ main .description .heading .value .price sup {
 main .description .heading .value .price sup::after {
   content: "\005F";
   position: absolute;
-  top: 5px;
+  top: 3px;
   left: 0;
 }
 main .description .brief {

@@ -182,16 +182,18 @@ main article {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: flex-start;
-            font-size: 12px;
+            align-items: center;
             color: @color_grey_dark;
+            font-size: 12px;
+            line-height: 11px;
 
             .icon {
                 min-width: 15px;
                 height: 15px;
-                margin-right: 3px;
+                margin-right: 5px;
                 background-repeat: no-repeat;
                 background-position: 0;
+                background-size: 15px;
 
                 &:nth-child(3) {
                     margin-left: 5px;
@@ -200,11 +202,11 @@ main article {
             }
 
             .icon-clock {
-                background-image: url('@{path_img}clock.png');
+                background-image: url('@{path_img}clock.svg');
             }
 
             .icon-location {
-                background-image: url('@{path_img}location.png');
+                background-image: url('@{path_img}location.svg');
             }
         }
     }

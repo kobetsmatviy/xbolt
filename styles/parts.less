@@ -18,7 +18,7 @@ main  {
 
             h1 {
                 margin: 0 auto;
-                padding: 30px 50px;
+                padding: 30px 20px;
                 padding-bottom: 10px;
                 text-transform: uppercase;
                 font-size: 24px;
@@ -28,13 +28,30 @@ main  {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin: 0 50px;
+                margin: 0 20px;
                 margin-bottom: 10px;
 
                 .rating {
                     display: flex;
                     align-items: center;
     
+                    // span {               // *** VECTOR
+                    //     width: 15px;
+                    //     height: 15px;
+                    //     margin-right: 2px;
+                    //     background-repeat: no-repeat;
+                    //     background-position: 50%;
+                    //     background-size: 15px;
+                    // }
+                    // .full {
+                    //     background-image: url('@{path_img}full.svg');
+                    // }
+                    // .half {
+                    //     background-image: url('@{path_img}half.svg');
+                    // }
+                    // .empty {
+                    //     background-image: url('@{path_img}empty.svg');
+                    // }
                     img {
                         padding-right: 3px;
                         background-color: @color_white;
@@ -48,13 +65,12 @@ main  {
                     justify-content: center;
                     text-align: right;
                     color: @color_red;
-                    font-family: MyriadProRegular;
-                    font-size: 20px;
-                    font-weight: bold;
+                    font-family: PTSansBold;
+                    font-size: 22px;
     
                     sup {
                         position: relative;
-                        top: 0;
+                        top: 2px;
                         left: 5px;
                         font-size: 14px;
                         font-weight: normal;
@@ -63,7 +79,7 @@ main  {
                         &::after {
                             content: "\005F";
                             position: absolute;
-                            top: 5px;
+                            top: 3px;
                             left: 0;
                         }
                     }
