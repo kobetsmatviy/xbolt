@@ -123,13 +123,13 @@ main article {
   flex-direction: column;
   align-items: center;
 }
-.partCard .description .secondary .rating {
+.partCard .description .secondary .state {
   display: flex;
   justify-content: center;
   position: relative;
   width: 100%;
 }
-.partCard .description .secondary .rating::before {
+.partCard .description .secondary .state::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -139,15 +139,15 @@ main article {
   background-color: #e3e3e3;
   z-index: 1;
 }
-.partCard .description .secondary .rating img {
+.partCard .description .secondary .state img {
   padding-right: 3px;
   background-color: #ffffff;
   z-index: 2;
 }
-.partCard .description .secondary .rating img:first-child {
+.partCard .description .secondary .state img:first-child {
   padding-left: 10px;
 }
-.partCard .description .secondary .rating img:last-child {
+.partCard .description .secondary .state img:last-child {
   padding-right: 10px;
 }
 .partCard .description .secondary .automobiles {

@@ -39,6 +39,7 @@ h6 {
   padding: 0;
   margin: 0;
   font-family: PTSansBold;
+  font-size: 24px;
 }
 h2 {
   text-align: center;
@@ -62,7 +63,7 @@ header {
   height: 35px;
   background-image: linear-gradient(45deg, #26a2db 10%, transparent 10%), linear-gradient(135deg, #249cd2 30%, transparent 30%), linear-gradient(45deg, #26a2db 60%, transparent 60%), linear-gradient(135deg, #249cd2 90%, transparent 90%);
   background-color: #26a2db;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
 }
 header article {
@@ -77,8 +78,12 @@ header article .interaction {
   display: flex;
   flex-direction: row;
 }
+header article .interaction a {
+  margin-left: 15px;
+}
 header article .interaction #search {
   display: none;
+  cursor: pointer;
 }
 header a {
   font-family: PTSansRegular !important;
@@ -170,8 +175,6 @@ footer article {
   }
   header article .interaction #search {
     display: flex;
-    margin-right: 15px;
-    cursor: pointer;
   }
   nav {
     display: none;

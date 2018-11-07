@@ -26,7 +26,6 @@
   top: 90px;
   right: 20px;
   padding: 20px;
-  z-index: 3;
 }
 .contacts:hover .phone {
   width: 160px;
@@ -59,7 +58,6 @@ main .description .heading h1 {
   padding: 30px 20px;
   padding-bottom: 10px;
   text-transform: uppercase;
-  font-size: 24px;
   color: #1e202e;
 }
 main .description .heading .value {
@@ -69,11 +67,11 @@ main .description .heading .value {
   margin: 0 20px;
   margin-bottom: 10px;
 }
-main .description .heading .value .rating {
+main .description .heading .value .state {
   display: flex;
   align-items: center;
 }
-main .description .heading .value .rating span {
+main .description .heading .value .state span {
   width: 15px;
   height: 15px;
   margin-right: 2px;
@@ -81,13 +79,13 @@ main .description .heading .value .rating span {
   background-position: 50%;
   background-size: 15px;
 }
-main .description .heading .value .rating .full {
+main .description .heading .value .state .full {
   background-image: url('../images/full.svg');
 }
-main .description .heading .value .rating .half {
+main .description .heading .value .state .half {
   background-image: url('../images/half.svg');
 }
-main .description .heading .value .rating .empty {
+main .description .heading .value .state .empty {
   background-image: url('../images/empty.svg');
 }
 main .description .heading .value .price {
