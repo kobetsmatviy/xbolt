@@ -14,3 +14,50 @@
   font-family: MyriadProRegular;
   src: url('../fonts/MyriadProRegular.ttf');
 }
+body {
+  background-color: #eee;
+}
+h1 {
+  margin: 20px 50px;
+}
+form {
+  width: 600px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+form label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+form label > span {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 120px;
+  padding-right: 10px;
+}
+form input[type="range"] {
+  width: 200px;
+}
+form textarea {
+  margin: 5px;
+  margin-right: 0;
+  padding: 5px;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background-color: #dddddd;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+form textarea:hover {
+  background-color: #d0d0d0;
+}

@@ -21,6 +21,17 @@
   background-color: #0d1216;
   overflow: hidden;
 }
+#back {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0);
+}
+#back:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.03);
+}
 .contacts {
   position: fixed;
   top: 90px;

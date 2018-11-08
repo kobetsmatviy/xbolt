@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Part</title>
+    <title>Post</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/post.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -23,49 +24,65 @@
             </div>
         </article>
     </header>
+    <a href="catalog.html"><span id="back">&lsaquo; Назад</span></a>
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Продати запчастину на XBolt</h1>
             <form>
                 <label>
-                    Оберіть фото деталі: <input type="file" value="Вибрати" />
+                    <span>Оберіть фото:</span>
+                    <input type="file" value="Фотографії" />
                 </label>    <br>
                 <label>
-                    Назва: <input type="Text" placeholder="ОРИГІНАЛЬНІ ФАРИ FORD MUSTANG 2015-2017" />
+                    <span>Назва:</span>
+                    <input type="Text" placeholder="Фари Ford Mustang" />
                 </label>    <br>
                 <label>
-                    Опис: 
-                    <textarea placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
+                    <span>Опис:</span>
+                    <textarea rows="5" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
                 </label>    <br>
                 <label>
-                    Категорія: 
+                    <span>Ціна:</span>
+                    <input type="number" placeholder="500грн" />
+                </label>    <br>
+                <label>
+                    <span>Категорія:</span> 
                     <select>
-                        <option>Двигун</option>
-                        <option>Кузов</option>
-                        <option>Салон</option>
-                        <option>Електрика</option>
-                        <option>Трансмісія</option>
-                        <option>Підвіска</option>
+                        <optgroup label="Двигун">
+                            <option>Блок</option>
+                            <option>Топливна</option>
+                            <option>Впуск</option>
+                        </optgroup>
+                        <optgroup label="Кузов">
+                            <option>Капот</option>
+                            <option>Двері</option>
+                            <option>Крила</option>
+                        </optgroup>
+                    </select>                          
+                </label>    <br>
+                <label>
+                    <span>Автомобілі:</span> 
+                    <select>
+                        <optgroup label="Audi">
+                            <option>B2 80 1982-1986</option>
+                            <option>100 1991-1994</option>
+                            <option>R8 2009-1015</option>
+                        </optgroup>
                     </select>
                 </label>    <br>
                 <label>
-                    Автомобілі: 
-                    <select class="selectpicker" data-style="btn-primary" multiple data-max-options="2">
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Ford</option>
-                        <option>Citroen</option>
-                        <option>Volksvagen</option>
+                    <span>Стан:</span>
+                    <input type="range" min="0" max="10" />
+                </label>    <br>
+                <label>
+                    <span>Локація:</span>
+                    <select>
+                        <option>Київ</option>
+                        <option>Рівненська обл, Корець</option>
+                        <option>Рівненська обл, Гоща</option>
+                        <option>Рівненська обл, Костопіль</option>
+                        <option>Рівненська обл, Головниця</option>
                     </select>
-                </label>    <br>
-                <label>
-                    Ціна: <input type="number" />
-                </label>    <br>
-                <label>
-                    Стан: <input type="range" min="0" max="10" />
-                </label>    <br>
-                <label>
-                    Локація: <input type="search" />
                 </label>    <br>
             </form>
         </article>
