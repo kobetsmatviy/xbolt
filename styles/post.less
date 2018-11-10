@@ -10,12 +10,15 @@ h1 {
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     width: 600px;
     padding: 10px;
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 10px;
     background-color: #fff;
+    border: 1px solid #ddd;
     
     label {
         display: flex;
@@ -25,9 +28,61 @@ form {
         &> span {
             display: flex;
             justify-content: flex-end;
-            min-width: 120px;
+            min-width: 100px;
             padding-right: 10px;
         }
+    }
+
+    #list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 225px;
+        height: 50px;
+        padding: 5px;
+        margin: 0 5px;
+        background-color: #ddd;
+        background-image: url('../images/camera.png');
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 30px;
+        border-radius: 3px;
+        list-style: none;
+        overflow: hidden;
+        cursor: pointer;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 40px;
+            width: 40px;
+            min-height: 40px;
+            height: 40px;
+            margin-right: 5px;
+            overflow: hidden;
+        }
+
+        img {
+            height: 40px;
+            margin-right: 5px;
+        }
+    }
+
+    #uploadImg {
+        display: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        box-shadow: 0 0 0 3px #eee;
+    }
+
+    input[type="submit"] {
+        align-self: flex-end;
+        margin-bottom: 0;
+        background-color: @button_mark;
+        color: @color_white;
+        text-align: center;
     }
 
     input[type="range"] {
@@ -47,8 +102,7 @@ form {
         font-size: 16px;
         font-weight: normal;
         text-align: left;
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        resize: vertical;
     
         &:hover {
             .button_hover(@button_color);

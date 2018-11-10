@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/post.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/post_actions.js" async></script>
 </head>
 <body>
     <header>
@@ -31,23 +32,24 @@
             <form>
                 <label>
                     <span>Оберіть фото:</span>
-                    <input type="file" value="Фотографії" />
-                </label>    <br>
+                    <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" required multiple />
+                    <ul id="list"></ul>
+                </label>
                 <label>
                     <span>Назва:</span>
-                    <input type="Text" placeholder="Фари Ford Mustang" />
-                </label>    <br>
+                    <input type="Text" required placeholder="Фари Ford Mustang" />
+                </label>
                 <label>
                     <span>Опис:</span>
                     <textarea rows="5" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
-                </label>    <br>
+                </label>
                 <label>
                     <span>Ціна:</span>
-                    <input type="number" placeholder="500грн" />
-                </label>    <br>
+                    <input type="number" required placeholder="500грн" />
+                </label>
                 <label>
                     <span>Категорія:</span> 
-                    <select>
+                    <select required>
                         <optgroup label="Двигун">
                             <option>Блок</option>
                             <option>Топливна</option>
@@ -59,31 +61,32 @@
                             <option>Крила</option>
                         </optgroup>
                     </select>                          
-                </label>    <br>
+                </label>
                 <label>
                     <span>Автомобілі:</span> 
-                    <select>
+                    <select required>
                         <optgroup label="Audi">
                             <option>B2 80 1982-1986</option>
                             <option>100 1991-1994</option>
                             <option>R8 2009-1015</option>
                         </optgroup>
                     </select>
-                </label>    <br>
+                </label>
                 <label>
                     <span>Стан:</span>
-                    <input type="range" min="0" max="10" />
-                </label>    <br>
+                    <input required type="range" min="0" max="10" value="0" />
+                </label>
                 <label>
                     <span>Локація:</span>
-                    <select>
+                    <select required>
                         <option>Київ</option>
                         <option>Рівненська обл, Корець</option>
                         <option>Рівненська обл, Гоща</option>
                         <option>Рівненська обл, Костопіль</option>
                         <option>Рівненська обл, Головниця</option>
                     </select>
-                </label>    <br>
+                </label>
+                <input type="submit" value="Продати болта" />
             </form>
         </article>
     </main>
