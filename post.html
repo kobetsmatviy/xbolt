@@ -33,69 +33,109 @@
             <h1>Продати запчастину на XBolt</h1>
             <form id="formSell" method="GET" action="">
                 <label>
-                    <span>Оберіть фото:</span>
-                    <ul id="list"><span class="delete">Завантажте від 1 до 5 фото</span></ul>
-                    <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
-                </label>
-                <label>
-                    <span>Назва:</span>
-                    <input type="text" name="title" placeholder="Фари Ford Mustang" />
-                </label>
-                <label>
-                    <span>Опис:</span>
-                    <textarea rows="5" name="description" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
-                </label>
-                <label>
-                    <span>Ціна:</span>
-                    <input type="number" name="price" min="1" max="9999999" placeholder="500" />
-                </label>
-                <label>
-                    <span>Категорія:</span> 
-                    <select name="category">
-                        <optgroup label="Двигун">
-                            <option>Блок</option>
-                            <option>Топливна</option>
-                            <option>Впуск</option>
-                        </optgroup>
-                        <optgroup label="Кузов">
-                            <option>Капот</option>
-                            <option>Двері</option>
-                            <option>Крила</option>
-                        </optgroup>
-                    </select>                          
-                </label>
-                <label>
-                    <span>Автомобілі:</span> 
-                    <select name="automobiles">
-                        <optgroup label="Audi">
-                            <option>B2 80 1982-1986</option>
-                            <option>100 1991-1994</option>
-                            <option>R8 2009-1015</option>
-                        </optgroup>
-                    </select>
-                </label>
-                <label>
-                    <span>Стан:</span>
-                    <div class="state">
-                        <div class="stateSvg">
-                            <img src="images/empty.svg" />
-                            <img src="images/empty.svg" />
-                            <img src="images/empty.svg" />
-                            <img src="images/empty.svg" />
-                            <img src="images/empty.svg" />
-                        </div>
-                        <input type="range" name="stateRange" min="0" max="10" value="0" />
+                    <div class="interaction">
+                        <span class="interactionName">Оберіть фото:</span>
+                        <ul id="list"></ul>
+                        <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Завантажте від 1 до 5 фото</span>
                     </div>
                 </label>
                 <label>
-                    <span>Локація:</span>
-                    <select name="location">
-                        <option>Київ</option>
-                        <option>Рівненська обл, Корець</option>
-                        <option>Рівненська обл, Гоща</option>
-                        <option>Рівненська обл, Костопіль</option>
-                        <option>Рівненська обл, Головниця</option>
-                    </select>
+                    <div class="interaction">
+                        <span class="interactionName">Назва:</span>
+                        <input type="text" name="title" placeholder="Фари Ford Mustang" />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Буде видно у стрічці пошуку</span>
+                    </div>
+                </label>
+                <label>
+                    <div class="interaction">
+                        <span class="interactionName">Опис:</span>
+                        <textarea rows="5" name="description" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
+                    </div>
+                    <div class="message">
+                        <span class="advice">"Це найкращий з усіх найкращих підшипник"</span>
+                    </div>
+                </label>
+                <label>
+                    <div class="interaction">
+                        <span class="interactionName">Ціна:</span>
+                        <input type="number" name="price" min="1" max="9999999" placeholder="500" />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Ціна вказується не у доларах, євро чи карбованцях, а гривнях</span>
+                    </div>
+                </label>
+                <label>
+                    <div class="interaction">
+                        <span class="interactionName">Категорія:</span> 
+                        <select name="category">
+                            <optgroup label="Двигун">
+                                <option>Блок</option>
+                                <option>Топливна</option>
+                                <option>Впуск</option>
+                            </optgroup>
+                            <optgroup label="Кузов">
+                                <option>Капот</option>
+                                <option>Двері</option>
+                                <option>Крила</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="message">
+                        <span class="advice">Розділ до якого відносить запчастина</span>
+                    </div>               
+                </label>
+                <label>
+                    <div class="interaction">
+                        <span class="interactionName">Автомобілі:</span> 
+                        <select name="automobiles">
+                            <optgroup label="Audi">
+                                <option>B2 80 1982-1986</option>
+                                <option>100 1991-1994</option>
+                                <option>R8 2009-1015</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="message">
+                        <span class="advice">До яких авто підходить деталь</span>
+                    </div>  
+                </label>
+                <label>
+                    <div class="interaction">
+                        <span class="interactionName">Стан:</span>
+                        <div class="state">
+                            <div class="stateSvg">
+                                <img src="images/empty.svg" />
+                                <img src="images/empty.svg" />
+                                <img src="images/empty.svg" />
+                                <img src="images/empty.svg" />
+                                <img src="images/empty.svg" />
+                            </div>
+                            <input type="range" name="stateRange" min="0" max="10" value="0" />
+                        </div>
+                    </div> 
+                    <div class="message">
+                        <span class="advice">Оберіть стан деталі</span>
+                    </div>  
+                </label>
+                <label>
+                    <div class="interaction">
+                        <span class="interactionName">Локація:</span>
+                        <select name="location">
+                            <option>Київ</option>
+                            <option>Рівненська обл, Корець</option>
+                            <option>Рівненська обл, Гоща</option>
+                            <option>Рівненська обл, Костопіль</option>
+                            <option>Рівненська обл, Головниця</option>
+                        </select>
+                    </div>
+                    <div class="message">
+                        <span class="advice">Місце знаходження</span>
+                    </div> 
                 </label>
                 <input type="submit" value="Продати болта" />
             </form>

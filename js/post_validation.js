@@ -36,6 +36,15 @@ $(function () {
                 required: "Визначте стан деталі",
                 min: "Визначте стан деталі"
             }
+        },
+        errorPlacement: function(error, element) {
+            element.each(function() {
+                var attrName = $(this).attr('name');
+                // var item = $('.interaction').children().attr('name', attrName);
+
+                $("input[name='"+attrName+"']").parent().next().find('.advice').remove();
+                error.appendTo($("input[name='"+attrName+"']").parent().next());
+            });
         }
     });
 });

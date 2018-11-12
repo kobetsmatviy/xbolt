@@ -41,7 +41,6 @@ $(function () {
     // При додаванні фото, видаляємо клас помилки
     $('#uploadImg').change(function() {
         $('#list').css('box-shadow', 'none');
-        $('#list .delete').remove();
         $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
         $(this).next().hide();
     });
