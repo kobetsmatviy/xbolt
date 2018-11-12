@@ -43,17 +43,18 @@ form label > span {
   padding-right: 10px;
 }
 form #list {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 225px;
   height: 50px;
   padding: 5px;
-  margin: 0 5px;
+  margin-left: 5px;
   background-color: #ddd;
   background-image: url('../images/camera.png');
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: 50% 30%;
   background-size: 30px;
   border-radius: 3px;
   list-style: none;
@@ -75,8 +76,24 @@ form #list img {
   height: 40px;
   margin-right: 5px;
 }
+form .delete {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #999;
+}
 form #uploadImg {
-  display: none;
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+form input,
+form select,
+form textarea {
+  width: 225px;
 }
 form input:focus,
 form select:focus,
@@ -91,23 +108,80 @@ form input[type="submit"] {
   text-align: center;
 }
 form input[type="range"] {
-  width: 200px;
+  width: 125px;
+  height: 30px;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
 }
 form textarea {
   margin: 5px;
   margin-right: 0;
   padding: 5px;
-  width: 200px;
+  width: 225px;
+  min-height: 50px;
   outline: none;
   border: none;
   border-radius: 3px;
   background-color: #dddddd;
   color: #333333;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   text-align: left;
   resize: vertical;
 }
 form textarea:hover {
   background-color: #d0d0d0;
+}
+form input.error {
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+}
+form label.error {
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #999;
+}
+form label#stateRange-error {
+  position: absolute;
+  top: 10px;
+  left: 230px;
+  min-width: 200px;
+}
+form .state {
+  position: relative;
+}
+form .stateSvg {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+  width: 120px;
+  height: 50px;
+}
+form .stateSvg img {
+  height: 20px;
+}
+@media screen and (max-width: 767px) {
+  form {
+    width: 100%;
+    max-width: 600px;
+  }
+  label {
+    position: relative;
+  }
+  label.error {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    padding: 0 3px;
+    font-size: 12px !important;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  label#stateRange-error {
+    position: static !important;
+  }
 }

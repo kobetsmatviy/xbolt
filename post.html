@@ -8,7 +8,9 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/post.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="js/post_actions.js" async></script>
+    <script src="js/post_validation.js" async></script>
 </head>
 <body>
     <header>
@@ -29,27 +31,27 @@
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Продати запчастину на XBolt</h1>
-            <form>
+            <form id="formSell" method="GET" action="">
                 <label>
                     <span>Оберіть фото:</span>
-                    <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" required multiple />
-                    <ul id="list"></ul>
+                    <ul id="list"><span class="delete">Завантажте від 1 до 5 фото</span></ul>
+                    <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
                 </label>
                 <label>
                     <span>Назва:</span>
-                    <input type="Text" required placeholder="Фари Ford Mustang" />
+                    <input type="text" name="title" placeholder="Фари Ford Mustang" />
                 </label>
                 <label>
                     <span>Опис:</span>
-                    <textarea rows="5" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
+                    <textarea rows="5" name="description" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
                 </label>
                 <label>
                     <span>Ціна:</span>
-                    <input type="number" required placeholder="500грн" />
+                    <input type="number" name="price" min="1" max="9999999" placeholder="500" />
                 </label>
                 <label>
                     <span>Категорія:</span> 
-                    <select required>
+                    <select name="category">
                         <optgroup label="Двигун">
                             <option>Блок</option>
                             <option>Топливна</option>
@@ -64,7 +66,7 @@
                 </label>
                 <label>
                     <span>Автомобілі:</span> 
-                    <select required>
+                    <select name="automobiles">
                         <optgroup label="Audi">
                             <option>B2 80 1982-1986</option>
                             <option>100 1991-1994</option>
@@ -74,11 +76,20 @@
                 </label>
                 <label>
                     <span>Стан:</span>
-                    <input required type="range" min="0" max="10" value="0" />
+                    <div class="state">
+                        <div class="stateSvg">
+                            <img src="images/empty.svg" />
+                            <img src="images/empty.svg" />
+                            <img src="images/empty.svg" />
+                            <img src="images/empty.svg" />
+                            <img src="images/empty.svg" />
+                        </div>
+                        <input type="range" name="stateRange" min="0" max="10" value="0" />
+                    </div>
                 </label>
                 <label>
                     <span>Локація:</span>
-                    <select required>
+                    <select name="location">
                         <option>Київ</option>
                         <option>Рівненська обл, Корець</option>
                         <option>Рівненська обл, Гоща</option>
