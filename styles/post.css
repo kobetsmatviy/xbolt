@@ -14,6 +14,31 @@
   font-family: MyriadProRegular;
   src: url('../fonts/MyriadProRegular.ttf');
 }
+.mark {
+  padding: 5px;
+  background-color: #499b42;
+  color: #ffffff;
+}
+.activeMark {
+  padding: 5px;
+  background-color: #41893a !important;
+}
+.mark:hover,
+.activeMark:hover {
+  padding: 5px;
+  background-color: #41893a !important;
+}
+.active,
+.active:hover {
+  background-color: #59aed8;
+  color: #ffffff;
+}
+.disabled,
+.disabled:hover {
+  background-color: #dddddd;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 body {
   background-color: #eee;
 }
@@ -159,7 +184,6 @@ form .stateSvg {
   left: 8px;
   top: 10px;
   display: flex;
-  justify-content: space-between;
   padding: 5px;
   width: 120px;
   height: 30px;
@@ -167,6 +191,7 @@ form .stateSvg {
 }
 form .stateSvg img {
   height: 20px;
+  margin-left: 3px;
 }
 form .auction {
   display: flex;

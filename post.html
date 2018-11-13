@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="js/post_actions.js" async></script>
+    <script src="js/filter_actions.js" async></script>
     <script src="js/post_validation.js" async></script>
 </head>
 <body>
@@ -129,14 +130,48 @@
                 </label>
                 <label>
                     <div class="interaction">
-                        <span class="interactionName">Локація:</span>
-                        <select name="location">
-                            <option>Київ</option>
-                            <option>Рівненська обл, Корець</option>
-                            <option>Рівненська обл, Гоща</option>
-                            <option>Рівненська обл, Костопіль</option>
-                            <option>Рівненська обл, Головниця</option>
-                        </select>
+                        <span class="interactionName">Регіон:</span>
+                        <div class="location">
+                            <select name="region">
+                                <option selected disabled hidden>Область</option>
+                                <option>Вінницька</option>
+                                <option>Волинська</option>
+                                <option>Дніпропетровська</option>
+                                <option>Донецька</option>
+                                <option>Житомирська</option>
+                                <option>Закарпатська</option>
+                                <option>Запорізька</option>
+                                <option>Івано-Франківська</option>
+                                <option>Київська</option>
+                                <option>Кіровоградська</option>
+                                <option>Крим (АРК)</option>
+                                <option>Луганська</option>
+                                <option>Львівська</option>
+                                <option>Миколаївська</option>
+                                <option>Одеська</option>
+                                <option>Полтавська</option>
+                                <option>Рівненська</option>
+                                <option>Сумська</option>
+                                <option>Тернопільська</option>
+                                <option>Харківська</option>
+                                <option>Херсонська</option>
+                                <option>Хмельницька</option>
+                                <option>Черкаська</option>
+                                <option>Чернівецька</option>
+                                <option>Чернігівська</option>
+                            </select>
+                            <select name="district" class="disabled" disabled>
+                                <option selected disabled hidden>Район</option>
+                                <option>Корець</option>
+                                <option>Гоща</option>
+                                <option>Кузнецовськ</option>
+                                <option>Решитилів</option>
+                                <option>Новоград-Волинськ</option>
+                                <option>Сарни</option>
+                                <option>Острог</option>
+                                <option>Дубно</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="message">
                         <span class="advice">Місце знаходження</span>

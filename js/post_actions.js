@@ -24,6 +24,11 @@ $(function () {
         if ($('input[type="range"]').val() <= 0) {
             $('.stateSvg').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
         }
+
+        //#### Валідація локації
+        if ($('select[name="region"] option').not(':first').is(':selected') == false) {
+            $('select[name="region"]').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
+        }
         
         //#### Валідація загрузки фото
         var itemImg = $(this).find('#list li');
@@ -48,6 +53,11 @@ $(function () {
         $('#list').css('box-shadow', 'none');
         $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
         $(this).closest('.interaction').next().find('label.error').remove();
+    });
+
+    // При зміні регіону
+    $('select[name="region"]').change(function() {
+        $(this).css('box-shadow', 'none');
     });
 
     //#### Повзунок input[type=range] для стану

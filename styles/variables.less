@@ -61,3 +61,27 @@
     font-family: MyriadProRegular;
     src: url('@{path_font}MyriadProRegular.ttf');
 } 
+
+// Classes for jQuery -> "filter_action.js"
+.mark {
+    padding: 5px;
+    background-color: @button_mark;
+    color: @color_white;
+}
+.activeMark {
+    padding: 5px;
+    .button_hover(@button_mark) !important;
+}
+.mark:hover, .activeMark:hover {
+    padding: 5px;
+    .button_hover(@button_mark) !important;
+}
+.active, .active:hover {
+    background-color: @button_active;
+    color: @color_white;
+}
+.disabled, .disabled:hover {
+    background-color: @button_color;
+    opacity: 0.5;
+    cursor: not-allowed;
+}

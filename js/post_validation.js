@@ -17,6 +17,9 @@ $(function () {
                 required: true,
                 min: 1,
                 max: 10
+            },
+            region: {
+                required: true
             }
         },
         messages: {
@@ -36,6 +39,9 @@ $(function () {
                 required: "Визначте стан деталі",
                 min: "Визначте стан деталі",
                 max: "Визначте стан деталі"
+            },
+            region: {
+                required: "Визначте своє місцерозташування"
             }
         },
         errorPlacement: function(error, element) {

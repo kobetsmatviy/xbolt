@@ -14,6 +14,31 @@
   font-family: MyriadProRegular;
   src: url('../fonts/MyriadProRegular.ttf');
 }
+.mark {
+  padding: 5px;
+  background-color: #499b42;
+  color: #ffffff;
+}
+.activeMark {
+  padding: 5px;
+  background-color: #41893a !important;
+}
+.mark:hover,
+.activeMark:hover {
+  padding: 5px;
+  background-color: #41893a !important;
+}
+.active,
+.active:hover {
+  background-color: #59aed8;
+  color: #ffffff;
+}
+.disabled,
+.disabled:hover {
+  background-color: #dddddd;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 body {
   margin: 0;
   font-family: PTSansRegular, Arial;
@@ -172,6 +197,7 @@ form input {
   font-size: 16px;
   font-weight: normal;
   text-align: left;
+  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
