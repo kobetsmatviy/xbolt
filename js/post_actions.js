@@ -19,8 +19,13 @@ $(function () {
     }
     document.getElementById('uploadImg').addEventListener('change', showFile, false);
     
-    //#### Валідація загрузки фото
     $('form').submit(function() {
+        //#### Звертаємо увагу на рейтинг стану
+        if ($('input[type="range"]').val() <= 0) {
+            $('.stateSvg').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
+        }
+        
+        //#### Валідація загрузки фото
         var itemImg = $(this).find('#list li');
 
         if ($(itemImg).length > 5) {
@@ -42,19 +47,19 @@ $(function () {
     $('#uploadImg').change(function() {
         $('#list').css('box-shadow', 'none');
         $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
-        $(this).next().hide();
+        $(this).closest('.interaction').next().find('label.error').remove();
     });
 
-    // Повзунок input[type=range] для стану
+    //#### Повзунок input[type=range] для стану
     var state = 0;
     $('input[type="range"]').on('mouseenter mousemove', function(e) {
         $(this).val((e.pageX - $(this).offset().left) / ($(this).outerWidth() / 10));
 
         $(this).on('click', function() {
             state = $(this).val();
-            console.log(state);
-            $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
-            $(this).next().hide();
+            $('.stateSvg').css('box-shadow', 'none');
+            $('input[type="range"]').removeClass('error').addClass('valid').attr('aria-invalid', 'false');
+            $(this).closest('.interaction').next().find('label.error').hide();
         });
 
         ChangeState();

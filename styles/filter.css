@@ -126,34 +126,6 @@ form input[type="submit"] {
   margin-bottom: 5px;
   margin-left: 5px;
 }
-.details input[type="checkbox"] + label span {
-  position: relative;
-  display: inline-block;
-  width: 13px !important;
-  height: 13px !important;
-  margin-right: 5px;
-  margin-bottom: 2px;
-  vertical-align: middle;
-  background-color: #ffffff !important;
-  background-image: none;
-  border: 2px solid #59aed8 !important;
-  border-radius: 2px;
-}
-.details input[type="checkbox"]:checked + label span {
-  background-color: #499b42 !important;
-  border-color: #499b42 !important;
-}
-.details input[type="checkbox"]:checked + label span::after {
-  position: absolute;
-  content: "";
-  left: 2px;
-  top: -2px;
-  width: 5px;
-  height: 10px;
-  border: solid #ffffff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
 .details label {
   margin-left: 20px;
 }
