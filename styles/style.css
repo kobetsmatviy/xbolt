@@ -99,14 +99,14 @@ header article {
 header article img {
   height: 25px;
 }
-header article .interaction {
+header article .leaderLinks {
   display: flex;
   flex-direction: row;
 }
-header article .interaction a {
+header article .leaderLinks a {
   margin-left: 15px;
 }
-header article .interaction #search {
+header article .leaderLinks #search {
   display: none;
   cursor: pointer;
 }
@@ -259,7 +259,7 @@ footer article {
   header article a span {
     display: none;
   }
-  header article .interaction #search {
+  header article .leaderLinks #search {
     display: flex;
   }
   nav {

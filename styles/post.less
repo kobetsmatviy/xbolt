@@ -29,7 +29,6 @@ form {
         &> div {
             display: flex;
             flex-direction: row;
-            align-items: center;
         }
         
         .interaction {
@@ -39,7 +38,7 @@ form {
                 display: flex;
                 justify-content: flex-end;
                 min-width: 100px;
-                // padding-top: 5px;
+                padding-top: 5px;
                 padding-right: 10px;
                 font-family: PTSansBold;
             }
@@ -47,6 +46,7 @@ form {
         .message {
             width: 100%;
             margin-left: 5px;
+            padding-top: 5px;
             font-size: 12px;
             color: #999;
         }
@@ -143,10 +143,9 @@ form {
         box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
     }
     label.error {
-        margin: 0 5px;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: normal;
-        color: #999;
+        color: #c55454 !important;
     }
 
     .state {
@@ -159,7 +158,7 @@ form {
         display: flex;
         // justify-content: space-between;
         padding: 5px;
-        width: 120px;
+        width: 125px;
         height: 30px;
         border-radius: 3px;
 
@@ -171,11 +170,49 @@ form {
 
     .auction {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         margin-left: 5px;
+        width: 50px;
         font-size: 12px;
         color: #555;
         cursor: pointer;
+
+        span {
+            margin-bottom: 0px !important;
+        }
+    }
+
+    .automobiles {
+        .selectedAutos {
+        margin: 5px;
+        line-height: 22px;
+
+            .auto {
+                background-color: @background_tag;
+                border-radius: 3px;
+                color: @color_tag;
+                padding: 3px 5px;
+                margin-right: 3px;
+                font-size: 12px;
+
+                span {
+                    margin-right: 3px;
+                }
+            }
+        }
+
+        #addAuto {
+            display: flex;
+            margin-right: 2px;
+            margin-left: auto;
+            padding: 2px 4px;
+            background-color: @button_mark;
+            color: @color_white;
+            border-radius: 3px;
+            font-size: 12px;
+            outline: none;
+            border: none;
+        }
     }
 }
 

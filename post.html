@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="styles/post.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="js/post_actions.js" async></script>
-    <script src="js/filter_actions.js" async></script>
     <script src="js/post_validation.js" async></script>
+    <script src="js/filter_actions.js" async></script>
+    <script src="js/post_actions.js" async></script>
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
                 <img src="images/logo.png" alt="XBOLT" />
             </a>
             
-            <div class="interaction">
+            <div class="leaderLinks">
                 <a href="">
                     <img src="images/profile.png" />
                     <span>Профіль</span>
@@ -97,14 +97,35 @@
                 </label>
                 <label>
                     <div class="interaction">
-                        <span class="interactionName">Автомобілі:</span> 
-                        <select name="automobiles">
-                            <optgroup label="Audi">
-                                <option>B2 80 1982-1986</option>
-                                <option>100 1991-1994</option>
-                                <option>R8 2009-1015</option>
-                            </optgroup>
-                        </select>
+                        <span class="interactionName">Автомобілі:</span>
+                        <div class="automobiles">
+                            <div class="selectedAutos"></div>
+                            <select name="transport" id="transport" class="transport">
+                                <option selected disabled hidden>Транспорт</option>
+                                <option value="cars">Легкові</option>
+                                <option value="trucks">Вантажівки</option>
+                                <option value="autobus">Автобуси</option>
+                                <option value="moto">Мото</option>
+                            </select>
+                            <select name="brand" class="disabled" disabled>
+                                <option selected disabled hidden>Марка</option>
+                                <option value="astron-martin">Aston Martin</option>
+                                <option value="audi">AUDI</option>
+                                <option value="bmw">BMW</option>
+                                <option value="opel">OPEL</option>
+                                <option value="toyota">TOYOTA</option>
+                            </select>
+                            <select name="model" class="disabled" disabled>
+                                <option selected disabled hidden>Модель</option>
+                                <option value="80">B2 80 1979-1981</option>
+                                <option value="100">B3 100 1982-1985</option>
+                                <option value="200">M4 200 1994-1996</option>
+                                <option value="A2">A2 2001</option>
+                                <option value="A4">A4 2004-2005</option>
+                                <option value="TT">TT 2018</option>
+                            </select>
+                            <button id="addAuto">+ Додати авто</button>
+                        </div>
                     </div>
                     <div class="message">
                         <span class="advice">До яких авто підходить деталь</span>
@@ -160,7 +181,7 @@
                                 <option>Чернівецька</option>
                                 <option>Чернігівська</option>
                             </select>
-                            <select name="district" class="disabled" disabled>
+                            <select name="town" class="disabled" disabled>
                                 <option selected disabled hidden>Район</option>
                                 <option>Корець</option>
                                 <option>Гоща</option>

@@ -64,7 +64,6 @@ form label {
 form label > div {
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 form label .interaction {
   min-width: 330px;
@@ -73,12 +72,14 @@ form label .interaction .interactionName {
   display: flex;
   justify-content: flex-end;
   min-width: 100px;
+  padding-top: 5px;
   padding-right: 10px;
   font-family: PTSansBold;
 }
 form label .message {
   width: 100%;
   margin-left: 5px;
+  padding-top: 5px;
   font-size: 12px;
   color: #999;
 }
@@ -171,10 +172,9 @@ form input.error {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
 }
 form label.error {
-  margin: 0 5px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
-  color: #999;
+  color: #c55454 !important;
 }
 form .state {
   position: relative;
@@ -185,7 +185,7 @@ form .stateSvg {
   top: 10px;
   display: flex;
   padding: 5px;
-  width: 120px;
+  width: 125px;
   height: 30px;
   border-radius: 3px;
 }
@@ -195,11 +195,42 @@ form .stateSvg img {
 }
 form .auction {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   margin-left: 5px;
+  width: 50px;
   font-size: 12px;
   color: #555;
   cursor: pointer;
+}
+form .auction span {
+  margin-bottom: 0px !important;
+}
+form .automobiles .selectedAutos {
+  margin: 5px;
+  line-height: 22px;
+}
+form .automobiles .selectedAutos .auto {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  color: #39739d;
+  padding: 3px 5px;
+  margin-right: 3px;
+  font-size: 12px;
+}
+form .automobiles .selectedAutos .auto span {
+  margin-right: 3px;
+}
+form .automobiles #addAuto {
+  display: flex;
+  margin-right: 2px;
+  margin-left: auto;
+  padding: 2px 4px;
+  background-color: #499b42;
+  color: #ffffff;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+  border: none;
 }
 @media screen and (max-width: 767px) {
   form {

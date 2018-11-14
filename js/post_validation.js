@@ -3,6 +3,7 @@ $(function () {
         rules: {
             'photos[]': {
                 required: true,
+                accept:"jpg,png,jpeg,gif"
             },
             title: {
                 required: true,
@@ -20,11 +21,15 @@ $(function () {
             },
             region: {
                 required: true
+            },
+            town: {
+                required: true
             }
         },
         messages: {
             'photos[]': {
-                required: "Оберіть фото запчастини"
+                required: "Оберіть фото запчастини",
+                accept: "Лише зображення формату: jpg/png/jpeg/gif"
             },
             title: {
                 required: "Введіть назву деталі",
@@ -41,6 +46,9 @@ $(function () {
                 max: "Визначте стан деталі"
             },
             region: {
+                required: "Визначте своє місцерозташування"
+            },
+            town: {
                 required: "Визначте своє місцерозташування"
             }
         },

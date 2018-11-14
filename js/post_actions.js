@@ -18,18 +18,15 @@ $(function () {
         }
     }
     document.getElementById('uploadImg').addEventListener('change', showFile, false);
+
+    // При додаванні фото, видаляємо клас помилки
+    $('#uploadImg').change(function() {
+        $('#list').css('box-shadow', 'none');
+        $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
+        $(this).closest('.interaction').next().find('label.error').remove();
+    });
     
     $('form').submit(function() {
-        //#### Звертаємо увагу на рейтинг стану
-        if ($('input[type="range"]').val() <= 0) {
-            $('.stateSvg').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
-        }
-
-        //#### Валідація локації
-        if ($('select[name="region"] option').not(':first').is(':selected') == false) {
-            $('select[name="region"]').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
-        }
-        
         //#### Валідація загрузки фото
         var itemImg = $(this).find('#list li');
 
@@ -41,23 +38,64 @@ $(function () {
                     $(this).remove();
                 }
             });
-            return false;
         }
         else if($(itemImg).length <= 0) {
             $('#list').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
+        }
+
+        //#### Звертаємо увагу на рейтинг стану
+        if ($('input[type="range"]').val() <= 0) {
+            $('.stateSvg').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
+        }
+
+        //#### Валідація select
+        $('select').each(function() {
+            if ($(this).find('option').not(':first').is(':selected') == false) {
+                $(this).css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
+            }
+        });
+
+        //#### Якщо якесь поле містить клас помилки, то забороняємо відправку форми
+        if($('.interaction').children().hasClass('error')) {
             return false;
         }
     });
-    // При додаванні фото, видаляємо клас помилки
-    $('#uploadImg').change(function() {
-        $('#list').css('box-shadow', 'none');
-        $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
-        $(this).closest('.interaction').next().find('label.error').remove();
+
+    //#### При зміні регіону
+    $('select[name="region"], select[name="town"]').change(function() {
+        $(this).css('box-shadow', 'none');
     });
 
-    // При зміні регіону
-    $('select[name="region"]').change(function() {
-        $(this).css('box-shadow', 'none');
+    //#### Якщо модель автомобіля :selected, то зберігаємо його
+    $('select[name="model"]').change(function() {
+        $(this).prop('disabled','disabled').addClass('disabled').removeClass('mark');
+        
+        $('.selectedAutos .auto').each(function(e) {
+            for (var i = 0; i < $('.auto span').length; i++) {
+                if ($(this).find('span').eq(i).attr('id') != $('.automobiles select').eq(i).find('option:selected').val()) {
+                    alert($(this).find('span').eq(i).attr('id') +' != '+ $('.automobiles select').eq(i).find('option:selected').val() );
+                    break;
+                }
+                else {
+                    alert($(this).find('span').eq(i).attr('id') +' == '+ $('.automobiles select').eq(i).find('option:selected').val() );
+                    if (i == 2) {
+                        alert('Вже існує');
+                        e.preventDefault();
+                        e.stopPropagation();
+                        break;
+                    }
+                }
+            }
+        });
+
+        $('.selectedAutos').append('<span class="auto"></span>');
+        $('.selectedAutos .auto:last').append('<span id='+$('select[name="transport"] option:selected').val()+'></span>');
+        $('.selectedAutos .auto:last').append('<span id='+$('select[name="brand"] option:selected').val()+'>' +$('select[name="brand"] option:selected').text()+ '</span>');
+        $('.selectedAutos .auto:last').append('<span id='+$('select[name="model"] option:selected').val()+'>' +$('select[name="model"] option:selected').text()+ '</span>');
+    });
+    $('#addAuto').on('click', function(e) {
+        $('select[name="model"]').prop('disabled', false).removeClass('disabled');
+        e.preventDefault();
     });
 
     //#### Повзунок input[type=range] для стану
