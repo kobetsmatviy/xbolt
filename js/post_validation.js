@@ -2,8 +2,7 @@ $(function () {
     $("#formSell").validate({
         rules: {
             'photos[]': {
-                required: true,
-                accept:"jpg,png,jpeg,gif"
+                required: true
             },
             title: {
                 required: true,
@@ -13,6 +12,15 @@ $(function () {
                 required: true,
                 min: 1,
                 max: 9999999
+            },
+            transport: {
+                required: true
+            },
+            brand: {
+                required: true
+            },
+            model: {
+                required: true
             },
             stateRange: {
                 required: true,
@@ -28,8 +36,7 @@ $(function () {
         },
         messages: {
             'photos[]': {
-                required: "Оберіть фото запчастини",
-                accept: "Лише зображення формату: jpg/png/jpeg/gif"
+                required: "Оберіть фото запчастини"
             },
             title: {
                 required: "Введіть назву деталі",
@@ -39,6 +46,15 @@ $(function () {
                 required: "Укажіть ціну, що вважаєте за потрібну",
                 min: "Ціна починається з 1грн",
                 max: "Не більше 9 999 999грн"
+            },
+            transport: {
+                required: "Потрібно вибрати вид транспорту"
+            },
+            brand: {
+                required: "Потрібно вибрати марку"
+            },
+            model: {
+                required: "Потрібно вибрати модель"
             },
             stateRange: {
                 required: "Визначте стан деталі",

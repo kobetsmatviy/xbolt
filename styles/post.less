@@ -184,27 +184,70 @@ form {
 
     .automobiles {
         .selectedAutos {
-        margin: 5px;
-        line-height: 22px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 5px;
+            line-height: 22px;
 
-            .auto {
-                background-color: @background_tag;
-                border-radius: 3px;
-                color: @color_tag;
-                padding: 3px 5px;
-                margin-right: 3px;
-                font-size: 12px;
-
-                span {
+                .auto {
+                    position: relative;
+                    background-color: @background_tag;
+                    border-radius: 3px;
+                    color: @color_tag;
+                    padding: 3px 5px;
+                    padding-right: 20px;
                     margin-right: 3px;
+                    margin-bottom: 3px;
+                    font-size: 12px;
+                    // cursor: pointer;
+                    // transition: all .3s ease-in-out;
+
+                    // &:hover {
+                    //     background-color: #c55454;
+                    //     color: @color_white;
+                    //     transition: all .3s ease-in-out;
+                    // }
+
+                    span {
+                        margin-right: 3px;
+                    }
+
+                    .remove {
+                        position: absolute;
+                        top: 6px;
+                        right: 2px;
+                        width: 15px;
+                        height: 15px;
+                        background-color: #c55454;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &::after, &::before {
+                            display: inline-block;
+                            position: absolute;
+                            top: 4px;
+                            left: 6px;
+                            content: "";
+                            height: 8px;
+                            width: 2px;
+                            background-color: @color_white;
+                        }
+    
+                        &::before {
+                            transform: rotate(45deg);
+                        }
+    
+                        &::after {
+                            transform: rotate(-45deg);
+                        }
+                    }
                 }
-            }
         }
 
         #addAuto {
-            display: flex;
-            margin-right: 2px;
-            margin-left: auto;
+            display: none;
+            margin: auto;
             padding: 2px 4px;
             background-color: @button_mark;
             color: @color_white;

@@ -26,13 +26,18 @@ $(function () {
         $(this).closest('.interaction').next().find('label.error').remove();
     });
     
-    $('form').submit(function() {
+    $('form').submit(function(e) {
+        //#### Якщо якесь поле містить клас помилки, то забороняємо відправку форми ******************
+        $('.interaction *').each(function() {
+            if ($(this).hasClass('error')) {
+                e.preventDefault();
+            }
+        });
+
         //#### Валідація загрузки фото
         var itemImg = $(this).find('#list li');
 
         if ($(itemImg).length > 5) {
-            alert('Ви перевищили ліміт фото!');
-
             $(itemImg).each(function() {
                 if ($(this).index() >= 5) {
                     $(this).remove();
@@ -54,30 +59,33 @@ $(function () {
                 $(this).css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
             }
         });
-
-        //#### Якщо якесь поле містить клас помилки, то забороняємо відправку форми
-        if($('.interaction').children().hasClass('error')) {
-            return false;
-        }
     });
 
     //#### При зміні регіону
-    $('select[name="region"], select[name="town"]').change(function() {
+    $('select').change(function() {
         $(this).css('box-shadow', 'none');
     });
 
     //#### Якщо модель автомобіля :selected, то зберігаємо його
-    $('select[name="model"]').change(function() {
+    $('select[name="model"]').change(function(e) {
         $(this).prop('disabled','disabled').addClass('disabled').removeClass('mark');
+        $('.automobiles select').hide();
+        if ($('.selectedAutos .auto').length < 4) {
+            $('#addAuto').css('display', 'flex');
+        }
+        else {
+            // *********************
+        }
         
         $('.selectedAutos .auto').each(function(e) {
-            for (var i = 0; i < $('.auto span').length; i++) {
+            for (var i = 0; i < 3; i++) {
                 if ($(this).find('span').eq(i).attr('id') != $('.automobiles select').eq(i).find('option:selected').val()) {
-                    alert($(this).find('span').eq(i).attr('id') +' != '+ $('.automobiles select').eq(i).find('option:selected').val() );
+                    // alert($(this).find('span').eq(i).attr('id') +' != '+ $('.automobiles select').eq(i).find('option:selected').val());
                     break;
                 }
                 else {
-                    alert($(this).find('span').eq(i).attr('id') +' == '+ $('.automobiles select').eq(i).find('option:selected').val() );
+                    // alert($(this).find('span').eq(i).attr('id') +' == '+ $('.automobiles select').eq(i).find('option:selected').val());
+                    
                     if (i == 2) {
                         alert('Вже існує');
                         e.preventDefault();
@@ -92,10 +100,18 @@ $(function () {
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="transport"] option:selected').val()+'></span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="brand"] option:selected').val()+'>' +$('select[name="brand"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="model"] option:selected').val()+'>' +$('select[name="model"] option:selected').text()+ '</span>');
+        $('.selectedAutos .auto:last').append('<span class="remove"></span>');
     });
     $('#addAuto').on('click', function(e) {
         $('select[name="model"]').prop('disabled', false).removeClass('disabled');
+        $('.automobiles select').show();
+        $('#addAuto').css('display', 'none');
         e.preventDefault();
+    });
+
+    //#### Видаляємо обраний автобоміль при кліку на його блок
+    $('.selectedAutos').delegate('.auto', 'click', function() {
+        $(this).remove();
     });
 
     //#### Повзунок input[type=range] для стану
@@ -113,6 +129,7 @@ $(function () {
         ChangeState();
     });
 
+    //#### Змінюємо значення стану на установлене, при виведу курсору з елементу 
     $('input[type="range"]').on('mouseout', function() {
         $(this).val(state);
         ChangeState();

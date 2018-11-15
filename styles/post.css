@@ -206,24 +206,56 @@ form .auction span {
   margin-bottom: 0px !important;
 }
 form .automobiles .selectedAutos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 5px;
   line-height: 22px;
 }
 form .automobiles .selectedAutos .auto {
+  position: relative;
   background-color: #e1ecf4;
   border-radius: 3px;
   color: #39739d;
   padding: 3px 5px;
+  padding-right: 20px;
   margin-right: 3px;
+  margin-bottom: 3px;
   font-size: 12px;
 }
 form .automobiles .selectedAutos .auto span {
   margin-right: 3px;
 }
+form .automobiles .selectedAutos .auto .remove {
+  position: absolute;
+  top: 6px;
+  right: 2px;
+  width: 15px;
+  height: 15px;
+  background-color: #c55454;
+  border-radius: 50%;
+  cursor: pointer;
+}
+form .automobiles .selectedAutos .auto .remove::after,
+form .automobiles .selectedAutos .auto .remove::before {
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  content: "";
+  height: 8px;
+  width: 2px;
+  background-color: #ffffff;
+}
+form .automobiles .selectedAutos .auto .remove::before {
+  transform: rotate(45deg);
+}
+form .automobiles .selectedAutos .auto .remove::after {
+  transform: rotate(-45deg);
+}
 form .automobiles #addAuto {
-  display: flex;
-  margin-right: 2px;
-  margin-left: auto;
+  display: none;
+  margin: auto;
   padding: 2px 4px;
   background-color: #499b42;
   color: #ffffff;
