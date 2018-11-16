@@ -52,13 +52,12 @@ $(function () {
         if ($('input[type="range"]').val() <= 0) {
             $('.stateSvg').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
         }
-
-        //#### Валідація select
-        $('select').each(function() {
-            if ($(this).find('option').not(':first').is(':selected') == false) {
-                $(this).css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
-            }
-        });
+        
+        if (($('.selectedAutos .auto').length == 0) || ($('.selectedAutos .auto').length >= 5)) {
+            $('.automobiles select').not('.disabled').addClass('error');
+            $('.automobiles select').closest('.interaction').next().find('.advice').remove();
+            $('<label class="error">Виберіть вид транспорту, марку та модель</label>').appendTo($('.automobiles select').closest('.interaction').next());
+        }
     });
 
     //#### При зміні регіону
@@ -67,16 +66,7 @@ $(function () {
     });
 
     //#### Якщо модель автомобіля :selected, то зберігаємо його
-    $('select[name="model"]').change(function(e) {
-        $(this).prop('disabled','disabled').addClass('disabled').removeClass('mark');
-        $('.automobiles select').hide();
-        if ($('.selectedAutos .auto').length < 4) {
-            $('#addAuto').css('display', 'flex');
-        }
-        else {
-            // *********************
-        }
-        
+    $('select[name="model"]').change(function() {        
         $('.selectedAutos .auto').each(function(e) {
             for (var i = 0; i < 3; i++) {
                 if ($(this).find('span').eq(i).attr('id') != $('.automobiles select').eq(i).find('option:selected').val()) {
@@ -88,6 +78,7 @@ $(function () {
                     
                     if (i == 2) {
                         alert('Вже існує');
+                        $('select[name="model"]').removeClass('mark');
                         e.preventDefault();
                         e.stopPropagation();
                         break;
@@ -96,14 +87,18 @@ $(function () {
             }
         });
 
+        // Додаємо авто і заповняємо його атрибути для відправки
         $('.selectedAutos').append('<span class="auto"></span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="transport"] option:selected').val()+'></span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="brand"] option:selected').val()+'>' +$('select[name="brand"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="model"] option:selected').val()+'>' +$('select[name="model"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span class="remove"></span>');
+
+        $(this).removeClass('mark');
+        $('.automobiles select').removeClass('error').hide();
+        CheckAutoExist();
     });
     $('#addAuto').on('click', function(e) {
-        $('select[name="model"]').prop('disabled', false).removeClass('disabled');
         $('.automobiles select').show();
         $('#addAuto').css('display', 'none');
         e.preventDefault();
@@ -112,6 +107,11 @@ $(function () {
     //#### Видаляємо обраний автобоміль при кліку на його блок
     $('.selectedAutos').delegate('.auto', 'click', function() {
         $(this).remove();
+        CheckAutoExist();
+    });
+
+    $('.automobiles select').on('change', function() {
+        $('.automobiles select').closest('.interaction').next().find('.error').remove();
     });
 
     //#### Повзунок input[type=range] для стану
@@ -135,6 +135,17 @@ $(function () {
         ChangeState();
     });
 
+    // Перевірка існування блоку .auto
+    function CheckAutoExist() {
+        if ($('.selectedAutos .auto').length < 5) {
+            $('#addAuto').css('display', 'flex');
+        }
+        else {
+            return false;
+        }
+    }
+
+    // Обрати стан
     function ChangeState() {
         switch($('input[type="range"]').val()) {
             case '1': {

@@ -13,15 +13,6 @@ $(function () {
                 min: 1,
                 max: 9999999
             },
-            transport: {
-                required: true
-            },
-            brand: {
-                required: true
-            },
-            model: {
-                required: true
-            },
             stateRange: {
                 required: true,
                 min: 1,
@@ -46,15 +37,6 @@ $(function () {
                 required: "Укажіть ціну, що вважаєте за потрібну",
                 min: "Ціна починається з 1грн",
                 max: "Не більше 9 999 999грн"
-            },
-            transport: {
-                required: "Потрібно вибрати вид транспорту"
-            },
-            brand: {
-                required: "Потрібно вибрати марку"
-            },
-            model: {
-                required: "Потрібно вибрати модель"
             },
             stateRange: {
                 required: "Визначте стан деталі",

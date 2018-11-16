@@ -168,7 +168,8 @@ form input[type="range"] {
 form input[type="checkbox"] {
   display: none;
 }
-form input.error {
+form input.error,
+form select.error {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
 }
 form label.error {
@@ -209,7 +210,7 @@ form .automobiles .selectedAutos {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 5px;
+  margin: 0 5px;
   line-height: 22px;
 }
 form .automobiles .selectedAutos .auto {
@@ -256,6 +257,7 @@ form .automobiles .selectedAutos .auto .remove::after {
 form .automobiles #addAuto {
   display: none;
   margin: auto;
+  margin-top: 5px;
   padding: 2px 4px;
   background-color: #499b42;
   color: #ffffff;
