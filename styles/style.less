@@ -188,7 +188,11 @@ form {
         color: @color_dark;
     }
 
-    input[type="checkbox"] + span {
+    // Exclude standard checkboxes for custom style && Hide a submit button 
+    input[type="checkbox"], input[type="radio"] {
+        display: none;
+    }
+    input[type="checkbox"] + span, input[type="radio"] + span {
         position: relative;
         display: inline-block;
         width: 13px !important;
@@ -201,7 +205,7 @@ form {
         border: 2px solid @button_active !important;
         border-radius: 2px;
     }
-    input[type="checkbox"]:checked + span {
+    input[type="checkbox"]:checked + span, input[type="radio"]:checked + span {
         background-color: @button_mark !important;
         border-color: @button_mark !important;
 
@@ -216,6 +220,13 @@ form {
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
+    }
+    input[type="radio"] + span {
+        border-radius: 50%;
+    }
+    input[type="radio"]:checked + span {
+        width: 3 !important;
+        height: 6 !important;
     }
 }
 

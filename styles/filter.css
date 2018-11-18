@@ -79,10 +79,7 @@ form select option {
   background-color: #ffffff;
   color: #2b2d42;
 }
-form input[type="checkbox"] {
-  display: none;
-}
-form input[type="submit"] {
+form #apply {
   position: absolute;
   left: 47%;
   bottom: -80px;
@@ -145,7 +142,6 @@ form input[type="submit"] {
 .details {
   display: none;
   width: 100%;
-  border-left: 2px solid #59aed8;
   padding: 10px;
   padding-left: 0;
   margin-bottom: 5px;
@@ -162,14 +158,14 @@ form input[type="submit"] {
   z-index: 10;
   width: 100%;
 }
-#filter form {
+form {
   display: flex;
   flex-direction: column;
   width: 100%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-#filter form .filterType {
+form .filterType {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -181,17 +177,17 @@ form input[type="submit"] {
   background-color: #ffffff;
   border-top: 1px solid #dddddd;
 }
-#filter form .filterType:first-of-type {
+form .filterType:first-of-type {
   border-top: none;
 }
-#filter form .filterType:last-of-type {
+form .filterType:last-of-type {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-#filter form .filterType:last-of-type .filterName {
+form .filterType:last-of-type .filterName {
   border-bottom-left-radius: 15px;
 }
-#filter form .filterType .filterName {
+form .filterType .filterName {
   display: flex;
   align-items: center;
   position: absolute;
@@ -204,7 +200,7 @@ form input[type="submit"] {
   background-color: #eeeeee;
   margin-bottom: auto;
 }
-#filter form .filterType .filterName .remove {
+form .filterType .filterName .remove {
   opacity: .2;
   position: relative;
   width: 20px;
@@ -214,12 +210,12 @@ form input[type="submit"] {
   border-radius: 50%;
   cursor: pointer;
 }
-#filter form .filterType .filterName .remove:hover {
+form .filterType .filterName .remove:hover {
   transform: rotate(360deg);
   transition: transform 1s;
 }
-#filter form .filterType .filterName .remove::after,
-#filter form .filterType .filterName .remove::before {
+form .filterType .filterName .remove::after,
+form .filterType .filterName .remove::before {
   display: inline-block;
   position: absolute;
   top: 5px;
@@ -229,18 +225,18 @@ form input[type="submit"] {
   width: 3px;
   background-color: #ffffff;
 }
-#filter form .filterType .filterName .remove::before {
+form .filterType .filterName .remove::before {
   transform: rotate(45deg);
 }
-#filter form .filterType .filterName .remove::after {
+form .filterType .filterName .remove::after {
   transform: rotate(-45deg);
 }
-#filter form .filterType .filterName .remove,
-#filter form .filterType .filterName .title {
+form .filterType .filterName .remove,
+form .filterType .filterName .title {
   font-size: 12px;
   color: #555;
 }
-#filter form .filterType .filterCategory {
+form .filterType .filterCategory {
   margin-left: 200px;
   display: flex;
   flex-direction: row;
@@ -276,14 +272,14 @@ form input[type="submit"] {
     flex-direction: column;
   }
   #filter form select,
-  #filter form input:not([type="submit"]) {
+  #filter form input:not('#apply') {
     width: 100%;
     max-width: 100%;
     margin: 5px;
     margin-top: 0;
   }
   #filter form select:first-child,
-  #filter form input:not([type="submit"]):first-child {
+  #filter form input:not('#apply'):first-child {
     margin-top: 5px;
   }
   #filter .filterType {

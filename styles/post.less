@@ -13,7 +13,7 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    max-width: 600px;
     padding: 10px;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -21,10 +21,9 @@ form {
     background-color: #fff;
     border: 1px solid #ddd;
     
-    label {
+    &> .formRow {
         display: flex;
         flex-direction: row;
-        font-weight: normal;
 
         &> div {
             display: flex;
@@ -32,7 +31,13 @@ form {
         }
         
         .interaction {
+            position: relative;
             min-width: 330px;
+
+            label {
+                max-width: 225px;
+                margin: 0;
+            }
 
             .interactionName {
                 display: flex;
@@ -55,7 +60,7 @@ form {
     #list {
         display: flex;
         flex-direction: row;
-        width: 225px;
+        min-width: 225px;
         height: 50px;
         margin: 5px;
         margin-right: 0;
@@ -79,6 +84,7 @@ form {
             min-height: 40px;
             height: 40px;
             margin-right: 5px;
+            background-color: rgba(0, 0, 0, .5);
             overflow: hidden;
         }
 
@@ -90,6 +96,7 @@ form {
     #uploadImg {
         visibility: hidden;
         width: 0;
+        height: 0;
         margin: 0;
         padding: 0;
     }
@@ -115,7 +122,7 @@ form {
         }
     }
     input, select, textarea {
-        width: 225px;
+        min-width: 225px;
     }
     input:focus, select:focus, textarea:focus {
         box-shadow: 0 0 0 3px #eee;
@@ -128,15 +135,16 @@ form {
         color: @color_white;
         text-align: center;
     }
+    input[type="number"] {
+        min-width: 180px;
+        margin-right: 5px;
+    }
     input[type="range"] {
-        width: 125px;
+        min-width: 125px;
         height: 40px;
         padding: 0;
         opacity: 0;
         cursor: pointer;
-    }
-    input[type="checkbox"] {
-        display: none;
     }
 
     input.error, select.error {
@@ -148,40 +156,67 @@ form {
         color: #c55454 !important;
     }
 
-    .state {
-        position: relative;
-    }
-    .stateSvg {
-        position: absolute;
-        left: 8px;
-        top: 10px;
-        display: flex;
-        // justify-content: space-between;
-        padding: 5px;
-        width: 125px;
-        height: 30px;
-        border-radius: 3px;
-
-        img {
-            height: 20px;
-            margin-left: 3px;
-        }
-    }
-
     .auction {
         display: flex;
         align-items: center;
-        margin-left: 5px;
-        width: 50px;
+        margin-left: 15px;
+        min-width: 50px;
         font-size: 12px;
         color: #555;
         cursor: pointer;
+
+        input[type="checkbox"] {
+            display: none;
+        }
 
         span {
             margin-bottom: 0px !important;
         }
     }
+    .category {
+        position: absolute;
+        top: 45px;
+        left: -22px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        min-width: 622px;
+        height: inherit;
+        background-color: @color_white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        z-index: 5;
 
+        .details {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            padding-left: 0;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        
+            label {
+                margin-left: 20px;
+            }
+        }
+
+        input[type="button"] {
+            min-width: 200px; 
+        }
+    }
+    // #overlay { ***********************
+    //     display: none;
+    //     position: fixed;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     .background_color_black(0.4);
+    //     z-index: 3;
+    // }
     .automobiles {
         .selectedAutos {
             display: flex;
@@ -250,6 +285,25 @@ form {
             border: none;
         }
     }
+    .state {
+        position: relative;
+
+        .stateSvg {
+            display: flex;
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            padding: 5px;
+            width: 125px;
+            height: 30px;
+            border-radius: 3px;
+    
+            img {
+                height: 20px;
+                margin-left: 3px;
+            }
+        }
+    }
 }
 
 // Version for a smartphone
@@ -257,20 +311,19 @@ form {
     form {
         width: 100%;
         max-width: 600px;
-    }
-    label {
-        position: relative;
-    }
-    label.error {
-        position: absolute;
-        right: 0;
-        top: -10px;
-        padding: 0 3px;
-        font-size: 12px !important;
-        background-color: #fff;
-        border-radius: 2px;
-    }
-    label#stateRange-error {
-        position: static !important;
+
+        label {
+            position: relative;
+
+            .error {
+                position: absolute;
+                right: 0;
+                top: -10px;
+                padding: 0 3px;
+                font-size: 12px !important;
+                background-color: #fff;
+                border-radius: 2px;
+            }
+        }
     }
 }

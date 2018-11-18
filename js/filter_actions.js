@@ -11,7 +11,7 @@
             var countItems = Math.floor(rowWidth / (200 + 5));
             var inputOrder = -1;
             var detailsOrder = 0;
-            
+
             // Значення order для кожного input[type=button]
             $(".filterCategory input[type=button]").each(function() {
                 if (($(this).index()/2) % countItems == 0) {
@@ -65,11 +65,11 @@
             $('#overlay').hide();
         }
     });
-    // При натисканні поза фільтром акцентуємо увагу на кнопку пошуку
-    $('input[type=submit], #filter form').on("click", function (e) {
+    // При натисканні поза фільтром приховуємо його
+    // окрім натискання на фільтр та кнопку відправки
+    $('#apply, #filter form').on("click", function (e) {
         e.stopPropagation();
     });
-
     $('#overlay, #filter').on("click", function () {
         $('#filter').hide();
         $('#overlay').hide();
@@ -115,7 +115,7 @@
         $(this).addClass('mark');
         $(this).next().removeClass('disabled').prop('disabled', false);
         $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
-        $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
+        $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
     });
 
     // Приховуємо/показуємо блоки з деталями, якщо має active
@@ -153,13 +153,13 @@
 
     // Якщо відмічений хоча б один checkbox у блоку details, то
     // змінити значення відповідної кнопки на mark
-    var $markDetails = $('.details input[type=checkbox]');
-    $markDetails.on("click", function () {
+    var $checkDetails = $('.details input[type=checkbox]');
+    $checkDetails.on("click", function () {
         if ($(this).parents('.details').find('input[type=checkbox]:checked').length) {
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
             $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
-            $('input[type=submit]').css('animation-name', 'submitMark').css('animation-duration', '3s');
+            $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
             $(this).parents('.details').css('border-color', '#499b42');
         }
         else {
@@ -170,19 +170,28 @@
             $(this).parents('.details').css('border-color', '#2299d4');
         }
         
-        $markDetails.each(function() {
-            if ($markDetails.parents('.details').find('input[type=checkbox]:checked').length) {
+        $checkDetails.each(function() {
+            if ($checkDetails.parents('.details').find('input[type=checkbox]:checked').length) {
                 $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
             }
         });
     });
 
+    var $radioDetails = $('.details input[type=radio]');
+    $radioDetails.on("click", function () {
+        if ($(this).parents('.details').find('input[type=radio]:checked').length) {
+            $('.details').prev().removeClass('mark');
+            $(this).parents('.details').prev().addClass('mark');
+            $(this).parents('.details').prev().addClass('activeMark');
+        }
+    });
+
     // Якщо курсор наведений на кнопку пошуку, то
     // пришвидшуємо анімацію для показу дії
-    $('input[type=submit]').mouseover(function() {
+    $('#apply').mouseover(function() {
         $(this).css('animation-duration', '1s');
     });
-    $('input[type=submit]').mouseout(function() {
+    $('#apply').mouseout(function() {
         $(this).css('animation-duration', '3s');
     });
 });

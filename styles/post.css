@@ -48,7 +48,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  max-width: 600px;
   padding: 10px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -56,19 +56,23 @@ form {
   background-color: #fff;
   border: 1px solid #ddd;
 }
-form label {
-  display: flex;
-  flex-direction: row;
-  font-weight: normal;
-}
-form label > div {
+form > .formRow {
   display: flex;
   flex-direction: row;
 }
-form label .interaction {
+form > .formRow > div {
+  display: flex;
+  flex-direction: row;
+}
+form > .formRow .interaction {
+  position: relative;
   min-width: 330px;
 }
-form label .interaction .interactionName {
+form > .formRow .interaction label {
+  max-width: 225px;
+  margin: 0;
+}
+form > .formRow .interaction .interactionName {
   display: flex;
   justify-content: flex-end;
   min-width: 100px;
@@ -76,7 +80,7 @@ form label .interaction .interactionName {
   padding-right: 10px;
   font-family: PTSansBold;
 }
-form label .message {
+form > .formRow .message {
   width: 100%;
   margin-left: 5px;
   padding-top: 5px;
@@ -86,7 +90,7 @@ form label .message {
 form #list {
   display: flex;
   flex-direction: row;
-  width: 225px;
+  min-width: 225px;
   height: 50px;
   margin: 5px;
   margin-right: 0;
@@ -110,6 +114,7 @@ form #list li {
   min-height: 40px;
   height: 40px;
   margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 form #list img {
@@ -119,6 +124,7 @@ form #list img {
 form #uploadImg {
   visibility: hidden;
   width: 0;
+  height: 0;
   margin: 0;
   padding: 0;
 }
@@ -144,7 +150,7 @@ form textarea:hover {
 form input,
 form select,
 form textarea {
-  width: 225px;
+  min-width: 225px;
 }
 form input:focus,
 form select:focus,
@@ -158,15 +164,16 @@ form input[type="submit"] {
   color: #ffffff;
   text-align: center;
 }
+form input[type="number"] {
+  min-width: 180px;
+  margin-right: 5px;
+}
 form input[type="range"] {
-  width: 125px;
+  min-width: 125px;
   height: 40px;
   padding: 0;
   opacity: 0;
   cursor: pointer;
-}
-form input[type="checkbox"] {
-  display: none;
 }
 form input.error,
 form select.error {
@@ -177,34 +184,49 @@ form label.error {
   font-weight: normal;
   color: #c55454 !important;
 }
-form .state {
-  position: relative;
-}
-form .stateSvg {
-  position: absolute;
-  left: 8px;
-  top: 10px;
-  display: flex;
-  padding: 5px;
-  width: 125px;
-  height: 30px;
-  border-radius: 3px;
-}
-form .stateSvg img {
-  height: 20px;
-  margin-left: 3px;
-}
 form .auction {
   display: flex;
   align-items: center;
-  margin-left: 5px;
-  width: 50px;
+  margin-left: 15px;
+  min-width: 50px;
   font-size: 12px;
   color: #555;
   cursor: pointer;
 }
+form .auction input[type="checkbox"] {
+  display: none;
+}
 form .auction span {
   margin-bottom: 0px !important;
+}
+form .category {
+  position: absolute;
+  top: 45px;
+  left: -22px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 622px;
+  height: inherit;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  z-index: 5;
+}
+form .category .details {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  padding-left: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+form .category .details label {
+  margin-left: 20px;
+}
+form .category input[type="button"] {
+  min-width: 200px;
 }
 form .automobiles .selectedAutos {
   display: flex;
@@ -266,15 +288,32 @@ form .automobiles #addAuto {
   outline: none;
   border: none;
 }
+form .state {
+  position: relative;
+}
+form .state .stateSvg {
+  display: flex;
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  padding: 5px;
+  width: 125px;
+  height: 30px;
+  border-radius: 3px;
+}
+form .state .stateSvg img {
+  height: 20px;
+  margin-left: 3px;
+}
 @media screen and (max-width: 767px) {
   form {
     width: 100%;
     max-width: 600px;
   }
-  label {
+  form label {
     position: relative;
   }
-  label.error {
+  form label .error {
     position: absolute;
     right: 0;
     top: -10px;
@@ -282,8 +321,5 @@ form .automobiles #addAuto {
     font-size: 12px !important;
     background-color: #fff;
     border-radius: 2px;
-  }
-  label#stateRange-error {
-    position: static !important;
   }
 }

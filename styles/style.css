@@ -215,7 +215,12 @@ form select option {
   background-color: #ffffff;
   color: #2b2d42;
 }
-form input[type="checkbox"] + span {
+form input[type="checkbox"],
+form input[type="radio"] {
+  display: none;
+}
+form input[type="checkbox"] + span,
+form input[type="radio"] + span {
   position: relative;
   display: inline-block;
   width: 13px !important;
@@ -228,11 +233,13 @@ form input[type="checkbox"] + span {
   border: 2px solid #59aed8 !important;
   border-radius: 2px;
 }
-form input[type="checkbox"]:checked + span {
+form input[type="checkbox"]:checked + span,
+form input[type="radio"]:checked + span {
   background-color: #499b42 !important;
   border-color: #499b42 !important;
 }
-form input[type="checkbox"]:checked + span::after {
+form input[type="checkbox"]:checked + span::after,
+form input[type="radio"]:checked + span::after {
   position: absolute;
   content: "";
   left: 2px;
@@ -242,6 +249,13 @@ form input[type="checkbox"]:checked + span::after {
   border: solid #ffffff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+form input[type="radio"] + span {
+  border-radius: 50%;
+}
+form input[type="radio"]:checked + span {
+  width: 3 !important;
+  height: 6 !important;
 }
 footer {
   width: 100%;

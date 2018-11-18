@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/post.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles/filter.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="js/post_validation.js" async></script>
-    <script src="js/filter_actions.js" async></script>
+    <!-- <script src="js/filter_actions.js" async></script> -->
     <script src="js/post_actions.js" async></script>
 </head>
 <body>
@@ -33,17 +34,19 @@
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Продати запчастину на XBolt</h1>
             <form id="formSell" method="GET" action="">
-                <label>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Оберіть фото:</span>
-                        <ul id="list"></ul>
-                        <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
+                        <label>
+                            <ul id="list"></ul>
+                            <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
+                        </label>
                     </div>
                     <div class="message">
                         <span class="advice">Завантажте від 1 до 5 фото</span>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Назва:</span>
                         <input type="text" name="title" placeholder="Фари Ford Mustang" />
@@ -51,8 +54,8 @@
                     <div class="message">
                         <span class="advice">Буде видно у стрічці пошуку</span>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Опис:</span>
                         <textarea rows="5" name="description" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
@@ -60,8 +63,8 @@
                     <div class="message">
                         <span class="advice">"Це найкращий з усіх найкращих підшипник"</span>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Ціна:</span>
                         <input type="number" name="price" min="1" max="9999999" placeholder="500" />
@@ -74,28 +77,336 @@
                     <div class="message">
                         <span class="advice">Ціна вказується не у доларах, євро чи карбованцях, а гривнях</span>
                     </div>
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
-                        <span class="interactionName">Категорія:</span> 
-                        <select name="category">
-                            <optgroup label="Двигун">
-                                <option>Блок</option>
-                                <option>Топливна</option>
-                                <option>Впуск</option>
-                            </optgroup>
-                            <optgroup label="Кузов">
-                                <option>Капот</option>
-                                <option>Двері</option>
-                                <option>Крила</option>
-                            </optgroup>
-                        </select>
+                        <span class="interactionName">Категорія:</span>
+                        <input type="button" id="toggleCategory" value="Вибір" />
+                        <div class="category">
+                            <input type="button" value="Двигун і його системи">
+                            <div id="engineDIV" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Двигун
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Блок
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Головка блока
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Топливна
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Впуск
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Випуск
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Охолодження
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Кронштейн
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Кузов">
+                            <div id="bodyDIV" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Скло
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Бампер
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Капот
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Двері
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Крила
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Дзеркала
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Передня частина
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Електрика">
+                            <div id="electricityDIV" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Блоки керування
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Двигун
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Салон
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Проводка
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Сигналізація
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Трансмісія">
+                            <div id="transmissionDIV" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Коробка передач
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Зчіплення
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Передній міст
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Задній міст
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Інше
+                                </label>
+                            </div>
+                            <input type="button" value="Підвіска">
+                            <div id="suspensionDIV" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Передня підвіска
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Задня підвіска
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    Рульове керування
+                                </label>
+                            </div>
+                            <input type="button" value="Салон">
+                            <div id="saloonDIV" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    111
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    222
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    333
+                                </label>
+                            </div>
+                            <input type="button" value="Отоплення">
+                            <div id="heatingID" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    111
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    222
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    333
+                                </label>
+                            </div>
+                            <input type="button" value="Оптика">
+                            <div id="opticsID" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    111
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    222
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    333
+                                </label>
+                            </div>
+                            <input type="button" value="Гальма">
+                            <div id="breaksID" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    111
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    222
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    333
+                                </label>
+                            </div>
+                            <input type="button" value="Шини">
+                            <div id="tiresID" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    111
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    222
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    333
+                                </label>
+                            </div>
+                            <input type="button" value="Аксесуари">
+                            <div id="accessoriesID" class="details">
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    111
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    222
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="datail" />
+                                    <span></span>
+                                    333
+                                </label>
+                            </div>
+                        </div>
+                        <!-- <div id="overlay"></div> ***************-->
                     </div>
                     <div class="message">
                         <span class="advice">Розділ до якого відноситься запчастина</span>
                     </div>               
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Автомобілі:</span>
                         <div class="automobiles">
@@ -130,8 +441,8 @@
                     <div class="message">
                         <span class="advice">До яких авто підходить деталь</span>
                     </div>  
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Стан:</span>
                         <div class="state">
@@ -148,8 +459,8 @@
                     <div class="message">
                         <span class="advice">Оберіть стан деталі</span>
                     </div>  
-                </label>
-                <label>
+                </div>
+                <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Регіон:</span>
                         <div class="location">
@@ -197,7 +508,7 @@
                     <div class="message">
                         <span class="advice">Місце знаходження</span>
                     </div> 
-                </label>
+                </div>
                 <input type="submit" value="Продати болта" />
             </form>
         </article>

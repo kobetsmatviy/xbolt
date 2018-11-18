@@ -1,4 +1,43 @@
 $(function () {
+    $('.category').css('display', 'none');
+    // Адаптивний вибір категорії
+    AdaptiveCategory();
+    function AdaptiveCategory() {
+        if ($(window).width() > 750) {
+            var rowWidth = $(".category").width();
+            var countItems = Math.floor(rowWidth / (200 + 5));
+            var inputOrder = -1;
+            var detailsOrder = 0;
+
+            // Значення order для кожного input[type=button]
+            $(".category input[type=button]").each(function() {
+                if (($(this).index()/2) % countItems == 0) {
+                    inputOrder += 2;
+                }
+                else {
+                    inputOrder++;
+                }
+                $(this).css("order", inputOrder);
+            });
+            // Значення order для кожного блоку details
+            $(".details").each(function() {
+                if((($(this).index()-1)/2) % countItems == 0) {
+                    detailsOrder += countItems + 1;
+                }
+                $(this).css("order", detailsOrder);
+            });
+            // Ширина блоку details, залежно від кількості елементів у рядку
+            $(".details").width(countItems * 200);
+        }
+        // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
+        else {
+            $(".category").children().each(function() {
+                $(this).css("order", 0);
+            });
+            $(".details").width("100%");
+        }
+    }
+
     //#### Показуємо завантажені файли
     function showFile(e) {
         var files = e.target.files;
@@ -129,10 +168,78 @@ $(function () {
         ChangeState();
     });
 
+    // Якщо select значення змінено, позначаємо mark
+    $('select').change(function () {
+        $(this).addClass('mark');
+        $(this).next().removeClass('disabled').prop('disabled', false);
+        $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
+        $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
+    });
+
+    // // При натисканні поза фільтром приховуємо його **********************
+    // // окрім натискання на фільтр та кнопку відправки
+    // $('.category').on("click", function (e) {
+    //     e.stopPropagation();
+    // });
+    // $('#overlay').on("click", function () {
+    //     $('.category').hide();
+    //     $('#overlay').hide();
+    // });
+
+    // Приховуємо/показуємо блоки з деталями, якщо має active
+    var $toggleDetails = $('input[type="button"]');
+    $toggleDetails.on("click", function () {
+        if ($(this).hasClass('active')) {
+            $(this).next().hide();
+            $toggleDetails.each(function () {
+                $toggleDetails.removeClass('active');
+            });
+            if ($(this).hasClass('activeMark')) {
+                $(this).removeClass('activeMark');
+                $(this).addClass('mark');
+            }
+        }
+        else {
+            $toggleDetails.each(function () {
+                $toggleDetails.removeClass('active');
+            });
+            $('.details').each(function () {
+                $(this).hide();
+            });
+            $(this).addClass('active');
+            $(this).next().show();
+
+            $toggleDetails.each(function () {
+                $toggleDetails.removeClass('activeMark');
+            });
+
+            if ($(this).hasClass('mark')) {
+                $(this).addClass('activeMark');
+            }
+        }
+    });
+
+    // Якщо відмічений хоча б один radio у блоку details, то
+    // змінити значення відповідної кнопки на mark
+    var $radioDetails = $('.details input[type=radio]');
+    $radioDetails.on("click", function () {
+        if ($(this).parents('.details').find('input[type=radio]:checked').length) {
+            $('.details').prev().removeClass('mark');
+            $(this).parents('.details').prev().addClass('mark');
+            $(this).parents('.details').prev().addClass('activeMark');
+        }
+    });
+
     //#### Змінюємо значення стану на установлене, при виведу курсору з елементу 
     $('input[type="range"]').on('mouseout', function() {
         $(this).val(state);
         ChangeState();
+    });
+
+    // Перемикаємо блок з категорією
+    $('#toggleCategory').on('click', function(e) {
+        $('.category').toggle();
+        // $('#overlay').show(); *****************************
     });
 
     // Перевірка існування блоку .auto
