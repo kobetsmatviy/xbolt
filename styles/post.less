@@ -173,9 +173,29 @@ form {
             margin-bottom: 0px !important;
         }
     }
+    .chooseCategory {
+        flex-direction: column;
+
+        .selectedCategory {
+            span {
+                font-size: 10px;
+                line-height: 12px;
+                color: @color_grey_dark;
+
+                &:not(:last-child) {
+                    padding-right: 2px;
+
+                    &::after {
+                        content: " \203A";
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
     .category {
         position: absolute;
-        top: 45px;
+        top: 50px;
         left: -22px;
         display: flex;
         flex-direction: row;
@@ -186,6 +206,8 @@ form {
         background-color: @color_white;
         border: 1px solid #ddd;
         border-radius: 10px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        visibility: hidden;
         z-index: 5;
 
         .details {
@@ -205,18 +227,6 @@ form {
             min-width: 200px; 
         }
     }
-    // #overlay { ***********************
-    //     display: none;
-    //     position: fixed;
-    //     top: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     right: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     .background_color_black(0.4);
-    //     z-index: 3;
-    // }
     .automobiles {
         .selectedAutos {
             display: flex;

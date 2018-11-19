@@ -199,9 +199,24 @@ form .auction input[type="checkbox"] {
 form .auction span {
   margin-bottom: 0px !important;
 }
+form .chooseCategory {
+  flex-direction: column;
+}
+form .chooseCategory .selectedCategory span {
+  font-size: 10px;
+  line-height: 12px;
+  color: #999999;
+}
+form .chooseCategory .selectedCategory span:not(:last-child) {
+  padding-right: 2px;
+}
+form .chooseCategory .selectedCategory span:not(:last-child)::after {
+  content: " \203A";
+  font-size: 10px;
+}
 form .category {
   position: absolute;
-  top: 45px;
+  top: 50px;
   left: -22px;
   display: flex;
   flex-direction: row;
@@ -212,6 +227,8 @@ form .category {
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  visibility: hidden;
   z-index: 5;
 }
 form .category .details {

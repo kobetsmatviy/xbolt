@@ -1,5 +1,4 @@
 $(function () {
-    $('.category').css('display', 'none');
     // Адаптивний вибір категорії
     AdaptiveCategory();
     function AdaptiveCategory() {
@@ -92,10 +91,18 @@ $(function () {
             $('.stateSvg').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
         }
         
+        // Валідація авто блоку
         if (($('.selectedAutos .auto').length == 0) || ($('.selectedAutos .auto').length >= 5)) {
             $('.automobiles select').not('.disabled').addClass('error');
             $('.automobiles select').closest('.interaction').next().find('.advice').remove();
             $('<label class="error">Виберіть вид транспорту, марку та модель</label>').appendTo($('.automobiles select').closest('.interaction').next());
+        }
+
+        // Валідація блоку категорії
+        if (($('.selectedCategory span').length < 2)) {
+            $('#toggleCategory').addClass('error');
+            $('.selectedCategory').closest('.interaction').next().find('.advice').remove();
+            $('<label class="error">Потрібно обрати категорію запчастини</label>').appendTo($('.selectedCategory').closest('.interaction').next());
         }
     });
 
@@ -148,7 +155,6 @@ $(function () {
         $(this).remove();
         CheckAutoExist();
     });
-
     $('.automobiles select').on('change', function() {
         $('.automobiles select').closest('.interaction').next().find('.error').remove();
     });
@@ -176,19 +182,10 @@ $(function () {
         $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
     });
 
-    // // При натисканні поза фільтром приховуємо його **********************
-    // // окрім натискання на фільтр та кнопку відправки
-    // $('.category').on("click", function (e) {
-    //     e.stopPropagation();
-    // });
-    // $('#overlay').on("click", function () {
-    //     $('.category').hide();
-    //     $('#overlay').hide();
-    // });
-
     // Приховуємо/показуємо блоки з деталями, якщо має active
-    var $toggleDetails = $('input[type="button"]');
+    var $toggleDetails = $('.category input[type="button"]');
     $toggleDetails.on("click", function () {
+        // alert(1);
         if ($(this).hasClass('active')) {
             $(this).next().hide();
             $toggleDetails.each(function () {
@@ -217,6 +214,11 @@ $(function () {
                 $(this).addClass('activeMark');
             }
         }
+
+        // Toggle Category
+        // if ($('.category').css('visibility') == 'visible') {
+        //     $('#toggleCategory').addClass('active');
+        // }
     });
 
     // Якщо відмічений хоча б один radio у блоку details, то
@@ -227,7 +229,29 @@ $(function () {
             $('.details').prev().removeClass('mark');
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
+            $('.selectedCategory').html('<span>'+$(this).parents('.details').prev().val()+'</span><span>'+
+                $(this).closest('label').find('b').text()+'</span>').css({
+                    'margin-top': '10px',
+                    'margin-left': '5px'
+                });
+            $('#toggleCategory').val('Змінити').css({
+                'padding': '0',
+                'padding-left': '5px',
+                'height': '20px',
+                'font-size': '12px'
+            });
+            // $('#toggleCategory').removeClass('error');
+            // $('.selectedCategory').closest('.interaction').next().find('.error').remove();
         }
+    });
+
+    // Приховуємо блок з категорією при кліку поза його межами
+    $(document).click(function(event) {
+        if ($(event.target).closest('.category').length) return;
+        else if ($(event.target).closest('#toggleCategory').length) return;
+        $('.category').css('visibility', 'hidden');
+        $('#toggleCategory').removeClass('active');
+        event.stopPropagation();
     });
 
     //#### Змінюємо значення стану на установлене, при виведу курсору з елементу 
@@ -238,8 +262,14 @@ $(function () {
 
     // Перемикаємо блок з категорією
     $('#toggleCategory').on('click', function(e) {
-        $('.category').toggle();
-        // $('#overlay').show(); *****************************
+        if ($('.category').css('visibility') == 'hidden') {
+            $('.category').css('visibility', 'visible');
+            $(this).addClass('active');
+        }
+        else {
+            $('.category').css('visibility', 'hidden');
+            $(this).removeClass('active');
+        }
     });
 
     // Перевірка існування блоку .auto
