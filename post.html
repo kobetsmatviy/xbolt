@@ -65,12 +65,14 @@
                 <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Ціна:</span>
-                        <input type="number" name="price" min="1" max="9999999" placeholder="500" />
-                        <label class="auction">
-                            <input type="checkbox" id="auction">
-                            <span></span>
-                            Торг
-                        </label>
+                        <div class="choosePrice">
+                            <input type="number" name="price" min="1" max="9999999" placeholder="500" />
+                            <label class="auction">
+                                <input type="checkbox" id="auction">
+                                <span></span>
+                                Торг
+                            </label>
+                        </div>
                     </div>
                     <div class="message">
                         <span class="advice">Ціна вказується не у доларах, євро чи карбованцях, а гривнях</span>
@@ -81,324 +83,324 @@
                         <span class="interactionName">Категорія:</span>
                         <div class="chooseCategory">
                             <span class="selectedCategory"></span>
-                            <input type="button" id="toggleCategory" value="Вибір" />
-                        </div>
-                        <div class="category">
-                            <input type="button" value="Двигун і його системи">
-                            <div id="engineDIV" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Двигун</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Блок</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Головка блока</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Топливна</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Впуск</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Випуск</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Охолодження</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Кронштейн</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Інше</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Кузов">
-                            <div id="bodyDIV" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Скло</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Бампер</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Капот</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Двері</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Крила</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Дзеркала</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Передня частина</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Інше</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Електрика">
-                            <div id="electricityDIV" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Блоки керування</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Двигун</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Салон</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Проводка</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Сигналізація</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Інше</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Трансмісія">
-                            <div id="transmissionDIV" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Коробка передач</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Зчіплення</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Передній міст</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Задній міст</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Інше</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Підвіска">
-                            <div id="suspensionDIV" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Передня підвіска</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Задня підвіска</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>Рульове керування</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Салон">
-                            <div id="saloonDIV" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>111</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>222</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>333</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Отоплення">
-                            <div id="heatingID" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>111</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>222</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>333</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Оптика">
-                            <div id="opticsID" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>111</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>222</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>333</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Гальма">
-                            <div id="breaksID" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>111</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>222</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>333</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Шини">
-                            <div id="tiresID" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>111</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>222</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>333</b>
-                                </label>
-                            </div>
-                            <input type="button" value="Аксесуари">
-                            <div id="accessoriesID" class="details">
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>111</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>222</b>
-                                </label>
-
-                                <label>
-                                    <input type="radio" name="detail" />
-                                    <span></span>
-                                    <b>333</b>
-                                </label>
+                            <button id="toggleCategory">Вибір</button>
+                            <div class="category">
+                                <input type="button" value="Двигун і його системи">
+                                <div id="engineDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Двигун</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Блок</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Головка блока</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Топливна</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Впуск</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Випуск</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Охолодження</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Кронштейн</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Кузов">
+                                <div id="bodyDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Скло</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Бампер</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Капот</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Двері</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Крила</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Дзеркала</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Передня частина</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Електрика">
+                                <div id="electricityDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Блоки керування</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Двигун</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Салон</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Проводка</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Сигналізація</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Трансмісія">
+                                <div id="transmissionDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Коробка передач</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Зчіплення</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Передній міст</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Задній міст</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Підвіска">
+                                <div id="suspensionDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Передня підвіска</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Задня підвіска</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Рульове керування</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Салон">
+                                <div id="saloonDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Отоплення">
+                                <div id="heatingID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Оптика">
+                                <div id="opticsID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Гальма">
+                                <div id="breaksID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Шини">
+                                <div id="tiresID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Аксесуари">
+                                <div id="accessoriesID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

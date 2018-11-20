@@ -2,7 +2,7 @@ $(function () {
     // Адаптивний вибір категорії
     AdaptiveCategory();
     function AdaptiveCategory() {
-        if ($(window).width() > 750) {
+        // if ($(window).width() > 750) {
             var rowWidth = $(".category").width();
             var countItems = Math.floor(rowWidth / (200 + 5));
             var inputOrder = -1;
@@ -27,14 +27,14 @@ $(function () {
             });
             // Ширина блоку details, залежно від кількості елементів у рядку
             $(".details").width(countItems * 200);
-        }
-        // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
-        else {
-            $(".category").children().each(function() {
-                $(this).css("order", 0);
-            });
-            $(".details").width("100%");
-        }
+        // }
+        // // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
+        // else {
+        //     $(".category").children().each(function() {
+        //         $(this).css("order", 0);
+        //     });
+        //     $(".details").width("100%");
+        // }
     }
 
     //#### Показуємо завантажені файли
@@ -102,6 +102,7 @@ $(function () {
         if (($('.selectedCategory span').length < 2)) {
             $('#toggleCategory').addClass('error');
             $('.selectedCategory').closest('.interaction').next().find('.advice').remove();
+            $('.selectedCategory').closest('.interaction').next().find('.error').remove();
             $('<label class="error">Потрібно обрати категорію запчастини</label>').appendTo($('.selectedCategory').closest('.interaction').next());
         }
     });
@@ -182,10 +183,14 @@ $(function () {
         $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
     });
 
+    // Відміняємо поведінку button#toggleCategory
+    $('#toggleCategory').on('click', function(e) {
+        e.preventDefault();
+    });
+
     // Приховуємо/показуємо блоки з деталями, якщо має active
     var $toggleDetails = $('.category input[type="button"]');
     $toggleDetails.on("click", function () {
-        // alert(1);
         if ($(this).hasClass('active')) {
             $(this).next().hide();
             $toggleDetails.each(function () {
@@ -214,11 +219,6 @@ $(function () {
                 $(this).addClass('activeMark');
             }
         }
-
-        // Toggle Category
-        // if ($('.category').css('visibility') == 'visible') {
-        //     $('#toggleCategory').addClass('active');
-        // }
     });
 
     // Якщо відмічений хоча б один radio у блоку details, то
@@ -234,14 +234,14 @@ $(function () {
                     'margin-top': '10px',
                     'margin-left': '5px'
                 });
-            $('#toggleCategory').val('Змінити').css({
+            $('#toggleCategory').text('Змінити').css({
                 'padding': '0',
                 'padding-left': '5px',
                 'height': '20px',
                 'font-size': '12px'
             });
-            // $('#toggleCategory').removeClass('error');
-            // $('.selectedCategory').closest('.interaction').next().find('.error').remove();
+            $('#toggleCategory').removeClass('error');
+            $('.selectedCategory').closest('.interaction').next().find('.error').remove();
         }
     });
 
@@ -250,6 +250,7 @@ $(function () {
         if ($(event.target).closest('.category').length) return;
         else if ($(event.target).closest('#toggleCategory').length) return;
         $('.category').css('visibility', 'hidden');
+        $('.category').css('position', 'absolute');
         $('#toggleCategory').removeClass('active');
         event.stopPropagation();
     });
@@ -261,14 +262,21 @@ $(function () {
     });
 
     // Перемикаємо блок з категорією
-    $('#toggleCategory').on('click', function(e) {
+    $('#toggleCategory').on('click', function() {
         if ($('.category').css('visibility') == 'hidden') {
             $('.category').css('visibility', 'visible');
-            $(this).addClass('active');
         }
         else {
             $('.category').css('visibility', 'hidden');
-            $(this).removeClass('active');
+        }
+        
+        if ($(window).width() <= 750) {
+            if ($('.category').css('visibility') == 'hidden') {
+                $('.category').css('position', 'absolute');
+            }
+            else {
+                $('.category').css('position', 'static');
+            }
         }
     });
 

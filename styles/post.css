@@ -147,7 +147,7 @@ form textarea {
 form textarea:hover {
   background-color: #d0d0d0;
 }
-form input,
+form input:not([type="number"]),
 form select,
 form textarea {
   min-width: 225px;
@@ -165,7 +165,7 @@ form input[type="submit"] {
   text-align: center;
 }
 form input[type="number"] {
-  min-width: 180px;
+  width: 180px;
   margin-right: 5px;
 }
 form input[type="range"] {
@@ -176,7 +176,8 @@ form input[type="range"] {
   cursor: pointer;
 }
 form input.error,
-form select.error {
+form select.error,
+form button.error {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
 }
 form label.error {
@@ -184,19 +185,23 @@ form label.error {
   font-weight: normal;
   color: #c55454 !important;
 }
-form .auction {
+form .choosePrice {
+  display: flex;
+  flex-direction: row;
+}
+form .choosePrice .auction {
   display: flex;
   align-items: center;
   margin-left: 15px;
-  min-width: 50px;
+  min-width: 50px !important;
   font-size: 12px;
   color: #555;
   cursor: pointer;
 }
-form .auction input[type="checkbox"] {
+form .choosePrice .auction input[type="checkbox"] {
   display: none;
 }
-form .auction span {
+form .choosePrice .auction span {
   margin-bottom: 0px !important;
 }
 form .chooseCategory {
@@ -214,7 +219,34 @@ form .chooseCategory .selectedCategory span:not(:last-child)::after {
   content: " \203A";
   font-size: 10px;
 }
-form .category {
+form .chooseCategory #toggleCategory {
+  margin: 5px;
+  margin-right: 0;
+  padding: 5px;
+  min-width: 225px;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background-color: #dddddd;
+  background-image: url('../images/arrow.png');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+form .chooseCategory #toggleCategory:hover {
+  background-color: #d0d0d0;
+}
+form .chooseCategory #toggleCategory:focus {
+  box-shadow: 0 0 0 3px #eee;
+}
+form .chooseCategory .category {
   position: absolute;
   top: 50px;
   left: -22px;
@@ -231,7 +263,7 @@ form .category {
   visibility: hidden;
   z-index: 5;
 }
-form .category .details {
+form .chooseCategory .category .details {
   display: none;
   width: 100%;
   padding: 10px;
@@ -239,10 +271,10 @@ form .category .details {
   margin-bottom: 5px;
   margin-left: 5px;
 }
-form .category .details label {
+form .chooseCategory .category .details label {
   margin-left: 20px;
 }
-form .category input[type="button"] {
+form .chooseCategory .category input[type="button"] {
   min-width: 200px;
 }
 form .automobiles .selectedAutos {
@@ -323,20 +355,53 @@ form .state .stateSvg img {
   margin-left: 3px;
 }
 @media screen and (max-width: 767px) {
+  h1 {
+    margin: 10px 0;
+  }
   form {
-    width: 100%;
-    max-width: 600px;
+    max-width: 100%;
+    padding: 10px 20px;
   }
-  form label {
-    position: relative;
+  form .formRow {
+    flex-direction: column;
+    margin-bottom: 10px;
   }
-  form label .error {
-    position: absolute;
-    right: 0;
-    top: -10px;
-    padding: 0 3px;
-    font-size: 12px !important;
-    background-color: #fff;
-    border-radius: 2px;
+  form .formRow .interaction {
+    flex-direction: column;
+  }
+  form .formRow .interaction .interactionName {
+    justify-content: flex-start;
+  }
+  form .formRow .message {
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+  form .interaction > label {
+    min-width: 100%;
+  }
+  form .category {
+    position: none;
+    min-width: 213px !important;
+  }
+  form .category .details {
+    display: flex;
+    flex-direction: column;
+  }
+  form .auction {
+    margin-left: 5px !important;
+  }
+  form input:not([type=button]),
+  form select,
+  form textarea,
+  form #list,
+  form #toggleCategory {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  form select {
+    margin-bottom: 5px !important;
+  }
+  form input[type="range"] {
+    max-width: 135px;
   }
 }
