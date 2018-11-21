@@ -84,7 +84,6 @@ form {
             min-height: 40px;
             height: 40px;
             margin-right: 5px;
-            background-color: rgba(0, 0, 0, .5);
             overflow: hidden;
         }
 
@@ -182,10 +181,16 @@ form {
         flex-direction: column;
 
         .selectedCategory {
+            display: block;
+            margin: 5px;
+            margin-bottom: 0;
+            
             span {
-                font-size: 10px;
-                line-height: 12px;
-                color: @color_grey_dark;
+                padding: 2px;
+                border-radius: 2px;
+                font-size: 12px;
+                background-color: @background_tag;
+                color: @color_tag;
 
                 &:not(:last-child) {
                     padding-right: 2px;
@@ -331,24 +336,9 @@ form {
             border: none;
         }
     }
-    .state {
-        position: relative;
-
-        .stateSvg {
-            display: flex;
-            position: absolute;
-            left: 8px;
-            top: 10px;
-            padding: 5px;
-            width: 125px;
-            height: 30px;
-            border-radius: 3px;
-    
-            img {
-                height: 20px;
-                margin-left: 3px;
-            }
-        }
+    .rateYo {
+        display: block;
+        margin: 10px 0;
     }
 }
 
@@ -368,6 +358,7 @@ form {
             
             .interaction {
                 flex-direction: column;
+                min-width: inherit;
 
                 .interactionName {
                     justify-content: flex-start;
@@ -384,12 +375,10 @@ form {
         }
 
         .category {
-            position: none; //*******
-            // flex-direction: column !important;
+            position: none;
             min-width: 213px !important;
 
             .details {
-                // max-width: 213px;
                 display: flex;
                 flex-direction: column;
             }
@@ -401,6 +390,7 @@ form {
 
         input:not([type=button]), select, textarea, #list, #toggleCategory {
             width: 100% !important;
+            min-width: inherit !important;
             margin: 0 !important;
         }
         select {

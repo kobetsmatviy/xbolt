@@ -114,7 +114,6 @@ form #list li {
   min-height: 40px;
   height: 40px;
   margin-right: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 form #list img {
@@ -207,10 +206,17 @@ form .choosePrice .auction span {
 form .chooseCategory {
   flex-direction: column;
 }
+form .chooseCategory .selectedCategory {
+  display: block;
+  margin: 5px;
+  margin-bottom: 0;
+}
 form .chooseCategory .selectedCategory span {
-  font-size: 10px;
-  line-height: 12px;
-  color: #999999;
+  padding: 2px;
+  border-radius: 2px;
+  font-size: 12px;
+  background-color: #e1ecf4;
+  color: #39739d;
 }
 form .chooseCategory .selectedCategory span:not(:last-child) {
   padding-right: 2px;
@@ -337,22 +343,9 @@ form .automobiles #addAuto {
   outline: none;
   border: none;
 }
-form .state {
-  position: relative;
-}
-form .state .stateSvg {
-  display: flex;
-  position: absolute;
-  left: 8px;
-  top: 10px;
-  padding: 5px;
-  width: 125px;
-  height: 30px;
-  border-radius: 3px;
-}
-form .state .stateSvg img {
-  height: 20px;
-  margin-left: 3px;
+form .rateYo {
+  display: block;
+  margin: 10px 0;
 }
 @media screen and (max-width: 767px) {
   h1 {
@@ -368,6 +361,7 @@ form .state .stateSvg img {
   }
   form .formRow .interaction {
     flex-direction: column;
+    min-width: inherit;
   }
   form .formRow .interaction .interactionName {
     justify-content: flex-start;
@@ -396,6 +390,7 @@ form .state .stateSvg img {
   form #list,
   form #toggleCategory {
     width: 100% !important;
+    min-width: inherit !important;
     margin: 0 !important;
   }
   form select {
