@@ -42,7 +42,7 @@
 body {
   background-color: #eee;
 }
-h1 {
+body h1 {
   margin: 20px 50px;
 }
 form {
@@ -167,16 +167,10 @@ form input[type="number"] {
   width: 180px;
   margin-right: 5px;
 }
-form input[type="range"] {
-  min-width: 125px;
-  height: 40px;
-  padding: 0;
-  opacity: 0;
-  cursor: pointer;
-}
 form input.error,
 form select.error,
-form button.error {
+form button.error,
+form .rateYo.error {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
 }
 form label.error {
@@ -267,7 +261,7 @@ form .chooseCategory .category {
   border-radius: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   visibility: hidden;
-  z-index: 5;
+  z-index: 12;
 }
 form .chooseCategory .category .details {
   display: none;
@@ -333,8 +327,8 @@ form .automobiles .selectedAutos .auto .remove::after {
 }
 form .automobiles #addAuto {
   display: none;
-  margin: auto;
-  margin-top: 5px;
+  margin-top: 2px;
+  margin-left: 5px;
   padding: 2px 4px;
   background-color: #499b42;
   color: #ffffff;
@@ -345,7 +339,10 @@ form .automobiles #addAuto {
 }
 form .rateYo {
   display: block;
-  margin: 10px 0;
+  margin-top: 3px;
+  margin-left: 5px;
+  padding: 3px;
+  border-radius: 2px;
 }
 @media screen and (max-width: 767px) {
   h1 {
@@ -363,26 +360,15 @@ form .rateYo {
     flex-direction: column;
     min-width: inherit;
   }
+  form .formRow .interaction > label {
+    min-width: 100%;
+  }
   form .formRow .interaction .interactionName {
     justify-content: flex-start;
   }
   form .formRow .message {
     justify-content: flex-end;
     padding-top: 0;
-  }
-  form .interaction > label {
-    min-width: 100%;
-  }
-  form .category {
-    position: none;
-    min-width: 213px !important;
-  }
-  form .category .details {
-    display: flex;
-    flex-direction: column;
-  }
-  form .auction {
-    margin-left: 5px !important;
   }
   form input:not([type=button]),
   form select,
@@ -396,7 +382,19 @@ form .rateYo {
   form select {
     margin-bottom: 5px !important;
   }
-  form input[type="range"] {
-    max-width: 135px;
+  form .choosePrice .auction {
+    margin-left: 5px !important;
+  }
+  form .chooseCategory .selectedCategory {
+    margin-bottom: 5px !important;
+  }
+  form .chooseCategory .category {
+    display: flex !important;
+    flex-direction: column !important;
+    position: none;
+    min-width: 213px !important;
+  }
+  form .chooseCategory .category .details {
+    width: 213px !important;
   }
 }

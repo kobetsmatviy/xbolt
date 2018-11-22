@@ -4,10 +4,10 @@
 // Version for a PK
 body {
     background-color: #eee;
-}
 
-h1 {
-    margin: 20px 50px;
+    h1 {
+        margin: 20px 50px;
+    }
 }
 
 form {
@@ -138,15 +138,8 @@ form {
         width: 180px;
         margin-right: 5px;
     }
-    input[type="range"] {
-        min-width: 125px;
-        height: 40px;
-        padding: 0;
-        opacity: 0;
-        cursor: pointer;
-    }
 
-    input.error, select.error, button.error {
+    input.error, select.error, button.error, .rateYo.error {
         box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
     }
     label.error {
@@ -248,7 +241,7 @@ form {
             border-radius: 10px;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
             visibility: hidden;
-            z-index: 5;
+            z-index: 12;
     
             .details {
                 display: none;
@@ -325,8 +318,8 @@ form {
 
         #addAuto {
             display: none;
-            margin: auto;
-            margin-top: 5px;
+            margin-top: 2px;
+            margin-left: 5px;
             padding: 2px 4px;
             background-color: @button_mark;
             color: @color_white;
@@ -338,7 +331,10 @@ form {
     }
     .rateYo {
         display: block;
-        margin: 10px 0;
+        margin-top: 3px;
+        margin-left: 5px;
+        padding: 3px;
+        border-radius: 2px;
     }
 }
 
@@ -360,6 +356,10 @@ form {
                 flex-direction: column;
                 min-width: inherit;
 
+                &> label  {
+                    min-width: 100%;
+                }
+
                 .interactionName {
                     justify-content: flex-start;
                 }
@@ -370,24 +370,6 @@ form {
             }
         }
 
-        .interaction > label  {
-            min-width: 100%;
-        }
-
-        .category {
-            position: none;
-            min-width: 213px !important;
-
-            .details {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-
-        .auction {
-            margin-left: 5px !important;
-        }
-
         input:not([type=button]), select, textarea, #list, #toggleCategory {
             width: 100% !important;
             min-width: inherit !important;
@@ -396,8 +378,24 @@ form {
         select {
             margin-bottom: 5px !important;
         }
-        input[type="range"] {
-            max-width: 135px;
+
+        .choosePrice .auction {
+            margin-left: 5px !important;
+        }
+        .chooseCategory {
+            .selectedCategory {
+                margin-bottom: 5px !important;
+            }
+            .category {
+                display: flex !important;
+                flex-direction: column !important;
+                position: none;
+                min-width: 213px !important;
+                
+                .details {
+                    width: 213px !important;
+                }
+            }
         }
     }
 }
