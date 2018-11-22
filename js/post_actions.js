@@ -64,9 +64,7 @@ $(function () {
     });
 
     //#### КАТЕГОРІЯ перемикаємо стан
-    $('#toggleCategory').on('click', function() {
-        // Відміняємо поведінку button#toggleCategory
-        e.preventDefault();
+    $('#toggleCategory').on('click', function(e) {
         // Перемикач станів
         if ($('.category').css('visibility') == 'hidden') {
             $('.category').css('visibility', 'visible');
@@ -83,6 +81,8 @@ $(function () {
                 $('.category').css('position', 'static');
             }
         }
+        // Відміняємо поведінку button#toggleCategory
+        e.preventDefault();
     });
     // Приховуємо/показуємо блоки з деталями, якщо має active
     var $toggleDetails = $('.category input[type="button"]');
