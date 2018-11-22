@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Once</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="js/once_validation.js" async></script>
+</head>
+<body>
+    <header>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            <a href="public/index.html">
+                <img src="images/logo.png" alt="XBOLT" />
+            </a>
+            
+            <div class="leaderLinks">
+                <a href="">
+                    <img src="images/profile.png" />
+                    <span>Профіль</span>
+                </a>
+            </div>
+        </article>
+    </header>
+    <a href="catalog.html"><span id="back">&lsaquo; Назад</span></a>
+    <main class="clearfix">
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            <h1>Разове оголошення / <a href="post.html">Продати запчастину на XBolt</a></h1>
+            <form id="formOnce" method="GET" action="">
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Ім'я Прізвище:</span>
+                        <input type="text" name="first_name" minlength="2"  placeholder="Семен Болт" />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Зателефонувавши до вас мають звернутися</span>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Номер:</span>
+                        <input type="tel" placeholder="+38 (097) 46-94-162" />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Контактний номер для зв'язку</span>
+                    </div>
+                </div>
+                <input type="submit" value="Гаразд" />
+            </form>
+        </article>
+    </main>
+    <footer>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            ПІДВАЛ - XBOLT &copy;2018
+        </article>
+    </footer>
+</body>
+</html>

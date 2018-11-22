@@ -226,7 +226,7 @@ $(function () {
         $(this).css('box-shadow', 'none');
     });
 
-
+    
     //++++ Якщо select значення змінено, позначаємо mark
     $('select').change(function () {
         $(this).addClass('mark');

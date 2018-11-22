@@ -1,5 +1,5 @@
 $(function () {
-    $("#formSell").validate({
+    $("#formPost").validate({
         rules: {
             'photos[]': {
                 required: true
