@@ -164,16 +164,11 @@ main article {
   background-color: #e3e3e3;
   z-index: 1;
 }
-.partCard .description .secondary .state img {
-  padding-right: 3px;
+.partCard .description .secondary .state .rateYo {
+  width: 100px;
+  height: 15px;
   background-color: #ffffff;
-  z-index: 2;
-}
-.partCard .description .secondary .state img:first-child {
-  padding-left: 10px;
-}
-.partCard .description .secondary .state img:last-child {
-  padding-right: 10px;
+  z-index: 1;
 }
 .partCard .description .secondary .automobiles {
   margin: 5px 0;

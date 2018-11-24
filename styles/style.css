@@ -269,6 +269,10 @@ footer article {
   justify-content: center;
   align-items: center;
 }
+.rateYo {
+  display: flex;
+  margin: auto 0;
+}
 @media (max-width: 767px) {
   header article a span {
     display: none;
