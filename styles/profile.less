@@ -22,14 +22,18 @@ main {
             min-width: 200px;
             margin-top: 15px;
             
-            #photo {
+            #review {
                 display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
                 width: 150px;
-                height: 150px;
+                height: 180px;
                 margin: 0 auto;
                 
                 img {
                     width: 150px;
+                    border-radius: 50%;
                 }
             }
             
@@ -38,22 +42,29 @@ main {
                 margin-top: 10px;
                 list-style: none;
     
-                li {
-                    width: 100%;
-                    padding: 5px 10px;
-                    margin-bottom: 2px;
-                    background-color: @color_grey_light;
+                a {
+                    font-family: PTSansRegular;
                     color: @color_tag;
-                    border-radius: 3px;
-                    cursor: pointer;
-    
-                    &:hover {
-                        background-color: darken(@background_tag, 3%);
-                    }
 
-                    span {
-                        margin-right: 10px;
+                    li {
+                        width: 100%;
+                        padding: 5px 10px;
+                        margin-bottom: 2px;
+                        background-color: @color_grey_light;
+                        border-radius: 3px;
+                        cursor: pointer;
+        
+                        &:hover {
+                            background-color: darken(@background_tag, 3%);
+                        }
+    
+                        span {
+                            margin-right: 10px;
+                        }
                     }
+                }
+                .openly {
+                    font-family: PTSansBold;
                 }
             }
         }
@@ -78,7 +89,7 @@ main {
                         margin-top: 5px;
 
                         h3 {
-                            font-size: 14px;
+                            font-size: 13px;
                         }
                     }
                     
@@ -120,6 +131,27 @@ main {
                                 background-image: url('@{path_img}comments.svg');
                             }
                         }
+                    }
+                }
+
+                .glyphicon-wrench {
+                    position: absolute;
+                    top: -5px;
+                    right: 20px;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    padding: 5px;
+                    background-color: @color_grey_dark;
+                    color: @color_white;
+                    border-radius: 50%;
+                    font-size: 10px;
+                    transition: background-color .2s ease-in-out;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background-color: @button_mark;
+                        transition: background-color .2s ease-in-out;
                     }
                 }
 
@@ -168,29 +200,29 @@ main {
 @media screen and (max-width: 767px) {
     main {
         article {
-            flex-direction: column !important;
+            flex-direction: column;
 
             #menu {
-                flex-direction: row !important;
-                justify-content: space-between !important;
+                flex-direction: row;
+                justify-content: space-between;
 
-                #photo {
-                    margin-left: 20px !important;
-                    min-width: 100px !important;
-                    height: 100px !important;
+                #review {
+                    margin-left: 20px;
+                    min-width: 120px;
+                    height: 100px;
 
                     img {
-                        min-width: 100px !important;
-                        height: 100px !important;
+                        width: 75px;
+                        height: 75px;
                     }
                 }
 
                 ul {
-                    align-self: center !important;
-                    min-width: 135px !important;
-                    width: 100% !important;
-                    max-width: 200px !important;
-                    margin: 0 15px !important;
+                    align-self: center;
+                    min-width: 135px;
+                    width: 100%;
+                    max-width: 200px;
+                    margin: 0 15px;
                 }
             }
         }
