@@ -50,10 +50,39 @@ main article {
 }
 main article #menu {
   display: flex;
-  margin-top: 15px;
+  flex-direction: column;
+  height: 100%;
   min-width: 200px;
-  height: 300px;
-  background-color: #aaa;
+  margin-top: 15px;
+}
+main article #menu #photo {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+main article #menu #photo img {
+  width: 150px;
+}
+main article #menu ul {
+  padding: 0;
+  margin-top: 10px;
+  list-style: none;
+}
+main article #menu ul li {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+  background-color: #eeeeee;
+  color: #39739d;
+  border-radius: 3px;
+  cursor: pointer;
+}
+main article #menu ul li:hover {
+  background-color: #d6e5f0;
+}
+main article #menu ul li span {
+  margin-right: 10px;
 }
 main article #posts {
   display: flex;
@@ -62,12 +91,105 @@ main article #posts {
   width: 100%;
 }
 main article #posts .partCard {
-  width: 200px !important;
-  max-height: 250px;
+  position: relative;
+  width: 150px !important;
+  max-height: 180px;
 }
 main article #posts .partCard .photo {
-  height: 140px;
+  height: 100px;
 }
 main article #posts .partCard .content .description .primary .title {
   margin-top: 5px;
+}
+main article #posts .partCard .content .description .primary .title h3 {
+  font-size: 14px;
+}
+main article #posts .partCard .content .statistic {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+main article #posts .partCard .content .statistic span {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: 40px;
+  position: relative;
+}
+main article #posts .partCard .content .statistic span::before {
+  content: " ";
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 18px;
+  position: absolute;
+  left: -23px;
+}
+main article #posts .partCard .content .statistic span:first-child {
+  margin-left: 15px;
+}
+main article #posts .partCard .content .statistic .views::before {
+  background-image: url('../images/views.svg');
+}
+main article #posts .partCard .content .statistic .comments::before {
+  background-image: url('../images/comments.svg');
+}
+main article #posts .partCard .withdraw {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  background-color: #333333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+main article #posts .partCard .withdraw:hover {
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
+main article #posts .partCard .withdraw::after,
+main article #posts .partCard .withdraw::before {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  content: "";
+  height: 10px;
+  width: 3px;
+  background-color: #ffffff;
+}
+main article #posts .partCard .withdraw::before {
+  transform: rotate(45deg);
+}
+main article #posts .partCard .withdraw::after {
+  transform: rotate(-45deg);
+}
+@media screen and (max-width: 767px) {
+  main article {
+    flex-direction: column !important;
+  }
+  main article #menu {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  main article #menu #photo {
+    margin-left: 20px !important;
+    min-width: 100px !important;
+    height: 100px !important;
+  }
+  main article #menu #photo img {
+    min-width: 100px !important;
+    height: 100px !important;
+  }
+  main article #menu ul {
+    align-self: center !important;
+    min-width: 135px !important;
+    width: 100% !important;
+    max-width: 200px !important;
+    margin: 0 15px !important;
+  }
 }

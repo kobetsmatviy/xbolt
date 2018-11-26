@@ -13,13 +13,49 @@ main {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        width: 100%;        
+        width: 100%;   
+
         #menu {
             display: flex;
-            margin-top: 15px;
+            flex-direction: column;
+            height: 100%;
             min-width: 200px;
-            height: 300px;
-            background-color: #aaa;
+            margin-top: 15px;
+            
+            #photo {
+                display: flex;
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+                
+                img {
+                    width: 150px;
+                }
+            }
+            
+            ul {
+                padding: 0;
+                margin-top: 10px;
+                list-style: none;
+    
+                li {
+                    width: 100%;
+                    padding: 5px 10px;
+                    margin-bottom: 2px;
+                    background-color: @color_grey_light;
+                    color: @color_tag;
+                    border-radius: 3px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background-color: darken(@background_tag, 3%);
+                    }
+
+                    span {
+                        margin-right: 10px;
+                    }
+                }
+            }
         }
         
         #posts {
@@ -29,16 +65,98 @@ main {
             width: 100%;
 
             .partCard {
-                width: 200px !important;
-                max-height: 250px;
+                position: relative;
+                width: 150px !important;
+                max-height: 180px;
 
                 .photo {
-                    height: 140px;
+                    height: 100px;
                 }
 
-                .content .description {
-                    .primary .title {
+                .content {
+                    .description .primary .title {
                         margin-top: 5px;
+
+                        h3 {
+                            font-size: 14px;
+                        }
+                    }
+                    
+                    .statistic {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        
+                        span {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: nowrap;
+                            margin-left: 40px;
+                            position: relative;
+
+                            &::before {
+                                content: " ";
+                                width: 18px;
+                                height: 18px;
+                                background-repeat: no-repeat;
+                                background-position: 50%;
+                                background-size: 18px;
+                                position: absolute;
+                                left: -23px;
+                            }
+
+                            &:first-child {
+                                margin-left: 15px;
+                            }
+                        }
+
+                        .views {
+                            &::before {
+                                background-image: url('@{path_img}views.svg');
+                            }
+                        }
+                        .comments {
+                            &::before {
+                                background-image: url('@{path_img}comments.svg');
+                            }
+                        }
+                    }
+                }
+
+                .withdraw {
+                    position: absolute;
+                    top: -5px;
+                    right: -5px;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    padding: 5px;
+                    background-color: @color_select;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        transform: rotate(360deg);
+                        transition: transform 1s;
+                    }
+    
+                    &::after, &::before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: 8px;
+                        content: "";
+                        height: 10px;
+                        width: 3px;
+                        background-color: @color_white;
+                    }
+    
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+    
+                    &::after {
+                        transform: rotate(-45deg);
                     }
                 }
             }
@@ -48,4 +166,33 @@ main {
 
 // Version for a smartphone
 @media screen and (max-width: 767px) {
+    main {
+        article {
+            flex-direction: column !important;
+
+            #menu {
+                flex-direction: row !important;
+                justify-content: space-between !important;
+
+                #photo {
+                    margin-left: 20px !important;
+                    min-width: 100px !important;
+                    height: 100px !important;
+
+                    img {
+                        min-width: 100px !important;
+                        height: 100px !important;
+                    }
+                }
+
+                ul {
+                    align-self: center !important;
+                    min-width: 135px !important;
+                    width: 100% !important;
+                    max-width: 200px !important;
+                    margin: 0 15px !important;
+                }
+            }
+        }
+    }
 }

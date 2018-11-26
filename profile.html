@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="js/adaptive_cards.js" async></script> -->
     <script src="js/filter_actions.js" async></script>
     <script src="libraries/jquery.rateyo.min.js" async></script>
 </head>
@@ -27,6 +26,10 @@
                 <a href="authorization.html">
                     <img src="images/give_bolt.png" />
                     <span>Продати</span>
+                </a>
+                <a href="">
+                    <img src="images/notify-active.png" />
+                    <span>Сповіщення</span>
                 </a>
                 <a href="profile.html">
                     <img src="images/user.svg" />
@@ -471,7 +474,14 @@
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <div id="menu">
-
+                <div id="photo">
+                    <img src="images/user.svg" />
+                </div>
+                <ul>
+                    <li><span class="glyphicon glyphicon-user"></span>Профіль</li>
+                    <li><span class="glyphicon glyphicon-send"></span>Коментарі</li>
+                    <li><span class="glyphicon glyphicon-wrench"></span>Налаштування</li>
+                </ul>
             </div>
             <div id="posts">
                 <section class="partCard" itemscope itemtype="https://schema.org/Car">
@@ -494,17 +504,13 @@
                                     5999 <sup>грн</sup>
                                 </span>
                             </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="4.5"></div>
-                                </div>
-                            </div>
                         </aside>
                         <aside class="statistic">
                             <span class="views">120</span>
                             <span class="comments">5</span>
                         </aside>
                     </div>
+                    <span class="withdraw"></span>
                 </section>
                 <section class="partCard">
                     <a href="part.html">
@@ -516,7 +522,6 @@
                         <aside class="description">
                             <div class="primary">
                                 <div class="title">
-                                    <span class="triangle"></span>
                                     <a href="part.html">
                                         <h3>
                                             Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
@@ -527,13 +532,153 @@
                                     9600 <sup>грн</sup>
                                 </span>
                             </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="5"></div>
-                                </div>
-                            </div>
+                        </aside>
+                        <aside class="statistic">
+                            <span class="views">97</span>
+                            <span class="comments">8</span>
                         </aside>
                     </div>
+                    <span class="withdraw"></span>
+                </section>
+                <section class="partCard">
+                    <a href="part.html">
+                        <div class="photo">
+                            <img src="images/minimals/3.jpg" />
+                        </div>
+                    </a>
+                    <div class="content">
+                        <aside class="description">
+                            <div class="primary">
+                                <div class="title">
+                                    <a href="part.html">
+                                        <h3>
+                                            ТУРБИНА VW PASSAT B3 B4 GOLF VENTO AUDI 80 SEAT
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    90 <sup>грн</sup>
+                                </span>
+                            </div>
+                        </aside>
+                        <aside class="statistic">
+                            <span class="views">15</span>
+                            <span class="comments">1</span>
+                        </aside>
+                    </div>
+                    <span class="withdraw"></span>
+                </section>
+                <section class="partCard">
+                    <a href="part.html">
+                        <div class="photo">
+                            <img src="images/minimals/5.jpg" />
+                        </div>
+                    </a>
+                    <div class="content">
+                        <aside class="description">
+                            <div class="primary">
+                                <div class="title">
+                                    <a href="part.html">
+                                        <h3>
+                                            Годовка блока ГБЦ Фиат Дукато 
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    6400 <sup>грн</sup>
+                                </span>
+                            </div>
+                        </aside>
+                        <aside class="statistic">
+                            <span class="views">93</span>
+                            <span class="comments">2</span>
+                        </aside>
+                    </div>
+                    <span class="withdraw"></span>
+                </section>
+                <section class="partCard">
+                    <a href="part.html">
+                        <div class="photo">
+                            <img src="images/minimals/4.jpg" />
+                        </div>
+                    </a>
+                    <div class="content">
+                        <aside class="description">
+                            <div class="primary">
+                                <div class="title">
+                                    <a href="part.html">
+                                        <h3>
+                                            ФАРИ MUSTANG FORD 2015 
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    12050 <sup>грн</sup>
+                                </span>
+                            </div>
+                        </aside>
+                        <aside class="statistic">
+                            <span class="views">205</span>
+                            <span class="comments">11</span>
+                        </aside>
+                    </div>
+                    <span class="withdraw"></span>
+                </section>
+                <section class="partCard">
+                    <a href="part.html">
+                        <div class="photo">
+                            <img src="images/minimals/6.jpg" />
+                        </div>
+                    </a>
+                    <div class="content">
+                        <aside class="description">
+                            <div class="primary">
+                                <div class="title">
+                                    <a href="part.html">
+                                        <h3>
+                                            Фольксваген Кадді заглушки в бампер 
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    270 <sup>грн</sup>
+                                </span>
+                            </div>
+                        </aside>
+                        <aside class="statistic">
+                            <span class="views">305</span>
+                            <span class="comments">4</span>
+                        </aside>
+                    </div>
+                    <span class="withdraw"></span>
+                </section>
+                <section class="partCard">
+                    <a href="part.html">
+                        <div class="photo">
+                            <img src="images/minimals/7.jpg" />
+                        </div>
+                    </a>
+                    <div class="content">
+                        <aside class="description">
+                            <div class="primary">
+                                <div class="title">
+                                    <a href="part.html">
+                                        <h3>
+                                            Двигатель рено кенго K9K 
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    4900 <sup>грн</sup>
+                                </span>
+                            </div>
+                        </aside>
+                        <aside class="statistic">
+                            <span class="views">109</span>
+                            <span class="comments">0</span>
+                        </aside>
+                    </div>
+                    <span class="withdraw"></span>
                 </section>
             </div>
         </article>
@@ -553,7 +698,7 @@
 
             function AdaptiveCards() {
                 var rowWidth = $("main #posts").width();
-                var countItems = Math.floor(rowWidth / 200);
+                var countItems = Math.floor(rowWidth / 150);
                 var itemWidth = Math.floor(rowWidth / countItems) - 15;
 
                 $(".partCard").css('max-width', itemWidth);

@@ -197,20 +197,20 @@ main .description .brief .person time {
 main .description .brief .person time::before {
   background-image: url('../images/clock.svg');
 }
-main .description .brief .act {
+main .description .brief .statistic {
   justify-content: flex-end;
 }
-main .description .brief .act .act > * {
+main .description .brief .statistic .statistic > * {
   margin-left: 0;
   margin-right: 40px;
 }
-main .description .brief .act .views::before {
+main .description .brief .statistic .views::before {
   background-image: url('../images/views.svg');
 }
-main .description .brief .act .comments::before {
+main .description .brief .statistic .comments::before {
   background-image: url('../images/comments.svg');
 }
-main .description .brief .act .share::before {
+main .description .brief .statistic .share::before {
   background-image: url('../images/share.svg');
   background-size: 16px;
 }

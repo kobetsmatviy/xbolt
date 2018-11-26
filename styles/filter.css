@@ -272,14 +272,13 @@ form .filterType .filterCategory {
     flex-direction: column;
   }
   #filter form select,
-  #filter form input:not('#apply') {
+  #filter form input:not([type=submit]) {
     width: 100%;
-    max-width: 100%;
     margin: 5px;
     margin-top: 0;
   }
   #filter form select:first-child,
-  #filter form input:not('#apply'):first-child {
+  #filter form input:not([type=submit]):first-child {
     margin-top: 5px;
   }
   #filter .filterType {
@@ -306,7 +305,9 @@ form .filterType .filterCategory {
     cursor: pointer;
   }
   #filter .filterType .filterCategory {
+    flex-direction: column !important;
     margin: 0 !important;
+    padding-right: 10px !important;
   }
   #filter .filterType .filterCategory .details {
     margin-right: 5px;
@@ -317,7 +318,7 @@ form .filterType .filterCategory {
     flex-direction: row;
     align-items: center;
   }
-  input[type="submit"] {
+  #apply {
     position: fixed !important;
     top: 45% !important;
     left: 10% !important;

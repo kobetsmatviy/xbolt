@@ -254,9 +254,8 @@ form {
             align-items: flex-end;
             flex-direction: column;
     
-            select, input:not('#apply') {
+            select, input:not([type=submit]) {
                 width: 100%;
-                max-width: 100%;
                 margin: 5px;
                 margin-top: 0;
 
@@ -291,7 +290,10 @@ form {
                 }
             }
             .filterCategory {
+                flex-direction: column !important;
                 margin: 0 !important;
+                padding-right: 10px !important;
+
                 .details {
                     margin-right: 5px;
                     border: none;
@@ -305,7 +307,7 @@ form {
         }
     }
 
-    input[type="submit"] {
+    #apply {
         position: fixed !important;
         top: 45% !important;
         left: 10% !important;
