@@ -79,6 +79,7 @@ form > .formRow .interaction .interactionName {
   padding-top: 5px;
   padding-right: 10px;
   font-family: PTSansBold;
+  text-align: right;
 }
 form > .formRow .message {
   width: 100%;

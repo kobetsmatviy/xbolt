@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Catalog</title>
+    <title>Семен Болт</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/filter.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/filter_actions.js" async></script>
-    <script src="libraries/jquery.rateyo.min.js" async></script>
+    <script src="js/profile_actions.js" async></script>
 </head>
 <body>
     <header>
@@ -481,7 +481,7 @@
                 <ul>
                     <a href="profile.html" class="openly"><li><span class="glyphicon glyphicon-user"></span>Профіль</li></a>
                     <a href=""><li><span class="glyphicon glyphicon-send"></span>Коментарі</li></a>
-                    <a href=""><li><span class="glyphicon glyphicon-wrench"></span>Налаштування</li></a>
+                    <a href="settings.html"><li><span class="glyphicon glyphicon-wrench"></span>Налаштування</li></a>
                 </ul>
             </div>
             <div id="posts">
@@ -696,22 +696,5 @@
             ПІДВАЛ - XBOLT &copy;2018
         </article>
     </footer>
-
-    <script>
-        $(document).ready(function(){
-            AdaptiveCards();
-            $( window ).resize(function() {
-                AdaptiveCards();
-            });
-
-            function AdaptiveCards() {
-                var rowWidth = $("main #posts").width();
-                var countItems = Math.floor(rowWidth / 150);
-                var itemWidth = Math.floor(rowWidth / countItems) - 15;
-
-                $(".partCard").css('max-width', itemWidth);
-            }
-        });
-    </script>
 </body>
 </html>
