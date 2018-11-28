@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/form.css">
-    <link rel="stylesheet" type="text/css" href="styles/post.css">
-    <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/settings.css">
+    <link rel="stylesheet" type="text/css" href="libraries/croppie.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="js/post_validation.js" async></script>
-    <script src="js/post_actions.js" async></script>
+    <script src="js/settings_actions.js" async></script>
+    <script src="libraries/croppie.min.js" async></script>
 </head>
 <body>
     <header>
@@ -38,9 +38,11 @@
                     <div class="interaction">
                         <span class="interactionName">Оберіть фото:</span>
                         <label>
-                            <ul id="list"></ul>
-                            <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" />
+                            <div id="readyPhoto"></div>
+                            <input type="file" accept="image/*" id="uploadPhoto" name="photo" value="Фотографії" />
                         </label>
+                        <div id="photoCrop"></div>
+                        <span id="getPhoto">Get Photo</span>
                     </div>
                     <div class="message">
                         <span class="advice">Вас будуть впізнавати по фото чи логотипі</span>
@@ -133,7 +135,7 @@
                 </div>
                 <div class="formRow">
                     <div class="interaction">
-                        <span class="interactionName">Змінити пароль:</span>
+                        <span class="interactionName">Пароль:</span>
                         <input type="password" name="password" autocomplete="off" placeholder="******" />
                     </div>
                     <div class="message">
@@ -142,7 +144,7 @@
                 </div>
                 <div class="formRow">
                     <div class="interaction">
-                        <span class="interactionName"></span>
+                        <span class="interactionName">Новий пароль</span>
                         <input type="password" name="newPassword" autocomplete="off" placeholder="******" />
                     </div>
                     <div class="message">
