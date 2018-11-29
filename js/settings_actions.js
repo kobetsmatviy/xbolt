@@ -1,25 +1,5 @@
 $(function () {
-    //#### Показуємо завантажені файли
-    // function showFile(e) {
-    //     var files = e.target.files;
-    //     for (var i = 0, f; f = files[i]; i++) {
-    //         if (!f.type.match('image.*')) continue;
-    //         var fr = new FileReader();
-    //         fr.onload = (function(theFile) {
-    //             return function(e) {
-    //                 var ph = document.getElementById('photoCrop');
-    //                 ph.innerHTML = "<img src='" + e.target.result + "' />";
-    //                 ph.style.backgroundImage = 'none';
-    //             };
-    //         })(f);
-        
-    //         fr.readAsDataURL(f);
-    //     }
-    // }
-    // document.getElementById('uploadPhoto').addEventListener('change', showFile, false);
-
-    var $uploadCrop = $('#photoCrop');
-    
+    var $uploadCrop = $('#photoCrop');    
     function readFile(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();          
@@ -27,8 +7,7 @@ $(function () {
                 $uploadCrop.croppie('bind', {
                     url: e.target.result
                 });
-                $uploadCrop.addClass('ready');
-                $uploadCrop.show();
+                $('.crop').css('display', 'flex');
             }           
             reader.readAsDataURL(input.files[0]);
         }

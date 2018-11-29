@@ -11,7 +11,7 @@ form {
         align-items: center;
         width: 100px;
         height: 100px;
-        margin: 5px;
+        margin: 0 auto;
         padding: 0;
         background-color: #ddd;
         background-image: url('../images/camera.png');
@@ -22,11 +22,6 @@ form {
         list-style: none;
         overflow: hidden;
         cursor: pointer;
-        
-        img {
-            width: 100px;
-            height: 100px;
-        }
     }
     
     #uploadPhoto {
@@ -37,27 +32,44 @@ form {
         padding: 0;
     }
     
-    #photoCrop {
-        display: none;
+    .crop {
+        // display: none;
+        flex-direction: column;
         position: absolute;
         top: 115px;
         left: 100px;
-        width: 300px;
-        height: 300px;
-        background-color: #ddd;
-        overflow: hidden;
-        z-index: 2;
-    }
-
-    #getPhoto {
-        position: absolute;
-        top: 50px;
-        width: 100px;
-        background-color: #499B42;
-        color: #fff;
-        padding: 5px;
+        width: 322px;
+        height: 355px;
+        padding: 10px;
+        background-color: #FFF;
+        border: 1px solid #ddd;
         border-radius: 5px;
-        cursor: pointer;
+        z-index: 3;
+
+        #photoCrop {
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cropButtons {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-top: 5px;
+
+            #getPhoto {
+                display: flex;
+                justify-items: flex-end;
+                background-color: #499B42;
+                color: #fff;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
     }
 }
 
