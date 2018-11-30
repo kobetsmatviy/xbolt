@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="js/settings_actions.js" async></script>
+    <script src="js/registration_validation.js" async></script>
     <script src="libraries/croppie.min.js" async></script>
 </head>
 <body>
@@ -33,7 +34,7 @@
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Налаштування профілю</h1>
-            <form id="formPost" method="GET" action="">
+            <form id="formSettings" method="GET" action="">
                 <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Оберіть фото:</span>
@@ -48,9 +49,19 @@
                                 <span id="getPhoto">Підтвердити</span>
                             </div>
                         </div>
+                        <div id="overlay"></div>
                     </div>
                     <div class="message">
                         <span class="advice">Вас будуть впізнавати по фото чи логотипі</span>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Номер:</span>
+                        <input type="tel" name="telephone" autocomplete="tel" placeholder="+38 (097) 46-94-162" />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Контактний номер для зв'язку</span>
                     </div>
                 </div>
                 <div class="formRow">
@@ -140,6 +151,12 @@
                 </div>
                 <div class="formRow">
                     <div class="interaction">
+                        <span class="interactionName"></span>
+                        <button id="showPswdBlock">Змінити пароль</button>
+                    </div>
+                </div>
+                <div class="formRow hidePassword">
+                    <div class="interaction">
                         <span class="interactionName">Пароль:</span>
                         <input type="password" name="password" autocomplete="off" placeholder="******" />
                     </div>
@@ -147,9 +164,9 @@
                         <span class="advice">Працюючий пароль від акаунту</span>
                     </div>
                 </div>
-                <div class="formRow">
+                <div class="formRow hidePassword">
                     <div class="interaction">
-                        <span class="interactionName">Новий пароль</span>
+                        <span class="interactionName">Новий пароль:</span>
                         <input type="password" name="newPassword" autocomplete="off" placeholder="******" />
                     </div>
                     <div class="message">

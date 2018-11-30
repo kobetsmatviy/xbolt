@@ -8,6 +8,7 @@ $(function () {
                     url: e.target.result
                 });
                 $('.crop').css('display', 'flex');
+                $('#overlay').css('display', 'block');
             }           
             reader.readAsDataURL(input.files[0]);
         }
@@ -34,7 +35,23 @@ $(function () {
             $('#readyPhoto').css('background-size', 'cover');
             $('#readyPhoto').css('background-image', 'url('+resp+')');
         });
+
+        $('.crop').css('display', 'none');
+        $('#overlay').css('display', 'none');
+
+        resetInputFile();
     });
+    $('#cancelCrop, #overlay').on('click', function() {
+        $('.crop').css('display', 'none');
+        $('#overlay').css('display', 'none');
+        resetInputFile();
+    });
+
+    function resetInputFile() {
+        var $el = $('#uploadPhoto');
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+    }
 
     //#### АВТОМОБІЛЬ :selected, зберігаємо його
     $('select[name="model"]').change(function() {        
@@ -85,6 +102,13 @@ $(function () {
             return false;
         }
     }
+
+    //#### Показуємо блок зі зміною пароля
+    $('#showPswdBlock').on('click', function(e) {
+        $('.hidePassword').css('display', 'flex');
+        $(this).hide();
+        e.preventDefault();
+    });
     
     //++++ Якщо select значення змінено, позначаємо mark
     $('select').change(function () {

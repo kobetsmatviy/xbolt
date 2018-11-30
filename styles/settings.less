@@ -33,18 +33,18 @@ form {
     }
     
     .crop {
-        // display: none;
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 115px;
-        left: 100px;
+        top: 105px;
+        left: 50px;
         width: 322px;
         height: 355px;
         padding: 10px;
         background-color: #FFF;
         border: 1px solid #ddd;
         border-radius: 5px;
-        z-index: 3;
+        z-index: 4;
 
         #photoCrop {
             width: 300px;
@@ -60,6 +60,14 @@ form {
             justify-content: flex-end;
             margin-top: 5px;
 
+            #cancelCrop {
+                margin-top: 5px;
+                margin-right: 10px;
+                color: @color_red;
+                font-size: 12px;
+                cursor: pointer;
+            }
+
             #getPhoto {
                 display: flex;
                 justify-items: flex-end;
@@ -71,9 +79,33 @@ form {
             }
         }
     }
+
+    #overlay {
+        display: none;
+    }
+
+    #showPswdBlock {
+        margin-top: 2px;
+        margin-left: 5px;
+        padding: 2px 4px;
+        background-color: @button_active;
+        color: @color_white;
+        border-radius: 3px;
+        font-size: 12px;
+        outline: none;
+        border: none;
+    }
+    .hidePassword {
+        display: none;
+    }
 }
 
 // Version for a smartphone
 @media screen and (max-width: 767px) {
-    
+    .crop {
+        position: absolute;
+        top: 130px !important;
+        left: 50% !important;
+        margin-left: -162px !important;
+    }
 }

@@ -66,17 +66,18 @@ form #uploadPhoto {
   padding: 0;
 }
 form .crop {
+  display: none;
   flex-direction: column;
   position: absolute;
-  top: 115px;
-  left: 100px;
+  top: 105px;
+  left: 50px;
   width: 322px;
   height: 355px;
   padding: 10px;
   background-color: #FFF;
   border: 1px solid #ddd;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 4;
 }
 form .crop #photoCrop {
   width: 300px;
@@ -91,6 +92,13 @@ form .crop .cropButtons {
   justify-content: flex-end;
   margin-top: 5px;
 }
+form .crop .cropButtons #cancelCrop {
+  margin-top: 5px;
+  margin-right: 10px;
+  color: #d10024;
+  font-size: 12px;
+  cursor: pointer;
+}
 form .crop .cropButtons #getPhoto {
   display: flex;
   justify-items: flex-end;
@@ -99,4 +107,29 @@ form .crop .cropButtons #getPhoto {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+}
+form #overlay {
+  display: none;
+}
+form #showPswdBlock {
+  margin-top: 2px;
+  margin-left: 5px;
+  padding: 2px 4px;
+  background-color: #59aed8;
+  color: #ffffff;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+  border: none;
+}
+form .hidePassword {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .crop {
+    position: absolute;
+    top: 130px !important;
+    left: 50% !important;
+    margin-left: -162px !important;
+  }
 }
