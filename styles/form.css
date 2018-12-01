@@ -45,7 +45,7 @@ body {
 body h1 {
   margin: 20px 50px;
 }
-form {
+form:not([id='filter']) {
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -56,23 +56,23 @@ form {
   background-color: #fff;
   border: 1px solid #ddd;
 }
-form > .formRow {
+form:not([id='filter']) > .formRow {
   display: flex;
   flex-direction: row;
 }
-form > .formRow > div {
+form:not([id='filter']) > .formRow > div {
   display: flex;
   flex-direction: row;
 }
-form > .formRow .interaction {
+form:not([id='filter']) > .formRow .interaction {
   position: relative;
   min-width: 330px;
 }
-form > .formRow .interaction label {
+form:not([id='filter']) > .formRow .interaction label {
   max-width: 225px;
   margin: 0;
 }
-form > .formRow .interaction .interactionName {
+form:not([id='filter']) > .formRow .interaction .interactionName {
   display: flex;
   justify-content: flex-end;
   min-width: 100px;
@@ -81,14 +81,14 @@ form > .formRow .interaction .interactionName {
   font-family: PTSansBold;
   text-align: right;
 }
-form > .formRow .message {
+form:not([id='filter']) > .formRow .message {
   width: 100%;
   margin-left: 5px;
   padding-top: 5px;
   font-size: 12px;
   color: #999;
 }
-form textarea {
+form:not([id='filter']) textarea {
   margin: 5px;
   margin-right: 0;
   padding: 5px;
@@ -104,49 +104,49 @@ form textarea {
   text-align: left;
   resize: vertical;
 }
-form textarea:hover {
+form:not([id='filter']) textarea:hover {
   background-color: #d0d0d0;
 }
-form input:not([type="number"]),
-form select,
-form textarea {
+form:not([id='filter']) input:not([type="number"]),
+form:not([id='filter']) select,
+form:not([id='filter']) textarea {
   min-width: 225px;
 }
-form input:focus,
-form select:focus,
-form textarea:focus {
+form:not([id='filter']) input:focus,
+form:not([id='filter']) select:focus,
+form:not([id='filter']) textarea:focus {
   box-shadow: 0 0 0 3px #eee;
 }
-form input[type="submit"] {
+form:not([id='filter']) input[type="submit"] {
   align-self: flex-end;
   margin-bottom: 0;
   background-color: #499b42;
   color: #ffffff;
   text-align: center;
 }
-form input[type="number"] {
+form:not([id='filter']) input[type="number"] {
   width: 180px;
   margin-right: 5px;
 }
-form input.error,
-form select.error,
-form button.error,
-form .rateYo.error {
+form:not([id='filter']) input.error,
+form:not([id='filter']) select.error,
+form:not([id='filter']) button.error,
+form:not([id='filter']) .rateYo.error {
   box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
 }
-form label.error {
+form:not([id='filter']) label.error {
   font-size: 12px;
   font-weight: normal;
   color: #c55454 !important;
 }
-form .automobiles .selectedAutos {
+form:not([id='filter']) .automobiles .selectedAutos {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 5px;
   line-height: 22px;
 }
-form .automobiles .selectedAutos .auto {
+form:not([id='filter']) .automobiles .selectedAutos .auto {
   position: relative;
   background-color: #e1ecf4;
   border-radius: 3px;
@@ -157,10 +157,10 @@ form .automobiles .selectedAutos .auto {
   margin-bottom: 3px;
   font-size: 12px;
 }
-form .automobiles .selectedAutos .auto span {
+form:not([id='filter']) .automobiles .selectedAutos .auto span {
   margin-right: 3px;
 }
-form .automobiles .selectedAutos .auto .remove {
+form:not([id='filter']) .automobiles .selectedAutos .auto .remove {
   position: absolute;
   top: 6px;
   right: 2px;
@@ -170,8 +170,8 @@ form .automobiles .selectedAutos .auto .remove {
   border-radius: 50%;
   cursor: pointer;
 }
-form .automobiles .selectedAutos .auto .remove::after,
-form .automobiles .selectedAutos .auto .remove::before {
+form:not([id='filter']) .automobiles .selectedAutos .auto .remove::after,
+form:not([id='filter']) .automobiles .selectedAutos .auto .remove::before {
   display: inline-block;
   position: absolute;
   top: 4px;
@@ -181,13 +181,13 @@ form .automobiles .selectedAutos .auto .remove::before {
   width: 2px;
   background-color: #ffffff;
 }
-form .automobiles .selectedAutos .auto .remove::before {
+form:not([id='filter']) .automobiles .selectedAutos .auto .remove::before {
   transform: rotate(45deg);
 }
-form .automobiles .selectedAutos .auto .remove::after {
+form:not([id='filter']) .automobiles .selectedAutos .auto .remove::after {
   transform: rotate(-45deg);
 }
-form .automobiles #addAuto {
+form:not([id='filter']) .automobiles #addAuto {
   display: none;
   margin-top: 2px;
   margin-left: 5px;
@@ -199,7 +199,7 @@ form .automobiles #addAuto {
   outline: none;
   border: none;
 }
-form .rateYo {
+form:not([id='filter']) .rateYo {
   display: block;
   margin-top: 3px;
   margin-left: 5px;
@@ -210,38 +210,38 @@ form .rateYo {
   h1 {
     margin: 10px 0;
   }
-  form {
+  form:not([id='filter']) {
     max-width: 100%;
     padding: 10px 20px;
   }
-  form .formRow {
+  form:not([id='filter']) .formRow {
     flex-direction: column;
     margin-bottom: 10px;
   }
-  form .formRow .interaction {
+  form:not([id='filter']) .formRow .interaction {
     flex-direction: column;
     min-width: inherit;
   }
-  form .formRow .interaction > label {
+  form:not([id='filter']) .formRow .interaction > label {
     min-width: 100%;
   }
-  form .formRow .interaction .interactionName {
+  form:not([id='filter']) .formRow .interaction .interactionName {
     justify-content: flex-start;
   }
-  form .formRow .message {
+  form:not([id='filter']) .formRow .message {
     justify-content: flex-end;
     padding-top: 0;
   }
-  form input:not([type=button]),
-  form select,
-  form textarea,
-  form #list,
-  form #toggleCategory {
+  form:not([id='filter']) input:not([type=button]),
+  form:not([id='filter']) select,
+  form:not([id='filter']) textarea,
+  form:not([id='filter']) #list,
+  form:not([id='filter']) #toggleCategory {
     width: 100% !important;
     min-width: inherit !important;
     margin: 0 !important;
   }
-  form select {
+  form:not([id='filter']) select {
     margin-bottom: 5px !important;
   }
 }

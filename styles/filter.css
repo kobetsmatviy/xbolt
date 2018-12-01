@@ -150,7 +150,7 @@ form #apply {
 .details label {
   margin-left: 20px;
 }
-#filter {
+#filterArea {
   display: flex;
   position: fixed;
   top: 81px;
@@ -158,14 +158,14 @@ form #apply {
   z-index: 10;
   width: 100%;
 }
-form {
+#filterArea #filter {
   display: flex;
   flex-direction: column;
   width: 100%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-form .filterType {
+#filterArea #filter .filterType {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -177,17 +177,17 @@ form .filterType {
   background-color: #ffffff;
   border-top: 1px solid #dddddd;
 }
-form .filterType:first-of-type {
+#filterArea #filter .filterType:first-of-type {
   border-top: none;
 }
-form .filterType:last-of-type {
+#filterArea #filter .filterType:last-of-type {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-form .filterType:last-of-type .filterName {
+#filterArea #filter .filterType:last-of-type .filterName {
   border-bottom-left-radius: 15px;
 }
-form .filterType .filterName {
+#filterArea #filter .filterType .filterName {
   display: flex;
   align-items: center;
   position: absolute;
@@ -200,7 +200,7 @@ form .filterType .filterName {
   background-color: #eeeeee;
   margin-bottom: auto;
 }
-form .filterType .filterName .remove {
+#filterArea #filter .filterType .filterName .remove {
   opacity: .2;
   position: relative;
   width: 20px;
@@ -210,12 +210,12 @@ form .filterType .filterName .remove {
   border-radius: 50%;
   cursor: pointer;
 }
-form .filterType .filterName .remove:hover {
+#filterArea #filter .filterType .filterName .remove:hover {
   transform: rotate(360deg);
   transition: transform 1s;
 }
-form .filterType .filterName .remove::after,
-form .filterType .filterName .remove::before {
+#filterArea #filter .filterType .filterName .remove::after,
+#filterArea #filter .filterType .filterName .remove::before {
   display: inline-block;
   position: absolute;
   top: 5px;
@@ -225,18 +225,18 @@ form .filterType .filterName .remove::before {
   width: 3px;
   background-color: #ffffff;
 }
-form .filterType .filterName .remove::before {
+#filterArea #filter .filterType .filterName .remove::before {
   transform: rotate(45deg);
 }
-form .filterType .filterName .remove::after {
+#filterArea #filter .filterType .filterName .remove::after {
   transform: rotate(-45deg);
 }
-form .filterType .filterName .remove,
-form .filterType .filterName .title {
+#filterArea #filter .filterType .filterName .remove,
+#filterArea #filter .filterType .filterName .title {
   font-size: 12px;
   color: #555;
 }
-form .filterType .filterCategory {
+#filterArea #filter .filterType .filterCategory {
   margin-left: 200px;
   display: flex;
   flex-direction: row;
@@ -244,64 +244,64 @@ form .filterType .filterCategory {
   width: 100%;
 }
 @media screen and (max-width: 767px) {
-  #filter {
+  #filterArea {
     position: absolute;
     top: 35px;
     z-index: 5;
   }
-  #filter article {
+  #filterArea article {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  #filter form {
+  #filterArea #filter {
     width: 70%;
     align-items: flex-end;
     flex-direction: column;
   }
-  #filter form select,
-  #filter form input:not([type=submit]) {
+  #filterArea #filter select,
+  #filterArea #filter input:not([type=submit]) {
     width: 100%;
     margin: 5px;
     margin-top: 0;
   }
-  #filter form select:first-child,
-  #filter form input:not([type=submit]):first-child {
+  #filterArea #filter select:first-child,
+  #filterArea #filter input:not([type=submit]):first-child {
     margin-top: 5px;
   }
-  #filter .filterType {
+  #filterArea .filterType {
     flex-direction: column !important;
     border-radius: 0 !important;
     padding-right: 0 !important;
     position: static !important;
     min-height: 0 !important;
   }
-  #filter .filterType:last-of-type {
+  #filterArea .filterType:last-of-type {
     border-radius: 0 !important;
   }
-  #filter .filterType:last-of-type .filterName {
+  #filterArea .filterType:last-of-type .filterName {
     border-radius: 0 !important;
   }
-  #filter .filterType div {
+  #filterArea .filterType div {
     width: 100% !important;
     justify-content: flex-start;
   }
-  #filter .filterType .filterName {
+  #filterArea .filterType .filterName {
     position: static !important;
   }
-  #filter .filterType .filterName:hover {
+  #filterArea .filterType .filterName:hover {
     cursor: pointer;
   }
-  #filter .filterType .filterCategory {
+  #filterArea .filterType .filterCategory {
     flex-direction: column !important;
     margin: 0 !important;
     padding-right: 10px !important;
   }
-  #filter .filterType .filterCategory .details {
+  #filterArea .filterType .filterCategory .details {
     margin-right: 5px;
     border: none;
   }
-  #filter .filterType .filterCategory .details label {
+  #filterArea .filterType .filterCategory .details label {
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -10,7 +10,7 @@ body {
     }
 }
 
-form {
+form:not([id='filter']) {
     display: flex;
     flex-direction: column;
     max-width: 600px;
@@ -189,7 +189,7 @@ form {
         margin: 10px 0;
     }
 
-    form {
+    form:not([id='filter']) {
         max-width: 100%;
         padding: 10px 20px;
 

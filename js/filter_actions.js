@@ -43,7 +43,7 @@
 
     // Перемикач фільтру
     $('#filterName').on("click", function () {
-        $('#filter').toggle();
+        $('#filterArea').toggle();
         // Перемкнути темну обкладинку, для більшого фокусу на фільтр / для ПК
         $('#overlay').toggle();
     });
@@ -55,23 +55,23 @@
         var scrollTop = $(document).scrollTop();
         
         if (scrollTop + 45 > filterTop) {
-            $('#filter').show();
+            $('#filterArea').show();
             $('#overlay').show();
             $('html, body').animate({ scrollTop: 0 }, 500);
         
         }
         else {
-            $('#filter').hide();
+            $('#filterArea').hide();
             $('#overlay').hide();
         }
     });
     // При натисканні поза фільтром приховуємо його
     // окрім натискання на фільтр та кнопку відправки
-    $('#apply, #filter form').on("click", function (e) {
+    $('#apply, #filter').on("click", function (e) {
         e.stopPropagation();
     });
-    $('#overlay, #filter').on("click", function () {
-        $('#filter').hide();
+    $('#overlay, #filterArea').on("click", function () {
+        $('#filterArea').hide();
         $('#overlay').hide();
     });
 

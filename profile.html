@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="styles/filter.css">
     <link rel="stylesheet" type="text/css" href="styles/cards.css">
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
-    <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/filter_actions.js" async></script>
     <script src="js/profile_actions.js" async></script>
@@ -60,9 +59,9 @@
             </section>
         </article>
     </nav>
-    <div id="filter">
+    <div id="filterArea">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-            <form action="" method="post">
+            <form id="filter" action="" method="post">
                 <aside class="filterType">
                     <div class="filterName">
                         <span class="remove"></span>
@@ -511,7 +510,7 @@
                             <span class="comments">5</span>
                         </aside>
                     </div>
-                    <span class="glyphicon glyphicon glyphicon-wrench"></span>
+                    <a href="edit.html"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
                     <span class="withdraw"></span>
                 </section>
                 <section class="partCard">

@@ -39,7 +39,13 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-form #readyPhoto {
+body {
+  background-color: #FFF;
+}
+#settings {
+  margin: 10px;
+}
+#formSettings #readyPhoto {
   display: flex;
   flex-direction: row;
   justify-content: stretch;
@@ -58,14 +64,14 @@ form #readyPhoto {
   overflow: hidden;
   cursor: pointer;
 }
-form #uploadPhoto {
+#formSettings #uploadPhoto {
   visibility: hidden;
   width: 0;
   height: 0;
   margin: 0;
   padding: 0;
 }
-form .crop {
+#formSettings .crop {
   display: none;
   flex-direction: column;
   position: absolute;
@@ -79,27 +85,27 @@ form .crop {
   border-radius: 5px;
   z-index: 4;
 }
-form .crop #photoCrop {
+#formSettings .crop #photoCrop {
   width: 300px;
   height: 300px;
   background-color: #ddd;
   overflow: hidden;
   z-index: 2;
 }
-form .crop .cropButtons {
+#formSettings .crop .cropButtons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin-top: 5px;
 }
-form .crop .cropButtons #cancelCrop {
+#formSettings .crop .cropButtons #cancelCrop {
   margin-top: 5px;
   margin-right: 10px;
   color: #d10024;
   font-size: 12px;
   cursor: pointer;
 }
-form .crop .cropButtons #getPhoto {
+#formSettings .crop .cropButtons #getPhoto {
   display: flex;
   justify-items: flex-end;
   background-color: #499B42;
@@ -108,10 +114,10 @@ form .crop .cropButtons #getPhoto {
   border-radius: 5px;
   cursor: pointer;
 }
-form #overlay {
+#formSettings #overlay {
   display: none;
 }
-form #showPswdBlock {
+#formSettings #showPswdBlock {
   margin-top: 2px;
   margin-left: 5px;
   padding: 2px 4px;
@@ -122,7 +128,7 @@ form #showPswdBlock {
   outline: none;
   border: none;
 }
-form .hidePassword {
+#formSettings .hidePassword {
   display: none;
 }
 @media screen and (max-width: 767px) {
@@ -131,5 +137,9 @@ form .hidePassword {
     top: 130px !important;
     left: 50% !important;
     margin-left: -162px !important;
+  }
+  #showPswdBlock {
+    max-width: 100px;
+    margin: 0;
   }
 }

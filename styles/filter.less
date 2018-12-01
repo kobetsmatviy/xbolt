@@ -118,113 +118,114 @@ form {
     }
 }
 
-#filter {
+#filterArea {
     display: flex;
     position: fixed;
     top: 81px;
     left: 0;
     z-index: 10;
     width: 100%;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-
-    .filterType {
+    
+    #filter {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: relative;
+        flex-direction: column;
         width: 100%;
-        height: 100%;
-        min-height: 50px;
-        padding-right: 5px;
-        background-color: @color_white;
-        border-top: 1px solid @button_color;
-
-        &:first-of-type {
-            border-top: none;
-        }
-        &:last-of-type {
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-
-            .filterName {
-                border-bottom-left-radius: 15px;
-            }
-        }
-
-        .filterName {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            height: 100%;
-            width: 200px;
-            background-color: @color_grey_light;
-            margin-bottom: auto;
-
-            .remove {
-                opacity: .2;
-                position: relative;
-                width: 20px;
-                height: 20px;
-                margin: 10px 20px;
-                background-color: @color_orange;
-                border-radius: 50%;
-                cursor: pointer;
-
-                &:hover {
-                    transform: rotate(360deg);
-                    transition: transform 1s;
-                }
-
-                &::after, &::before {
-                    display: inline-block;
-                    position: absolute;
-                    top: 5px;
-                    left: 8px;
-                    content: "";
-                    height: 10px;
-                    width: 3px;
-                    background-color: @color_white;
-                }
-
-                &::before {
-                    transform: rotate(45deg);
-                }
-
-                &::after {
-                    transform: rotate(-45deg);
-                }
-            }
-
-            .remove, .title {
-                font-size: 12px;
-                color: #555;
-            }
-        }
-
-        .filterCategory {
-            margin-left: 200px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    
+        .filterType {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
             width: 100%;
+            height: 100%;
+            min-height: 50px;
+            padding-right: 5px;
+            background-color: @color_white;
+            border-top: 1px solid @button_color;
+    
+            &:first-of-type {
+                border-top: none;
+            }
+            &:last-of-type {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+    
+                .filterName {
+                    border-bottom-left-radius: 15px;
+                }
+            }
+    
+            .filterName {
+                display: flex;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 100%;
+                width: 200px;
+                background-color: @color_grey_light;
+                margin-bottom: auto;
+    
+                .remove {
+                    opacity: .2;
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    margin: 10px 20px;
+                    background-color: @color_orange;
+                    border-radius: 50%;
+                    cursor: pointer;
+    
+                    &:hover {
+                        transform: rotate(360deg);
+                        transition: transform 1s;
+                    }
+    
+                    &::after, &::before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: 8px;
+                        content: "";
+                        height: 10px;
+                        width: 3px;
+                        background-color: @color_white;
+                    }
+    
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+    
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+    
+                .remove, .title {
+                    font-size: 12px;
+                    color: #555;
+                }
+            }
+    
+            .filterCategory {
+                margin-left: 200px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+            }
         }
     }
 }
 
+
 //################### Version for a smartphone
 @media screen and (max-width: 767px) {
-    #filter {
+    #filterArea {
         position: absolute;
         top: 35px;
         z-index: 5;
@@ -235,7 +236,7 @@ form {
             align-items: flex-end;
         }
         
-        form {
+        #filter {
             width: 70%;
             align-items: flex-end;
             flex-direction: column;

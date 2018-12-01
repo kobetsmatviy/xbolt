@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <link rel="stylesheet" type="text/css" href="styles/post.css">
+    <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="js/edit_validation.js" async></script>
+    <script src="js/post_actions.js" async></script>
+    <script src="libraries/jquery.rateyo.min.js" async></script>
+</head>
+<body>
+    <header>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            <a href="public/index.html">
+                <img src="images/logo.png" alt="XBOLT" />
+            </a>
+            
+            <div class="leaderLinks">
+                <a href="profile.html">
+                    <img src="images/profile.png" />
+                    <span>Профіль</span>
+                </a>
+            </div>
+        </article>
+    </header>
+    <a href="profile.html"><span id="back">&lsaquo; Назад</span></a>
+    <main class="clearfix">
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            <h1>Редагувати оголошення</h1>
+            <form id="formEdit" method="GET" action="">
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Оберіть фото:</span>
+                        <label>
+                            <ul id="list"></ul>
+                            <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
+                        </label>
+                    </div>
+                    <div class="message">
+                        <span class="advice">Завантажте від 1 до 5 фото</span>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Назва:</span>
+                        <input type="text" name="title" autocomplete="off" placeholder="Фари Ford Mustang" />
+                    </div>
+                    <div class="message">
+                        <span class="advice">Буде видно у стрічці пошуку</span>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Опис:</span>
+                        <textarea rows="5" name="description" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
+                    </div>
+                    <div class="message">
+                        <span class="advice">"Це найкращий з усіх найкращих підшипник"</span>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Ціна:</span>
+                        <div class="choosePrice">
+                            <input type="number" name="price" min="1" max="9999999" placeholder="500" />
+                            <label class="auction">
+                                <input type="checkbox" id="auction">
+                                <span></span>
+                                Торг
+                            </label>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <span class="advice">Ціна вказується не у доларах, євро чи карбованцях, а гривнях</span>
+                    </div>
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Категорія:</span>
+                        <div class="chooseCategory">
+                            <span class="selectedCategory"></span>
+                            <button id="toggleCategory">Вибір</button>
+                            <div class="category">
+                                <input type="button" value="Двигун і його системи">
+                                <div id="engineDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Двигун</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Блок</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Головка блока</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Топливна</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Впуск</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Випуск</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Охолодження</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Кронштейн</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Кузов">
+                                <div id="bodyDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Скло</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Бампер</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Капот</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Двері</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Крила</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Дзеркала</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Передня частина</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Електрика">
+                                <div id="electricityDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Блоки керування</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Двигун</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Салон</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Проводка</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Сигналізація</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Трансмісія">
+                                <div id="transmissionDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Коробка передач</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Зчіплення</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Передній міст</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Задній міст</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Інше</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Підвіска">
+                                <div id="suspensionDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Передня підвіска</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Задня підвіска</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>Рульове керування</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Салон">
+                                <div id="saloonDIV" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Отоплення">
+                                <div id="heatingID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Оптика">
+                                <div id="opticsID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Гальма">
+                                <div id="breaksID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Шини">
+                                <div id="tiresID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                                <input type="button" value="Аксесуари">
+                                <div id="accessoriesID" class="details">
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>111</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>222</b>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="detail" />
+                                        <span></span>
+                                        <b>333</b>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <span class="advice">Розділ до якого відноситься запчастина</span>
+                    </div>               
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Автомобілі:</span>
+                        <div class="automobiles">
+                            <div class="selectedAutos"></div>
+                            <select name="transport" id="transport" class="transport">
+                                <option selected disabled hidden>Транспорт</option>
+                                <option value="cars">Легкові</option>
+                                <option value="trucks">Вантажівки</option>
+                                <option value="autobus">Автобуси</option>
+                                <option value="moto">Мото</option>
+                            </select>
+                            <select name="brand" class="disabled" disabled>
+                                <option selected disabled hidden>Марка</option>
+                                <option value="astron-martin">Aston Martin</option>
+                                <option value="audi">AUDI</option>
+                                <option value="bmw">BMW</option>
+                                <option value="opel">OPEL</option>
+                                <option value="toyota">TOYOTA</option>
+                            </select>
+                            <select name="model" class="disabled" disabled>
+                                <option selected disabled hidden>Модель</option>
+                                <option value="80">B2 80 1979-1981</option>
+                                <option value="100">B3 100 1982-1985</option>
+                                <option value="200">M4 200 1994-1996</option>
+                                <option value="A2">A2 2001</option>
+                                <option value="A4">A4 2004-2005</option>
+                                <option value="TT">TT 2018</option>
+                            </select>
+                            <button id="addAuto">+ Додати авто</button>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <span class="advice">До яких авто підходить деталь</span>
+                    </div>  
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Стан:</span>
+                        <div class="rateYo"></div>
+                    </div> 
+                    <div class="message">
+                        <span class="advice">Оберіть стан деталі</span>
+                    </div>  
+                </div>
+                <div class="formRow">
+                    <div class="interaction">
+                        <span class="interactionName">Регіон:</span>
+                        <div class="location">
+                            <select name="region">
+                                <option selected disabled hidden>Область</option>
+                                <option>Вінницька</option>
+                                <option>Волинська</option>
+                                <option>Дніпропетровська</option>
+                                <option>Донецька</option>
+                                <option>Житомирська</option>
+                                <option>Закарпатська</option>
+                                <option>Запорізька</option>
+                                <option>Івано-Франківська</option>
+                                <option>Київська</option>
+                                <option>Кіровоградська</option>
+                                <option>Крим (АРК)</option>
+                                <option>Луганська</option>
+                                <option>Львівська</option>
+                                <option>Миколаївська</option>
+                                <option>Одеська</option>
+                                <option>Полтавська</option>
+                                <option>Рівненська</option>
+                                <option>Сумська</option>
+                                <option>Тернопільська</option>
+                                <option>Харківська</option>
+                                <option>Херсонська</option>
+                                <option>Хмельницька</option>
+                                <option>Черкаська</option>
+                                <option>Чернівецька</option>
+                                <option>Чернігівська</option>
+                            </select>
+                            <select name="town" class="disabled" disabled>
+                                <option selected disabled hidden>Район</option>
+                                <option>Корець</option>
+                                <option>Гоща</option>
+                                <option>Кузнецовськ</option>
+                                <option>Решитилів</option>
+                                <option>Новоград-Волинськ</option>
+                                <option>Сарни</option>
+                                <option>Острог</option>
+                                <option>Дубно</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <span class="advice">Місце знаходження</span>
+                    </div> 
+                </div>
+                <input type="submit" value="Продати болта" />
+            </form>
+        </article>
+    </main>
+    <footer>
+        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            ПІДВАЛ - XBOLT &copy;2018
+        </article>
+    </footer>
+</body>
+</html>
