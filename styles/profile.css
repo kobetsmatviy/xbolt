@@ -197,6 +197,59 @@ main article #posts .partCard .withdraw::before {
 main article #posts .partCard .withdraw::after {
   transform: rotate(-45deg);
 }
+main article #posts .partCard .deletePost {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 250px;
+  margin-top: -125px;
+  margin-left: -250px;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  font-family: PTSansBold;
+  overflow: hidden;
+  z-index: 5;
+}
+main article #posts .partCard .deletePost .caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  color: #333333;
+}
+main article #posts .partCard .deletePost .vote {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: PTSansRegular;
+  font-size: 32px;
+  color: #ffffff;
+  cursor: pointer;
+}
+main article #posts .partCard .deletePost .vote .yes,
+main article #posts .partCard .deletePost .vote .no {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+main article #posts .partCard .deletePost .vote .yes {
+  background-color: #499b42;
+}
+main article #posts .partCard .deletePost .vote .no {
+  background-color: #d10024;
+}
+main article #posts .partCard .deletePost .vote .glyphicon {
+  margin-left: 10px;
+}
 @media screen and (max-width: 767px) {
   main article {
     flex-direction: column;
@@ -220,5 +273,8 @@ main article #posts .partCard .withdraw::after {
     width: 100%;
     max-width: 200px;
     margin: 0 15px;
+  }
+  main article #post .deletePost {
+    width: 290px !important;
   }
 }

@@ -43,6 +43,10 @@ body {
   margin: 0;
   font-family: PTSansRegular, Arial;
 }
+::selection {
+  background-color: #d10024;
+  color: #ffffff;
+}
 .no-padding {
   padding: 0;
 }
