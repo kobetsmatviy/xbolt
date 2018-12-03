@@ -3,11 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Семен Болт</title>
+    <title>Коментарі</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/filter.css">
-    <link rel="stylesheet" type="text/css" href="styles/cards.css">
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/filter_actions.js" async></script>
@@ -27,11 +26,11 @@
                     <span>Продати</span>
                 </a>
                 <a href="comments.html">
-                    <img src="images/notify-active.png" />
+                    <img src="images/notify.png" />
                     <span>Сповіщення</span>
                 </a>
-                <a href="profile.html">
-                    <img src="images/user.svg" />
+                <a href="profile.html" id="profile">
+                    <img src="D:\Desktop\Photos\crop-user.jpeg" />
                     <span>Семен Болт</span>
                 </a>
             </div>
@@ -474,219 +473,68 @@
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <div id="menu">
                 <div id="review">
-                    <img src="images/user.svg" />
+                    <img src="D:\Desktop\Photos\crop-user.jpeg" />
                     <h2>Семен Болт</h2>
                 </div>
                 <ul>
-                    <a href="profile.html" class="openly"><li><span class="glyphicon glyphicon-user"></span>Профіль</li></a>
-                    <a href="comments.html"><li><span class="glyphicon glyphicon-send"></span>Коментарі</li></a>
+                    <a href="profile.html"><li><span class="glyphicon glyphicon-user"></span>Профіль</li></a>
+                    <a href="comments.html" class="openly"><li><span class="glyphicon glyphicon-send"></span>Коментарі</li></a>
                     <a href="settings.html"><li><span class="glyphicon glyphicon-wrench"></span>Налаштування</li></a>
                 </ul>
             </div>
-            <div id="posts">
-                <section class="partCard" itemscope itemtype="https://schema.org/Car">
-                    <a href="part.html" itemprop="image">
-                        <div class="photo">
-                            <img src="images/minimals/1.jpg" />
+            <div id="comments">
+                <div class="comment">
+                    <div class="userData">
+                        <img src="images/user.svg" />
+                        <div class="contentData">
+                            <h3>Володя Квач</h3>
+                            <p>Поршень від ламборджі, а не фольцваген.</p>
                         </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title" itemprop="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Турбина Audi A4 A5 Q5 2.0 TDI Seat Exeo (03L145721A)
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price" itemprop="price">
-                                    5999 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">120</span>
-                            <span class="comments">5</span>
-                        </aside>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
-                <section class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/2.jpg" />
+                    <div class="infoData">
+                        <time datetime="03-12-2018 22:40">2год. тому</time>
+                        <span class="reply">Відповісти</span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="userData">
+                        <img src="images/user.svg" />
+                        <div class="contentData">
+                            <h3>Володя Квач</h3>
+                            <p>Поршень від ламборджі, а не фольцваген.</p>
                         </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    9600 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">97</span>
-                            <span class="comments">8</span>
-                        </aside>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
-                <section class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/3.jpg" />
+                    <div class="infoData">
+                        <time datetime="03-12-2018 22:40">2год. тому</time>
+                        <span class="reply">Відповісти</span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="userData">
+                        <img src="images/user.svg" />
+                        <div class="contentData">
+                            <h3>Володя Квач</h3>
+                            <p>Поршень від ламборджі, а не фольцваген.</p>
                         </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            ТУРБИНА VW PASSAT B3 B4 GOLF VENTO AUDI 80 SEAT
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    90 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">15</span>
-                            <span class="comments">1</span>
-                        </aside>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
-                <section class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/5.jpg" />
+                    <div class="infoData">
+                        <time datetime="03-12-2018 22:40">2год. тому</time>
+                        <span class="reply">Відповісти</span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="userData">
+                        <img src="images/user.svg" />
+                        <div class="contentData">
+                            <h3>Володя Квач</h3>
+                            <p>Поршень від ламборджі, а не фольцваген.</p>
                         </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Годовка блока ГБЦ Фиат Дукато 
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    6400 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">93</span>
-                            <span class="comments">2</span>
-                        </aside>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
-                <section class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/4.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            ФАРИ MUSTANG FORD 2015 
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    12050 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">205</span>
-                            <span class="comments">11</span>
-                        </aside>
+                    <div class="infoData">
+                        <time datetime="03-12-2018 22:40">2год. тому</time>
+                        <span class="reply">Відповісти</span>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
-                <section class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/6.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Фольксваген Кадді заглушки в бампер 
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    270 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">305</span>
-                            <span class="comments">4</span>
-                        </aside>
-                    </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
-                <section class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/7.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Двигатель рено кенго K9K 
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    4900 <sup>грн</sup>
-                                </span>
-                            </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">109</span>
-                            <span class="comments">0</span>
-                        </aside>
-                    </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </section>
+                </div>
             </div>
         </article>
     </main>

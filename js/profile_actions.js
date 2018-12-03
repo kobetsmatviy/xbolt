@@ -44,5 +44,10 @@ $(document).ready(function(){
             'opacity': '0',
             'transition': 'all 1s'
         });
+        
+        setTimeout(function() {
+            $('.partCard #overlay').remove();  
+            $('.deletePost').remove();
+        }, 1000);
     });
 });

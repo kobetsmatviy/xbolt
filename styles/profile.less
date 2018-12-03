@@ -33,7 +33,9 @@ main {
                 
                 img {
                     width: 100px;
+                    height: 100px;
                     border-radius: 50%;
+                    box-shadow: 0 5px 30px 0 #AAA;
                 }
             }
             
@@ -250,6 +252,155 @@ main {
                 }
             }
         }
+
+        #settings {
+            margin: 10px;
+
+            #formSettings {
+        
+                #readyPhoto {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: stretch;
+                    align-items: center;
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+                    padding: 0;
+                    background-color: #ddd;
+                    background-image: url('../images/camera.png');
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    background-size: 30px;
+                    border-radius: 50%;
+                    list-style: none;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                
+                #uploadPhoto {
+                    visibility: hidden;
+                    width: 0;
+                    height: 0;
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                .crop {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 105px;
+                    left: 50px;
+                    width: 322px;
+                    height: 355px;
+                    padding: 10px;
+                    background-color: #FFF;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    z-index: 4;
+            
+                    #photoCrop {
+                        width: 300px;
+                        height: 300px;
+                        background-color: #ddd;
+                        overflow: hidden;
+                        z-index: 2;
+                    }
+            
+                    .cropButtons {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        margin-top: 5px;
+            
+                        #cancelCrop {
+                            margin-top: 5px;
+                            margin-right: 10px;
+                            color: @color_red;
+                            font-size: 12px;
+                            cursor: pointer;
+                        }
+            
+                        #getPhoto {
+                            display: flex;
+                            justify-items: flex-end;
+                            background-color: #499B42;
+                            color: #fff;
+                            padding: 5px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            
+                #overlay {
+                    display: none;
+                }
+            
+                #showPswdBlock {
+                    margin-top: 2px;
+                    margin-left: 5px;
+                    padding: 2px 4px;
+                    background-color: @button_active;
+                    color: @color_white;
+                    border-radius: 3px;
+                    font-size: 12px;
+                    outline: none;
+                    border: none;
+                }
+                .hidePassword {
+                    display: none;
+                }
+            }
+        }
+
+        #comments {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            margin: 10px;
+
+            .comment {
+                display: flex;
+                flex-direction: column;
+                width: 270px;
+                height: 90px;
+                padding: 15px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                background-color: #EEE;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    box-shadow: 0 5px 10px 0 #CCC;
+                }
+
+                .userData {
+                    display: flex;
+                    flex-direction: row;
+
+                    .contentData {
+                        margin-left: 15px;
+
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .infoData {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    color: #555;
+                }
+            }
+        }
     }
 }
 
@@ -283,9 +434,26 @@ main {
                 }
             }
 
-            #post {
+            #posts {
                 .deletePost {
-                    width: 290px !important;
+                    max-width: 310px;
+                    max-height: 150px;
+                    margin-left: -155px !important;
+                    margin-top: -70px !important;
+                }
+            }
+
+            #settings {
+                .crop {
+                    position: absolute;
+                    top: 130px !important;
+                    left: 50% !important;
+                    margin-left: -162px !important;
+                }
+            
+                #showPswdBlock {
+                    max-width: 100px;
+                    margin: 0;
                 }
             }
         }

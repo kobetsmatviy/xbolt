@@ -114,6 +114,9 @@ header article .leaderLinks #search {
   display: none;
   cursor: pointer;
 }
+header article .leaderLinks #profile img {
+  border-radius: 50%;
+}
 header a {
   font-family: PTSansRegular !important;
   color: #ffffff !important;
