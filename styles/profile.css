@@ -343,43 +343,44 @@ main article #settings #formSettings .hidePassword {
 }
 main article #comments {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-direction: column;
   height: 100%;
   margin: 10px;
 }
 main article #comments .comment {
   display: flex;
-  flex-direction: column;
-  width: 270px;
-  height: 90px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
   padding: 15px;
-  margin-right: 10px;
   margin-bottom: 10px;
   background-color: #EEE;
-}
-main article #comments .comment img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 5px 10px 0 #CCC;
+  font-size: 12px;
 }
 main article #comments .comment .userData {
   display: flex;
   flex-direction: row;
 }
+main article #comments .comment .userData img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 0 #CCC;
+}
 main article #comments .comment .userData .contentData {
-  margin-left: 15px;
+  margin: 0 15px;
+}
+main article #comments .comment .userData .contentData h3 {
+  font-size: 14px;
+  color: #333333;
 }
 main article #comments .comment .userData .contentData p {
-  font-size: 12px;
+  white-space: pre-line;
 }
-main article #comments .comment .infoData {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #555;
+main article #comments .comment time {
+  min-width: 75px;
+  color: #888;
 }
 @media screen and (max-width: 767px) {
   main article {

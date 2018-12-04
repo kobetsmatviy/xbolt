@@ -104,27 +104,6 @@ main .description .heading .value {
   margin: 0 20px;
   margin-bottom: 10px;
 }
-main .description .heading .value .state {
-  display: flex;
-  align-items: center;
-}
-main .description .heading .value .state span {
-  width: 15px;
-  height: 15px;
-  margin-right: 2px;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: 15px;
-}
-main .description .heading .value .state .full {
-  background-image: url('../images/full.svg');
-}
-main .description .heading .value .state .half {
-  background-image: url('../images/half.svg');
-}
-main .description .heading .value .state .empty {
-  background-image: url('../images/empty.svg');
-}
 main .description .heading .value .price {
   height: 30px;
   display: flex;
@@ -250,7 +229,7 @@ main .description .story p {
   .description .brief .person > * {
     margin-left: 23px !important;
   }
-  .description .brief .act {
+  .description .brief .statistic {
     align-items: flex-start !important;
     flex: 0 !important;
   }
