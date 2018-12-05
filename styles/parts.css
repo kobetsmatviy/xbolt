@@ -39,6 +39,9 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+.visible {
+  visibility: visible !important;
+}
 #photoView {
   width: 100%;
   min-height: 500px;

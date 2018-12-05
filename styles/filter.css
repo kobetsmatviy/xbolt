@@ -39,6 +39,9 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+.visible {
+  visibility: visible !important;
+}
 select,
 input,
 label {
@@ -155,8 +158,9 @@ form #apply {
   position: fixed;
   top: 81px;
   left: 0;
-  z-index: 10;
   width: 100%;
+  z-index: 10;
+  visibility: hidden;
 }
 #filterArea #filter {
   display: flex;

@@ -39,6 +39,9 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+.visible {
+  visibility: visible !important;
+}
 form #list {
   display: flex;
   flex-direction: row;

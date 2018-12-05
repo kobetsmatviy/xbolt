@@ -21,10 +21,10 @@ $(document).ready(function(){
                     '<span class="no">Ні<span class="glyphicon glyphicon-thumbs-down"></span></span>'+
                 '</div>'+
             '</div>'+
-            '<div id="overlay"></div>');
+            '<div id="overlayModal"></div>');
     });
 
-    $('.partCard').delegate('#overlay', 'click', function() {
+    $('.partCard').delegate('#overlayModal', 'click', function() {
         $(this).remove();
         $('.deletePost').remove();        
     });
@@ -46,7 +46,7 @@ $(document).ready(function(){
         });
         
         setTimeout(function() {
-            $('.partCard #overlay').remove();  
+            $('.partCard #overlayModal').remove();  
             $('.deletePost').remove();
         }, 1000);
     });

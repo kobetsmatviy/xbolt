@@ -39,8 +39,8 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-body {
-  background-color: #eee;
+.visible {
+  visibility: visible !important;
 }
 body h1 {
   margin: 20px 50px;

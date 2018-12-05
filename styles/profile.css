@@ -39,8 +39,8 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-header .leaderLinks a[href="profile.html"] span {
-  color: #005580;
+.visible {
+  visibility: visible !important;
 }
 main article {
   display: flex;
@@ -68,6 +68,7 @@ main article #menu #review img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  background-color: #FFF;
   box-shadow: 0 5px 30px 0 #AAA;
 }
 main article #menu ul {
@@ -251,6 +252,18 @@ main article #posts .partCard .deletePost .vote .no {
 }
 main article #posts .partCard .deletePost .vote .glyphicon {
   margin-left: 10px;
+}
+main article #posts .partCard #overlayModal {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
 }
 main article #settings {
   margin: 10px;

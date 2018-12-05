@@ -43,9 +43,9 @@
 
     // Перемикач фільтру
     $('#filterName').on("click", function () {
-        $('#filterArea').toggle();
+        $('#filterArea').toggleClass('visible');
         // Перемкнути темну обкладинку, для більшого фокусу на фільтр / для ПК
-        $('#overlay').toggle();
+        $('#overlay').toggleClass('visible');
     });
     $('#search').on("click", function () {
         // Сховати блок по кліку, якщо він у полі зору
@@ -55,14 +55,13 @@
         var scrollTop = $(document).scrollTop();
         
         if (scrollTop + 45 > filterTop) {
-            $('#filterArea').show();
-            $('#overlay').show();
+            $('#filterArea').toggleClass('visible');
+            $('#overlay').toggleClass('visible');
             $('html, body').animate({ scrollTop: 0 }, 500);
-        
         }
         else {
-            $('#filterArea').hide();
-            $('#overlay').hide();
+            $('#filterArea').toggleClass('visible');
+            $('#overlay').toggleClass('visible');
         }
     });
     // При натисканні поза фільтром приховуємо його
@@ -71,8 +70,8 @@
         e.stopPropagation();
     });
     $('#overlay, #filterArea').on("click", function () {
-        $('#filterArea').hide();
-        $('#overlay').hide();
+        $('#filterArea').toggleClass('visible');
+        $('#overlay').toggleClass('visible');
     });
 
     // Перемикач блоків фільтру на смартфонах
