@@ -44,6 +44,7 @@
 }
 body {
   margin: 0;
+  background-color: #EEE;
   font-family: PTSansRegular, Arial;
 }
 ::selection {
