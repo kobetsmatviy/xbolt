@@ -43,6 +43,7 @@
   visibility: visible !important;
 }
 #preview {
+  position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
@@ -55,6 +56,7 @@
 }
 #preview article .intro {
   text-align: center;
+  z-index: 3;
 }
 #preview article .intro h1 {
   margin-top: 50px;
@@ -64,6 +66,56 @@
 }
 #preview article .intro span {
   color: #FFF;
+}
+#preview article .boltsSystem {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  z-index: 1;
+}
+#preview article .boltsSystem .bolt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/bolt.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+#preview article .boltsSystem .b1 {
+  margin-left: -200px;
+  margin-top: -25px;
+  background-size: 40px;
+  transform-origin: 200px 25px;
+}
+#preview article .boltsSystem .b2 {
+  margin-left: 180px;
+  margin-top: 120px;
+  background-size: 35px;
+  transform-origin: -180px -120px;
+  opacity: .5;
+}
+#preview article .boltsSystem .b3 {
+  margin-left: -215px;
+  margin-top: 80px;
+  background-size: 25px;
+  transform-origin: 215px -80px;
+  opacity: .3;
+}
+#preview article .boltsSystem .b4 {
+  margin-left: 220px;
+  margin-top: -150px;
+  background-size: 20px;
+  transform-origin: -220px 150px;
+  opacity: .3;
+}
+#preview article .boltsSystem .b5 {
+  margin-left: -250px;
+  margin-top: -120px;
+  background-size: 40px;
+  transform-origin: 250px 120px;
+  opacity: .2;
 }
 article > div {
   padding: 50px 10px;
@@ -128,8 +180,10 @@ article > div h2 {
 }
 #benefits {
   background-color: #FFF;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 15px 25px -5px #dddddd;
+  margin: 0 10px;
+  margin-bottom: 50px;
 }
 #benefits .benefitChoose {
   display: flex;
@@ -140,13 +194,112 @@ article > div h2 {
   width: 300px;
 }
 #benefits .benefitChoose .column .benefit {
-  height: 80px;
+  position: relative;
+  height: 110px;
   margin-bottom: 10px;
+  padding-left: 110px;
+}
+#benefits .benefitChoose .column .benefit::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100px;
+  height: 100px;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+#benefits .benefitChoose .column .benefit:hover::before {
+  transform: translateY(-5px);
+  transition: all 0.5s ease-in-out;
 }
 #benefits .benefitChoose .column .benefit h3 {
   font-size: 20px;
+  color: #2b2d42;
 }
 #benefits .benefitChoose .column .benefit p {
-  font-size: 16px;
-  color: #2b2d42;
+  font-size: 14px;
+  color: #999999;
+}
+#benefits .benefitChoose .column .easy::before {
+  background-image: url('../images/easy.png');
+}
+#benefits .benefitChoose .column .speedSearch::before {
+  background-image: url('../images/speedSearch.png');
+}
+#benefits .benefitChoose .column .trashFilter::before {
+  background-image: url('../images/trashFilter.png');
+}
+#benefits .benefitChoose .column .sale::before {
+  background-image: url('../images/sale.png');
+}
+#benefits .benefitChoose .column .reserve::before {
+  background-image: url('../images/reserve.png');
+}
+#benefits .benefitChoose .column .targetAudience::before {
+  background-image: url('../images/targetAudience.png');
+}
+#stories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#stories .story {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  height: 200px;
+  background-color: #FFF;
+  border-radius: 10px;
+}
+#stories .story img {
+  height: 150px;
+  margin: 25px;
+  border-radius: 50%;
+}
+#stories .story .contentData {
+  margin: 25px 0;
+}
+@media (max-width: 767px) {
+  #preview .boltsSystem .bolt {
+    opacity: 1 !important;
+  }
+  #preview .boltsSystem .b1 {
+    margin-left: -180px !important;
+    transform-origin: 180px 25px !important;
+  }
+  #preview .boltsSystem .b2 {
+    margin-left: 110px !important;
+    transform-origin: -110px -120px !important;
+  }
+  #preview .boltsSystem .b3 {
+    margin-left: -75px !important;
+    margin-top: 170px !important;
+    transform-origin: 75px -170px !important;
+  }
+  #preview .boltsSystem .b4 {
+    margin-left: 30px !important;
+    margin-top: 130px !important;
+    transform-origin: -30px -120px !important;
+  }
+  #benefits .benefitChoose {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even) {
+    padding: 0;
+    padding-right: 110px;
+  }
+  #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even):before {
+    left: inherit;
+    right: 0;
+  }
+  #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd) {
+    padding: 0;
+    padding-right: 110px;
+  }
+  #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd):before {
+    left: inherit;
+    right: 0;
+  }
 }
