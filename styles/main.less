@@ -43,7 +43,7 @@
                 left: 50%;
                 width: 40px;
                 height: 40px;
-                background-image: url('../images/bolt.svg');
+                background-image: url('../images/bolt_dark_blue.svg');
                 background-repeat: no-repeat;
                 background-position: 50%;
             }
@@ -85,173 +85,181 @@
     }
 }
 
-article > div {
-    padding: 50px 10px;
-
-    h2 {
-        width: 250px;
-        margin: 0 auto;
-        margin-bottom: 15px;
-        text-align: left;
-        font-size: 24px;
-    }
-}
-
-#categories {
-    .categoriesChoose {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+main {
+    background-image: url('../images/bolt_grey.svg'), url('../images/bolt_grey.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 400px, 250px;
+    background-position: 10% 5%, 90% 75%;
     
-        a {
-            padding: 5px;
-            margin-bottom: 5px;
-            font-family: PTSansRegular;
-            text-align: center;
-            color: #FFF;
-            border-radius: 20px;
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
-            transition: all .2s ease-in-out;
-            
-            span {
-                position: relative;
-                margin-left: 25px;
-                font-size: 20px;
-                font-family: PTSansBold;
-                vertical-align: middle;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 2px;
-                    left: -25px;
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    background-size: 20px;
-                }
-            }
-
-            &:hover {
-                box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+    article > div {
+        padding: 50px 10px;
+    
+        h2 {
+            width: 250px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 24px;
+        }
+    }
+    
+    #categories {
+        .categoriesChoose {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        
+            a {
+                padding: 5px;
+                margin-bottom: 5px;
+                font-family: PTSansRegular;
+                text-align: center;
+                color: #FFF;
+                border-radius: 20px;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
                 transition: all .2s ease-in-out;
-            }
-        }
-    
-        #buy {
-            background-color: #339933;
-            background-image: linear-gradient(to right, #339933, #237d23);
-
-            span::before {
-                background-image: url('../images/search.png');
-            }
-        }
-        #sale {
-            background-color: #ff6600;
-            background-image: linear-gradient(to right, #ff6600, #d95700);
-
-            span::before {
-                background-image: url('../images/give_bolt.png');
-            }
-        }
-    }
-}
-
-#benefits {
-    background-color: #FFF;
-    border-radius: 15px;
-    box-shadow: 0 15px 25px -5px #DDD;
-    margin: 0 10px;
-    margin-bottom: 50px;
-
-    .benefitChoose {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-
-        .column {
-            width: 300px;
-
-            .benefit {
-                position: relative;
-                height: 110px;
-                margin-bottom: 10px;
-                padding-left: 110px;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    display: block;
-                    width: 100px;
-                    height: 100px;
-                    transform: translateY(0);
-                    transition: all .5s ease-in-out;
-                }
-
-                &:hover::before {
-                    transform: translateY(-5px);
-                    transition: all .5s ease-in-out;
-                }
-
-                h3 {
+                
+                span {
+                    position: relative;
+                    margin-left: 25px;
                     font-size: 20px;
-                    color: @color_dark;
+                    font-family: PTSansBold;
+                    vertical-align: middle;
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 2px;
+                        left: -25px;
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        background-size: 20px;
+                    }
                 }
-
-                p {
-                    font-size: 14px;
-                    color: @color_grey_dark;
+    
+                &:hover {
+                    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+                    transition: all .2s ease-in-out;
                 }
             }
-
-            .easy::before {
-                background-image: url('../images/easy.png');
+        
+            #buy {
+                background-color: #339933;
+                background-image: linear-gradient(to right, #339933, #237d23);
+    
+                span::before {
+                    background-image: url('../images/search.png');
+                }
             }
-            .speedSearch::before {
-                background-image: url('../images/speedSearch.png');
-            }
-            .trashFilter::before {
-                background-image: url('../images/trashFilter.png');
-            }
-            .sale::before {
-                background-image: url('../images/sale.png');
-            }
-            .reserve::before {
-                background-image: url('../images/reserve.png');
-            }
-            .targetAudience::before {
-                background-image: url('../images/targetAudience.png');
+            #sale {
+                background-color: #ff6600;
+                background-image: linear-gradient(to right, #ff6600, #d95700);
+    
+                span::before {
+                    background-image: url('../images/give_bolt.png');
+                }
             }
         }
     }
-}
-
-#stories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .story {
-        display: flex;
-        flex-direction: row;
-        width: 600px;
-        height: 200px;
+    
+    #benefits {
         background-color: #FFF;
-        border-radius: 10px;
-
-        img {
-            height: 150px;
-            margin: 25px;
-            border-radius: 50%;
+        border-radius: 15px;
+        box-shadow: 0 15px 25px -5px #DDD;
+        margin: 0 10px;
+        margin-bottom: 50px;
+    
+        .benefitChoose {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+    
+            .column {
+                width: 300px;
+    
+                .benefit {
+                    position: relative;
+                    height: 110px;
+                    margin-bottom: 10px;
+                    padding-left: 110px;
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        display: block;
+                        width: 100px;
+                        height: 100px;
+                        transform: translateY(0);
+                        transition: all .5s ease-in-out;
+                    }
+    
+                    &:hover::before {
+                        transform: translateY(-5px);
+                        transition: all .5s ease-in-out;
+                    }
+    
+                    h3 {
+                        font-size: 20px;
+                        color: @color_dark;
+                    }
+    
+                    p {
+                        font-size: 14px;
+                        color: @color_grey_dark;
+                    }
+                }
+    
+                .easy::before {
+                    background-image: url('../images/easy.png');
+                }
+                .speedSearch::before {
+                    background-image: url('../images/speedSearch.png');
+                }
+                .trashFilter::before {
+                    background-image: url('../images/trashFilter.png');
+                }
+                .sale::before {
+                    background-image: url('../images/sale.png');
+                }
+                .reserve::before {
+                    background-image: url('../images/reserve.png');
+                }
+                .targetAudience::before {
+                    background-image: url('../images/targetAudience.png');
+                }
+            }
         }
-
-        .contentData {
-            margin: 25px 0;
+    }
+    
+    #stories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .story {
+            display: flex;
+            flex-direction: row;
+            width: 600px;
+            height: 200px;
+            background-color: #FFF;
+            border-radius: 10px;
+    
+            img {
+                height: 150px;
+                margin: 25px;
+                border-radius: 50%;
+            }
+    
+            .contentData {
+                margin: 25px 0;
+            }
         }
     }
 }
+
 
 // Version for a smartphone
 @media (max-width: 767px) {
@@ -282,30 +290,34 @@ article > div {
         }
     }
 
-    #benefits {
-        .benefitChoose {
-            flex-direction: column !important;
-            align-items: center !important;
+    main {
+        background: none;
 
-            .column:nth-child(1) {
-                .benefit:nth-of-type(even) {
-                    padding: 0;
-                    padding-right: 110px;
+        #benefits {
+            .benefitChoose {
+                flex-direction: column !important;
+                align-items: center !important;
     
-                    &:before {
-                        left: inherit;
-                        right: 0;
+                .column:nth-child(1) {
+                    .benefit:nth-of-type(even) {
+                        padding: 0;
+                        padding-right: 110px;
+        
+                        &:before {
+                            left: inherit;
+                            right: 0;
+                        }
                     }
                 }
-            }
-            .column:nth-child(2) {
-                .benefit:nth-of-type(odd) {
-                    padding: 0;
-                    padding-right: 110px;
-    
-                    &:before {
-                        left: inherit;
-                        right: 0;
+                .column:nth-child(2) {
+                    .benefit:nth-of-type(odd) {
+                        padding: 0;
+                        padding-right: 110px;
+        
+                        &:before {
+                            left: inherit;
+                            right: 0;
+                        }
                     }
                 }
             }

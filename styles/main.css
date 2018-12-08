@@ -79,7 +79,7 @@
   left: 50%;
   width: 40px;
   height: 40px;
-  background-image: url('../images/bolt.svg');
+  background-image: url('../images/bolt_dark_blue.svg');
   background-repeat: no-repeat;
   background-position: 50%;
 }
@@ -117,23 +117,29 @@
   transform-origin: 250px 120px;
   opacity: .2;
 }
-article > div {
+main {
+  background-image: url('../images/bolt_grey.svg'), url('../images/bolt_grey.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 400px, 250px;
+  background-position: 10% 5%, 90% 75%;
+}
+main article > div {
   padding: 50px 10px;
 }
-article > div h2 {
+main article > div h2 {
   width: 250px;
   margin: 0 auto;
   margin-bottom: 15px;
   text-align: left;
   font-size: 24px;
 }
-#categories .categoriesChoose {
+main #categories .categoriesChoose {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-#categories .categoriesChoose a {
+main #categories .categoriesChoose a {
   padding: 5px;
   margin-bottom: 5px;
   font-family: PTSansRegular;
@@ -143,14 +149,14 @@ article > div h2 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease-in-out;
 }
-#categories .categoriesChoose a span {
+main #categories .categoriesChoose a span {
   position: relative;
   margin-left: 25px;
   font-size: 20px;
   font-family: PTSansBold;
   vertical-align: middle;
 }
-#categories .categoriesChoose a span::before {
+main #categories .categoriesChoose a span::before {
   content: '';
   position: absolute;
   top: 2px;
@@ -160,46 +166,46 @@ article > div h2 {
   height: 20px;
   background-size: 20px;
 }
-#categories .categoriesChoose a:hover {
+main #categories .categoriesChoose a:hover {
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
 }
-#categories .categoriesChoose #buy {
+main #categories .categoriesChoose #buy {
   background-color: #339933;
   background-image: linear-gradient(to right, #339933, #237d23);
 }
-#categories .categoriesChoose #buy span::before {
+main #categories .categoriesChoose #buy span::before {
   background-image: url('../images/search.png');
 }
-#categories .categoriesChoose #sale {
+main #categories .categoriesChoose #sale {
   background-color: #ff6600;
   background-image: linear-gradient(to right, #ff6600, #d95700);
 }
-#categories .categoriesChoose #sale span::before {
+main #categories .categoriesChoose #sale span::before {
   background-image: url('../images/give_bolt.png');
 }
-#benefits {
+main #benefits {
   background-color: #FFF;
   border-radius: 15px;
   box-shadow: 0 15px 25px -5px #dddddd;
   margin: 0 10px;
   margin-bottom: 50px;
 }
-#benefits .benefitChoose {
+main #benefits .benefitChoose {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-#benefits .benefitChoose .column {
+main #benefits .benefitChoose .column {
   width: 300px;
 }
-#benefits .benefitChoose .column .benefit {
+main #benefits .benefitChoose .column .benefit {
   position: relative;
   height: 110px;
   margin-bottom: 10px;
   padding-left: 110px;
 }
-#benefits .benefitChoose .column .benefit::before {
+main #benefits .benefitChoose .column .benefit::before {
   content: '';
   position: absolute;
   left: 0;
@@ -209,42 +215,42 @@ article > div h2 {
   transform: translateY(0);
   transition: all 0.5s ease-in-out;
 }
-#benefits .benefitChoose .column .benefit:hover::before {
+main #benefits .benefitChoose .column .benefit:hover::before {
   transform: translateY(-5px);
   transition: all 0.5s ease-in-out;
 }
-#benefits .benefitChoose .column .benefit h3 {
+main #benefits .benefitChoose .column .benefit h3 {
   font-size: 20px;
   color: #2b2d42;
 }
-#benefits .benefitChoose .column .benefit p {
+main #benefits .benefitChoose .column .benefit p {
   font-size: 14px;
   color: #999999;
 }
-#benefits .benefitChoose .column .easy::before {
+main #benefits .benefitChoose .column .easy::before {
   background-image: url('../images/easy.png');
 }
-#benefits .benefitChoose .column .speedSearch::before {
+main #benefits .benefitChoose .column .speedSearch::before {
   background-image: url('../images/speedSearch.png');
 }
-#benefits .benefitChoose .column .trashFilter::before {
+main #benefits .benefitChoose .column .trashFilter::before {
   background-image: url('../images/trashFilter.png');
 }
-#benefits .benefitChoose .column .sale::before {
+main #benefits .benefitChoose .column .sale::before {
   background-image: url('../images/sale.png');
 }
-#benefits .benefitChoose .column .reserve::before {
+main #benefits .benefitChoose .column .reserve::before {
   background-image: url('../images/reserve.png');
 }
-#benefits .benefitChoose .column .targetAudience::before {
+main #benefits .benefitChoose .column .targetAudience::before {
   background-image: url('../images/targetAudience.png');
 }
-#stories {
+main #stories {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#stories .story {
+main #stories .story {
   display: flex;
   flex-direction: row;
   width: 600px;
@@ -252,12 +258,12 @@ article > div h2 {
   background-color: #FFF;
   border-radius: 10px;
 }
-#stories .story img {
+main #stories .story img {
   height: 150px;
   margin: 25px;
   border-radius: 50%;
 }
-#stories .story .contentData {
+main #stories .story .contentData {
   margin: 25px 0;
 }
 @media (max-width: 767px) {
@@ -282,23 +288,26 @@ article > div h2 {
     margin-top: 130px !important;
     transform-origin: -30px -120px !important;
   }
-  #benefits .benefitChoose {
+  main {
+    background: none;
+  }
+  main #benefits .benefitChoose {
     flex-direction: column !important;
     align-items: center !important;
   }
-  #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even) {
+  main #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even) {
     padding: 0;
     padding-right: 110px;
   }
-  #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even):before {
+  main #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even):before {
     left: inherit;
     right: 0;
   }
-  #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd) {
+  main #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd) {
     padding: 0;
     padding-right: 110px;
   }
-  #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd):before {
+  main #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd):before {
     left: inherit;
     right: 0;
   }
