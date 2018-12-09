@@ -7,8 +7,10 @@
     width: 100%;
     height: 400px;
     overflow: hidden;
-    background: url('../images/earth.png') no-repeat 50%, 
-                radial-gradient(circle, #007cba, #02486b 90%);
+    background-image: url('../images/earth.png'), radial-gradient(circle, #007cba, #02486b 90%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50%, 50%;
+    background-size: 355px, 100%;
 
     article {
         display: flex;
@@ -83,13 +85,25 @@
             }
         }
     }
+
+    .previewCover {
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        height: 50px;
+        background-color: #EEE;
+        transform: skewY(-1.5deg);
+        z-index: 3;
+    }
 }
 
 main {
+    position: relative;
     background-image: url('../images/bolt_grey.svg'), url('../images/bolt_grey.svg');
     background-repeat: no-repeat, no-repeat;
     background-size: 400px, 250px;
-    background-position: 10% 5%, 90% 75%;
+    background-position: 10% 5%, 90% 60%;
+    overflow: hidden;
     
     article > div {
         padding: 50px 10px;
@@ -158,7 +172,7 @@ main {
                 background-image: linear-gradient(to right, #ff6600, #d95700);
     
                 span::before {
-                    background-image: url('../images/give_bolt.png');
+                    background-image: url('../images/give_bolt.svg');
                 }
             }
         }
@@ -238,28 +252,57 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
+        &> * {
+            z-index: 3;
+        }
+
+        .owl-carousel {
+            width: 600px;
+            height: 200px;
+            cursor: -webkit-grab;
+            border-radius: 15px;
+            box-shadow: 0 15px 25px -5px #DDD;
+
+            .item {
+                width: 100%;
+                height: 200px;
+            }
+        }
     
         .story {
             display: flex;
             flex-direction: row;
-            width: 600px;
-            height: 200px;
-            background-color: #FFF;
-            border-radius: 10px;
+            background-color: #EEE;
+            border-radius: 15px;
     
             img {
-                height: 150px;
-                margin: 25px;
+                display: block;
+                width: 170px;
+                margin: 15px;
                 border-radius: 50%;
             }
     
             .contentData {
-                margin: 25px 0;
+                margin: 15px 0;
             }
         }
     }
+
+    .mainCover {
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        height: 350px;
+        background-color: #FFF;
+        transform: skewY(1.5deg);
+        z-index: 1;
+    }
 }
 
+footer {
+    margin: 0;
+}
 
 // Version for a smartphone
 @media (max-width: 767px) {
@@ -292,8 +335,11 @@ main {
 
     main {
         background: none;
+        background-image: linear-gradient(to bottom, #EEE, #d8e1e4);
 
         #benefits {
+            box-shadow: 0 15px 25px -10px #CCC;
+
             .benefitChoose {
                 flex-direction: column !important;
                 align-items: center !important;
@@ -321,6 +367,37 @@ main {
                     }
                 }
             }
+        }
+
+        #stories {
+            .owl-carousel {
+                width: 100%;
+                height: 300px;
+    
+                .item {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    height: 300px;
+                    padding: 10px;
+                }
+            }
+
+            .story {
+                flex-direction: column;
+
+                img {
+                    margin: 0;
+                }
+
+                .contentData {
+                    margin: 5px 0;
+                }
+            }
+        }
+
+        .mainCover {
+            height: 450px;
         }
     }
 }

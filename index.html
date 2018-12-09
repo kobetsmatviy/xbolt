@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="libraries/owl.carousel.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="libraries/owl.carousel.min.js" async></script>
 </head>
 <body>
     <header>
@@ -18,7 +20,7 @@
 
             <div class="leaderLinks">
                 <a href="authorization.html">
-                    <img src="images/give_bolt.png" />
+                    <img src="images/give_bolt.svg" />
                     <span>Продати</span>
                 </a>
                 <a href="profile.html">
@@ -43,6 +45,7 @@
                 <div class="bolt b5"></div>
             </div>
         </article>
+        <div class="previewCover"></div>
     </div>
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
@@ -91,20 +94,41 @@
                     </div>
                 </div>
             </div>
-            <!-- <div id="stories">
+            <div id="stories">
                 <h2>Історії користувачів</h2>
-                <div class="story">
-                    <img src="https://i.pinimg.com/564x/eb/f8/e9/ebf8e928fd23d1d7c54821e26ce9c0be.jpg" />
-                    <div class="contentData">
-                        <h3>Семен Болт</h3>
-                        <p>
-                            Викладач англійської у Києві - 38років<br>
-                            Їздить на Volksvagen Golf 1986
-                        </p>
+                <div class="owl-carousel owl-theme">
+                    <div class="item story">
+                        <img src="https://i.snag.gy/QBKOwc.jpg" />
+                        <div class="contentData">
+                            <h3>Семен</h3>
+                            <p>
+                                Викладач англійської у Львові - 38років<br>
+                                Їздить на Volksvagen Golf 1986
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item story">
+                        <img src="https://i.snag.gy/QPJ3mH.jpg" />
+                        <div class="contentData">
+                            <h3>Володька</h3>
+                            <p>
+                                Професійний охотник на лінь
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item story">
+                        <img src="https://i.snag.gy/cJzQB8.jpg" />
+                        <div class="contentData">
+                            <h3>Євген</h3>
+                            <p>
+                                Депутат сільської ради
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </article>
+        <div class="mainCover"></div>
     </main>
     <footer>
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
@@ -113,5 +137,15 @@
     </footer>
     <!-- JS ans CSS files -->
     <script src="js/scroll_bolts.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop: false,
+                dots: false,
+                items: 1,
+                margin: 10
+            });
+        });
+    </script>
 </body>
 </html>
