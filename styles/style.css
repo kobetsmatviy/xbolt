@@ -105,7 +105,7 @@ header article {
   align-items: center;
 }
 header article img {
-  height: 25px;
+  height: 30px;
 }
 header article .leaderLinks {
   display: flex;
@@ -120,6 +120,19 @@ header article .leaderLinks #search {
 }
 header article .leaderLinks #profile img {
   border-radius: 50%;
+}
+header article .leaderLinks #saleIco span {
+  position: relative;
+  top: -3px;
+}
+header article .leaderLinks #saleIco span::before {
+  content: 'без реєстрації';
+  position: absolute;
+  top: 18px;
+  left: 0;
+  display: block;
+  font-size: 9px;
+  color: #DDD;
 }
 header a {
   font-family: PTSansRegular !important;

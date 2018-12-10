@@ -164,7 +164,7 @@ main {
                 background-image: linear-gradient(to right, #339933, #237d23);
     
                 span::before {
-                    background-image: url('../images/search.png');
+                    background-image: url('../images/search.svg');
                 }
             }
             #sale {
@@ -198,23 +198,7 @@ main {
                     height: 110px;
                     margin-bottom: 10px;
                     padding-left: 110px;
-    
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        display: block;
-                        width: 100px;
-                        height: 100px;
-                        transform: translateY(0);
-                        transition: all .5s ease-in-out;
-                    }
-    
-                    &:hover::before {
-                        transform: translateY(-5px);
-                        transition: all .5s ease-in-out;
-                    }
-    
+
                     h3 {
                         font-size: 20px;
                         color: @color_dark;
@@ -224,25 +208,61 @@ main {
                         font-size: 14px;
                         color: @color_grey_dark;
                     }
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 10px;
+                        bottom: 0;
+                        display: block;
+                        width: 80px;
+                        height: 30px;
+                        background-color: #E8E8E8;
+                        border-radius: 50%;
+                        filter: blur(5px);
+                        transform: translateY(0);
+                        transition: all .5s ease-in-out;
+                    }
+                    &:hover::before {
+                        filter: blur(10px);
+                        transform: translateY(5px);
+                        transition: all .5s ease-in-out;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 100px;
+                        height: 100px;
+                        transform: translateY(0);
+                        transition: all .5s ease-in-out;
+                    }
+                    &:hover::after {
+                        transform: translateY(-5px);
+                        transition: all .5s ease-in-out;
+                    }
                 }
     
-                .easy::before {
-                    background-image: url('../images/easy.png');
+                .easy::after {
+                    background-image: url('../images/easy.svg');
                 }
-                .speedSearch::before {
-                    background-image: url('../images/speedSearch.png');
+                .speedSearch::after {
+                    background-image: url('../images/speedSearch.svg');
                 }
-                .trashFilter::before {
-                    background-image: url('../images/trashFilter.png');
+                .trashFilter::after {
+                    background-image: url('../images/trashFilter.svg');
                 }
-                .sale::before {
-                    background-image: url('../images/sale.png');
+                .sale::after {
+                    background-image: url('../images/sale.svg');
                 }
-                .reserve::before {
-                    background-image: url('../images/reserve.png');
+                .reserve::after {
+                    background-image: url('../images/reserve.svg');
                 }
-                .targetAudience::before {
-                    background-image: url('../images/targetAudience.png');
+                .targetAudience::after {
+                    background-image: url('../images/targetAudience.svg');
                 }
             }
         }
@@ -349,7 +369,7 @@ footer {
                         padding: 0;
                         padding-right: 110px;
         
-                        &:before {
+                        &::before, &::after {
                             left: inherit;
                             right: 0;
                         }
@@ -360,7 +380,7 @@ footer {
                         padding: 0;
                         padding-right: 110px;
         
-                        &:before {
+                        &::before, &::after {
                             left: inherit;
                             right: 0;
                         }

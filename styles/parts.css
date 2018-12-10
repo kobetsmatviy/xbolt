@@ -65,7 +65,7 @@
   top: 90px;
   right: 20px;
   padding: 20px;
-  z-index: 2;
+  z-index: 10;
 }
 .contacts:hover .phone {
   width: 160px;
@@ -80,9 +80,10 @@
   color: #ffffff;
   font-family: PTSansRegular;
   background-color: #0088cc;
-  background-image: url('../images/phone.png');
+  background-image: url('../images/phone.svg');
   background-repeat: no-repeat;
-  background-position: 5px 50%;
+  background-position: 4px 50%;
+  background-size: 30px;
   border-radius: 19px;
   cursor: pointer;
   white-space: nowrap;

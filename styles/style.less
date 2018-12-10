@@ -57,7 +57,7 @@ header {
         align-items: center;
         
         img {
-            height: 25px;
+            height: 30px;
         }
 
         .leaderLinks {
@@ -76,6 +76,23 @@ header {
             #profile {
                 img {
                     border-radius: 50%;
+                }
+            }
+
+            #saleIco {
+                span {
+                    position: relative;
+                    top: -3px;
+                    
+                    &::before {
+                        content: 'без реєстрації';
+                        position: absolute;
+                        top: 18px;
+                        left: 0;
+                        display: block;
+                        font-size: 9px;
+                        color: #DDD;
+                    }
                 }
             }
         }

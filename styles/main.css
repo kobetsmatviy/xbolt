@@ -189,7 +189,7 @@ main #categories .categoriesChoose #buy {
   background-image: linear-gradient(to right, #339933, #237d23);
 }
 main #categories .categoriesChoose #buy span::before {
-  background-image: url('../images/search.png');
+  background-image: url('../images/search.svg');
 }
 main #categories .categoriesChoose #sale {
   background-color: #ff6600;
@@ -219,20 +219,6 @@ main #benefits .benefitChoose .column .benefit {
   margin-bottom: 10px;
   padding-left: 110px;
 }
-main #benefits .benefitChoose .column .benefit::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  display: block;
-  width: 100px;
-  height: 100px;
-  transform: translateY(0);
-  transition: all 0.5s ease-in-out;
-}
-main #benefits .benefitChoose .column .benefit:hover::before {
-  transform: translateY(-5px);
-  transition: all 0.5s ease-in-out;
-}
 main #benefits .benefitChoose .column .benefit h3 {
   font-size: 20px;
   color: #2b2d42;
@@ -241,23 +227,57 @@ main #benefits .benefitChoose .column .benefit p {
   font-size: 14px;
   color: #999999;
 }
-main #benefits .benefitChoose .column .easy::before {
-  background-image: url('../images/easy.png');
+main #benefits .benefitChoose .column .benefit::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  display: block;
+  width: 80px;
+  height: 30px;
+  background-color: #E8E8E8;
+  border-radius: 50%;
+  filter: blur(5px);
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
 }
-main #benefits .benefitChoose .column .speedSearch::before {
-  background-image: url('../images/speedSearch.png');
+main #benefits .benefitChoose .column .benefit:hover::before {
+  filter: blur(10px);
+  transform: translateY(5px);
+  transition: all 0.5s ease-in-out;
 }
-main #benefits .benefitChoose .column .trashFilter::before {
-  background-image: url('../images/trashFilter.png');
+main #benefits .benefitChoose .column .benefit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100px;
+  height: 100px;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
 }
-main #benefits .benefitChoose .column .sale::before {
-  background-image: url('../images/sale.png');
+main #benefits .benefitChoose .column .benefit:hover::after {
+  transform: translateY(-5px);
+  transition: all 0.5s ease-in-out;
 }
-main #benefits .benefitChoose .column .reserve::before {
-  background-image: url('../images/reserve.png');
+main #benefits .benefitChoose .column .easy::after {
+  background-image: url('../images/easy.svg');
 }
-main #benefits .benefitChoose .column .targetAudience::before {
-  background-image: url('../images/targetAudience.png');
+main #benefits .benefitChoose .column .speedSearch::after {
+  background-image: url('../images/speedSearch.svg');
+}
+main #benefits .benefitChoose .column .trashFilter::after {
+  background-image: url('../images/trashFilter.svg');
+}
+main #benefits .benefitChoose .column .sale::after {
+  background-image: url('../images/sale.svg');
+}
+main #benefits .benefitChoose .column .reserve::after {
+  background-image: url('../images/reserve.svg');
+}
+main #benefits .benefitChoose .column .targetAudience::after {
+  background-image: url('../images/targetAudience.svg');
 }
 main #stories {
   display: flex;
@@ -342,7 +362,8 @@ footer {
     padding: 0;
     padding-right: 110px;
   }
-  main #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even):before {
+  main #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even)::before,
+  main #benefits .benefitChoose .column:nth-child(1) .benefit:nth-of-type(even)::after {
     left: inherit;
     right: 0;
   }
@@ -350,7 +371,8 @@ footer {
     padding: 0;
     padding-right: 110px;
   }
-  main #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd):before {
+  main #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd)::before,
+  main #benefits .benefitChoose .column:nth-child(2) .benefit:nth-of-type(odd)::after {
     left: inherit;
     right: 0;
   }
