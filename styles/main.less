@@ -295,6 +295,7 @@ main {
         }
     
         .story {
+            position: relative;
             display: flex;
             flex-direction: row;
             background-color: #EEE;
@@ -310,6 +311,45 @@ main {
             .contentData {
                 margin: 15px 0;
             }
+
+            &:hover {
+                &::after {
+                    animation: mouseMove 2s linear 2;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                display: block;
+                width: 30px;
+                height: 30px;
+                margin-top: -15px;
+                background-image: url('../images/mouse.svg');
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: 25px;
+                
+
+                @keyframes mouseMove {
+                    0% {
+                        transform: translateX(0);
+                        background-image: url('../images/mouse.svg');
+                    }
+                    10% {
+                        background-image: url('../images/mouse_active.svg');
+                    }
+                    90% {
+                        transform: translateX(-20px);
+                        background-image: url('../images/mouse.svg');
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+            }
         }
     }
 
@@ -319,6 +359,9 @@ main {
         width: 100%;
         height: 350px;
         background-color: #FFF;
+        background-image: url('../images/dotsPattern.png');
+        background-repeat: repeat-y;
+        background-size: contain;
         transform: skewY(1.5deg);
         z-index: 1;
     }
