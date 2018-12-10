@@ -90,9 +90,10 @@ form #apply {
   margin-top: 25px;
   width: 55px;
   height: 55px;
-  background-image: url('../images/search.png');
+  background-image: url('../images/search.svg');
   background-repeat: no-repeat;
   background-position: 50%;
+  background-size: 30px;
   border-radius: 50%;
   animation: submitStandard 5s infinite;
 }
