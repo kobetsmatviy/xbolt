@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <link rel="stylesheet" type="text/css" href="styles/authorization.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -26,13 +27,38 @@
     </header>
     <a href="catalog.html"><span id="back">&lsaquo; Назад</span></a>
     <main class="clearfix">
-        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-            <h1>Авторизація</h1>
-            <form>
-                <h3 style="margin-bottom: 20px;"><a href="once.html">Одноразова подача</a></h3>
-                <h3><a href="registration.html">Реєстрація</a> / <a href="login.html">Вхід</a></h3>
-            </form>
-        </article>
+        <form id="formAuthorization">
+            <img src="images/full.svg" class="boltLogo" />
+            <h1>Зареєструйся, щоб побачити більше</h1>
+            <div class="registerVSonce">
+                <h3><a href="registration.html" class="registration">Реєстрація</a></h3>
+                <span class="vs">або</span>
+                <h3><a href="once.html" class="once">Одноразова подача</a></h3>
+            </div>
+            <a href="login.html" class="slight"><h3>Вже зареєстрований?! <span>Увійти</span></h3></a>
+        </form>
+        <div id="overlay"></div>
+        <div class="photoCards">
+            <img src="images/photosGrid/1.png" />
+            <img src="images/photosGrid/2.png" />
+            <img src="images/photosGrid/3.png" />
+            <img src="images/photosGrid/4.png" />
+            <img src="images/photosGrid/5.png" />
+            <img src="images/photosGrid/6.png" />
+            <img src="images/photosGrid/7.png" />
+            <img src="images/photosGrid/8.png" />
+            <img src="images/photosGrid/9.png" />
+            <img src="images/photosGrid/10.png" />
+            <img src="images/photosGrid/11.png" />
+            <img src="images/photosGrid/12.png" />
+            <img src="images/photosGrid/13.png" />
+            <img src="images/photosGrid/14.png" />
+            <img src="images/photosGrid/1.png" />
+            <img src="images/photosGrid/2.png" />
+            <img src="images/photosGrid/3.png" />
+            <img src="images/photosGrid/4.png" />
+            <img src="images/photosGrid/5.png" />
+        </div>
     </main>
     <footer>
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">

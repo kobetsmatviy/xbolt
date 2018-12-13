@@ -1,0 +1,198 @@
+// Libraries for the LESS
+@import "variables";
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+// Version for a PK
+#back {
+    z-index: 5;
+}
+
+main {
+    #formAuthorization {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 420px;
+        height: 400px;
+        margin: 0 10px;
+        margin-top: -200px;
+        margin-left: -210px;
+        padding: 30px;
+        box-shadow: 0 0 25px 0 #333;
+        z-index: 5;
+
+        .boltLogo {
+            width: 45px;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 28px;
+            text-align: center;
+            color: #222;
+        }
+
+        .registerVSonce {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+
+            h3 {
+                margin: 0 20px;
+                font-size: 18px;
+
+                a {
+                    padding-right: 5px;
+                    color: #333;
+                }
+                
+                .registration {
+                    box-shadow: 3px 3px 0 0 #0088cc;
+                    
+                    &:hover {
+                        box-shadow: 5px 5px 0 0 #0088cc;
+                    }
+                }
+                .once {
+                    box-shadow: 3px 3px 0 0 #FF6600;
+                    
+                    &:hover {
+                        box-shadow: 5px 5px 0 0 #FF6600;
+                    }
+                }
+            }
+
+            .vs {
+                color: #555;
+            }
+        }
+
+        .slight {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+            height: 40px;
+            background-color: #DDD;
+            border-radius: 5px; 
+
+            h3 {
+                font-family: PTSansRegular;
+                font-weight: normal;
+                color: #555;
+            }
+
+            span {
+                margin-left: 10px;
+                color: #333;
+                font-family: PTSansBold;
+            }
+        }
+    }
+
+    #overlay {
+        height: 100vh;
+        overflow: hidden;
+        .background_color_black(0.6);
+        visibility: visible;
+    }
+    
+    .photoCards {
+        column-count: 6;
+        column-gap: 10px;
+        -moz-column-gap: 10px;
+        -webkit-column-gap: 10px;
+        margin: 5px 60px;
+        height: 1000px;
+        overflow: hidden;
+
+        img {
+            display: inline-block;
+            width: 100%;
+            margin: 5px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+
+// Version for a smartphone
+@media screen and (max-width: 767px) {
+    #formAuthorization {
+        position: absolute;
+        left: 10% !important;
+        width: 80% !important;
+        margin-top: -180px !important;
+        margin-left: 0 !important;
+
+        .registerVSonce {
+            flex-direction: column !important;
+
+            span {
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .photoCards {
+        margin: 10px !important;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .photoCards {
+        column-count: 1 !important;
+        -moz-column-count: 1 !important;
+        -webkit-column-count: 1 !important;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .photoCards {
+        column-count: 2 !important;
+        -moz-column-count: 2 !important;
+        -webkit-column-count: 2 !important;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .photoCards {
+        column-count: 3 !important;
+        -moz-column-count: 3 !important;
+        -webkit-column-count: 3 !important;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .photoCards {
+        column-count: 4 !important;
+        -moz-column-count: 4 !important;
+        -webkit-column-count: 4 !important;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .photoCards {
+        column-count: 5 !important;
+        -moz-column-count: 5 !important;
+        -webkit-column-count: 5 !important;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .photoCards {
+        column-count: 6 !important;
+        -moz-column-count: 6 !important;
+        -webkit-column-count: 6 !important;
+    }
+}
