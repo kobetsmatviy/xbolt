@@ -114,7 +114,8 @@ main {
         column-gap: 10px;
         -moz-column-gap: 10px;
         -webkit-column-gap: 10px;
-        margin: 5px 60px;
+        margin: 10px;
+        margin-right: 15px;
         height: 1000px;
         overflow: hidden;
 
@@ -132,9 +133,12 @@ main {
 @media screen and (max-width: 767px) {
     #formAuthorization {
         position: absolute;
+        top: 15% !important;
         left: 10% !important;
         width: 80% !important;
-        margin-top: -180px !important;
+        height: 80% !important;
+        max-height: 400px !important;
+        margin-top: 0 !important;
         margin-left: 0 !important;
 
         .registerVSonce {
@@ -146,8 +150,8 @@ main {
         }
     }
 
-    .photoCards {
-        margin: 10px !important;
+    #overlay {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.8) 100%);
     }
 }
 
