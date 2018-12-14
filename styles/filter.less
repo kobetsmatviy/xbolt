@@ -1,7 +1,7 @@
 ﻿// Libraries for the LESS
 @import "variables";
 
-//############### Version for a PK
+// Version for a PK
 select, input, label {
     cursor: pointer;
 }
@@ -19,7 +19,7 @@ form {
         border: none;
         border-radius: 3px;
         background-color: @button_color;
-        color: @color_select;
+        color: #333;
         font-size: 16px;
         font-weight: normal;
         text-align: left;
@@ -32,7 +32,7 @@ form {
     }
 
     select, input[type="button"] {
-        background-image: url('@{path_img}arrow.png');
+        background-image: url('../images/arrow.png');
         background-repeat: no-repeat;
         background-position: 95% 50%;
     }
@@ -116,13 +116,14 @@ form {
 
     label {
         margin-left: 20px;
+        color: #555;
     }
 }
 
 #filterArea {
     display: flex;
     position: fixed;
-    top: 81px;
+    top: 75px;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -145,7 +146,7 @@ form {
             min-height: 50px;
             padding-right: 5px;
             background-color: @color_white;
-            border-top: 1px solid @button_color;
+            border-top: 1px solid #DDD;
     
             &:first-of-type {
                 border-top: none;
@@ -169,7 +170,7 @@ form {
                 right: 0;
                 height: 100%;
                 width: 200px;
-                background-color: @color_grey_light;
+                background-color: #EEE;
                 margin-bottom: auto;
     
                 .remove {
@@ -224,8 +225,7 @@ form {
     }
 }
 
-
-//################### Version for a smartphone
+// Version for a smartphone
 @media screen and (max-width: 767px) {
     #filterArea {
         position: absolute;

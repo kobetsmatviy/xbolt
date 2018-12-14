@@ -1,17 +1,18 @@
 ﻿// Libraries for the LESS
 @import "variables";
 
-// VERSION FOR PK - STYLE LIKE CARDS
+// Version for a PK
 main article {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 
 .partCard {
     flex-direction: column;
     flex-grow: 1;
-    border: 1px solid @color_border;
+    border: 1px solid #E3E3E3;
     margin: 15px 15px 0 0;
     border-radius: 5px;
     width: 245px;
@@ -58,7 +59,7 @@ main article {
             span {
                 font-size: 10px;
                 line-height: 12px;
-                color: @color_grey_dark;
+                color: #999;
 
                 &:not(:last-child)::after {
                     content: " \203A";
@@ -104,7 +105,6 @@ main article {
                 justify-content: center;
                 text-align: right;
                 color: @color_red;
-                font-family: MyriadProRegular;
                 font-size: 20px;
                 font-weight: bold;
 
@@ -143,7 +143,7 @@ main article {
                     left: 0;
                     right: 0;
                     height: 1px;
-                    background-color: @color_border;
+                    background-color: #E3E3E3;
                     z-index: 1;
                 }
 
@@ -156,9 +156,11 @@ main article {
             }
 
             .automobiles {
+                max-height: 50px;
                 margin: 5px 0;
                 text-align: center;
                 line-height: 22px;
+                overflow: hidden;
 
                 span {
                     background-color: @background_tag;
@@ -178,7 +180,7 @@ main article {
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            color: @color_grey_dark;
+            color: #999;
             font-size: 12px;
             line-height: 11px;
 
@@ -197,11 +199,11 @@ main article {
             }
 
             .icon-clock {
-                background-image: url('@{path_img}clock.svg');
+                background-image: url('../images/clock.svg');
             }
 
             .icon-location {
-                background-image: url('@{path_img}location.svg');
+                background-image: url('../images/location.svg');
             }
         }
     }

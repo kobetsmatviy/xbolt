@@ -7,7 +7,7 @@ main {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        width: 100%;   
+        width: 100%;
 
         #menu {
             display: flex;
@@ -40,7 +40,6 @@ main {
                 list-style: none;
     
                 a {
-                    font-family: PTSansRegular;
                     color: @color_tag;
 
                     li {
@@ -61,7 +60,7 @@ main {
                     }
                 }
                 .openly {
-                    font-family: PTSansBold;
+                    font-weight: bold;
                 }
             }
         }
@@ -204,7 +203,7 @@ main {
                     border-radius: 10px;
                     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
                     text-transform: uppercase;
-                    font-family: PTSansBold;
+                    font-weight: bold;
                     overflow: hidden;
                     z-index: 5;
 
@@ -221,7 +220,7 @@ main {
                         display: flex;
                         width: 100%;
                         height: 100%;
-                        font-family: PTSansRegular;
+                        font-weight: bold;
                         font-size: 32px;
                         color: @color_white;
                         cursor: pointer;
@@ -257,6 +256,56 @@ main {
                     height: 100%;
                     .background_color_black(0.4);
                     z-index: 3;
+                }
+            }
+        }
+
+        #comments {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin: 10px;
+
+            .comment {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+                padding: 15px;
+                margin-bottom: 10px;
+                font-size: 12px;
+                background-color: @color_white;
+                border-radius: 2px;
+
+                .userData {
+                    display: flex;
+                    flex-direction: row;
+
+                    img {
+                        max-width: 40px;
+                        max-height: 40px;
+                        border-radius: 50%;
+                        box-shadow: 0 5px 10px 0 #DDD;
+                    }
+
+                    .contentData {
+                        margin: 0 15px;
+
+                        h3 {
+                            font-size: 14px;
+                            color: @color_select;
+                        }
+
+                        p {
+                            white-space: pre-line;
+                        }
+                    }
+                }
+
+                time {
+                    min-width: 75px;
+                    color: #888;
                 }
             }
         }
@@ -359,56 +408,6 @@ main {
                 }
                 .hidePassword {
                     display: none;
-                }
-            }
-        }
-
-        #comments {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            margin: 10px;
-
-            .comment {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 100%;
-                height: 100%;
-                padding: 15px;
-                margin-bottom: 10px;
-                font-size: 12px;
-                background-color: @color_white;
-                border-radius: 2px;
-
-                .userData {
-                    display: flex;
-                    flex-direction: row;
-
-                    img {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        box-shadow: 0 5px 10px 0 #DDD;
-                    }
-
-                    .contentData {
-                        margin: 0 15px;
-
-                        h3 {
-                            font-size: 14px;
-                            color: @color_select;
-                        }
-
-                        p {
-                            white-space: pre-line;
-                        }
-                    }
-                }
-
-                time {
-                    min-width: 75px;
-                    color: #888;
                 }
             }
         }

@@ -6,15 +6,15 @@
     width: 100%;
     min-height: 500px;
     height: 1px;
-    background-color: #0d1216;
+    background-color: #0D1216;
     overflow: hidden;
 }
 
 #back {
     position: fixed;
-    top: 80px;
+    top: 75px;
     left: 0;
-    color: #ccc;
+    color: #CCC;
     background-color: rgba(255, 255, 255, 0);
 
     &:hover {
@@ -25,10 +25,10 @@
 
 .contacts {
     position: fixed;
-    top: 90px;
-    right: 20px;
+    top: 85px;
+    right: 15px;
     padding: 20px;
-    z-index: 10;
+    z-index: 2;
     
     &:hover .phone {
         width: 160px;
@@ -42,9 +42,8 @@
         height: 38px;
         padding-left: 38px;
         color: @color_white;
-        font-family: PTSansRegular;
-        background-color: #0088cc;
-        background-image: url('@{path_img}phone.svg');
+        background-color: #0088CC;
+        background-image: url('../images/phone.svg');
         background-repeat: no-repeat;
         background-position: 4px 50%;
         background-size: 30px;
@@ -56,7 +55,7 @@
     }
 }
 
-main  {
+main {
     .description {
         .heading {
             max-width: 600px;
@@ -67,7 +66,7 @@ main  {
                 padding: 30px 20px;
                 padding-bottom: 10px;
                 text-transform: uppercase;
-                color: #1e202e;
+                color: #1E202E;
             }
             .value {
                 display: flex;
@@ -82,8 +81,8 @@ main  {
                     justify-content: center;
                     text-align: right;
                     color: @color_red;
-                    font-family: PTSansBold;
                     font-size: 22px;
+                    font-weight: bold;
     
                     sup {
                         position: relative;
@@ -110,8 +109,8 @@ main  {
             flex-wrap: wrap;
             max-width: 700px;
             margin: 0 auto;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #DDD;
+            border-bottom: 1px solid #DDD;
             color: #737c81;
 
             div {
@@ -144,20 +143,21 @@ main  {
             .person {
                 .owner {
                     margin-left: 23px;
+                    font-weight: bold;
 
                     &::before {
-                        background-image: url('@{path_img}user.svg');
+                        background-image: url('../images/user.svg');
                     }
                 }
                 .location {
                     &::before {
-                        background-image: url('@{path_img}location.svg');
+                        background-image: url('../images/location.svg');
                     }
                 }
                 time {
                     margin-right: 5px;
                     &::before {
-                        background-image: url('@{path_img}clock.svg');
+                        background-image: url('../images/clock.svg');
                     }
                 }
             }
@@ -170,15 +170,17 @@ main  {
 
                 .views {
                     &::before {
-                        background-image: url('@{path_img}views.svg');
+                        background-image: url('../images/views.svg');
                     }
                 }
                 .comments {
                     &::before {
-                        background-image: url('@{path_img}comments.svg');
+                        background-image: url('../images/comments.svg');
                     }
                 }
                 .share {
+                    font-weight: bold;
+
                     &::before {
                         background-image: url('../images/share.svg');
                         background-size: 16px;

@@ -5,7 +5,7 @@
 body {
     margin: 0;
     background-color: #EEE;
-    font-family: PTSansRegular, Arial;
+    font-family: 'PT Sans', sans-serif;
 }
 ::selection {
 	background-color: @color_red;
@@ -17,12 +17,11 @@ body {
 a, a:hover, a:link, a:active, a:visited {
     color: @background_filter;
     text-decoration: none;
-    font-family: PTSansBold;
 }
 h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
-    font-family: PTSansBold;
+    font-weight: bold;
     font-size: 24px;
 }
 h2 {
@@ -99,7 +98,6 @@ header {
     }
 
     a {
-        font-family: PTSansRegular !important;
         color: @color_white !important;
     }
 }
@@ -111,15 +109,14 @@ nav {
     right: 0;
     z-index: 10;
     width: 100%;
-    height: 46px;
-    background-color: @background_nav;
+    height: 40px;
     font-size: 16px;
+    background-color: @background_nav;
     color: @color_white;
 
     section {
         display: flex;
         flex-direction: row;
-        align-items: center;
     }
 
     div {
@@ -134,7 +131,7 @@ nav {
         flex-grow: 0;
         flex-shrink: 0;
         width: 200px;
-        height: 46px;
+        height: 40px;
         color: @color_grey_light;
         background-color: @background_filter;
         font-size: 18px;
@@ -142,10 +139,12 @@ nav {
     }
 
     #filterCategories {
+        display: flex;
         flex-wrap: wrap;
-        overflow: hidden;
-        max-height: 36px;
+        margin: auto 0;
+        max-height: 35px;
         font-size: 12px;
+        overflow: hidden;
 
         span {
             margin: 0 3px;
@@ -168,7 +167,6 @@ nav {
     height: 100%;
     padding: 20px 25px;
     color: #555;
-    font-family: PTSansRegular;
     background-color: rgba(0, 0, 0, 0);
     transition: all 1s ease-in-out;
     cursor: pointer;
@@ -272,10 +270,15 @@ form {
     }
 }
 
+.rateYo {
+    display: flex;
+    margin: auto 0;
+    z-index: 1;
+}
+
 footer {
     width: 100%;
     height: 100px;
-    margin-top: 10px;
     background-color: @background_footer;
 
     article {
@@ -284,12 +287,6 @@ footer {
         justify-content: center;
         align-items: center;
     }
-}
-
-.rateYo {
-    display: flex;
-    margin: auto 0;
-    z-index: 1;
 }
 
 // Version for a smartphone
