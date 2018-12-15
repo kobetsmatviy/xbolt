@@ -37,10 +37,12 @@ $(function () {
 
 $(function () {
     $('input[name=first_name]').keyup(function(e) {
+        e.preventDefault();
         var res = /[^а-яА-Яa-zA-ZїЇєЄіІёЁґ ]/g.exec(this.value);
         this.value = this.value.replace(res, '');
     });
     $('input[name=telephone]').keyup(function(e) {
+        e.preventDefault();
         var res = /[^0-9+]/g.exec(this.value);
         this.value = this.value.replace(res, '');
     });

@@ -220,7 +220,7 @@ $(function () {
     });
 
     //#### FORM SUBMIT validation
-    $('form').submit(function(e) {
+    $('#formPost, #formEdit').submit(function(e) {
         //#### Валідація загрузки фото
         var itemImg = $(this).find('#list li');
 

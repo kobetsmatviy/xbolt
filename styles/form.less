@@ -3,8 +3,14 @@
 
 // Version for a PK
 body {
+    main {
+        min-height: 600px;
+    }
+
     h1 {
-        margin: 20px 50px;
+        margin: 20px 0;
+        text-align: center;
+        color: #333;
     }
 }
 
@@ -16,8 +22,8 @@ form:not([id='filter']) {
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #FFF;
+    box-shadow: 0 0 25px 0 #DDD;
     
     &> .formRow {
         display: flex;
@@ -178,6 +184,52 @@ form:not([id='filter']) {
         margin-left: 5px;
         padding: 3px;
         border-radius: 2px;
+    }
+}
+
+.animationShapes {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    .shape {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-image: url('../images/bolt_grey.svg');
+        background-size: 100px;
+    }
+
+    .s1 {
+        left: 15%;
+        top: 30%;
+        animation: shapeMove 30s infinite linear;
+        transform-origin: 200px 25px;
+    }
+    .s2 {
+        left: 90%;
+        top: 40%;
+        animation: shapeMove 30s infinite linear;
+        transform-origin: -100px 50px;
+    }
+    .s3 {
+        left: 10%;
+        top: 80%;
+        animation: shapeMove 30s infinite linear;
+        transform-origin: 100px -100px;
+    }
+
+    @keyframes shapeMove {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 }
 
