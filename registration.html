@@ -6,10 +6,7 @@
     <title>Registration</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="styles/form.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="js/registration_validation.js" async></script>
 </head>
 <body>
     <header>
@@ -26,7 +23,7 @@
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Реєстрація</h1>
-            <form id="formRegistration" method="GET" action="">
+            <form id="formRegistration" method="POST" action="post.html">
                 <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Ім'я Прізвище:</span>
@@ -77,5 +74,9 @@
             ПІДВАЛ - XBOLT &copy;2018
         </article>
     </footer>
+    <!-- JS and CSS files -->
+    <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" async></script>
+    <script src="js/registration_validation.js" async></script>
 </body>
 </html>

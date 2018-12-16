@@ -6,15 +6,7 @@
     <title>Once</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="styles/form.css">
-    <link rel="stylesheet" type="text/css" href="styles/post.css">
-    <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="js/once_validation.js" async></script>
-    <script src="js/post_validation.js" async></script>
-    <script src="js/post_actions.js" async></script>
-    <script src="libraries/jquery.rateyo.min.js" async></script>
 </head>
 <body>
     <header>
@@ -35,7 +27,7 @@
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Разове оголошення</h1>
-            <form id="formOnce" method="GET" action="">
+            <form id="formOnce" method="POST" action="">
                 <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Ім'я Прізвище:</span>
@@ -56,7 +48,7 @@
                 </div>
                 <!-- <input type="submit" value="Гаразд" /> -->
             </form>
-            <form id="formPost" method="GET" action="">
+            <form id="formPost" method="POST" action="part.html">
                 <div class="formRow">
                     <div class="interaction">
                         <span class="interactionName">Оберіть фото:</span>
@@ -541,5 +533,14 @@
             ПІДВАЛ - XBOLT &copy;2018
         </article>
     </footer>
+    <!-- JS and CSS files -->
+    <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <link rel="stylesheet" type="text/css" href="styles/post.css">
+    <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" async></script>
+    <script src="js/once_validation.js" async></script>
+    <script src="js/post_validation.js" async></script>
+    <script src="js/post_actions.js" async></script>
+    <script src="libraries/jquery.rateyo.min.js" async></script>
 </body>
 </html>
