@@ -470,33 +470,39 @@
     <main class="clearfix">
         <section id="photoView">
             <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-                <div class="fotorama">
-                    <img src="images/photos/fari-ford-mustang.jpg" />
-                    <img src="images/photos/fari-ford-mustang2.jpg" />
-                    <img src="images/photos/fari-ford-mustang3.jpg" />
-                    <img src="images/photos/fari-ford-mustang4.jpg" />
-                    <img src="images/photos/fari-ford-mustang5.jpg" />
-                    <img src="images/photos/fari-ford-mustang6.jpg" />
-                    <img src="images/photos/fari-ford-mustang7.jpg" />
+                <div class="fotorama" itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="images/photos/fari-ford-mustang.jpg" itemprop="image" />
+                    <img src="images/photos/fari-ford-mustang2.jpg" itemprop="image" />
+                    <img src="images/photos/fari-ford-mustang3.jpg" itemprop="image" />
+                    <img src="images/photos/fari-ford-mustang4.jpg" itemprop="image" />
+                    <img src="images/photos/fari-ford-mustang5.jpg" itemprop="image" />
+                    <img src="images/photos/fari-ford-mustang6.jpg" itemprop="image" />
+                    <img src="images/photos/fari-ford-mustang7.jpg" itemprop="image" />
                 </div>
             </article>
         </section>
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-            <div class="description">
+            <div class="description" itemscope itemtype="http://schema.org/Product">
                 <div class="heading">
-                    <h1>Продам оригінальні фари Ford Mustang 2015-2017</h1>
+                    <h1 itemprop="name">Продам оригінальні фари Ford Mustang 2015-2017</h1>
                     <div class="value">
                         <div class="rateYo" data-rateyo-rating="3.5"></div>
-                        <span class="price" itemprop="price">
-                            5999 <sup>грн</sup>
+                        <span class="price" itemscope itemtype="https://schema.org/Offer">
+                            <div itemprop="price">
+                                5999 <sup>грн</sup>
+                            </div>
                         </span>
                     </div>
                 </div>
                 <div class="brief">
                     <div class="person">
-                        <span class="owner"><a href="profile.html">Семен Болт</a></span>
-                        <span class="location">Корець, Рівненська обл.</span>
-                        <time data-time="2018-11-01 15:50">1 листопада 15:50</time>
+                        <span class="owner" itemscope itemtype="https://schema.org/Place">
+                            <a href="profile.html" itemprop="name">Семен Болт</a>
+                        </span>
+                        <span class="location" itemscope itemtype="https://schema.org/Place">
+                            <div itemprop="address">Корець, Рівненська обл.</div>
+                        </span>
+                        <time data-time="2018-11-01 15:50" itemprop="productionDate">1 листопада 15:50</time>
                     </div>
                     <div class="statistic">
                         <span class="views">120</span>
@@ -504,7 +510,7 @@
                         <span class="share"><a href="">Поділитись</a></span>
                     </div>
                 </div>
-                <div class="story">
+                <div class="story" itemprop="description">
                     <p>Продам нові оригінальні фари Ford Mustang 2015-2017 року.
 Ціна к-ту 1200$ по курсу.
 Підходять для сертифікації на авто Ford з Америки.
