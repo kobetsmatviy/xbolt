@@ -463,35 +463,37 @@
     <div id="overlay" class="visible"></div>
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-            <div class="partCard" itemscope itemtype="https://schema.org/Car">
-                <a href="part.html" itemprop="image">
+            <div class="partCard" itemscope itemtype="http://schema.org/Product">
+                <a href="part.html" itemprop="url">
                     <div class="photo">
-                        <img src="images/minimals/1.jpg" />
+                        <img src="images/minimals/1.jpg" itemprop="image" />
                     </div>
                 </a>
                 <div class="content">
                     <div class="description">
-                        <div class="parts" itemprop="parts">
+                        <div class="parts" itemprop="category">
                             <span>передняя подвеска</span>
                             <span>рулевое управление</span>
                         </div>
                         <div class="primary">
-                            <div class="title" itemprop="title">
-                                <a href="part.html">
+                            <div class="title">
+                                <a href="part.html" itemprop="name url">
                                     <h3>
                                         Турбина Audi A4 A5 Q5 2.0 TDI Seat Exeo (03L145721A)
                                     </h3>
                                 </a>
                             </div>
-                            <span class="price" itemprop="price">
-                                5999 <sup>грн</sup>
+                            <span class="price" itemscope itemtype="https://schema.org/Offer">
+                                <div itemprop="price">
+                                    5999 <sup>грн</sup>
+                                </div>
                             </span>
                         </div>
                         <div class="secondary">
                             <div class="state">
                                 <div class="rateYo" data-rateyo-rating="4.5"></div>
                             </div>
-                            <div class="automobiles" itemprop="automobiles">
+                            <div class="automobiles">
                                 <span>Audi A4 1994-1998</span>
                                 <span>BMW Z4 M 2014-2015</span>
                             </div>
@@ -500,9 +502,13 @@
                     <div class="tertiary">
                         <div class="additionalInfo">
                             <span class="icon icon-clock"></span>
-                            <span class="date" itemprop="date"><time data-time="2018-04-18">18.04.2018</time></span>
+                            <span class="date" itemprop="productionDate">
+                                <time data-time="2018-04-18">18.04.2018</time>
+                            </span>
                             <span class="icon icon-location"></span>
-                            <span class="location" itemprop="location">Корець, Рівненська обл.</span>
+                            <span class="location" itemscope itemtype="https://schema.org/Place">
+                                <div itemprop="address">Корець, Рівненська обл.</div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -529,7 +535,9 @@
                                     </a>
                                 </div>
                                 <span class="price">
-                                    9600 <sup>грн</sup>
+                                    <div>
+                                        9600 <sup>грн</sup>
+                                    </div>
                                 </span>
                             </div>
                             <div class="secondary">
@@ -574,7 +582,9 @@
                                 </a>
                             </div>
                             <span class="price">
-                                90 <sup>грн</sup>
+                                <div>
+                                    90 <sup>грн</sup>
+                                </div>
                             </span>
                         </div>
                         <div class="secondary">
@@ -618,7 +628,9 @@
                                 </a>
                             </div>
                             <span class="price">
-                                12050 <sup>грн</sup>
+                                <div>
+                                    12050 <sup>грн</sup>
+                                </div>
                             </span>
                         </div>
                         <div class="secondary">
@@ -664,7 +676,9 @@
                                 </a>
                             </div>
                             <span class="price">
-                                1 <sup>грн</sup>
+                                <div>
+                                    1 <sup>грн</sup>
+                                </div>
                             </span>
                         </div>
                         <div class="secondary">
@@ -708,7 +722,9 @@
                                 </a>
                             </div>
                             <span class="price">
-                                320 <sup>грн</sup>
+                                <div>
+                                    320 <sup>грн</sup>
+                                </div>
                             </span>
                         </div>
                         <div class="secondary">
@@ -752,7 +768,9 @@
                                 </a>
                             </div>
                             <span class="price">
-                                55 <sup>грн</sup>
+                                <div>
+                                    55 <sup>грн</sup>
+                                </div>
                             </span>
                         </div>
                         <div class="secondary">
@@ -788,5 +806,16 @@
     <script src="js/filter_actions.js" async></script>
     <script src="js/adaptive_cards.js" async></script>
     <script src="libraries/jquery.rateyo.min.js" async></script>
+    <!-- Hotjar Tracking Code for http://workout.korets.in.ua/xbolt/index.html -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1130294,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </body>
 </html>
