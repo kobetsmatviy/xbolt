@@ -63,7 +63,7 @@ $(function () {
         $(this).closest('.interaction').next().find('label.error').remove();
     });
 
-    //#### КАТЕГОРІЯ перемикаємо стан
+    //#### КАТЕГОРІЯ перемикач
     $('#toggleCategory').on('click', function(e) {
         // Перемикач станів
         if ($('.category').css('visibility') == 'hidden') {
@@ -206,6 +206,31 @@ $(function () {
         }
     }
 
+    //#### СТАН деталі
+    var usedItem = $('.chooseCondition input[value="usedItem"]').on('change', function() {
+        $('.chooseCondition').removeClass('error');
+
+        if ($('.rateYo').rateYo("rating") > 0) {
+            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
+        }
+    });
+    var newItem = $('.chooseCondition input[value="newItem"]').on('change', function() {
+        $('.rateYo').rateYo("rating", 10);
+        $('.chooseCondition').removeClass('error');
+
+        if ($('.rateYo').rateYo("rating") > 0) {
+            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
+        }
+    });
+    $(".rateYo").rateYo("option", "onSet", function () {
+        if (newItem.prop('checked') && $('.rateYo').rateYo("rating") < 10 && $('.rateYo').rateYo("rating") > 0) {
+            usedItem.prop('checked', true);
+        }
+        if ($('.rateYo').rateYo("rating") > 0) {
+            $('.rateYo').removeClass('error');
+        }
+    });
+
     //#### РЕГІОН при зміні
     $('select').change(function() {
         $(this).css('box-shadow', 'none');
@@ -218,6 +243,8 @@ $(function () {
         $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
         $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
     });
+
+
 
     //#### FORM SUBMIT validation
     $('#formPost, #formEdit').submit(function(e) {
@@ -251,11 +278,20 @@ $(function () {
         }
 
         //#### Звертаємо увагу на рейтинг стану
+        // б/у або новий
+        if (!(usedItem.prop('checked')) && !(newItem.prop('checked'))) {
+            $('.chooseCondition').addClass('error');
+            $('.chooseCondition').closest('.interaction').next().find('.advice').remove();
+            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
+            $('<label class="error">Оберіть стан</label>').appendTo($('.chooseCondition').closest('.interaction').next());
+        }
+        else {
+            $('.chooseCondition').removeClass('error');
+        }
+
+        // рейтинг болтів
         if ($('.jq-ry-rated-group').width() == 0) {
             $('.rateYo').addClass('error');
-            $('.rateYo').closest('.interaction').next().find('.advice').remove();
-            $('.rateYo').closest('.interaction').next().find('.error').remove();
-            $('<label class="error">Оберіть стан</label>').appendTo($('.rateYo').closest('.interaction').next());
         }
         else {
             $('.rateYo').removeClass('error');

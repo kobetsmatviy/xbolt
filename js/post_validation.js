@@ -13,6 +13,9 @@ $(function () {
                 min: 1,
                 max: 9999999
             },
+            condition: {
+                required: true
+            },
             stateRange: {
                 required: true,
                 min: 1,
@@ -37,6 +40,9 @@ $(function () {
                 required: "Укажіть ціну, що вважаєте за потрібну",
                 min: "Ціна починається з 1грн",
                 max: "Не більше 9 999 999грн"
+            },
+            condition: {
+                required: "Оберіть стан деталі"
             },
             stateRange: {
                 required: "Визначте стан деталі",
