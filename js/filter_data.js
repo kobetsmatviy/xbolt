@@ -48,24 +48,24 @@
 //     });
 // });
 
-$.ajax({
-    url: 'http://192.168.0.21:44332/api/catalog/filter/regions',
-    method: 'GET',
-    dataType: 'json',
-    success: function (data) {
-        // $('select[name="region"]').empty();
-        // $('select[name="region"]').append('<option selected disabled hidden>Область</option>');
-        // $('select[name="region"]').removeClass('mark');
+// $.ajax({
+//     url: 'http://192.168.0.21:44332/api/catalog/filter/regions',
+//     method: 'GET',
+//     dataType: 'json',
+//     success: function (data) {
+//         // $('select[name="region"]').empty();
+//         // $('select[name="region"]').append('<option selected disabled hidden>Область</option>');
+//         // $('select[name="region"]').removeClass('mark');
 
-        // for (var id in data) {
-        //     $('select[name="region"]').append('<option value="' +
-        //         id + '">' +
-        //         data[id] + '</option>');
-        // }
-        alert(1);
-    },
-    error: function(request, status, error) {
-        var statusCode = request.status;
-        alert(statusCode);
-    }
-});
+//         // for (var id in data) {
+//         //     $('select[name="region"]').append('<option value="' +
+//         //         id + '">' +
+//         //         data[id] + '</option>');
+//         // }
+//         // alert(1);
+//     },
+//     error: function(request, status, error) {
+//         var statusCode = request.status;
+//         alert(statusCode);
+//     }
+// });
