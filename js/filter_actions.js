@@ -1,45 +1,13 @@
 ﻿$(function () {
-    AdaptiveFilter();
+    // Автоматично відкриваємо фільтр, якщо це /catalog/
+    var thisURL = window.location.href;
+    if (thisURL.substr(thisURL.indexOf('/catalog') + 1).length <= 8) {
+        $('#filterArea, #overlay').addClass('visible');
+    }
+
     $(window).resize(function() {
         AdaptiveFilter();
     });
-    
-    // Розміщення блоку деталей під кнопкою (адаптивно для всіх екранів) 
-    function AdaptiveFilter() {
-        if ($(window).width() > 750) {
-            var rowWidth = $(".filterCategory").width();
-            var countItems = Math.floor(rowWidth / (200 + 5));
-            var inputOrder = -1;
-            var detailsOrder = 0;
-
-            // Значення order для кожного input[type=button]
-            $(".filterCategory input[type=button]").each(function() {
-                if (($(this).index()/2) % countItems == 0) {
-                    inputOrder += 2;
-                }
-                else {
-                    inputOrder++;
-                }
-                $(this).css("order", inputOrder);
-            });
-            // Значення order для кожного блоку details
-            $(".details").each(function() {
-                if((($(this).index()-1)/2) % countItems == 0) {
-                    detailsOrder += countItems + 1;
-                }
-                $(this).css("order", detailsOrder);
-            });
-            // Ширина блоку details, залежно від кількості елементів у рядку
-            $(".details").width(countItems * 200);
-        }
-        // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
-        else {
-            $(".filterCategory").children().each(function() {
-                $(this).css("order", 0);
-            });
-            $(".details").width("100%");
-        }
-    }
 
     // Перемикач фільтру
     $('#filterName').on("click", function () {
@@ -110,20 +78,21 @@
     });
 
     // Якщо select значення змінено, позначаємо mark
-    $('select').change(function () {
+    $('select').change(MarkSelect);
+    function MarkSelect() {
         $(this).addClass('mark');
         $(this).next().removeClass('disabled').prop('disabled', false);
         $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
         $('#apply').css('animation-name', 'submitMark').css('animation-duration', '3s');
-    });
+    }
 
     // Приховуємо/показуємо блоки з деталями, якщо має active
-    var $toggleDetails = $('input[type="button"]');
-    $toggleDetails.on("click", function () {
+    var $toggleDetails = $('#groups');
+    $toggleDetails.on("click", 'input[type="button"]', function () {
         if ($(this).hasClass('active')) {
             $(this).next().hide();
-            $toggleDetails.each(function () {
-                $toggleDetails.removeClass('active');
+            $toggleDetails.find('input[type="button"]').each(function () {
+                $toggleDetails.find('input[type="button"]').removeClass('active');
             });
             if ($(this).hasClass('activeMark')) {
                 $(this).removeClass('activeMark');
@@ -131,8 +100,8 @@
             }
         }
         else {
-            $toggleDetails.each(function () {
-                $toggleDetails.removeClass('active');
+            $toggleDetails.find('input[type="button"]').each(function () {
+                $toggleDetails.find('input[type="button"]').removeClass('active');
             });
             $('.details').each(function () {
                 $(this).hide();
@@ -140,8 +109,8 @@
             $(this).addClass('active');
             $(this).next().show();
 
-            $toggleDetails.each(function () {
-                $toggleDetails.removeClass('activeMark');
+            $toggleDetails.find('input[type="button"]').each(function () {
+                $toggleDetails.find('input[type="button"]').removeClass('activeMark');
             });
 
             if ($(this).hasClass('mark')) {
@@ -152,8 +121,7 @@
 
     // Якщо відмічений хоча б один checkbox у блоку details, то
     // змінити значення відповідної кнопки на mark
-    var $checkDetails = $('.details input[type=checkbox]');
-    $checkDetails.on("click", function () {
+    $('#groups').on("click", '.details input[type=checkbox]', function () {
         if ($(this).parents('.details').find('input[type=checkbox]:checked').length) {
             $(this).parents('.details').prev().addClass('mark');
             $(this).parents('.details').prev().addClass('activeMark');
@@ -169,8 +137,8 @@
             $(this).parents('.details').css('border-color', '#2299d4');
         }
         
-        $checkDetails.each(function() {
-            if ($checkDetails.parents('.details').find('input[type=checkbox]:checked').length) {
+        $('.details input[type=checkbox]').each(function() {
+            if ($('.details input[type=checkbox]').parents('.details').find('input[type=checkbox]:checked').length) {
                 $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
             }
         });
@@ -194,3 +162,40 @@
         $(this).css('animation-duration', '3s');
     });
 });
+
+// Розміщення блоку деталей під кнопкою (адаптивно для всіх екранів) 
+function AdaptiveFilter() {
+    if ($(window).width() > 750) {
+        var rowWidth = $("#groups").width();
+        var countItems = Math.floor(rowWidth / (200 + 5));
+        var inputOrder = -1;
+        var detailsOrder = 0;
+
+        // Значення order для кожного input[type=button]
+        $("#groups input[type='button']").each(function() {
+            if (($(this).index()/2) % countItems == 0) {
+                inputOrder += 2;
+            }
+            else {
+                inputOrder++;
+            }
+            $(this).css("order", inputOrder);
+        });
+        // Значення order для кожного блоку details
+        $(".details").each(function() {
+            if((($(this).index()-1)/2) % countItems == 0) {
+                detailsOrder += countItems + 1;
+            }
+            $(this).css("order", detailsOrder);
+        });
+        // Ширина блоку details, залежно від кількості елементів у рядку
+        $(".details").width(countItems * 200);
+    }
+    // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
+    else {
+        $(".filterCategory").children().each(function() {
+            $(this).css("order", 0);
+        });
+        $(".details").width("100%");
+    }
+}

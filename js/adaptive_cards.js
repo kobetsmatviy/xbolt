@@ -11,4 +11,11 @@ $(document).ready(function(){
 
         $(".partCard").css('max-width', itemWidth);
     }
+
+    $('#pagination .mark').parent().next().find('li').css('width', '65px');
+
+    $('img[data-src]').each(function() {
+        $(this).attr('src', $(this).attr('data-src'));
+        $(this).removeAttr('data-src');
+    });
 });
