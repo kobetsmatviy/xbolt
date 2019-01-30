@@ -23,48 +23,52 @@
     }
 }
 
-.contacts {
-    position: fixed;
-    top: 85px;
-    right: 15px;
-    padding: 20px;
-    z-index: 2;
-    
-    &:hover .phone {
-        width: 160px;
-        transition: width .5s ease-in-out;
-    }
-
-    .phone {
-        display: flex;
-        align-items: center;
-        width: 38px;
-        height: 38px;
-        padding-left: 38px;
-        color: @color_white;
-        background-color: #0088CC;
-        background-image: url('../images/phone.svg');
-        background-repeat: no-repeat;
-        background-position: 4px 50%;
-        background-size: 30px;
-        border-radius: 19px;
-        cursor: pointer;
-        white-space: nowrap;
-        overflow: hidden;
-        transition: width .5s ease-in-out;
-    }
-}
-
 main {
     .description {
         .heading {
             max-width: 600px;
             margin: 0 auto;
 
+            .vehicleParts {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .automobiles {
+                    margin-right: 15px;
+
+                    span {
+                        white-space: nowrap;
+                    }
+                }
+
+                .parts {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    text-align: center;
+        
+                    span {
+                        display: flex;
+                        font-size: 13px;
+                        line-height: 12px;
+                        color: #555;
+        
+                        &:not(:last-child)::after {
+                            content: " \2022";
+                            margin: 0 5px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
+
             h1 {
                 margin: 0 auto;
-                padding: 30px 20px;
-                padding-bottom: 10px;
+                padding: 10px 20px;
                 text-transform: uppercase;
                 color: #1E202E;
             }
@@ -131,6 +135,12 @@ main {
                 flex-wrap: wrap;
                 flex-grow: 1;
                 height: 45px;
+
+                &:first-child > * {
+                    &:first-child {
+                        margin-left: 20px;
+                    }
+                }
             }
             
             div > * {
@@ -152,10 +162,18 @@ main {
                 }
             }
 
+            a {
+                font-weight: bold;
+
+                .glyphicon {
+                    position: absolute;
+                    top: 3px;
+                    left: -20px;
+                }
+            }
+
             .person {
                 .owner {
-                    font-weight: bold;
-
                     &::before {
                         background-image: url('../images/user.svg');
                     }
@@ -249,6 +267,15 @@ main {
             }
         }
 
+        .contact {
+            border-top: none;
+
+            .phone {
+                justify-content: flex-end;
+                align-self: center;
+            }
+        }
+
         .story {
             max-width: 600px;
             margin: 0 auto;
@@ -269,13 +296,13 @@ main {
         min-height: 300px;
     }
 
-    .contacts {
-        top: inherit !important;
-        bottom: 10px !important;
-        right: 10px !important;     
-    }
-
     .description {
+        .heading {
+            .vehicleParts {
+                flex-direction: column !important;
+            }
+        }
+
         .brief {
             justify-content: space-between !important;
             padding: 3px 0;
@@ -297,6 +324,13 @@ main {
             .statistic {
                 align-items: flex-start !important;
                 flex: 0 !important;
+            }
+        }
+
+        .contact {
+            .phone a {
+                display: flex;
+                align-self: flex-end;
             }
         }
     }
