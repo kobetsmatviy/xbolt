@@ -3,11 +3,32 @@
 
 // Version for a PK
 #photoView {
+    position: relative;
     width: 100%;
     min-height: 500px;
     height: 1px;
     background-color: #0D1216;
     overflow: hidden;
+
+    opacity: .7;
+}
+.sold::after, .archive::after {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    display: block;
+    margin-left: -90px;
+    padding: 0 5px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, .7);
+    color: #ff3300;
+}
+.sold::after {
+    content: 'ПРОДАНО';
+}
+.archive::after {
+    content: 'В АРХИВЕ';
 }
 
 #back {
@@ -273,6 +294,33 @@ main {
             .phone {
                 justify-content: flex-end;
                 align-self: center;
+            }
+        }
+
+        .additionalInfo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            padding-top: 10px;
+
+            .detailCode {
+                margin-right: 15px;
+                color: #333;
+
+                strong {
+                    white-space: nowrap;
+                }
+            }
+            .dateEdit {
+                color: #999;
+    
+                time {
+                    margin-left: 5px;
+                    white-space: nowrap;
+                }
             }
         }
 
