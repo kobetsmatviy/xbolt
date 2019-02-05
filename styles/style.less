@@ -68,8 +68,14 @@ header {
             }
             
             #search {
-                display: none;
                 cursor: pointer;
+            }
+            .searching {
+                width: 30px;
+                height: 30px;
+                padding: 5px;
+                background-color: #224b7a;
+                border-radius: 10px;
             }
 
             #profile {
@@ -267,45 +273,6 @@ form {
     }
 }
 
-.chooseCondition {
-    margin: 5px;
-    padding: 5px;
-    border-radius: 2px;
-
-    label {
-        padding-right: 15px;
-        color: #555;
-        cursor: pointer;
-
-        span {
-            margin-right: 0;
-        }
-    }
-}
-.stateCondition {
-    display: flex;
-    align-items: center;
-    background-color: @color_white;
-    color: #AAA;
-    font-size: 20px;
-}
-.automobiles {
-    max-height: 50px;
-    margin: 5px 0;
-    text-align: center;
-    line-height: 22px;
-    overflow: hidden;
-
-    span {
-        background-color: @background_tag;
-        color: @color_tag;
-        padding: 3px 5px;
-        margin-right: 2px;
-        border-radius: 3px;
-        font-size: 12px;
-    }
-}
-
 #pagination {
     width: 100%;
     height: 61px;
@@ -401,6 +368,82 @@ footer {
         align-items: center;
     }
 }
+
+.chooseCondition {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 2px;
+
+    label {
+        padding-right: 15px;
+        color: #555;
+        cursor: pointer;
+
+        span {
+            margin-right: 0;
+        }
+    }
+}
+.stateCondition {
+    display: flex;
+    align-items: center;
+    background-color: @color_white;
+    color: #AAA;
+    font-size: 20px;
+}
+.automobiles {
+    max-height: 50px;
+    margin: 5px 0;
+    text-align: center;
+    line-height: 22px;
+    overflow: hidden;
+
+    span {
+        background-color: @background_tag;
+        color: @color_tag;
+        padding: 3px 5px;
+        margin-right: 2px;
+        border-radius: 3px;
+        font-size: 12px;
+    }
+}
+.phone {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    flex-grow: 0 !important;
+    margin: 10px 0;
+    height: 100% !important;
+
+    a {
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+.sold, .archive {
+    position: relative;
+    opacity: .7;
+}
+.sold::after, .archive::after {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    display: block;
+    margin-left: -90px;
+    padding: 0 5px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, .7);
+    color: #ff3300;
+}
+.sold::after {
+    content: 'ПРОДАНО';
+}
+.archive::after {
+    content: 'В АРХИВЕ';
+}
+
+// @charset "utf-8";
 
 // Version for a smartphone
 @media (max-width: 767px) {

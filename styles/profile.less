@@ -34,6 +34,16 @@ main {
                 }
             }
             
+            .phone {
+                align-self: center;
+            }
+
+            .dateRegister {
+                text-align: center;
+                color: #888;
+                font-size: 14px;
+            }
+
             ul {
                 padding: 0;
                 margin-top: 10px;
@@ -74,62 +84,8 @@ main {
 
             .partCard {
                 position: relative;
-                width: 150px !important;
-                max-height: 180px;
-
-                .photo {
-                    height: 100px;
-                }
-
-                .content {
-                    .description .primary .title {
-                        margin-top: 5px;
-
-                        h3 {
-                            font-size: 13px;
-                        }
-                    }
-                    
-                    .statistic {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        
-                        span {
-                            display: flex;
-                            align-items: center;
-                            flex-wrap: nowrap;
-                            margin-left: 40px;
-                            position: relative;
-
-                            &::before {
-                                content: " ";
-                                width: 18px;
-                                height: 18px;
-                                background-repeat: no-repeat;
-                                background-position: 50%;
-                                background-size: 18px;
-                                position: absolute;
-                                left: -23px;
-                            }
-
-                            &:first-child {
-                                margin-left: 15px;
-                            }
-                        }
-
-                        .views {
-                            &::before {
-                                background-image: url('../images/views.svg');
-                            }
-                        }
-                        .comments {
-                            &::before {
-                                background-image: url('../images/comments.svg');
-                            }
-                        }
-                    }
-                }
+                width: 245px;
+                height: auto;
 
                 .glyphicon-wrench {
                     position: absolute;

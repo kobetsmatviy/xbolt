@@ -33,31 +33,23 @@
     </header>
     <a href="catalog.html"><span id="back">&lsaquo; Назад</span></a>
     <main class="clearfix">
-        <section id="photoView">
+        <section id="photoView" class="noPhoto">
             <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
                 <div class="fotorama" itemscope itemtype="https://schema.org/ImageObject">
-                    <img src="images/photos/fari-ford-mustang.jpg" itemprop="image" />
-                    <img src="images/photos/fari-ford-mustang2.jpg" itemprop="image" />
-                    <img src="images/photos/fari-ford-mustang3.jpg" itemprop="image" />
-                    <img src="images/photos/fari-ford-mustang4.jpg" itemprop="image" />
-                    <img src="images/photos/fari-ford-mustang5.jpg" itemprop="image" />
-                    <img src="images/photos/fari-ford-mustang6.jpg" itemprop="image" />
-                    <img src="images/photos/fari-ford-mustang7.jpg" itemprop="image" />
+                    <img src="images/no_photo.svg" itemprop="image" />
                 </div>
             </article>
         </section>
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <div class="description" itemscope itemtype="http://schema.org/Product">
                 <div class="heading">
-                    <div class="machineParts">
+                    <div class="vehicleParts">
                         <div class="automobiles">
                             <span>Audi A4 1994-1998</span>
-                            <span>Audi R8 2002-2008</span>
-                            <span>Volksvagen Golf 1978-1999</span>
                         </div>
                         <div class="parts" itemprop="category">
                             <span>передняя подвеска</span>
-                            <span>рулевое управление</span>
+                            <span>рулевое управление рулевое управление</span>
                         </div>
                     </div>
                     <h1 itemprop="name">Продам оригінальні фари Ford Mustang 2015-2017</h1>
@@ -73,20 +65,12 @@
                         </span>
                     </div>
                 </div>
-                <div class="producerCode">Код детали: <strong>WBAFF41080L149328</strong></div>
-                <div class="story" itemprop="description">
-                    <p>Продам нові оригінальні фари Ford Mustang 2015-2017 року.
-Ціна к-ту 1200$ по курсу.
-Підходять для сертифікації на авто Ford з Америки.
-Також під замовлення оригінальні запчастини до даного авто, термін доставки 7-10 днів! Телефонний номер +380123456789 двонити від 9 до 18
-                    </p>
-                </div>
                 <div class="brief">
                     <div class="person">
                         <span class="location" itemscope itemtype="https://schema.org/Place">
                             <div itemprop="address">Корець, Рівненська обл.</div>
                         </span>
-                        <time datetime="2018-11-01 15:50" itemprop="productionDate">1 листопада 15:50</time>
+                        <time data-time="2018-11-01 15:50" itemprop="productionDate">1 листопада 15:50</time>
                     </div>
                     <div class="statistic">
                         <span class="views">120</span>
@@ -131,21 +115,31 @@
                         </a>
                     </div>
                     <div class="phone">
-                        <a data-last="+38(068)50-60-574">
+                        <a href="tel:+38(068)5060574">
                             <span class="glyphicon glyphicon-earphone"></span>
-                            <span class="phoneNumber">+38(068)XX-XX-XXX</span>
+                            <span>+38(068)50-60-574</span>
                         </a>
-                        <a data-last="+38(067)35-55-499">
+                        <a href="tel:+38(067)3555499">
                             <span class="glyphicon glyphicon-earphone"></span>
-                            <span class="phoneNumber">+38(067)XX-XX-XXX</span>
+                            <span>+38(067)35-55-499</span>
                         </a>
-                        <a data-last="+38(097)46-94-162">
+                        <a href="tel:+38(097)4694162">
                             <span class="glyphicon glyphicon-earphone"></span>
-                            <span class="phoneNumber">+38(097)XX-XX-XXX</span>
+                            <span>+38(097)46-94-162</span>
                         </a>
                     </div>
                 </div>
-                <div class="dateEdit">Оновлено: <span>01.02 16:41</span></div>
+                <div class="additionalInfo">
+                    <span class="detailCode">Код детали: <strong>WBAFF41080L149328</strong></span>
+                    <span class="dateEdit">Оновлено: <time data-time="2019-02-01 16:41">01.02 16:41</time></span>
+                </div>
+                <div class="story" itemprop="description">
+                    <p>Продам нові оригінальні фари Ford Mustang 2015-2017 року.
+Ціна к-ту 1200$ по курсу.
+Підходять для сертифікації на авто Ford з Америки.
+Також під замовлення оригінальні запчастини до даного авто, термін доставки 7-10 днів! Телефонний номер +380123456789 двонити від 9 до 18
+                    </p>
+                </div>
             </div>
         </article>
     </main>
@@ -158,9 +152,8 @@
     <link rel="stylesheet" type="text/css" href="libraries/fotorama.css">
     <link rel="stylesheet" type="text/css" href="styles/parts.css">
     <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
+    <script src="js/share_socials.js" async></script>
     <script src="libraries/fotorama.js" async></script>
     <script src="libraries/jquery.rateyo.min.js" async></script>
-    <script src="js/share_socials.js" async></script>
-    <script src="js/phone_number.js" async></script>
 </body>
 </html>

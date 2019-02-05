@@ -5,8 +5,8 @@ $(document).ready(function(){
     });
 
     function AdaptiveCards() {
-        var rowWidth = $("main #posts").width();
-        var countItems = Math.floor(rowWidth / 150);
+        var rowWidth = $("#posts").width();
+        var countItems = Math.floor(rowWidth / 245);
         var itemWidth = Math.floor(rowWidth / countItems) - 15;
 
         $(".partCard").css('max-width', itemWidth);

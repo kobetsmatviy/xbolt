@@ -9,32 +9,18 @@
     height: 1px;
     background-color: #0D1216;
     overflow: hidden;
+}
+.noPhoto {
+    min-height: 300px !important;
+    background-color: #fefefe !important;
 
-    opacity: .7;
-}
-.sold::after, .archive::after {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    display: block;
-    margin-left: -90px;
-    padding: 0 5px;
-    font-size: 40px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, .7);
-    color: #ff3300;
-}
-.sold::after {
-    content: 'ПРОДАНО';
-}
-.archive::after {
-    content: 'В АРХИВЕ';
+    img {
+        margin-top: 25px;
+        height: 250px !important;
+    }
 }
 
 #back {
-    position: fixed;
-    top: 75px;
-    left: 0;
     color: #CCC;
     background-color: rgba(255, 255, 255, 0);
 
@@ -50,17 +36,21 @@ main {
             max-width: 600px;
             margin: 0 auto;
 
-            .vehicleParts {
+            .machineParts {
                 display: flex;
-                flex-direction: row;
-                justify-content: center;
+                flex-direction: column;
+                justify-content: flex-start;
                 align-items: center;
 
                 .automobiles {
-                    margin-right: 15px;
+                    line-height: 24px;
 
-                    span {
+                    span {       
                         white-space: nowrap;
+                        background-color: inherit;
+                        color: #555;
+                        border: 1px solid #999;
+                        border-radius: 5px;
                     }
                 }
 
@@ -136,6 +126,18 @@ main {
                         }
                     }
                 }
+            }
+        }
+
+        .story {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+            color: #555;
+
+            p {
+                padding: 0 20px;
+                white-space: pre-wrap;
             }
         }
 
@@ -289,50 +291,30 @@ main {
         }
 
         .contact {
-            border-top: none;
-
-            .phone {
-                justify-content: flex-end;
-                align-self: center;
-            }
+            border: none;
         }
 
-        .additionalInfo {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+        .producerCode {
             max-width: 600px;
             margin: 0 auto;
             padding: 0 20px;
-            padding-top: 10px;
+            color: #333;
 
-            .detailCode {
-                margin-right: 15px;
-                color: #333;
-
-                strong {
-                    white-space: nowrap;
-                }
-            }
-            .dateEdit {
-                color: #999;
-    
-                time {
-                    margin-left: 5px;
-                    white-space: nowrap;
-                }
+            strong {
+                white-space: nowrap;
             }
         }
 
-        .story {
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 20px;
-            color: #555;
+        .dateEdit {
+            display: flex;
+            justify-content: flex-end;
+            max-width: 700px;
+            margin: 10px auto;
+            color: #999;
 
-            p {
-                padding: 0 20px;
-                white-space: pre-wrap;
+            span {
+                margin-left: 5px;
+                white-space: nowrap;
             }
         }
     }
@@ -342,6 +324,17 @@ main {
 @media screen and (max-width: 767px) {
     #photoView {
         min-height: 300px;
+    }
+    .noPhoto {
+        position: relative;
+        min-height: 200px !important;
+
+        img {
+            position: absolute !important;
+            top: 50% !important;
+            margin-top: -125px !important;
+            height: 150px !important;
+        }
     }
 
     .description {

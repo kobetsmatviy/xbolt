@@ -26,7 +26,7 @@
                     <span>Сповіщення</span>
                 </a>
                 <a href="profile.html" id="profile">
-                    <img src="images/crop-user.jpeg" />
+                    <img src="images/user.svg" />
                     <span>Семен Болт</span>
                 </a>
             </div>
@@ -40,16 +40,6 @@
                     <span>легкові</span>
                     <span>Audi</span>
                     <span>80 B2 1979-1986</span>
-                    <span>передня підвіска</span>
-                    <span>рульове керування</span>
-                    <span>Рівненська обл.</span>
-                    <span>Корецький р-н</span>
-                    <span>Audi</span>
-                    <span>80 B2 1979-1986</span>
-                    <span>передня підвіска</span>
-                    <span>рульове керування</span>
-                    <span>Рівненська обл.</span>
-                    <span>Корецький р-н</span>
                 </div>
             </section>
         </article>
@@ -469,44 +459,87 @@
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <div id="menu">
                 <div id="review">
-                    <img src="images/crop-user.jpeg" />
+                    <img src="images/user.svg" />
                     <h2>Семен Болт</h2>
                 </div>
-                <ul>
+                <!-- <ul>
                     <a href="profile.html" class="openly"><li><span class="glyphicon glyphicon-user"></span>Профіль</li></a>
                     <a href="comments.html"><li><span class="glyphicon glyphicon-send"></span>Коментарі</li></a>
                     <a href="settings.html"><li><span class="glyphicon glyphicon-wrench"></span>Налаштування</li></a>
+                </ul> -->
+                <ul class="phone">
+                    <a data-last="+38(068)50-60-574">
+                        <li>
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            <span class="phoneNumber">+38(068)XX-XX-XXX</span>
+                        </li>
+                    </a>
+                    <a data-last="+38(067)35-55-499">
+                        <li>
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            <span class="phoneNumber">+38(067)XX-XX-XXX</span>
+                        </li>
+                    </a>
+                    <a data-last="+38(097)46-94-162">
+                        <li>
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            <span class="phoneNumber">+38(097)XX-XX-XXX</span>
+                        </li>
+                    </a>
                 </ul>
+                <div class="dateRegister">На сайте с <time datetime="2019-02-07">февраля 2019</time></div>
             </div>
             <div id="posts">
-                <div class="partCard" itemscope itemtype="https://schema.org/Car">
-                    <a href="part.html" itemprop="image">
-                        <div class="photo">
-                            <img src="images/minimals/1.jpg" />
+                <div class="partCard" itemscope itemtype="http://schema.org/Product">
+                    <a href="part.html" itemprop="url">
+                        <div class="photo sold">
+                            <img src="images/minimals/1.jpg" itemprop="image" />
                         </div>
                     </a>
                     <div class="content">
-                        <aside class="description">
+                        <div class="description">
+                            <div class="parts" itemprop="category">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление рулевое управление</span>
+                            </div>
                             <div class="primary">
-                                <div class="title" itemprop="title">
-                                    <a href="part.html">
+                                <div class="title">
+                                    <a href="part.html" itemprop="name url">
                                         <h3>
                                             Турбина Audi A4 A5 Q5 2.0 TDI Seat Exeo (03L145721A)
                                         </h3>
                                     </a>
                                 </div>
-                                <span class="price" itemprop="price">
-                                    5999 <sup>грн</sup>
+                                <span class="price" itemscope itemtype="https://schema.org/Offer">
+                                    <div itemprop="price">
+                                        5999 <sup>грн</sup>
+                                    </div>
                                 </span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">120</span>
-                            <span class="comments">5</span>
-                        </aside>
+                            <div class="secondary">
+                                <div class="state">
+                                    <div class="rateYo" data-rateyo-rating="9"></div>
+                                    <span class="stateCondition glyphicon glyphicon-ice-lolly-tasted"></span>
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                    <span>BMW Z4 M 2014-2015</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date" itemprop="productionDate">
+                                    <time data-time="2018-04-18">18.04.2018</time>
+                                </span>
+                                <span class="icon icon-location"></span>
+                                <span class="location" itemscope itemtype="https://schema.org/Place">
+                                    <div itemprop="address">Корець, Рівненська обл.</div>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
                 </div>
                 <div class="partCard">
                     <a href="part.html">
@@ -515,27 +548,45 @@
                         </div>
                     </a>
                     <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
-                                        </h3>
-                                    </a>
+                        <div class="description">
+                                <div class="parts">
+                                    <span>передняя подвеска</span>
+                                    <span>рулевое управление</span>
                                 </div>
-                                <span class="price">
-                                    9600 <sup>грн</sup>
-                                </span>
+                                <div class="primary">
+                                    <div class="title">
+                                        <span class="triangle"></span>
+                                        <a href="part.html">
+                                            <h3>
+                                                Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
+                                            </h3>
+                                        </a>
+                                    </div>
+                                    <span class="price">
+                                        <div>
+                                            9600 <sup>грн</sup>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="secondary">
+                                    <div class="state">
+                                        <div class="rateYo" data-rateyo-rating="10"></div>
+                                    </div>
+                                    <div class="automobiles">
+                                        <span>Audi A4 1994-1998</span>
+                                        <span>BMW Z4 M 2014-2015</span>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date">15.04.2018</span>
+                                <span class="icon icon-location"></span>
+                                <span class="location">Львів, Львівська обл.</span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">97</span>
-                            <span class="comments">8</span>
-                        </aside>
+                        </div>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
                 </div>
                 <div class="partCard">
                     <a href="part.html">
@@ -544,56 +595,44 @@
                         </div>
                     </a>
                     <div class="content">
-                        <aside class="description">
+                        <div class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
                             <div class="primary">
                                 <div class="title">
+                                    <span class="triangle"></span>
                                     <a href="part.html">
                                         <h3>
-                                            ТУРБИНА VW PASSAT B3 B4 GOLF VENTO AUDI 80 SEAT
+                                            Турбина VW Passat B3 B4 Golf Vento Audi 80 Seat Ibiza Toledo 1.9 TD
                                         </h3>
                                     </a>
                                 </div>
                                 <span class="price">
-                                    90 <sup>грн</sup>
+                                    <div>
+                                        90 <sup>грн</sup>
+                                    </div>
                                 </span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">15</span>
-                            <span class="comments">1</span>
-                        </aside>
-                    </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
-                </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/5.jpg" />
+                            <div class="secondary">
+                                <div class="state">
+                                    <div class="rateYo" data-rateyo-rating="6"></div>
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <div class="content">
-                        <aside class="description">
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html">
-                                        <h3>
-                                            Годовка блока ГБЦ Фиат Дукато 
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    6400 <sup>грн</sup>
-                                </span>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date">15.04.2018</span>
+                                <span class="icon icon-location"></span>
+                                <span class="location">Новоград-Волинськ, Житомирська обл.</span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">93</span>
-                            <span class="comments">2</span>
-                        </aside>
+                        </div>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
                 </div>
                 <div class="partCard">
                     <a href="part.html">
@@ -602,27 +641,92 @@
                         </div>
                     </a>
                     <div class="content">
-                        <aside class="description">
+                        <div class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
                             <div class="primary">
                                 <div class="title">
+                                    <span class="triangle"></span>
                                     <a href="part.html">
                                         <h3>
-                                            ФАРИ MUSTANG FORD 2015 
+                                            Турбіна турбина audi vw 80 1.9 tdi
                                         </h3>
                                     </a>
                                 </div>
                                 <span class="price">
-                                    12050 <sup>грн</sup>
+                                    <div>
+                                        12050 <sup>грн</sup>
+                                    </div>
                                 </span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">205</span>
-                            <span class="comments">11</span>
-                        </aside>
+                            <div class="secondary">
+                                <div class="state">
+                                    <div class="rateYo" data-rateyo-rating="10"></div>
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                    <span>Volkswagen 80 1991-1999</span>
+                                    <span>Volvo Yakes 1954-1955</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date">14.04.2018</span>
+                                <span class="icon icon-location"></span>
+                                <span class="location">Київ, Київська обл.</span>
+                            </div>
+                        </div>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
+                </div>
+                <div class="partCard">
+                    <a href="part.html">
+                        <div class="photo">
+                            <img src="images/minimals/5.jpg" />
+                        </div>
+                    </a>
+                    <div class="content">
+                        <div class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
+                            <div class="primary">
+                                <div class="title">
+                                    <span class="triangle"></span>
+                                    <a href="part.html">
+                                        <h3>
+                                            Турбіна ауді 1,9
+                                        </h3>
+                                    </a>
+                                </div>
+                                <span class="price">
+                                    <div>
+                                        1 <sup>грн</sup>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="secondary">
+                                <div class="state">
+                                    <div class="rateYo" data-rateyo-rating="1"></div>
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date">10.04.2018</span>
+                                <span class="icon icon-location"></span>
+                                <span class="location">Головниця, Рівненська обл.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="partCard">
                     <a href="part.html">
@@ -631,27 +735,44 @@
                         </div>
                     </a>
                     <div class="content">
-                        <aside class="description">
+                        <div class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
                             <div class="primary">
                                 <div class="title">
+                                    <span class="triangle"></span>
                                     <a href="part.html">
                                         <h3>
-                                            Фольксваген Кадді заглушки в бампер 
+                                            Турбіна Ауді А6 Ц4 Audi A6 C4 2.5TDI AEL 103kW
                                         </h3>
                                     </a>
                                 </div>
                                 <span class="price">
-                                    270 <sup>грн</sup>
+                                    <div>
+                                        320 <sup>грн</sup>
+                                    </div>
                                 </span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">305</span>
-                            <span class="comments">4</span>
-                        </aside>
+                            <div class="secondary">
+                                <div class="state">
+                                    <div class="rateYo" data-rateyo-rating="8"></div>
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date">02.04.2018</span>
+                                <span class="icon icon-location"></span>
+                                <span class="location">Млинів, Полтавська обл.</span>
+                            </div>
+                        </div>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
                 </div>
                 <div class="partCard">
                     <a href="part.html">
@@ -660,27 +781,44 @@
                         </div>
                     </a>
                     <div class="content">
-                        <aside class="description">
+                        <div class="description">
+                            <div class="parts">
+                                <span>передняя подвеска</span>
+                                <span>рулевое управление</span>
+                            </div>
                             <div class="primary">
                                 <div class="title">
+                                    <span class="triangle"></span>
                                     <a href="part.html">
                                         <h3>
-                                            Двигатель рено кенго K9K 
+                                            Турбіна турбина audi vw 80 1.9 tdi Турбіна турбина audi vw 80 1.9 tdi
                                         </h3>
                                     </a>
                                 </div>
                                 <span class="price">
-                                    4900 <sup>грн</sup>
+                                    <div>
+                                        55 <sup>грн</sup>
+                                    </div>
                                 </span>
                             </div>
-                        </aside>
-                        <aside class="statistic">
-                            <span class="views">109</span>
-                            <span class="comments">0</span>
-                        </aside>
+                            <div class="secondary">
+                                <div class="state">
+                                    <div class="rateYo" data-rateyo-rating="7"></div>
+                                </div>
+                                <div class="automobiles">
+                                    <span>Audi A4 1994-1998</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tertiary">
+                            <div class="additionalInfo">
+                                <span class="icon icon-clock"></span>
+                                <span class="date">30.03.2018</span>
+                                <span class="icon icon-location"></span>
+                                <span class="location">Роздільна, Одеська обл.</span>
+                            </div>
+                        </div>
                     </div>
-                    <a href="edit.html" title="Редагувати"><span class="glyphicon glyphicon glyphicon-wrench"></span></a>
-                    <span class="withdraw" title="Видалити"></span>
                 </div>
             </div>
         </article>
@@ -694,18 +832,10 @@
     <link rel="stylesheet" type="text/css" href="styles/filter.css">
     <link rel="stylesheet" type="text/css" href="styles/cards.css">
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
+    <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="js/filter_actions.js" async></script>
     <script src="js/profile_actions.js" async></script>
-    <!-- Hotjar Tracking Code for http://workout.korets.in.ua/xbolt/index.html -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1130294,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    <script src="js/phone_number.js" async></script>
+    <script src="libraries/jquery.rateyo.min.js" async></script>
 </body>
 </html>
