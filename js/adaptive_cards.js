@@ -5,7 +5,7 @@ $(document).ready(function(){
     });
 
     function AdaptiveCards() {
-        var rowWidth = $("main article").width();
+        var rowWidth = $(".cards").width();
         var countItems = Math.floor(rowWidth / 260);
         var itemWidth = Math.floor(rowWidth / countItems) - 15;
 

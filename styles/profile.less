@@ -15,6 +15,7 @@ main {
             height: 100%;
             min-width: 200px;
             margin-top: 15px;
+            margin-right: 15px;
             
             #review {
                 display: flex;
@@ -71,148 +72,6 @@ main {
                 }
                 .openly {
                     font-weight: bold;
-                }
-            }
-        }
-        
-        #posts {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 10px;
-            margin-bottom: 15px;
-            width: 100%;
-
-            .partCard {
-                position: relative;
-                width: 245px;
-                height: auto;
-
-                .glyphicon-wrench {
-                    position: absolute;
-                    top: -5px;
-                    right: 20px;
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    padding: 5px;
-                    background-color: #999;
-                    color: @color_white;
-                    border-radius: 50%;
-                    font-size: 10px;
-                    transition: background-color .2s ease-in-out;
-                    cursor: pointer;
-                    
-                    &:hover {
-                        background-color: @button_mark;
-                        transition: background-color .2s ease-in-out;
-                    }
-                }
-
-                .withdraw {
-                    position: absolute;
-                    top: -5px;
-                    right: -5px;
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    padding: 5px;
-                    background-color: @color_select;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    
-                    &:hover {
-                        transform: rotate(360deg);
-                        transition: transform 1s;
-                    }
-    
-                    &::after, &::before {
-                        display: inline-block;
-                        position: absolute;
-                        top: 5px;
-                        left: 8px;
-                        content: "";
-                        height: 10px;
-                        width: 3px;
-                        background-color: @color_white;
-                    }
-    
-                    &::before {
-                        transform: rotate(45deg);
-                    }
-    
-                    &::after {
-                        transform: rotate(-45deg);
-                    }
-                }
-
-                .deletePost {
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 500px;
-                    height: 250px;
-                    margin-top: -125px;
-                    margin-left: -250px;
-                    background-color: #FFF;
-                    border-radius: 10px;
-                    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    overflow: hidden;
-                    z-index: 5;
-
-                    .caption {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 100%;
-                        height: 50px;
-                        color: @color_select;
-                    }
-
-                    .vote {
-                        display: flex;
-                        width: 100%;
-                        height: 100%;
-                        font-weight: bold;
-                        font-size: 32px;
-                        color: @color_white;
-                        cursor: pointer;
-
-                        .yes, .no {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 50%;
-                            height: 100%;
-                        }
-                        .yes {
-                            background-color: @button_mark;
-                        }                        
-                        .no {
-                            background-color: @color_red;
-                        }
-
-                        .glyphicon {
-                            margin-left: 10px;
-                        }
-                    }
-                }
-
-                #overlayModal {
-                    display: block;
-                    position: fixed;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    width: 100%;
-                    height: 100%;
-                    .background_color_black(0.4);
-                    z-index: 3;
                 }
             }
         }
@@ -380,6 +239,7 @@ main {
             #menu {
                 flex-direction: row;
                 justify-content: space-between;
+                margin-right: 0 !important;
 
                 #review {
                     margin-left: 20px;
@@ -390,6 +250,11 @@ main {
                         width: 75px;
                         height: 75px;
                     }
+                }
+
+                .userContacts {
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 ul {
@@ -426,3 +291,137 @@ main {
         }
     }
 }
+
+// .partCard {
+        //     position: relative;
+        //     width: 245px;
+        //     height: auto;
+
+        //     .glyphicon-wrench {
+        //         position: absolute;
+        //         top: -5px;
+        //         right: 20px;
+        //         display: block;
+        //         width: 20px;
+        //         height: 20px;
+        //         padding: 5px;
+        //         background-color: #999;
+        //         color: @color_white;
+        //         border-radius: 50%;
+        //         font-size: 10px;
+        //         transition: background-color .2s ease-in-out;
+        //         cursor: pointer;
+                
+        //         &:hover {
+        //             background-color: @button_mark;
+        //             transition: background-color .2s ease-in-out;
+        //         }
+        //     }
+
+        //     .withdraw {
+        //         position: absolute;
+        //         top: -5px;
+        //         right: -5px;
+        //         display: block;
+        //         width: 20px;
+        //         height: 20px;
+        //         padding: 5px;
+        //         background-color: @color_select;
+        //         border-radius: 50%;
+        //         cursor: pointer;
+                
+        //         &:hover {
+        //             transform: rotate(360deg);
+        //             transition: transform 1s;
+        //         }
+
+        //         &::after, &::before {
+        //             display: inline-block;
+        //             position: absolute;
+        //             top: 5px;
+        //             left: 8px;
+        //             content: "";
+        //             height: 10px;
+        //             width: 3px;
+        //             background-color: @color_white;
+        //         }
+
+        //         &::before {
+        //             transform: rotate(45deg);
+        //         }
+
+        //         &::after {
+        //             transform: rotate(-45deg);
+        //         }
+        //     }
+
+        //     .deletePost {
+        //         position: fixed;
+        //         top: 50%;
+        //         left: 50%;
+        //         display: flex;
+        //         flex-direction: column;
+        //         align-items: center;
+        //         width: 500px;
+        //         height: 250px;
+        //         margin-top: -125px;
+        //         margin-left: -250px;
+        //         background-color: #FFF;
+        //         border-radius: 10px;
+        //         box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5);
+        //         text-transform: uppercase;
+        //         font-weight: bold;
+        //         overflow: hidden;
+        //         z-index: 5;
+
+        //         .caption {
+        //             display: flex;
+        //             justify-content: center;
+        //             align-items: center;
+        //             width: 100%;
+        //             height: 50px;
+        //             color: @color_select;
+        //         }
+
+        //         .vote {
+        //             display: flex;
+        //             width: 100%;
+        //             height: 100%;
+        //             font-weight: bold;
+        //             font-size: 32px;
+        //             color: @color_white;
+        //             cursor: pointer;
+
+        //             .yes, .no {
+        //                 display: flex;
+        //                 justify-content: center;
+        //                 align-items: center;
+        //                 width: 50%;
+        //                 height: 100%;
+        //             }
+        //             .yes {
+        //                 background-color: @button_mark;
+        //             }                        
+        //             .no {
+        //                 background-color: @color_red;
+        //             }
+
+        //             .glyphicon {
+        //                 margin-left: 10px;
+        //             }
+        //         }
+        //     }
+
+        //     #overlayModal {
+        //         display: block;
+        //         position: fixed;
+        //         top: 0;
+        //         bottom: 0;
+        //         left: 0;
+        //         right: 0;
+        //         width: 100%;
+        //         height: 100%;
+        //         .background_color_black(0.4);
+        //         z-index: 3;
+        //     }
+        // }
