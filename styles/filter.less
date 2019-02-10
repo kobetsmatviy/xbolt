@@ -180,8 +180,8 @@ form {
                 .remove {
                     opacity: .2;
                     position: relative;
-                    width: 20px;
-                    height: 20px;
+                    min-width: 20px;
+                    min-height: 20px;
                     margin: 10px;
                     background-color: @color_orange;
                     border-radius: 50%;
@@ -226,7 +226,7 @@ form {
                 flex-wrap: wrap;
                 width: 100%;
 
-                .chooseCondition {
+                .chooseCondition, .chooseUser {
                     display: flex;
                     flex-direction: row;
                     
