@@ -143,6 +143,16 @@
             }
         });
     });
+    
+    // змінити видимість remove при кліку на стан запчастини
+    $('.chooseCondition input').on('click', function() {
+        if ($('.chooseCondition input:checked').length) {
+            $(this).parents('.filterType').find('.filterName .remove').css('opacity', '1');
+        }
+        else {
+            $(this).parents('.filterType').find('.filterName .remove').css('opacity', '.3');
+        }
+    });
 
     var $radioDetails = $('.details input[type=radio]');
     $radioDetails.on("click", function () {
