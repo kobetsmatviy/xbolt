@@ -74,7 +74,7 @@
             });
             $(this).find('.details').css('border-color', '#2299d4');
         });
-        $(this).css('opacity', '.2');
+        $(this).css('opacity', '.2').removeClass('opacityFull');
     });
 
     // Якщо select значення змінено, позначаємо mark
