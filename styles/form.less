@@ -2,15 +2,76 @@
 @import "variables";
 
 // Version for a PK
-body {
-    main {
-        min-height: 600px;
+main {
+    min-height: 600px;
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
+    color: #333;
+}
+
+#offerType {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 150px;
+        height: 30px;
+        margin-bottom: 0;
+        margin-right: 10px;
+        font-weight: normal;
+        border-radius: 15px;
+        background-color: #AAA;
+        color: #FFF;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+
+        input {
+            display: none;
+            
+            &:checked + span {
+                opacity: 1;
+                color: #FFF !important;
+            }
+        }
+
+        span {
+            opacity: .3;
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+            transition: all .2s ease-in-out;
+        }
     }
 
-    h1 {
-        margin: 20px 0;
-        text-align: center;
-        color: #333;
+    .offerSearch {
+        background-color: #393;
+        background-image: linear-gradient(to right,#393,#237d23);
+    }
+    .offerSale {
+        background-color: #f60;
+        background-image: linear-gradient(to right,#f60,#d95700);
+    }
+    .offerExplore {
+        background-color: #0088cc;
+        background-image: linear-gradient(to right,#0088cc,#006ca1);
     }
 }
 
@@ -18,6 +79,7 @@ form:not([id='filter']) {
     display: flex;
     flex-direction: column;
     max-width: 600px;
+    width: 100%;
     padding: 10px;
     margin: 0 auto;
     margin-bottom: 20px;
