@@ -1,9 +1,6 @@
 $(function () {
     $("#formPost").validate({
         rules: {
-            'photos[]': {
-                required: true
-            },
             title: {
                 required: true,
                 minlength: 5
@@ -29,9 +26,6 @@ $(function () {
             }
         },
         messages: {
-            'photos[]': {
-                required: "Оберіть фото запчастини"
-            },
             title: {
                 required: "Введіть назву деталі",
                 minlength: jQuery.validator.format("Щонайменше {0} символів")

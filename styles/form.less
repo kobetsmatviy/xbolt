@@ -20,7 +20,7 @@ h1 {
 #offerType {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
@@ -31,16 +31,25 @@ h1 {
         justify-content: center;
         align-items: center;
         min-width: 150px;
-        height: 30px;
+        height: 35px;
         margin-bottom: 0;
         margin-right: 10px;
         font-weight: normal;
-        border-radius: 15px;
+        border-radius: 10px;
         background-color: #AAA;
         color: #FFF;
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
         transition: all .2s ease-in-out;
         cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+            transition: all .2s ease-in-out;
+        }
 
         input {
             display: none;
@@ -52,26 +61,43 @@ h1 {
         }
 
         span {
+            position: relative;
+            margin-left: 15px;
             opacity: .3;
-        }
 
-        &:hover {
-            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
-            transition: all .2s ease-in-out;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -25px;
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-size: 20px;
+            }
         }
     }
 
     .offerSearch {
-        background-color: #393;
-        background-image: linear-gradient(to right,#393,#237d23);
+        background-color: #339933;
+
+        span::before {
+            background-image: url('../images/search.svg');
+        }
     }
     .offerSale {
-        background-color: #f60;
-        background-image: linear-gradient(to right,#f60,#d95700);
+        background-color: #FF6600;
+
+        span::before {
+            background-image: url('../images/give_bolt.svg');
+        }
     }
     .offerExplore {
-        background-color: #0088cc;
-        background-image: linear-gradient(to right,#0088cc,#006ca1);
+        background-color: #0088CC;
+
+        span::before {
+            background-image: url('../images/give_bolt.svg');
+        }
     }
 }
 
@@ -96,31 +122,36 @@ form:not([id='filter']) {
             flex-direction: row;
         }
         
-        .interaction {
-            position: relative;
-            min-width: 330px;
-
-            label {
-                max-width: 225px;
-                margin: 0;
-            }
-
-            .interactionName {
-                display: flex;
-                justify-content: flex-end;
-                min-width: 100px;
-                padding-top: 5px;
-                padding-right: 10px;
-                font-weight: bold;
-                text-align: right;
-            }
-        }
         .message {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            max-width: 150px;
             width: 100%;
-            margin-left: 5px;
+            margin-right: 5px;
             padding-top: 5px;
+            text-align: right;
             font-size: 12px;
             color: #999;
+            
+            .caption {
+                font-size: 14px;
+                font-weight: bold;
+                color: #000;
+            }
+            .notRequired {
+                font-weight: normal;
+            }
+        }
+        .interaction {
+            position: relative;
+            width: 100%;
+
+            label {
+                // width: 100%;
+                margin: 0;
+                margin-right: 5px;
+            }
         }
     }
 
@@ -128,7 +159,7 @@ form:not([id='filter']) {
         margin: 5px;
         margin-right: 0;
         padding: 5px;
-        width: 225px;
+        width: 100%;
         min-height: 50px;
         outline: none;
         border: none;
@@ -145,7 +176,7 @@ form:not([id='filter']) {
         }
     }
     input:not([type="number"]), select, textarea {
-        min-width: 225px;
+        width: 100%;
     }
     input:focus, select:focus, textarea:focus {
         box-shadow: 0 0 0 3px #EEE;
@@ -159,7 +190,8 @@ form:not([id='filter']) {
         text-align: center;
     }
     input[type="number"] {
-        width: 180px;
+        display: flex;
+        width: 100%;
         margin-right: 5px;
     }
 
@@ -172,7 +204,19 @@ form:not([id='filter']) {
         color: #C55454 !important;
     }
 
+    .priceFiled {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        input[name="price"] {
+            width: 200px;
+        }
+    }
     .automobiles {
+        width: 100%;
+        margin-right: 5px;
+
         .selectedAutos {
             display: flex;
             flex-direction: row;
@@ -247,6 +291,10 @@ form:not([id='filter']) {
         padding: 3px;
         border-radius: 2px;
     }
+    .location {
+        width: 100%;
+        margin-right: 5px;
+    }
 }
 
 .animationShapes {
@@ -313,9 +361,9 @@ form:not([id='filter']) {
                 flex-direction: column;
                 min-width: inherit;
 
-                &> label  {
-                    min-width: 100%;
-                }
+                // &> label  {
+                   // min-width: 100%;
+                // }
 
                 .interactionName {
                     justify-content: flex-start;

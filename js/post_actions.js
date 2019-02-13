@@ -3,13 +3,15 @@ $(function () {
     AdaptiveCategory();
     function AdaptiveCategory() {
         if ($(window).width() > 750) {
-            var rowWidth = $(".category").width();
+            var rowWidth = $("#category").width();
             var countItems = Math.floor(rowWidth / (200 + 5));
             var inputOrder = -1;
             var detailsOrder = 0;
+            
+            console.log((rowWidth / countItems) - 25);
 
             // Значення order для кожного input[type=button]
-            $(".category input[type=button]").each(function() {
+            $("#category input[type=button]").each(function() {
                 if (($(this).index()/2) % countItems == 0) {
                     inputOrder += 2;
                 }
@@ -17,6 +19,7 @@ $(function () {
                     inputOrder++;
                 }
                 $(this).css("order", inputOrder);
+                $(this).width((rowWidth / countItems) - 15);
             });
             // Значення order для кожного блоку details
             $(".details").each(function() {
@@ -30,10 +33,11 @@ $(function () {
         }
         // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
         else {
-            $(".category").children().each(function() {
+            $("#category").children().each(function() {
                 $(this).css("order", 0);
+                $(this).css("width", "100%");
             });
-            $(".details").width("100%");
+            $(".details").css("width", "100%");
         }
     }
 
@@ -66,26 +70,26 @@ $(function () {
     //#### КАТЕГОРІЯ перемикач
     $('#toggleCategory').on('click', function(e) {
         // Перемикач станів
-        if ($('.category').css('visibility') == 'hidden') {
-            $('.category').css('visibility', 'visible');
+        if ($('#category').css('visibility') == 'hidden') {
+            $('#category').css('visibility', 'visible');
         }
         else {
-            $('.category').css('visibility', 'hidden');
+            $('#category').css('visibility', 'hidden');
         }
         
         if ($(window).width() <= 750) {
-            if ($('.category').css('visibility') == 'hidden') {
-                $('.category').css('position', 'absolute');
+            if ($('#category').css('visibility') == 'hidden') {
+                $('#category').css('position', 'absolute');
             }
             else {
-                $('.category').css('position', 'static');
+                $('#category').css('position', 'static');
             }
         }
         // Відміняємо поведінку button#toggleCategory
         e.preventDefault();
     });
     // Приховуємо/показуємо блоки з деталями, якщо має active
-    var $toggleDetails = $('.category input[type="button"]');
+    var $toggleDetails = $('#category input[type="button"]');
     $toggleDetails.on("click", function () {
         if ($(this).hasClass('active')) {
             $(this).next().hide();
@@ -126,7 +130,8 @@ $(function () {
             $(this).parents('.details').prev().addClass('activeMark');
             $('.selectedCategory').html('<span>'+$(this).parents('.details').prev().val()+'</span><span>'+
                 $(this).closest('label').find('b').text()+'</span>');
-            $('#toggleCategory').text('Змінити').css({
+            $('#toggleCategory').css({
+                'display': 'block',
                 'min-width': '80px',
                 'padding': '0',
                 'padding-left': '5px',
@@ -141,14 +146,14 @@ $(function () {
         }
     });
     // Приховуємо блок з категорією при кліку поза його межами
-    $(document).click(function(event) {
-        if ($(event.target).closest('.category').length) return;
-        else if ($(event.target).closest('#toggleCategory').length) return;
-        $('.category').css('visibility', 'hidden');
-        $('.category').css('position', 'absolute');
-        $('#toggleCategory').removeClass('active');
-        event.stopPropagation();
-    });
+    // $(document).click(function(event) {
+    //     if ($(event.target).closest('#category').length) return;
+    //     else if ($(event.target).closest('#toggleCategory').length) return;
+    //     $('#category').css('visibility', 'hidden');
+    //     $('#category').css('position', 'absolute');
+    //     $('#toggleCategory').removeClass('active');
+    //     event.stopPropagation();
+    // });
 
     //#### АВТОМОБІЛЬ :selected, зберігаємо його
     $('select[name="model"]').change(function() {        
@@ -250,7 +255,6 @@ $(function () {
     $('#formPost, #formEdit').submit(function(e) {
         //#### Валідація загрузки фото
         var itemImg = $(this).find('#list li');
-
         if ($(itemImg).length > 5) {
             $(itemImg).each(function() {
                 if ($(this).index() >= 5) {
