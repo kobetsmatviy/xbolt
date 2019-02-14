@@ -189,13 +189,8 @@ form:not([id='filter']) {
         color: @color_white;
         text-align: center;
     }
-    input[type="number"] {
-        display: flex;
-        width: 100%;
-        margin-right: 5px;
-    }
 
-    input.error, select.error, button.error, .rateYo.error, .chooseCondition.error {
+    .error, .error:focus {
         box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
     }
     label.error {
@@ -210,7 +205,8 @@ form:not([id='filter']) {
         align-items: center;
 
         input[name="price"] {
-            width: 200px;
+            width: 205px;
+            margin-right: 5px;
         }
     }
     .automobiles {

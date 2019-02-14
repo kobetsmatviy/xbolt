@@ -7,8 +7,6 @@ $(function () {
             var countItems = Math.floor(rowWidth / (200 + 5));
             var inputOrder = -1;
             var detailsOrder = 0;
-            
-            console.log((rowWidth / countItems) - 25);
 
             // Значення order для кожного input[type=button]
             $("#category input[type=button]").each(function() {
@@ -29,7 +27,7 @@ $(function () {
                 $(this).css("order", detailsOrder);
             });
             // Ширина блоку details, залежно від кількості елементів у рядку
-            $(".details").width(countItems * 200);
+            $(".details").width(countItems * 205);
         }
         // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
         else {
@@ -60,30 +58,15 @@ $(function () {
         }
     }
     document.getElementById('uploadImg').addEventListener('change', showFile, false);
-    // При додаванні фото, видаляємо клас помилки
-    $('#uploadImg').change(function() {
-        $('#list').css('box-shadow', 'none');
-        $(this).removeClass('error').addClass('valid').attr('aria-invalid', 'false');
-        $(this).closest('.interaction').next().find('label.error').remove();
-    });
 
     //#### КАТЕГОРІЯ перемикач
     $('#toggleCategory').on('click', function(e) {
         // Перемикач станів
-        if ($('#category').css('visibility') == 'hidden') {
-            $('#category').css('visibility', 'visible');
+        if ($('#category').css('display') == 'none') {
+            $('#category').css('display', 'flex');
         }
         else {
-            $('#category').css('visibility', 'hidden');
-        }
-        
-        if ($(window).width() <= 750) {
-            if ($('#category').css('visibility') == 'hidden') {
-                $('#category').css('position', 'absolute');
-            }
-            else {
-                $('#category').css('position', 'static');
-            }
+            $('#category').css('display', 'none');
         }
         // Відміняємо поведінку button#toggleCategory
         e.preventDefault();
@@ -141,8 +124,8 @@ $(function () {
                 'background-color': '#499B42',
                 'color': '#FFF'
             });
-            $('#toggleCategory').removeClass('error');
-            $('.selectedCategory').closest('.interaction').next().find('.error').remove();
+            $('#category').removeClass('error');
+            $('#category').css('display', 'none');
         }
     });
     // Приховуємо блок з категорією при кліку поза його межами
@@ -262,13 +245,10 @@ $(function () {
                 }
             });
         }
-        else if($(itemImg).length <= 0) {
-            $('#list').css('box-shadow', '0 0 0 2px rgba(255, 0, 0, 0.3)');
-        }
 
         //#### Валідація блоку категорії
         if (($('.selectedCategory span').length < 2)) {
-            $('#toggleCategory').addClass('error');
+            $('#category').addClass('error');
             $('.selectedCategory').closest('.interaction').next().find('.advice').remove();
             $('.selectedCategory').closest('.interaction').next().find('.error').remove();
             $('<label class="error">Потрібно обрати категорію запчастини</label>').appendTo($('.selectedCategory').closest('.interaction').next());
@@ -307,7 +287,7 @@ $(function () {
                 e.preventDefault();
 
                 // Скролл догори, щоб побачити незаповнені поля
-                $('html, body').animate({ scrollTop: 0 }, 500);
+                // $('html, body').animate({ scrollTop: 0 }, 500);
             }
         });
     });
