@@ -27,7 +27,7 @@ $(function () {
                 $(this).css("order", detailsOrder);
             });
             // Ширина блоку details, залежно від кількості елементів у рядку
-            $(".details").width(countItems * 205);
+            $(".details").width(countItems * 200);
         }
         // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
         else {
@@ -72,12 +72,12 @@ $(function () {
         e.preventDefault();
     });
     // Приховуємо/показуємо блоки з деталями, якщо має active
-    var $toggleDetails = $('#category input[type="button"]');
-    $toggleDetails.on("click", function () {
+    var $categoryButton = $('#category input[type="button"]');
+    $categoryButton.on("click", function () {
         if ($(this).hasClass('active')) {
             $(this).next().hide();
-            $toggleDetails.each(function () {
-                $toggleDetails.removeClass('active');
+            $categoryButton.each(function () {
+                $categoryButton.removeClass('active');
             });
             if ($(this).hasClass('activeMark')) {
                 $(this).removeClass('activeMark');
@@ -85,8 +85,8 @@ $(function () {
             }
         }
         else {
-            $toggleDetails.each(function () {
-                $toggleDetails.removeClass('active');
+            $categoryButton.each(function () {
+                $categoryButton.removeClass('active');
             });
             $('.details').each(function () {
                 $(this).hide();
@@ -94,8 +94,8 @@ $(function () {
             $(this).addClass('active');
             $(this).next().show();
 
-            $toggleDetails.each(function () {
-                $toggleDetails.removeClass('activeMark');
+            $categoryButton.each(function () {
+                $categoryButton.removeClass('activeMark');
             });
 
             if ($(this).hasClass('mark')) {
@@ -113,42 +113,19 @@ $(function () {
             $(this).parents('.details').prev().addClass('activeMark');
             $('.selectedCategory').html('<span>'+$(this).parents('.details').prev().val()+'</span><span>'+
                 $(this).closest('label').find('b').text()+'</span>');
-            $('#toggleCategory').css({
-                'display': 'block',
-                'min-width': '80px',
-                'padding': '0',
-                'padding-left': '5px',
-                'margin-bottom': '5px',
-                'height': '20px',
-                'font-size': '12px',
-                'background-color': '#499B42',
-                'color': '#FFF'
-            });
-            $('#category').removeClass('error');
-            $('#category').css('display', 'none');
+            $('#toggleCategory').css('display', 'block');
+            $('#category').css('display', 'none').removeClass('error');
         }
     });
-    // Приховуємо блок з категорією при кліку поза його межами
-    // $(document).click(function(event) {
-    //     if ($(event.target).closest('#category').length) return;
-    //     else if ($(event.target).closest('#toggleCategory').length) return;
-    //     $('#category').css('visibility', 'hidden');
-    //     $('#category').css('position', 'absolute');
-    //     $('#toggleCategory').removeClass('active');
-    //     event.stopPropagation();
-    // });
 
     //#### АВТОМОБІЛЬ :selected, зберігаємо його
     $('select[name="model"]').change(function() {        
         $('.selectedAutos .auto').each(function(e) {
             for (var i = 0; i < 3; i++) {
                 if ($(this).find('span').eq(i).attr('id') != $('.automobiles select').eq(i).find('option:selected').val()) {
-                    // alert($(this).find('span').eq(i).attr('id') +' != '+ $('.automobiles select').eq(i).find('option:selected').val());
                     break;
                 }
-                else {
-                    // alert($(this).find('span').eq(i).attr('id') +' == '+ $('.automobiles select').eq(i).find('option:selected').val());
-                    
+                else {                    
                     if (i == 2) {
                         alert('Вже існує');
                         $('select[name="model"]').removeClass('mark');
@@ -186,7 +163,7 @@ $(function () {
     });
     // Перевірка існування блоку .auto
     function CheckAutoExist() {
-        if ($('.selectedAutos .auto').length < 5) {
+        if ($('.selectedAutos .auto').length < 3) {
             $('#addAuto').css('display', 'flex');
         }
         else {
@@ -249,25 +226,17 @@ $(function () {
         //#### Валідація блоку категорії
         if (($('.selectedCategory span').length < 2)) {
             $('#category').addClass('error');
-            $('.selectedCategory').closest('.interaction').next().find('.advice').remove();
-            $('.selectedCategory').closest('.interaction').next().find('.error').remove();
-            $('<label class="error">Потрібно обрати категорію запчастини</label>').appendTo($('.selectedCategory').closest('.interaction').next());
         }
 
         //#### Валідація авто блоку
-        if (($('.selectedAutos .auto').length == 0) || ($('.selectedAutos .auto').length >= 5)) {
+        if (($('.selectedAutos .auto').length == 0) || ($('.selectedAutos .auto').length > 3)) {
             $('.automobiles select').not('.disabled').addClass('error');
-            $('.automobiles select').closest('.interaction').next().find('.advice').remove();
-            $('<label class="error">Виберіть вид транспорту, марку та модель</label>').appendTo($('.automobiles select').closest('.interaction').next());
         }
 
         //#### Звертаємо увагу на рейтинг стану
         // б/у або новий
         if (!(usedItem.prop('checked')) && !(newItem.prop('checked'))) {
             $('.chooseCondition').addClass('error');
-            $('.chooseCondition').closest('.interaction').next().find('.advice').remove();
-            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
-            $('<label class="error">Оберіть стан</label>').appendTo($('.chooseCondition').closest('.interaction').next());
         }
         else {
             $('.chooseCondition').removeClass('error');
