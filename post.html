@@ -29,58 +29,66 @@
             <h1>Продати запчастину на XBolt</h1>
             <form id="formPost" method="POST" action="part.html">
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption notRequired">Оберіть фото:</span>
+                        <span class="advice">Завантажте до 5 фото</span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Оберіть фото:</span>
                         <label>
                             <ul id="list"></ul>
                             <input type="file" accept="image/*" id="uploadImg" name="photos[]" value="Фотографії" multiple />
                         </label>
                     </div>
-                    <div class="message">
-                        <span class="advice">Завантажте від 1 до 5 фото</span>
-                    </div>
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption">Назва:</span>
+                        <span class="advice">Видно у стрічці пошуку</span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Назва:</span>
                         <input type="text" name="title" autocomplete="off" placeholder="Фари Ford Mustang" />
                     </div>
-                    <div class="message">
-                        <span class="advice">Буде видно у стрічці пошуку</span>
-                    </div>
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption notRequired">Опис:</span>
+                        <span class="advice"></span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Опис:</span>
                         <textarea rows="5" name="description" placeholder="Варто перелічити виробника, код продукту та назву"></textarea>
                     </div>
+                </div>
+                <div class="formRow">
                     <div class="message">
-                        <span class="advice">"Це найкращий з усіх найкращих підшипник"</span>
+                        <span class="caption notRequired">Код детали:</span>
+                        <span class="advice"></span>
+                    </div>
+                    <div class="interaction">
+                        <input type="text" name="producerCode" autocomplete="off" placeholder="WBAFF41080L149328" />
                     </div>
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption">Ціна:</span>
+                        <span class="advice"></span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Ціна:</span>
-                        <div class="choosePrice">
-                            <input type="number" name="price" min="1" max="9999999" placeholder="500" />
-                            <label class="auction">
-                                <input type="checkbox" id="auction">
-                                <span></span>
-                                Торг
-                            </label>
+                        <div class="priceFiled">
+                            <input type="number" name="price" min="1" max="999999" placeholder="500" />
+                            <span>ГРН</span>
                         </div>
                     </div>
-                    <div class="message">
-                        <span class="advice">Ціна вказується не у доларах, євро чи карбованцях, а гривнях</span>
-                    </div>
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption">Категорія:</span>
+                        <span class="advice">Розділ запчастини</span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Категорія:</span>
                         <div class="chooseCategory">
                             <span class="selectedCategory"></span>
-                            <button id="toggleCategory">Вибір</button>
-                            <div class="category">
+                            <button id="toggleCategory">Змінити</button>
+                            <div id="category">
                                 <input type="button" value="Двигун і його системи">
                                 <div id="engineDIV" class="details">
                                     <label>
@@ -400,13 +408,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="message">
-                        <span class="advice">Розділ до якого відноситься запчастина</span>
-                    </div>               
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption">Автомобілі:</span>
+                        <span class="advice">До яких підходить деталь</span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Автомобілі:</span>
                         <div class="automobiles">
                             <div class="selectedAutos"></div>
                             <select name="transport" id="transport" class="transport">
@@ -436,13 +444,13 @@
                             <button id="addAuto">+ Додати авто</button>
                         </div>
                     </div>
-                    <div class="message">
-                        <span class="advice">До яких авто підходить деталь</span>
-                    </div>  
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption">Стан:</span>
+                        <span class="advice">Оберіть стан деталі</span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Стан:</span>
                         <div class="chooseCondition">
                             <label class="conditionUsedItem">
                                 <input type="radio" name="condition" value="usedItem" />
@@ -455,23 +463,23 @@
                                 Новая
                             </label>
                         </div>
-                    </div> 
-                    <div class="message">
-                        <span class="advice">Оберіть стан деталі</span>
-                    </div>  
+                    </div>
                 </div>
                 <div class="formRow">
-                    <div class="interaction">
-                        <span class="interactionName"></span>
-                        <div class="rateYo"></div>
-                    </div> 
                     <div class="message">
+                        <span class="caption"></span>
                         <span class="advice"></span>
-                    </div>  
+                    </div>
+                    <div class="interaction">
+                        <div class="rateYo"></div>
+                    </div>
                 </div>
                 <div class="formRow">
+                    <div class="message">
+                        <span class="caption">Регіон:</span>
+                        <span class="advice">Місце знаходження</span>
+                    </div>
                     <div class="interaction">
-                        <span class="interactionName">Регіон:</span>
                         <div class="location">
                             <select name="region">
                                 <option selected disabled hidden>Область</option>
@@ -514,9 +522,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="message">
-                        <span class="advice">Місце знаходження</span>
-                    </div> 
                 </div>
                 <input type="submit" value="Продати болта" />
             </form>

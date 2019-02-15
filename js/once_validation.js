@@ -1,5 +1,5 @@
 $(function () {
-    $("#formOnce").validate({
+    $("#formPost").validate({
         rules: {
             first_name: {
                 required: true,
@@ -9,27 +9,28 @@ $(function () {
                 required: true,
                 minlength: 10,
                 maxlength: 13
-            }
-        },
-        messages: {
-            first_name: {
-                required: "Запишіть як до вас мають звертатися",
-                minlength: jQuery.validator.format("Щонайменше {0} символів")
             },
-            telephone: {
-                required: "Контактний номер для зв'язку",
-                minlength: jQuery.validator.format("Щонайменше {0} символів"),
-                maxlength: jQuery.validator.format("Перебільшено")
+            title: {
+                required: true,
+                minlength: 5
+            },
+            price: {
+                required: true,
+                min: 1,
+                max: 9999999
+            },
+            condition: {
+                required: true
+            },
+            region: {
+                required: true
+            },
+            town: {
+                required: true
             }
         },
         errorPlacement: function(error, element) {
-            element.each(function() {
-                var attrName = $(this).attr('name');
-                var item = $(this).prop('name', attrName);
-
-                $(this).closest('.interaction').next().find('.advice').remove();
-                error.appendTo($(this).closest('.interaction').next());
-            });
+            return true;
         }
     });
 });

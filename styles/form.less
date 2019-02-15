@@ -106,51 +106,53 @@ form:not([id='filter']) {
     flex-direction: column;
     max-width: 600px;
     width: 100%;
-    padding: 10px;
     margin: 0 auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: #FFF;
-    box-shadow: 0 0 25px 0 #DDD;
     
-    &> .formRow {
-        display: flex;
-        flex-direction: row;
+    .formShape {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: #FFF;
+        box-shadow: 0 0 25px 0 #DDD;
 
-        &> div {
+        &> .formRow {
             display: flex;
             flex-direction: row;
-        }
-        
-        .message {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            max-width: 150px;
-            width: 100%;
-            margin-right: 5px;
-            padding-top: 5px;
-            text-align: right;
-            font-size: 12px;
-            color: #999;
+    
+            &> div {
+                display: flex;
+                flex-direction: row;
+            }
             
-            .caption {
-                font-size: 14px;
-                font-weight: bold;
-                color: #000;
-            }
-            .notRequired {
-                font-weight: normal;
-            }
-        }
-        .interaction {
-            position: relative;
-            width: 100%;
-
-            label {
-                // width: 100%;
-                margin: 0;
+            .message {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                max-width: 150px;
+                width: 100%;
                 margin-right: 5px;
+                padding-top: 5px;
+                text-align: right;
+                font-size: 12px;
+                color: #999;
+                
+                .caption {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #000;
+                }
+                .notRequired {
+                    font-weight: normal;
+                }
+            }
+            .interaction {
+                position: relative;
+                width: 100%;
+    
+                label {
+                    margin: 0;
+                    margin-right: 5px;
+                }
             }
         }
     }
@@ -199,6 +201,48 @@ form:not([id='filter']) {
         color: #C55454 !important;
     }
 
+    #list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        margin: 5px;
+        margin-right: 0;
+        padding: 5px;
+        background-color: #DDD;
+        background-image: url('../images/camera.svg');
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 30px;
+        border-radius: 3px;
+        list-style: none;
+        overflow: hidden;
+        cursor: pointer;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 40px;
+            width: 40px;
+            min-height: 40px;
+            height: 40px;
+            margin-right: 5px;
+            overflow: hidden;
+        }
+
+        img {
+            height: 40px;
+            margin-right: 5px;
+        }
+    }
+    #uploadImg {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
     .priceFiled {
         display: flex;
         flex-direction: row;
@@ -206,7 +250,87 @@ form:not([id='filter']) {
 
         input[name="price"] {
             width: 205px;
-            margin-right: 5px;
+        }
+
+        span {
+            margin-left: 5px;
+        }
+    }
+    .chooseCategory {
+        flex-direction: column;
+
+        .selectedCategory {
+            display: block;
+            margin: 5px;
+            margin-bottom: 0;
+            
+            span {
+                padding: 2px;
+                border-radius: 2px;
+                font-size: 12px;
+                background-color: @background_tag;
+                color: @color_tag;
+
+                &:not(:last-child) {
+                    padding-right: 2px;
+
+                    &::after {
+                        content: " \203A";
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        #toggleCategory {
+            display: none;
+            margin: 5px;
+            margin-right: 0;
+            padding: 0;
+            padding-left: 5px;
+            min-width: 80px;
+            height: 20px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            background-color: @button_mark;
+            background-image: url('../images/arrow.png');
+            background-repeat: no-repeat;
+            background-position: 95% 50%;
+            color: @color_white;
+            font-size: 12px;
+            text-align: left;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        #category {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            height: inherit;
+            margin-bottom: 5px;
+            padding-right: 5px;
+            border-radius: 3px;            
+    
+            .details {
+                display: none;
+                width: 100%;
+                padding: 10px;
+                padding-left: 0;
+                margin-bottom: 5px;
+                margin-left: 5px;
+            
+                label {
+                    margin-left: 20px;
+                }
+            }
+    
+            input[type="button"] {
+                min-width: 200px; 
+            }
         }
     }
     .automobiles {
@@ -280,10 +404,33 @@ form:not([id='filter']) {
             border: none;
         }
     }
+    .chooseCondition {
+        display: flex;
+        flex-direction: row;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 2px;
+        width: 131px;
+
+        label {
+            padding-right: 15px;
+            color: #555;
+            cursor: pointer;
+    
+            &:last-child {
+                padding-right: 0;
+            }
+
+            span {
+                margin-right: 0;
+            }
+        }
+    }
     .rateYo {
         display: block;
         margin-top: 3px;
         margin-left: 5px;
+        margin-bottom: 3px;
         padding: 3px;
         border-radius: 2px;
     }
@@ -349,35 +496,43 @@ form:not([id='filter']) {
         max-width: 100%;
         padding: 10px 20px;
 
-        .formRow {
+        .formShape .formRow {
             flex-direction: column;
             margin-bottom: 10px;
             
             .interaction {
                 flex-direction: column;
-                min-width: inherit;
-
-                // &> label  {
-                   // min-width: 100%;
-                // }
-
-                .interactionName {
-                    justify-content: flex-start;
-                }
             }
             .message {
-                justify-content: flex-end;
-                padding-top: 0;
+                max-width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .advice {
+                    margin-left: 10px;
+                }
             }
         }
 
-        input:not([type=button]), select, textarea, #list, #toggleCategory {
-            width: 100% !important;
-            min-width: inherit !important;
-            margin: 0 !important;
+        .choosePrice .auction {
+            margin-left: 5px;
+        }
+        .chooseCondition {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .rateYo {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        input:not([type=button]), select, textarea, #list {
+            // width: 100%;
+            // min-width: inherit;
+            margin: 0;
         }
         select {
-            margin-bottom: 5px !important;
+            margin-bottom: 5px;
         }
     }
 }
