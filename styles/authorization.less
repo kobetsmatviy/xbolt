@@ -12,18 +12,21 @@ main {
         position: fixed;
         top: 50%;
         left: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 420px;
-        height: 400px;
         margin: 0 10px;
         margin-top: -200px;
         margin-left: -205px;
-        padding: 30px;
-        box-shadow: 0 0 25px 0 #333;
         font-family: 'PT Sans', sans-serif;
         z-index: 5;
+
+        .formShape {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 420px;
+            height: 400px;
+            padding: 30px;
+            box-shadow: 0 0 25px 0 #333;
+        }
 
         .boltLogo {
             width: 45px;
@@ -135,9 +138,12 @@ main {
         position: absolute;
         top: 15% !important;
         left: 10% !important;
-        width: 80% !important;
-        height: 80% !important;
-        max-height: 400px !important;
+
+        .formShape {
+            width: 80% !important;
+            height: 350px !important;
+            padding: 20px !important;
+        }
         margin-top: 0 !important;
         margin-left: 0 !important;
 

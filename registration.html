@@ -24,43 +24,45 @@
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Реєстрація</h1>
             <form id="formRegistration" method="POST" action="post.html">
-                <div class="formRow">
-                    <div class="message">
-                        <span class="caption">Ім'я Прізвище:</span>
-                        <span class="advice">Як до вас звертатися?!</span>
+                <div class="formShape">
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">Ім'я Прізвище:</span>
+                            <span class="advice">Як до вас звертатися?!</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="text" name="first_name" autocomplete="cc-name" placeholder="Семен Болт" />
+                        </div>
                     </div>
-                    <div class="interaction">
-                        <input type="text" name="first_name" autocomplete="cc-name" placeholder="Семен Болт" />
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">Номер:</span>
+                            <span class="advice">Контактний номер</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="tel" name="telephone" autocomplete="tel" placeholder="+38(097) 46-94-162" />
+                        </div>
                     </div>
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">E-mail:</span>
+                            <span class="advice">Введіть e-mail</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="email" name="email" autocomplete="email" placeholder="semenbolt@xbolt.com" />
+                        </div>
+                    </div>
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">Пароль:</span>
+                            <span class="advice">Пароль від акаунту</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="password" name="password" autocomplete="off" placeholder="******" />
+                        </div>
+                    </div>
+                    <input type="submit" value="Продовжити" />
                 </div>
-                <div class="formRow">
-                    <div class="message">
-                        <span class="caption">Номер:</span>
-                        <span class="advice">Контактний номер</span>
-                    </div>
-                    <div class="interaction">
-                        <input type="tel" name="telephone" autocomplete="tel" placeholder="+38(097) 46-94-162" />
-                    </div>
-                </div>
-                <div class="formRow">
-                    <div class="message">
-                        <span class="caption">E-mail:</span>
-                        <span class="advice">Введіть e-mail</span>
-                    </div>
-                    <div class="interaction">
-                        <input type="email" name="email" autocomplete="email" placeholder="semenbolt@xbolt.com" />
-                    </div>
-                </div>
-                <div class="formRow">
-                    <div class="message">
-                        <span class="caption">Пароль:</span>
-                        <span class="advice">Пароль від акаунту</span>
-                    </div>
-                    <div class="interaction">
-                        <input type="password" name="password" autocomplete="off" placeholder="******" />
-                    </div>
-                </div>
-                <input type="submit" value="Продовжити" />
             </form>
         </article>
         <div class="animationShapes">

@@ -24,25 +24,27 @@
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <h1>Вхід</h1>
             <form id="formLogin" method="POST" action="profile.html">
-                <div class="formRow">
-                    <div class="message">
-                        <span class="caption">E-mail:</span>
-                        <span class="advice">Введіть e-mail</span>
+                <div class="formShape">
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">E-mail:</span>
+                            <span class="advice">Введіть e-mail</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="email" name="email" autocomplete="email" placeholder="semenbolt@xbolt.com" />
+                        </div>
                     </div>
-                    <div class="interaction">
-                        <input type="email" name="email" autocomplete="email" placeholder="semenbolt@xbolt.com" />
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">Пароль:</span>
+                            <span class="advice">Пароль від акаунту</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="password" name="password" autocomplete="off" placeholder="******" />
+                        </div>
                     </div>
+                    <input type="submit" value="Підтвердити" />
                 </div>
-                <div class="formRow">
-                    <div class="message">
-                        <span class="caption">Пароль:</span>
-                        <span class="advice">Пароль від акаунту</span>
-                    </div>
-                    <div class="interaction">
-                        <input type="password" name="password" autocomplete="off" placeholder="******" />
-                    </div>
-                </div>
-                <input type="submit" value="Підтвердити" />
             </form>
         </article>
         <div class="animationShapes">
