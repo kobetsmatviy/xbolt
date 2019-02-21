@@ -3,13 +3,13 @@ $(function () {
     AdaptiveCategory();
     function AdaptiveCategory() {
         if ($(window).width() > 750) {
-            var rowWidth = $("#category").width();
+            var rowWidth = $("#groups").width();
             var countItems = Math.floor(rowWidth / (200 + 5));
             var inputOrder = -1;
             var detailsOrder = 0;
 
             // Значення order для кожного input[type=button]
-            $("#category input[type=button]").each(function() {
+            $("#groups input[type=button]").each(function() {
                 if (($(this).index()/2) % countItems == 0) {
                     inputOrder += 2;
                 }
@@ -31,7 +31,7 @@ $(function () {
         }
         // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
         else {
-            $("#category").children().each(function() {
+            $("#groups").children().each(function() {
                 $(this).css("order", 0);
                 $(this).css("width", "100%");
             });
@@ -62,22 +62,22 @@ $(function () {
     //#### КАТЕГОРІЯ перемикач
     $('#toggleCategory').on('click', function(e) {
         // Перемикач станів
-        if ($('#category').css('display') == 'none') {
-            $('#category').css('display', 'flex');
+        if ($('#groups').css('display') == 'none') {
+            $('#groups').css('display', 'flex');
         }
         else {
-            $('#category').css('display', 'none');
+            $('#groups').css('display', 'none');
         }
         // Відміняємо поведінку button#toggleCategory
         e.preventDefault();
     });
     // Приховуємо/показуємо блоки з деталями, якщо має active
-    var $categoryButton = $('#category input[type="button"]');
-    $categoryButton.on("click", function () {
+    var $groupButton = $('#groups input[type="button"]');
+    $groupButton.on("click", function () {
         if ($(this).hasClass('active')) {
             $(this).next().hide();
-            $categoryButton.each(function () {
-                $categoryButton.removeClass('active');
+            $groupButton.each(function () {
+                $groupButton.removeClass('active');
             });
             if ($(this).hasClass('activeMark')) {
                 $(this).removeClass('activeMark');
@@ -85,8 +85,8 @@ $(function () {
             }
         }
         else {
-            $categoryButton.each(function () {
-                $categoryButton.removeClass('active');
+            $groupButton.each(function () {
+                $groupButton.removeClass('active');
             });
             $('.details').each(function () {
                 $(this).hide();
@@ -94,8 +94,8 @@ $(function () {
             $(this).addClass('active');
             $(this).next().show();
 
-            $categoryButton.each(function () {
-                $categoryButton.removeClass('activeMark');
+            $groupButton.each(function () {
+                $groupButton.removeClass('activeMark');
             });
 
             if ($(this).hasClass('mark')) {
@@ -114,7 +114,7 @@ $(function () {
             $('.selectedCategory').html('<span>'+$(this).parents('.details').prev().val()+'</span><span>'+
                 $(this).closest('label').find('b').text()+'</span>');
             $('#toggleCategory').css('display', 'block');
-            $('#category').css('display', 'none').removeClass('error');
+            $('#groups').css('display', 'none').removeClass('error');
         }
     });
 
@@ -225,7 +225,7 @@ $(function () {
 
         //#### Валідація блоку категорії
         if (($('.selectedCategory span').length < 2)) {
-            $('#category').addClass('error');
+            $('#groups').addClass('error');
         }
 
         //#### Валідація авто блоку
