@@ -1,43 +1,8 @@
 $(function () {
     //#### Адаптивний вибір категорії
-    AdaptiveCategory();
-    function AdaptiveCategory() {
-        if ($(window).width() > 750) {
-            var rowWidth = $("#groups").width();
-            var countItems = Math.floor(rowWidth / (200 + 5));
-            var inputOrder = -1;
-            var detailsOrder = 0;
-
-            // Значення order для кожного input[type=button]
-            $("#groups input[type=button]").each(function() {
-                if (($(this).index()/2) % countItems == 0) {
-                    inputOrder += 2;
-                }
-                else {
-                    inputOrder++;
-                }
-                $(this).css("order", inputOrder);
-                $(this).width((rowWidth / countItems) - 15);
-            });
-            // Значення order для кожного блоку details
-            $(".details").each(function() {
-                if((($(this).index()-1)/2) % countItems == 0) {
-                    detailsOrder += countItems + 1;
-                }
-                $(this).css("order", detailsOrder);
-            });
-            // Ширина блоку details, залежно від кількості елементів у рядку
-            $(".details").width(countItems * 200);
-        }
-        // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
-        else {
-            $("#groups").children().each(function() {
-                $(this).css("order", 0);
-                $(this).css("width", "100%");
-            });
-            $(".details").css("width", "100%");
-        }
-    }
+    $(window).resize(function() {
+        AdaptiveCategory();
+    });
 
     //#### Показуємо завантажені файли
     function showFile(e) {
@@ -105,8 +70,7 @@ $(function () {
     });
     // Якщо відмічений хоча б один radio у блоку details, то
     // змінити значення відповідної кнопки на mark
-    var $radioDetails = $('.details input[type=radio]');
-    $radioDetails.on("click", function () {
+    $('#groups').delegate('.details input[type=radio]', 'click', function () {
         if ($(this).parents('.details').find('input[type=radio]:checked').length) {
             $('.details').prev().removeClass('mark');
             $(this).parents('.details').prev().addClass('mark');
@@ -254,10 +218,45 @@ $(function () {
         $('.interaction *').each(function() {
             if ($(this).hasClass('error')) {
                 e.preventDefault();
-
-                // Скролл догори, щоб побачити незаповнені поля
-                // $('html, body').animate({ scrollTop: 0 }, 500);
             }
         });
     });
 });
+
+// function AdaptiveCategory() {
+//     if ($(window).width() > 750) {
+//         var rowWidth = $("#groups").width();
+//         var countItems = Math.floor(rowWidth / (200 + 5));
+//         var inputOrder = -1;
+//         var detailsOrder = 0;
+
+//         // Значення order для кожного input[type=button]
+//         $("#groups input[type=button]").each(function() {
+//             if (($(this).index()/2) % countItems == 0) {
+//                 inputOrder += 2;
+//             }
+//             else {
+//                 inputOrder++;
+//             }
+//             $(this).css("order", inputOrder);
+//             $(this).width((rowWidth / countItems) - 15);
+//         });
+//         // Значення order для кожного блоку details
+//         $(".details").each(function() {
+//             if((($(this).index()-1)/2) % countItems == 0) {
+//                 detailsOrder += countItems + 1;
+//             }
+//             $(this).css("order", detailsOrder);
+//         });
+//         // Ширина блоку details, залежно від кількості елементів у рядку
+//         $(".details").width(countItems * 200);
+//     }
+//     // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
+//     else {
+//         $("#groups").children().each(function() {
+//             $(this).css("order", 0);
+//             $(this).css("width", "100%");
+//         });
+//         $(".details").css("width", "100%");
+//     }
+// }
