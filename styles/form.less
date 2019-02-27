@@ -107,55 +107,6 @@ form:not([id='filter']) {
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
-    
-    .formShape {
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        background-color: #FFF;
-        box-shadow: 0 0 25px 0 #DDD;
-
-        &> .formRow {
-            display: flex;
-            flex-direction: row;
-    
-            &> div {
-                display: flex;
-                flex-direction: row;
-            }
-            
-            .message {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                max-width: 150px;
-                width: 100%;
-                margin-right: 5px;
-                padding-top: 5px;
-                text-align: right;
-                font-size: 12px;
-                color: #999;
-                
-                .caption {
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: #000;
-                }
-                .notRequired {
-                    font-weight: normal;
-                }
-            }
-            .interaction {
-                position: relative;
-                width: 100%;
-    
-                label {
-                    margin: 0;
-                    margin-right: 5px;
-                }
-            }
-        }
-    }
 
     textarea {
         margin: 5px;
@@ -346,9 +297,9 @@ form:not([id='filter']) {
 
                 .auto {
                     position: relative;
-                    background-color: @background_tag;
+                    background-color: @button_mark;
                     border-radius: 3px;
-                    color: @color_tag;
+                    color: @color_white;
                     padding: 3px 5px;
                     padding-right: 20px;
                     margin-right: 3px;
@@ -437,6 +388,116 @@ form:not([id='filter']) {
     .location {
         width: 100%;
         margin-right: 5px;
+    }
+    .selectedInputs {
+        display: none;
+    }
+}
+
+.formShape {
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0 0 25px 0 #DDD;
+
+    &> .formRow {
+        display: flex;
+        flex-direction: row;
+
+        &> div {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .message {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            max-width: 150px;
+            width: 100%;
+            margin-right: 5px;
+            padding-top: 5px;
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            
+            .caption {
+                font-size: 14px;
+                font-weight: bold;
+                color: #000;
+            }
+            .notRequired {
+                font-weight: normal;
+            }
+        }
+        .interaction {
+            position: relative;
+            width: 100%;
+
+            label {
+                margin: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+.doneMessage {
+    // margin: 75px auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0 10px;
+    margin-top: -225px;
+    margin-left: -205px;
+    max-width: 420px;
+    width: 100%;
+    padding: 30px;
+
+    .boltLogo {
+        text-align: center;
+
+        img {
+            width: 45px;
+        }
+    }
+
+    h3 {
+        margin: 20px auto;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        text-align: center;
+        color: #222;
+    }
+
+    p {
+        margin: 30px auto;
+        // font-size: 16px;
+        color: #555;
+
+        .registration {
+            padding-right: 5px;
+            box-shadow: 3px 3px 0 0 #FF6600;
+            color: #FF6600;
+
+            &:hover {
+                box-shadow: 5px 5px 0 0 #FF6600;
+            }
+        }
+    }
+
+    .addButton {
+        display: block;  
+        width: 100%;
+        padding: 5px 8px;
+        background-color: @button_mark;
+        color: @color_white;
+        font-size: 16px;
+        border-radius: 3px;
+        text-align: center;
     }
 }
 

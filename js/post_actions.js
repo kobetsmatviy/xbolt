@@ -38,7 +38,7 @@ $(function () {
     });
     // Приховуємо/показуємо блоки з деталями, якщо має active
     var $groupButton = $('#groups input[type="button"]');
-    $groupButton.on("click", function () {
+    $('#groups').delegate('input[type="button"]', 'click', function () {
         if ($(this).hasClass('active')) {
             $(this).next().hide();
             $groupButton.each(function () {
@@ -103,10 +103,13 @@ $(function () {
 
         // Додаємо авто і заповняємо його атрибути для відправки
         $('.selectedAutos').append('<span class="auto"></span>');
-        $('.selectedAutos .auto:last').append('<span id='+$('select[name="transport"] option:selected').val()+'></span>');
+        $('.selectedAutos .auto:last').append('<span id='+$('select[name="mtype"] option:selected').val()+'></span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="brand"] option:selected').val()+'>' +$('select[name="brand"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="model"] option:selected').val()+'>' +$('select[name="model"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span class="remove"></span>');
+        $('.selectedInputs').append('<input type="text" name="mtype_send" readonly value="'+$('select[name="mtype"] option:selected').val()+'" data-select="'+$('.selectedAutos .auto').length+'" />');
+        $('.selectedInputs').append('<input type="text" name="brand_send" readonly value="'+$('select[name="brand"] option:selected').val()+'" data-select="'+$('.selectedAutos .auto').length+'" />');
+        $('.selectedInputs').append('<input type="text" name="model_send" readonly value="'+$('select[name="model"] option:selected').val()+'" data-select="'+$('.selectedAutos .auto').length+'" />');
 
         $(this).removeClass('mark');
         $('.automobiles select').removeClass('error').hide();
@@ -119,8 +122,14 @@ $(function () {
     });
     // Видаляємо авто при кліку на його блок
     $('.selectedAutos').delegate('.auto', 'click', function() {
+        $('.selectedInputs input[data-select="'+($(this).closest('.auto').index() + 1)+'"]').remove();
         $(this).remove();
         CheckAutoExist();
+
+        if ($('.selectedAutos .auto').length <= 0) {
+            $('#addAuto').trigger('click');
+            $('select[name="model"]').removeClass('mark').addClass('error').css('box-shadow', '0 0 0 2px rgba(255,0,0,.3)');
+        }
     });
     $('.automobiles select').on('change', function() {
         $('.automobiles select').closest('.interaction').next().find('.error').remove();
@@ -158,9 +167,10 @@ $(function () {
         if ($('.rateYo').rateYo("rating") > 0) {
             $('.rateYo').removeClass('error');
         }
+        $('#rateInput').attr('value', $('.rateYo').rateYo("rating"));
     });
 
-    //#### РЕГІОН при зміні
+    //#### SELECT при зміні
     $('select').change(function() {
         $(this).css('box-shadow', 'none');
     });
@@ -223,40 +233,40 @@ $(function () {
     });
 });
 
-// function AdaptiveCategory() {
-//     if ($(window).width() > 750) {
-//         var rowWidth = $("#groups").width();
-//         var countItems = Math.floor(rowWidth / (200 + 5));
-//         var inputOrder = -1;
-//         var detailsOrder = 0;
+function AdaptiveCategory() {
+    if ($(window).width() > 750) {
+        var rowWidth = $("#groups").width();
+        var countItems = Math.floor(rowWidth / (200 + 5));
+        var inputOrder = -1;
+        var detailsOrder = 0;
 
-//         // Значення order для кожного input[type=button]
-//         $("#groups input[type=button]").each(function() {
-//             if (($(this).index()/2) % countItems == 0) {
-//                 inputOrder += 2;
-//             }
-//             else {
-//                 inputOrder++;
-//             }
-//             $(this).css("order", inputOrder);
-//             $(this).width((rowWidth / countItems) - 15);
-//         });
-//         // Значення order для кожного блоку details
-//         $(".details").each(function() {
-//             if((($(this).index()-1)/2) % countItems == 0) {
-//                 detailsOrder += countItems + 1;
-//             }
-//             $(this).css("order", detailsOrder);
-//         });
-//         // Ширина блоку details, залежно від кількості елементів у рядку
-//         $(".details").width(countItems * 200);
-//     }
-//     // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
-//     else {
-//         $("#groups").children().each(function() {
-//             $(this).css("order", 0);
-//             $(this).css("width", "100%");
-//         });
-//         $(".details").css("width", "100%");
-//     }
-// }
+        // Значення order для кожного input[type=button]
+        $("#groups input[type=button]").each(function() {
+            if (($(this).index()/2) % countItems == 0) {
+                inputOrder += 2;
+            }
+            else {
+                inputOrder++;
+            }
+            $(this).css("order", inputOrder);
+            $(this).css("width", (rowWidth / countItems) - 15);
+        });
+        // Значення order для кожного блоку details
+        $(".details").each(function() {
+            if((($(this).index()-1)/2) % countItems == 0) {
+                detailsOrder += countItems + 1;
+            }
+            $(this).css("order", detailsOrder);
+        });
+        // Ширина блоку details, залежно від кількості елементів у рядку
+        $(".details").width(countItems * 200);
+    }
+    // Обнуляємо данні для смартфонів, вони по стандарту ті що треба
+    else {
+        $("#groups").children().each(function() {
+            $(this).css("order", 0);
+            $(this).css("width", "100%");
+        });
+        $(".details").css("width", "100%");
+    }
+}
