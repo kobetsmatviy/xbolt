@@ -12,7 +12,7 @@ $(document).ready(function(){
         $(".partCard").css('max-width', itemWidth);
     }
 
-    $('.withdraw').on('click', function() {
+    $('.glyphicon-remove').on('click', function() {
         $(this).parent().append(
             '<div class="deletePost">'+
                 '<span class="caption">Вам вдалося продати запчастину?!</span>'+

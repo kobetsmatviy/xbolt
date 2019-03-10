@@ -27,12 +27,15 @@
                 <div class="formShape">
                     <div class="formRow">
                         <div class="message">
-                            <span class="caption">Ім'я Прізвище:</span>
-                            <span class="advice">Як до вас звертатися?!</span>
+                            <span class="caption">E-mail:</span>
+                            <span class="advice">Введіть e-mail</span>
                         </div>
                         <div class="interaction">
-                            <input type="text" name="first_name" autocomplete="cc-name" placeholder="Семен Болт" />
+                            <input type="email" name="email" autocomplete="email" placeholder="semenbolt@xbolt.com" required />
                         </div>
+                    </div>
+                    <div style="width: 100%; font-weight: bold; text-align: center">
+                        <span>або</span>
                     </div>
                     <div class="formRow">
                         <div class="message">
@@ -40,25 +43,25 @@
                             <span class="advice">Контактний номер</span>
                         </div>
                         <div class="interaction">
-                            <input type="tel" name="telephone" autocomplete="tel" placeholder="+38(097) 46-94-162" />
-                        </div>
-                    </div>
-                    <div class="formRow">
-                        <div class="message">
-                            <span class="caption">E-mail:</span>
-                            <span class="advice">Введіть e-mail</span>
-                        </div>
-                        <div class="interaction">
-                            <input type="email" name="email" autocomplete="email" placeholder="semenbolt@xbolt.com" />
+                            <input type="tel" name="telephone" autocomplete="tel" placeholder="+38(097) 46-94-162" required />
                         </div>
                     </div>
                     <div class="formRow">
                         <div class="message">
                             <span class="caption">Пароль:</span>
-                            <span class="advice">Пароль від акаунту</span>
+                            <span class="advice">Від 6 символів</span>
                         </div>
                         <div class="interaction">
-                            <input type="password" name="password" autocomplete="off" placeholder="******" />
+                            <input type="password" name="password" autocomplete="off" placeholder="******" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+                        </div>
+                    </div>
+                    <div class="formRow">
+                        <div class="message">
+                            <span class="caption">Ім'я Прізвище:</span>
+                            <span class="advice">Як звертатися?!</span>
+                        </div>
+                        <div class="interaction">
+                            <input type="text" name="first_name" autocomplete="cc-name" placeholder="Семен Болт" />
                         </div>
                     </div>
                     <input type="submit" value="Продовжити" />
@@ -80,16 +83,5 @@
     <link rel="stylesheet" type="text/css" href="styles/form.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" async></script>
     <script src="js/registration_validation.js" async></script>
-    <!-- Hotjar Tracking Code for http://workout.korets.in.ua/xbolt/index.html -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1130294,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
 </body>
 </html>

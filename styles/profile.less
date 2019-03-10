@@ -235,58 +235,6 @@ main {
     }
 }
 
-// Version for a smartphone
-@media screen and (max-width: 767px) {
-    main {
-        article {
-            flex-direction: column;
-
-            #menu {
-                flex-direction: row;
-                justify-content: space-between;
-                margin-right: 0 !important;
-
-                #review {
-                    margin-left: 20px;
-                    min-width: 120px;
-
-                    img {
-                        width: 75px;
-                        height: 75px;
-                    }
-                }
-
-                .userContacts {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                ul {
-                    align-self: center;
-                    min-width: 135px;
-                    width: 100%;
-                    max-width: 200px;
-                    margin: 0 15px;
-                }
-            }
-
-            #settings {
-                .crop {
-                    position: absolute;
-                    top: 130px !important;
-                    left: 50% !important;
-                    margin-left: -162px !important;
-                }
-            
-                #showPswdBlock {
-                    max-width: 100px;
-                    margin: 0;
-                }
-            }
-        }
-    }
-}
-
 .partCard {
     position: relative;
     width: 245px;
@@ -359,6 +307,7 @@ main {
             align-items: center;
             width: 100%;
             height: 50px;
+            padding: 5px;
             color: @color_select;
         }
 
@@ -402,5 +351,64 @@ main {
         height: 100%;
         .background_color_black(0.4);
         z-index: 3;
+    }
+}
+
+// Version for a smartphone
+@media screen and (max-width: 767px) {
+    main {
+        article {
+            flex-direction: column;
+
+            #menu {
+                flex-direction: row;
+                justify-content: space-between;
+                margin-right: 0 !important;
+
+                #review {
+                    margin-left: 20px;
+                    min-width: 120px;
+
+                    img {
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+
+                .userContacts {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                ul {
+                    align-self: center;
+                    min-width: 135px;
+                    width: 100%;
+                    max-width: 200px;
+                    margin: 0 15px;
+                }
+            }
+
+            #posts {
+                .partCard .deletePost {
+                    width: 80%;
+                    margin-left: -40%;
+                }
+            }
+
+            #settings {
+                .crop {
+                    position: absolute;
+                    top: 130px !important;
+                    left: 50% !important;
+                    margin-left: -162px !important;
+                }
+            
+                #showPswdBlock {
+                    max-width: 100px;
+                    margin: 0;
+                }
+            }
+        }
     }
 }
