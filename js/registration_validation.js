@@ -4,7 +4,7 @@ $(function () {
             email: {
                 email: true
             },
-            telephone: {
+            phone: {
                 minlength: 10,
                 maxlength: 13
             },
@@ -27,13 +27,13 @@ $(function () {
 $(function () {
     $('input[name=email]').keyup(function(e) {        
         if( $(this).val() ) {
-            $('input[name=telephone]').prop({required: false, readonly: true}).addClass('disabled');
+            $('input[name=phone]').prop({required: false, readonly: true}).addClass('disabled');
         }
         else {
-            $('input[name=telephone]').prop({required: true, readonly: false}).removeClass('disabled');
+            $('input[name=phone]').prop({required: true, readonly: false}).removeClass('disabled');
         }
     });
-    $('input[name=telephone]').keyup(function(e) {
+    $('input[name=phone]').keyup(function(e) {
         var res = /[^0-9+]/g.exec(this.value);
         this.value = this.value.replace(res, '');
 

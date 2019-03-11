@@ -21,10 +21,6 @@
                     <img src="images/give_bolt.svg" />
                     <span>Продати</span>
                 </a>
-                <a href="comments.html">
-                    <img src="images/notify_active.svg" />
-                    <span>Сповіщення</span>
-                </a>
                 <a href="profile.html" id="profile">
                     <img src="images/crop-user.jpeg" />
                     <span>Семен Болт</span>
@@ -40,16 +36,6 @@
                     <span>легкові</span>
                     <span>Audi</span>
                     <span>80 B2 1979-1986</span>
-                    <span>передня підвіска</span>
-                    <span>рульове керування</span>
-                    <span>Рівненська обл.</span>
-                    <span>Корецький р-н</span>
-                    <span>Audi</span>
-                    <span>80 B2 1979-1986</span>
-                    <span>передня підвіска</span>
-                    <span>рульове керування</span>
-                    <span>Рівненська обл.</span>
-                    <span>Корецький р-н</span>
                 </div>
             </section>
         </article>
@@ -481,145 +467,147 @@
             <div id="settings">
                 <h1>Налаштування профілю</h1>
                 <form id="formSettings" method="GET" action="">
-                    <div class="formRow">
-                        <div class="interaction">
-                            <span class="interactionName">Оберіть фото:</span>
-                            <label>
-                                <div id="readyPhoto"></div>
-                                <input type="file" accept="image/*" id="uploadPhoto" name="photo" value="Фотографії" />
-                            </label>
-                            <div class="crop">
-                                <div id="photoCrop"></div>
-                                <div class="cropButtons">
-                                    <span id="cancelCrop">Скасувати</span>
-                                    <span id="getPhoto">Підтвердити</span>
+                    <div class="formShape">
+                        <div class="formRow">
+                            <div class="message">
+                                <span class="caption">Оберіть фото:</span>
+                                <span class="advice">Вас будуть впізнавати по фото чи логотипі</span>
+                            </div>
+                            <div class="interaction">
+                                <label>
+                                    <div id="readyPhoto"></div>
+                                    <input type="file" accept="image/*" id="uploadPhoto" name="photo" value="Фотографії" />
+                                </label>
+                                <div class="crop">
+                                    <div id="photoCrop"></div>
+                                    <div class="cropButtons">
+                                        <span id="cancelCrop">Скасувати</span>
+                                        <span id="getPhoto">Підтвердити</span>
+                                    </div>
+                                </div>
+                                <div id="overlay"></div>
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <div class="message">
+                                <span class="caption">Номер:</span>
+                                <span class="advice">Контактний номер для зв'язку</span>
+                            </div>
+                            <div class="interaction">
+                                <input type="tel" name="telephone" autocomplete="tel" placeholder="+38 (097) 46-94-162" />
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <div class="interaction">
+                                <span class="interactionName">Автомобілі:</span>
+                                <div class="automobiles">
+                                    <div class="selectedAutos"></div>
+                                    <select name="transport" id="transport" class="transport">
+                                        <option selected disabled hidden>Транспорт</option>
+                                        <option value="cars">Легкові</option>
+                                        <option value="trucks">Вантажівки</option>
+                                        <option value="autobus">Автобуси</option>
+                                        <option value="moto">Мото</option>
+                                    </select>
+                                    <select name="brand" class="disabled" disabled>
+                                        <option selected disabled hidden>Марка</option>
+                                        <option value="astron-martin">Aston Martin</option>
+                                        <option value="audi">AUDI</option>
+                                        <option value="bmw">BMW</option>
+                                        <option value="opel">OPEL</option>
+                                        <option value="toyota">TOYOTA</option>
+                                    </select>
+                                    <select name="model" class="disabled" disabled>
+                                        <option selected disabled hidden>Модель</option>
+                                        <option value="80">B2 80 1979-1981</option>
+                                        <option value="100">B3 100 1982-1985</option>
+                                        <option value="200">M4 200 1994-1996</option>
+                                        <option value="A2">A2 2001</option>
+                                        <option value="A4">A4 2004-2005</option>
+                                        <option value="TT">TT 2018</option>
+                                    </select>
+                                    <button id="addAuto">+ Додати авто</button>
                                 </div>
                             </div>
-                            <div id="overlay"></div>
+                            <div class="message">
+                                <span class="advice">Ваші автомобілі, до яких шукаєте деталі</span>
+                            </div>  
                         </div>
-                        <div class="message">
-                            <span class="advice">Вас будуть впізнавати по фото чи логотипі</span>
+                        <div class="formRow">
+                            <div class="interaction">
+                                <span class="interactionName">Регіон:</span>
+                                <div class="location">
+                                    <select name="region">
+                                        <option selected disabled hidden>Область</option>
+                                        <option>Вінницька</option>
+                                        <option>Волинська</option>
+                                        <option>Дніпропетровська</option>
+                                        <option>Донецька</option>
+                                        <option>Житомирська</option>
+                                        <option>Закарпатська</option>
+                                        <option>Запорізька</option>
+                                        <option>Івано-Франківська</option>
+                                        <option>Київська</option>
+                                        <option>Кіровоградська</option>
+                                        <option>Крим (АРК)</option>
+                                        <option>Луганська</option>
+                                        <option>Львівська</option>
+                                        <option>Миколаївська</option>
+                                        <option>Одеська</option>
+                                        <option>Полтавська</option>
+                                        <option>Рівненська</option>
+                                        <option>Сумська</option>
+                                        <option>Тернопільська</option>
+                                        <option>Харківська</option>
+                                        <option>Херсонська</option>
+                                        <option>Хмельницька</option>
+                                        <option>Черкаська</option>
+                                        <option>Чернівецька</option>
+                                        <option>Чернігівська</option>
+                                    </select>
+                                    <select name="town" class="disabled" disabled>
+                                        <option selected disabled hidden>Район</option>
+                                        <option>Корець</option>
+                                        <option>Гоща</option>
+                                        <option>Кузнецовськ</option>
+                                        <option>Решитилів</option>
+                                        <option>Новоград-Волинськ</option>
+                                        <option>Сарни</option>
+                                        <option>Острог</option>
+                                        <option>Дубно</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="message">
+                                <span class="advice">Місце проживання</span>
+                            </div> 
                         </div>
-                    </div>
-                    <div class="formRow">
-                        <div class="interaction">
-                            <span class="interactionName">Номер:</span>
-                            <input type="tel" name="telephone" autocomplete="tel" placeholder="+38 (097) 46-94-162" />
-                        </div>
-                        <div class="message">
-                            <span class="advice">Контактний номер для зв'язку</span>
-                        </div>
-                    </div>
-                    <div class="formRow">
-                        <div class="interaction">
-                            <span class="interactionName">Автомобілі:</span>
-                            <div class="automobiles">
-                                <div class="selectedAutos"></div>
-                                <select name="transport" id="transport" class="transport">
-                                    <option selected disabled hidden>Транспорт</option>
-                                    <option value="cars">Легкові</option>
-                                    <option value="trucks">Вантажівки</option>
-                                    <option value="autobus">Автобуси</option>
-                                    <option value="moto">Мото</option>
-                                </select>
-                                <select name="brand" class="disabled" disabled>
-                                    <option selected disabled hidden>Марка</option>
-                                    <option value="astron-martin">Aston Martin</option>
-                                    <option value="audi">AUDI</option>
-                                    <option value="bmw">BMW</option>
-                                    <option value="opel">OPEL</option>
-                                    <option value="toyota">TOYOTA</option>
-                                </select>
-                                <select name="model" class="disabled" disabled>
-                                    <option selected disabled hidden>Модель</option>
-                                    <option value="80">B2 80 1979-1981</option>
-                                    <option value="100">B3 100 1982-1985</option>
-                                    <option value="200">M4 200 1994-1996</option>
-                                    <option value="A2">A2 2001</option>
-                                    <option value="A4">A4 2004-2005</option>
-                                    <option value="TT">TT 2018</option>
-                                </select>
-                                <button id="addAuto">+ Додати авто</button>
+                        <div class="formRow">
+                            <div class="interaction">
+                                <span class="interactionName"></span>
+                                <button id="showPswdBlock">Змінити пароль</button>
                             </div>
                         </div>
-                        <div class="message">
-                            <span class="advice">Ваші автомобілі, до яких шукаєте деталі</span>
-                        </div>  
-                    </div>
-                    <div class="formRow">
-                        <div class="interaction">
-                            <span class="interactionName">Регіон:</span>
-                            <div class="location">
-                                <select name="region">
-                                    <option selected disabled hidden>Область</option>
-                                    <option>Вінницька</option>
-                                    <option>Волинська</option>
-                                    <option>Дніпропетровська</option>
-                                    <option>Донецька</option>
-                                    <option>Житомирська</option>
-                                    <option>Закарпатська</option>
-                                    <option>Запорізька</option>
-                                    <option>Івано-Франківська</option>
-                                    <option>Київська</option>
-                                    <option>Кіровоградська</option>
-                                    <option>Крим (АРК)</option>
-                                    <option>Луганська</option>
-                                    <option>Львівська</option>
-                                    <option>Миколаївська</option>
-                                    <option>Одеська</option>
-                                    <option>Полтавська</option>
-                                    <option>Рівненська</option>
-                                    <option>Сумська</option>
-                                    <option>Тернопільська</option>
-                                    <option>Харківська</option>
-                                    <option>Херсонська</option>
-                                    <option>Хмельницька</option>
-                                    <option>Черкаська</option>
-                                    <option>Чернівецька</option>
-                                    <option>Чернігівська</option>
-                                </select>
-                                <select name="town" class="disabled" disabled>
-                                    <option selected disabled hidden>Район</option>
-                                    <option>Корець</option>
-                                    <option>Гоща</option>
-                                    <option>Кузнецовськ</option>
-                                    <option>Решитилів</option>
-                                    <option>Новоград-Волинськ</option>
-                                    <option>Сарни</option>
-                                    <option>Острог</option>
-                                    <option>Дубно</option>
-                                </select>
+                        <div class="formRow hidePassword">
+                            <div class="interaction">
+                                <span class="interactionName">Пароль:</span>
+                                <input type="password" name="password" autocomplete="off" placeholder="******" />
+                            </div>
+                            <div class="message">
+                                <span class="advice">Працюючий пароль від акаунту</span>
                             </div>
                         </div>
-                        <div class="message">
-                            <span class="advice">Місце проживання</span>
-                        </div> 
+                        <div class="formRow hidePassword">
+                            <div class="interaction">
+                                <span class="interactionName">Новий пароль:</span>
+                                <input type="password" name="newPassword" autocomplete="off" placeholder="******" />
+                            </div>
+                            <div class="message">
+                                <span class="advice">Введіть новий пароль</span>
+                            </div>
+                        </div>
+                        <input type="submit" value="Зберегти" />
                     </div>
-                    <div class="formRow">
-                        <div class="interaction">
-                            <span class="interactionName"></span>
-                            <button id="showPswdBlock">Змінити пароль</button>
-                        </div>
-                    </div>
-                    <div class="formRow hidePassword">
-                        <div class="interaction">
-                            <span class="interactionName">Пароль:</span>
-                            <input type="password" name="password" autocomplete="off" placeholder="******" />
-                        </div>
-                        <div class="message">
-                            <span class="advice">Працюючий пароль від акаунту</span>
-                        </div>
-                    </div>
-                    <div class="formRow hidePassword">
-                        <div class="interaction">
-                            <span class="interactionName">Новий пароль:</span>
-                            <input type="password" name="newPassword" autocomplete="off" placeholder="******" />
-                        </div>
-                        <div class="message">
-                            <span class="advice">Введіть новий пароль</span>
-                        </div>
-                    </div>
-                    <input type="submit" value="Зберегти" />
                 </form>
             </div>
         </article>
