@@ -103,12 +103,16 @@ header {
                 }
             }
 
-            .profileNav {
+            #profileName {
+                padding: 5px 0;
+            }
+            #profileNav {
                 position: absolute;
-                top: 40px;
+                top: 35px;
                 right: -5px;
-                display: flex;
+                display: none;
                 flex-direction: column;
+                min-width: 155px;
                 background-color: #555;
                 border: 1px solid #333;
                 border-radius: 5px;
@@ -465,15 +469,27 @@ footer {
     content: 'В АРХИВЕ';
 }
 
+.validation-summary-errors {
+    ul {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            text-align: center;
+            color: #FF3300;
+        }
+    }
+}
+
 // @charset "utf-8";
 // Version for a smartphone
 @media (max-width: 767px) {
-    header article {
-        a span {
+    header article .leaderLinks {
+        &>a span {
             display: none;
         }
 
-        .leaderLinks #search {
+        #search {
             display: flex;
         }
     }
