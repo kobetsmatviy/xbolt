@@ -17,440 +17,57 @@
             
             <div class="leaderLinks">
                 <img src="images/search.svg" id="search" />
-                <a href="authorization.html">
+                <div id="marketName">
+                    <span class="glyphicon glyphicon-inbox"></span>
+                    <span class="signature">Каталог</span>
+                    <div id="marketNav">
+                        <a href="catalog.html">
+                            <span class="glyphicon glyphicon-inbox"></span>
+                            <span>Каталог</span>
+                        </a>
+                        <a href="">
+                            <span class="glyphicon glyphicon-download-alt"></span>
+                            <span>Замовити</span>
+                        </a>
+                        <a href="">
+                            <span class="glyphicon glyphicon-scissors"></span>
+                            <span>Розборка</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="post.html">
                     <img src="images/give_bolt.svg" />
-                    <span>Продати</span>
+                    <span class="signature">Продати</span>
                 </a>
-                <a href="profile.html" id="profile">
-                    <img src="images/crop-user.jpeg" />
-                    <span>Семен Болт</span>
-                </a>
+                <div id="profileName">
+                    <img src="images/user.svg" />
+                    <span class="signature">Семен Болт</span>
+                    <div id="profileNav">
+                        <a href="profile.html">
+                            <img src="images/user.svg" />
+                            <span>Профіль</span>
+                        </a>
+                        <a href="notifies.html">
+                            <img src="images/notify.svg" />
+                            <span>Сповіщення</span>
+                        </a>
+                        <a href="poster.html">
+                            <span class="glyphicon glyphicon-briefcase"></span>
+                            <span>Постер</span>
+                        </a>
+                        <a href="settings.html">
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span>Налаштування</span>
+                        </a>
+                        <a href="logout.html">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                            <span>Вийти</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </article>
     </header>
-    <nav>
-        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-            <section>
-                <div id="filterName" class="choice">ФІЛЬТР</div>
-                <div id="filterCategories">
-                    <span>легкові</span>
-                    <span>Audi</span>
-                    <span>80 B2 1979-1986</span>
-                </div>
-            </section>
-        </article>
-    </nav>
-    <div id="filterArea">
-        <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-            <form id="filter" action="" method="post">
-                <aside class="filterType">
-                    <div class="filterName">
-                        <span class="remove"></span>
-                        <span class="title">МАРКА, МОДЕЛЬ</span>
-                    </div>
-                    <div class="filterCategory">
-                        <select name="trasnport" id="trasnport" class="trasnport">
-                            <option selected disabled hidden>Транспорт</option>
-                            <option value="cars">Легкові</option>
-                            <option value="trucks">Вантажівки</option>
-                            <option value="autobus">Автобуси</option>
-                            <option value="moto">Мото</option>
-                        </select>
-                        <select name="brand" class="disabled" disabled>
-                            <option selected disabled hidden>Марка</option>
-                            <option value="aston martin">Aston Martin</option>
-                            <option value="audi">AUDI</option>
-                            <option value="bmw">BMW</option>
-                            <option value="opel">OPEL</option>
-                            <option value="toyota">TOYOTA</option>
-                        </select>
-                        <select name="model" class="disabled" disabled>
-                            <option selected disabled hidden>Модель</option>
-                            <option value="80">B2 80 / 1979-1981</option>
-                            <option value="100">B3 90 / 1982-1985</option>
-                            <option value="200">M4 200 / 1994-1996</option>
-                            <option value="A2">A2 / 2001</option>
-                            <option value="A4">A4 / 2004-2005</option>
-                            <option value="TT">TT / 2018</option>
-                        </select>
-                    </div>
-                </aside>
-                <aside class="filterType">
-                    <div class="filterName">
-                        <span class="remove"></span>
-                        <span class="title">ДЕТАЛІ</span>
-                    </div>
-                    <div class="filterCategory">
-                        <input type="button" value="Двигун і його системи">
-                        <div id="engineDIV" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Двигун
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Блок
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Головка блока
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Топливна
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Впуск
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Випуск
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Охолодження
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Кронштейн
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Інше
-                            </label>
-                        </div>
-                        <input type="button" value="Кузов">
-                        <div id="bodyDIV" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Скло
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Бампер
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Капот
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Двері
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Крила
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Дзеркала
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Передня частина
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Інше
-                            </label>
-                        </div>
-                        <input type="button" value="Електрика">
-                        <div id="electricityDIV" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Блоки керування
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Двигун
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Салон
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Проводка
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Сигналізація
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Інше
-                            </label>
-                        </div>
-                        <input type="button" value="Трансмісія">
-                        <div id="transmissionDIV" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Коробка передач
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Зчіплення
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Передній міст
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Задній міст
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Інше
-                            </label>
-                        </div>
-                        <input type="button" value="Підвіска">
-                        <div id="suspensionDIV" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Передня підвіска
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Задня підвіска
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                Рульове керування
-                            </label>
-                        </div>
-                        <input type="button" value="Салон">
-                        <div id="saloonDIV" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                111
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                222
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                333
-                            </label>
-                        </div>
-                        <input type="button" value="Отоплення">
-                        <div id="heatingID" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                111
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                222
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                333
-                            </label>
-                        </div>
-                        <input type="button" value="Оптика">
-                        <div id="opticsID" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                111
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                222
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                333
-                            </label>
-                        </div>
-                        <input type="button" value="Гальма">
-                        <div id="breaksID" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                111
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                222
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                333
-                            </label>
-                        </div>
-                        <input type="button" value="Шини">
-                        <div id="tiresID" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                111
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                222
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                333
-                            </label>
-                        </div>
-                        <input type="button" value="Аксесуари">
-                        <div id="accessoriesID" class="details">
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                111
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                222
-                            </label>
-
-                            <label>
-                                <input type="checkbox" />
-                                <span></span>
-                                333
-                            </label>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="filterType">
-                    <div class="filterName">
-                        <span class="remove"></span>
-                        <span class="title">РЕГІОН</span>
-                    </div>
-                    <div class="filterCategory">
-                        <select name="region">
-                            <option selected disabled hidden>Область</option>
-                            <option>Вінницька</option>
-                            <option>Волинська</option>
-                            <option>Дніпропетровська</option>
-                            <option>Донецька</option>
-                            <option>Житомирська</option>
-                            <option>Закарпатська</option>
-                            <option>Запорізька</option>
-                            <option>Івано-Франківська</option>
-                            <option>Київська</option>
-                            <option>Кіровоградська</option>
-                            <option>Крим (АРК)</option>
-                            <option>Луганська</option>
-                            <option>Львівська</option>
-                            <option>Миколаївська</option>
-                            <option>Одеська</option>
-                            <option>Полтавська</option>
-                            <option>Рівненська</option>
-                            <option>Сумська</option>
-                            <option>Тернопільська</option>
-                            <option>Харківська</option>
-                            <option>Херсонська</option>
-                            <option>Хмельницька</option>
-                            <option>Черкаська</option>
-                            <option>Чернівецька</option>
-                            <option>Чернігівська</option>
-                        </select>
-                        <select name="district" class="disabled" disabled>
-                            <option selected disabled hidden>Район</option>
-                            <option>Корець</option>
-                            <option>Гоща</option>
-                            <option>Кузнецовськ</option>
-                            <option>Решитилів</option>
-                            <option>Новоград-Волинськ</option>
-                            <option>Сарни</option>
-                            <option>Острог</option>
-                            <option>Дубно</option>
-                        </select>
-                    </div>
-                </aside>
-                <input type="submit" id="apply" value="" />
-            </form>
-        </article>
-    </div>
-    <div id="overlay"></div>
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <div id="menu">
@@ -458,17 +75,41 @@
                     <img src="images/crop-user.jpeg" />
                     <h2>Семен Болт</h2>
                 </div>
-                <ul>
-                    <a href="profile.html"><li><span class="glyphicon glyphicon-user"></span>Профіль</li></a>
-                    <a href="comments.html"><li><span class="glyphicon glyphicon-send"></span>Коментарі</li></a>
-                    <a href="settings.html" class="openly"><li><span class="glyphicon glyphicon-wrench"></span>Налаштування</li></a>
-                </ul>
+                <div class="userContacts">
+                    <ul class="contacts">     
+                        <a href="profile.html">
+                            <li>
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span class="phoneNumber">Профіль</span>
+                            </li>
+                        </a>
+                        <a href="notifies.html">
+                            <li>
+                                <span class="glyphicon glyphicon-send"></span>
+                                <span class="phoneNumber">Сповіщення</span>
+                            </li>
+                        </a>
+                        <a href="poster.html">
+                            <li>
+                                <span class="glyphicon glyphicon-briefcase"></span>
+                                <span class="phoneNumber">Постер</span>
+                            </li>
+                        </a>
+                        <a href="settings.html">
+                            <li>
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="phoneNumber">Налаштування</span>
+                            </li>
+                        </a>
+                    </ul>
+                    <div class="dateRegister">На сайте с <time datetime="2019-02-07">февраля 2019</time></div>
+                </div>
             </div>
             <div id="settings">
                 <h1>Налаштування профілю</h1>
                 <form id="formSettings" method="GET" action="">
                     <div class="formShape">
-                        <div class="formRow">
+                        <!-- <div class="formRow">
                             <div class="message">
                                 <span class="caption">Оберіть фото:</span>
                                 <span class="advice">Вас будуть впізнавати по фото чи логотипі</span>
@@ -487,19 +128,41 @@
                                 </div>
                                 <div id="overlay"></div>
                             </div>
-                        </div>
+                        </div> -->
+
                         <div class="formRow">
                             <div class="message">
-                                <span class="caption">Номер:</span>
-                                <span class="advice">Контактний номер для зв'язку</span>
+                                <span class="caption">Номери:</span>
+                                <span class="advice">вказати до трьох</span>
                             </div>
                             <div class="interaction">
                                 <input type="tel" name="telephone" autocomplete="tel" placeholder="+38 (097) 46-94-162" />
                             </div>
                         </div>
                         <div class="formRow">
+                            <div class="message">
+                                <span class="caption"></span>
+                                <span class="advice"></span>
+                            </div>
                             <div class="interaction">
-                                <span class="interactionName">Автомобілі:</span>
+                                <input type="tel" name="telephone" autocomplete="tel" placeholder="+38 (097) 46-94-162" />
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <div class="message">
+                                <span class="caption"></span>
+                                <span class="advice"></span>
+                            </div>
+                            <div class="interaction">
+                                <input type="tel" name="telephone" autocomplete="tel" placeholder="+38 (097) 46-94-162" />
+                            </div>
+                        </div>
+                        <div class="formRow">
+                            <div class="message">
+                                <span class="caption">Автомобілі:</span>
+                                <span class="advice">ваші автомобілі</span>
+                            </div>
+                            <div class="interaction">
                                 <div class="automobiles">
                                     <div class="selectedAutos"></div>
                                     <select name="transport" id="transport" class="transport">
@@ -529,13 +192,13 @@
                                     <button id="addAuto">+ Додати авто</button>
                                 </div>
                             </div>
-                            <div class="message">
-                                <span class="advice">Ваші автомобілі, до яких шукаєте деталі</span>
-                            </div>  
                         </div>
                         <div class="formRow">
+                            <div class="message">
+                                <span class="caption">Регіон:</span>
+                                <span class="advice">місце проживання</span>
+                            </div>
                             <div class="interaction">
-                                <span class="interactionName">Регіон:</span>
                                 <div class="location">
                                     <select name="region">
                                         <option selected disabled hidden>Область</option>
@@ -578,34 +241,32 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="message">
-                                <span class="advice">Місце проживання</span>
-                            </div> 
                         </div>
-                        <div class="formRow">
+
+                        <!-- <div class="formRow">
                             <div class="interaction">
                                 <span class="interactionName"></span>
                                 <button id="showPswdBlock">Змінити пароль</button>
                             </div>
                         </div>
                         <div class="formRow hidePassword">
-                            <div class="interaction">
-                                <span class="interactionName">Пароль:</span>
-                                <input type="password" name="password" autocomplete="off" placeholder="******" />
-                            </div>
                             <div class="message">
-                                <span class="advice">Працюючий пароль від акаунту</span>
+                                <span class="caption">Пароль:</span>
+                                <span class="advice">працюючий пароль від акаунту</span>
+                            </div>
+                            <div class="interaction">
+                                <input type="password" name="password" autocomplete="off" placeholder="******" />
                             </div>
                         </div>
                         <div class="formRow hidePassword">
+                            <div class="message">
+                                <span class="caption">Новий пароль:</span>
+                                <span class="advice">введіть новий пароль</span>
+                            </div>
                             <div class="interaction">
-                                <span class="interactionName">Новий пароль:</span>
                                 <input type="password" name="newPassword" autocomplete="off" placeholder="******" />
                             </div>
-                            <div class="message">
-                                <span class="advice">Введіть новий пароль</span>
-                            </div>
-                        </div>
+                        </div> -->
                         <input type="submit" value="Зберегти" />
                     </div>
                 </form>
@@ -625,6 +286,7 @@
     <script src="js/filter_actions.js" async></script>
     <script src="js/profile_actions.js" async></script>
     <script src="js/settings_actions.js" async></script>
+    <script src="js/header_actions.js" async></script>
     <script src="libraries/croppie.min.js" async></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Catalog</title>
+    <title>Постер</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,7 +53,7 @@
                         </a>
                         <a href="profile.html">
                             <span class="glyphicon glyphicon-briefcase"></span>
-                            <span>Деталі</span>
+                            <span>Постер</span>
                         </a>
                         <a href="settings.html">
                             <span class="glyphicon glyphicon-cog"></span>
@@ -73,16 +73,32 @@
             <section>
                 <div id="filterName" class="choice">ФІЛЬТР</div>
                 <div id="filterCategories">
+                    <span class="glyphicon glyphicon-user"></span>
                     <span>легкові</span>
                     <span>Audi</span>
                     <span>80 B2 1979-1986</span>
+                    <span class="boltIcon"></span>
+                    <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
+                    <span class="glyphicon glyphicon-map-marker"></span>
                 </div>
             </section>
         </article>
     </nav>
-    <div id="filterArea" class="visible">
+    <div id="filterArea">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <form id="filter" action="" method="post">
+                <aside class="filterType">
+                    <div class="filterName">
+                        <span class="remove opacityFull"></span>
+                        <span class="title">ОБЪЯВЛЕНИЯ ПОЛЬЗОВАТЕЛЯ</span>
+                    </div>
+                    <div class="filterCategory">
+                        <select name="postsUser" id="postsUser" class="mark">
+                            <option selected disabled hidden>Пользователь</option>
+                            <option value="1" selected>Василь Супер Барига</option>
+                        </select>
+                    </div>
+                </aside>
                 <aside class="filterType">
                     <div class="filterName">
                         <span class="remove"></span>
@@ -512,69 +528,158 @@
             </form>
         </article>
     </div>
-    <div id="overlay" class="visible"></div>
+    <div id="overlay"></div>
     <main class="clearfix">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-            <div class="cards">
-                <div class="partCard" itemscope itemtype="http://schema.org/Product">
-                    <a href="part.html" itemprop="url">
-                        <div class="photo sold">
-                            <img src="images/minimals/1.jpg" itemprop="image" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
-                            <div class="parts" itemprop="category">
-                                <span>передняя подвеска</span>
-                                <span>рулевое управление рулевое управление</span>
-                            </div>
-                            <div class="primary">
-                                <div class="title">
-                                    <a href="part.html" itemprop="name url">
-                                        <h3>
-                                            Турбина Audi A4 A5 Q5 2.0 TDI Seat Exeo (03L145721A)
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price" itemscope itemtype="https://schema.org/Offer">
-                                    <div itemprop="price">
-                                        5999 <sup>грн</sup>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="9"></div>
-                                    <span class="stateCondition glyphicon glyphicon-ice-lolly-tasted"></span>
-                                </div>
-                                <div class="automobiles">
-                                    <span>Audi A4 1994-1998</span>
-                                    <span>BMW Z4 M 2014-2015</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date" itemprop="productionDate">
-                                    <time data-time="2018-04-18">18.04.2018</time>
-                                </span>
-                                <span class="icon icon-location"></span>
-                                <span class="location" itemscope itemtype="https://schema.org/Place">
-                                    <div itemprop="address">Корець, Рівненська обл.</div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+            <div id="menu">
+                <div id="review">
+                    <img src="images/user.svg" />
+                    <h2>Семен Болт</h2>
                 </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/2.jpg" />
+                <div class="userContacts">
+                    <ul class="contacts">     
+                        <a href="profile.html">
+                            <li>
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span class="phoneNumber">Профіль</span>
+                            </li>
+                        </a>
+                        <a href="notifies.html">
+                            <li>
+                                <span class="glyphicon glyphicon-send"></span>
+                                <span class="phoneNumber">Сповіщення</span>
+                            </li>
+                        </a>
+                        <a href="poster.html">
+                            <li>
+                                <span class="glyphicon glyphicon-briefcase"></span>
+                                <span class="phoneNumber">Постер</span>
+                            </li>
+                        </a>
+                        <a href="settings.html">
+                            <li>
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="phoneNumber">Налаштування</span>
+                            </li>
+                        </a>
+                    </ul>
+                    <div class="dateRegister">На сайте с <time datetime="2019-02-07">февраля 2019</time></div>
+                </div>
+            </div>
+            <div id="posts">
+                <div class="cards">
+                    <div class="partCard" itemscope itemtype="http://schema.org/Product">
+                        <a href="part.html" itemprop="url">
+                            <div class="photo sold">
+                                <img src="images/minimals/1.jpg" itemprop="image" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                <div class="parts" itemprop="category">
+                                    <span>передняя подвеска</span>
+                                    <span>рулевое управление рулевое управление</span>
+                                </div>
+                                <div class="primary">
+                                    <div class="title">
+                                        <a href="part.html" itemprop="name url">
+                                            <h3>
+                                                Турбина Audi A4 A5 Q5 2.0 TDI Seat Exeo (03L145721A)
+                                            </h3>
+                                        </a>
+                                    </div>
+                                    <span class="price" itemscope itemtype="https://schema.org/Offer">
+                                        <div itemprop="price">
+                                            5999 <sup>грн</sup>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="secondary">
+                                    <div class="state">
+                                        <div class="rateYo" data-rateyo-rating="9"></div>
+                                        <span class="stateCondition glyphicon glyphicon-ice-lolly-tasted"></span>
+                                    </div>
+                                    <div class="automobiles">
+                                        <span>Audi A4 1994-1998</span>
+                                        <span>BMW Z4 M 2014-2015</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date" itemprop="productionDate">
+                                        <time data-time="2018-04-18">18.04.2018</time>
+                                    </span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location" itemscope itemtype="https://schema.org/Place">
+                                        <div itemprop="address">Корець, Рівненська обл.</div>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
+                        <span class="glyphicon glyphicon-paperclip icons"></span>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
+                    </div>
+                    <div class="partCard">
+                        <a href="part.html">
+                            <div class="photo">
+                                <img src="images/minimals/2.jpg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                    <div class="parts">
+                                        <span>передняя подвеска</span>
+                                        <span>рулевое управление</span>
+                                    </div>
+                                    <div class="primary">
+                                        <div class="title">
+                                            <span class="triangle"></span>
+                                            <a href="part.html">
+                                                <h3>
+                                                    Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
+                                                </h3>
+                                            </a>
+                                        </div>
+                                        <span class="price">
+                                            <div>
+                                                9600 <sup>грн</sup>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="secondary">
+                                        <div class="state">
+                                            <div class="rateYo" data-rateyo-rating="10"></div>
+                                        </div>
+                                        <div class="automobiles">
+                                            <span>Audi A4 1994-1998</span>
+                                            <span>BMW Z4 M 2014-2015</span>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">15.04.2018</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Львів, Львівська обл.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="glyphicon glyphicon-paperclip icons"></span>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
+                    </div>
+                    <div class="partCard">
+                        <a href="part.html">
+                            <div class="photo">
+                                <img src="images/minimals/3.jpg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
                                 <div class="parts">
                                     <span>передняя подвеска</span>
                                     <span>рулевое управление</span>
@@ -584,13 +689,62 @@
                                         <span class="triangle"></span>
                                         <a href="part.html">
                                             <h3>
-                                                Гофра Патрубок от Турбины к Воздушному фильтра Audi 80 B3/B4 1.9 TD
+                                                Турбина VW Passat B3 B4 Golf Vento Audi 80 Seat Ibiza Toledo 1.9 TD
                                             </h3>
                                         </a>
                                     </div>
                                     <span class="price">
                                         <div>
-                                            9600 <sup>грн</sup>
+                                            90 <sup>грн</sup>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="secondary">
+                                    <div class="state">
+                                        <div class="rateYo" data-rateyo-rating="6"></div>
+                                    </div>
+                                    <div class="automobiles">
+                                        <span>Audi A4 1994-1998</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">15.04.2018</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Новоград-Волинськ, Житомирська обл.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="glyphicon glyphicon-paperclip icons"></span>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
+                    </div>
+                    <div class="partCard">
+                        <a href="part.html">
+                            <div class="photo">
+                                <img src="images/minimals/4.jpg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                <div class="parts">
+                                    <span>передняя подвеска</span>
+                                    <span>рулевое управление</span>
+                                </div>
+                                <div class="primary">
+                                    <div class="title">
+                                        <span class="triangle"></span>
+                                        <a href="part.html">
+                                            <h3>
+                                                Турбіна турбина audi vw 80 1.9 tdi
+                                            </h3>
+                                        </a>
+                                    </div>
+                                    <span class="price">
+                                        <div>
+                                            12050 <sup>грн</sup>
                                         </div>
                                     </span>
                                 </div>
@@ -600,266 +754,174 @@
                                     </div>
                                     <div class="automobiles">
                                         <span>Audi A4 1994-1998</span>
-                                        <span>BMW Z4 M 2014-2015</span>
+                                        <span>Volkswagen 80 1991-1999</span>
+                                        <span>Volvo Yakes 1954-1955</span>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">14.04.2018</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Київ, Київська обл.</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date">15.04.2018</span>
-                                <span class="icon icon-location"></span>
-                                <span class="location">Львів, Львівська обл.</span>
+                    </div>
+                    <div class="partCard">
+                        <a href="part.html">
+                            <div class="photo">
+                                <img src="images/minimals/5.jpg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                <div class="parts">
+                                    <span>передняя подвеска</span>
+                                    <span>рулевое управление</span>
+                                </div>
+                                <div class="primary">
+                                    <div class="title">
+                                        <span class="triangle"></span>
+                                        <a href="part.html">
+                                            <h3>
+                                                Турбіна ауді 1,9
+                                            </h3>
+                                        </a>
+                                    </div>
+                                    <span class="price">
+                                        <div>
+                                            1 <sup>грн</sup>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="secondary">
+                                    <div class="state">
+                                        <div class="rateYo" data-rateyo-rating="1"></div>
+                                    </div>
+                                    <div class="automobiles">
+                                        <span>Audi A4 1994-1998</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">10.04.2018</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Головниця, Рівненська обл.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partCard">
+                        <a href="part.html">
+                            <div class="photo">
+                                <img src="images/minimals/6.jpg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                <div class="parts">
+                                    <span>передняя подвеска</span>
+                                    <span>рулевое управление</span>
+                                </div>
+                                <div class="primary">
+                                    <div class="title">
+                                        <span class="triangle"></span>
+                                        <a href="part.html">
+                                            <h3>
+                                                Турбіна Ауді А6 Ц4 Audi A6 C4 2.5TDI AEL 103kW
+                                            </h3>
+                                        </a>
+                                    </div>
+                                    <span class="price">
+                                        <div>
+                                            320 <sup>грн</sup>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="secondary">
+                                    <div class="state">
+                                        <div class="rateYo" data-rateyo-rating="8"></div>
+                                    </div>
+                                    <div class="automobiles">
+                                        <span>Audi A4 1994-1998</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">02.04.2018</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Млинів, Полтавська обл.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partCard">
+                        <a href="part.html">
+                            <div class="photo">
+                                <img src="images/minimals/7.jpg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                <div class="parts">
+                                    <span>передняя подвеска</span>
+                                    <span>рулевое управление</span>
+                                </div>
+                                <div class="primary">
+                                    <div class="title">
+                                        <span class="triangle"></span>
+                                        <a href="part.html">
+                                            <h3>
+                                                Турбіна турбина audi vw 80 1.9 tdi Турбіна турбина audi vw 80 1.9 tdi
+                                            </h3>
+                                        </a>
+                                    </div>
+                                    <span class="price">
+                                        <div>
+                                            55 <sup>грн</sup>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="secondary">
+                                    <div class="state">
+                                        <div class="rateYo" data-rateyo-rating="7"></div>
+                                    </div>
+                                    <div class="automobiles">
+                                        <span>Audi A4 1994-1998</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">30.03.2018</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Роздільна, Одеська обл.</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/3.jpg" />
+                <div id="pagination">
+                    <ul>
+                        <li class="first disabled">Назад</li>
+                        <div class="numerator">
+                            <a href=""><li class="mark">1</li></a>
+                            <a href=""><li>2</li></a>
+                            <a href=""><li>3</li></a>
+                            <a href="" class="smartHide"><li>4</li></a>
+                            <li class="mute">...</li>
+                            <a href=""><li>17</li></a>
                         </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
-                            <div class="parts">
-                                <span>передняя подвеска</span>
-                                <span>рулевое управление</span>
-                            </div>
-                            <div class="primary">
-                                <div class="title">
-                                    <span class="triangle"></span>
-                                    <a href="part.html">
-                                        <h3>
-                                            Турбина VW Passat B3 B4 Golf Vento Audi 80 Seat Ibiza Toledo 1.9 TD
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    <div>
-                                        90 <sup>грн</sup>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="6"></div>
-                                </div>
-                                <div class="automobiles">
-                                    <span>Audi A4 1994-1998</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date">15.04.2018</span>
-                                <span class="icon icon-location"></span>
-                                <span class="location">Новоград-Волинськ, Житомирська обл.</span>
-                            </div>
-                        </div>
-                    </div>
+                        <a href=""><li class="last">Вперед</li></a>
+                    </ul>
                 </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/4.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
-                            <div class="parts">
-                                <span>передняя подвеска</span>
-                                <span>рулевое управление</span>
-                            </div>
-                            <div class="primary">
-                                <div class="title">
-                                    <span class="triangle"></span>
-                                    <a href="part.html">
-                                        <h3>
-                                            Турбіна турбина audi vw 80 1.9 tdi
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    <div>
-                                        12050 <sup>грн</sup>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="10"></div>
-                                </div>
-                                <div class="automobiles">
-                                    <span>Audi A4 1994-1998</span>
-                                    <span>Volkswagen 80 1991-1999</span>
-                                    <span>Volvo Yakes 1954-1955</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date">14.04.2018</span>
-                                <span class="icon icon-location"></span>
-                                <span class="location">Київ, Київська обл.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/5.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
-                            <div class="parts">
-                                <span>передняя подвеска</span>
-                                <span>рулевое управление</span>
-                            </div>
-                            <div class="primary">
-                                <div class="title">
-                                    <span class="triangle"></span>
-                                    <a href="part.html">
-                                        <h3>
-                                            Турбіна ауді 1,9
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    <div>
-                                        1 <sup>грн</sup>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="1"></div>
-                                </div>
-                                <div class="automobiles">
-                                    <span>Audi A4 1994-1998</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date">10.04.2018</span>
-                                <span class="icon icon-location"></span>
-                                <span class="location">Головниця, Рівненська обл.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/6.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
-                            <div class="parts">
-                                <span>передняя подвеска</span>
-                                <span>рулевое управление</span>
-                            </div>
-                            <div class="primary">
-                                <div class="title">
-                                    <span class="triangle"></span>
-                                    <a href="part.html">
-                                        <h3>
-                                            Турбіна Ауді А6 Ц4 Audi A6 C4 2.5TDI AEL 103kW
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    <div>
-                                        320 <sup>грн</sup>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="8"></div>
-                                </div>
-                                <div class="automobiles">
-                                    <span>Audi A4 1994-1998</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date">02.04.2018</span>
-                                <span class="icon icon-location"></span>
-                                <span class="location">Млинів, Полтавська обл.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="partCard">
-                    <a href="part.html">
-                        <div class="photo">
-                            <img src="images/minimals/7.jpg" />
-                        </div>
-                    </a>
-                    <div class="content">
-                        <div class="description">
-                            <div class="parts">
-                                <span>передняя подвеска</span>
-                                <span>рулевое управление</span>
-                            </div>
-                            <div class="primary">
-                                <div class="title">
-                                    <span class="triangle"></span>
-                                    <a href="part.html">
-                                        <h3>
-                                            Турбіна турбина audi vw 80 1.9 tdi Турбіна турбина audi vw 80 1.9 tdi
-                                        </h3>
-                                    </a>
-                                </div>
-                                <span class="price">
-                                    <div>
-                                        55 <sup>грн</sup>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="secondary">
-                                <div class="state">
-                                    <div class="rateYo" data-rateyo-rating="7"></div>
-                                </div>
-                                <div class="automobiles">
-                                    <span>Audi A4 1994-1998</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tertiary">
-                            <div class="additionalInfo">
-                                <span class="icon icon-clock"></span>
-                                <span class="date">30.03.2018</span>
-                                <span class="icon icon-location"></span>
-                                <span class="location">Роздільна, Одеська обл.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="pagination">
-                <ul>
-                    <li class="first disabled">Назад</li>
-                    <div class="numerator">
-                        <a href=""><li class="mark">1</li></a>
-                        <a href=""><li>2</li></a>
-                        <a href=""><li>3</li></a>
-                        <a href="" class="smartHide"><li>4</li></a>
-                        <li class="mute">...</li>
-                        <a href=""><li>17</li></a>
-                    </div>
-                    <a href=""><li class="last">Вперед</li></a>
-                </ul>
             </div>
         </article>
     </main>
@@ -868,13 +930,14 @@
             ПІДВАЛ - XBOLT &copy;2018
         </article>
     </footer>
-    <!-- JS & CSS files -->
+    <!-- JS and CSS files -->
     <link rel="stylesheet" type="text/css" href="styles/filter.css">
     <link rel="stylesheet" type="text/css" href="styles/cards.css">
+    <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="js/filter_actions.js" async></script>
-    <script src="js/filter_data.js" async></script>
     <script src="js/adaptive_cards.js" async></script>
+    <script src="js/profile_actions.js" async></script>
     <script src="js/header_actions.js" async></script>
     <script src="libraries/jquery.rateyo.min.js" async></script>
 </body>

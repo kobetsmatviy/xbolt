@@ -70,6 +70,7 @@ header {
             }
             
             #search {
+                display: none;
                 cursor: pointer;
             }
             .searching {
@@ -103,13 +104,27 @@ header {
                 }
             }
 
-            #profileName {
-                padding: 5px 0;
+            #profileName, #marketName {
+                position: relative;
+                // padding: 5px 0;
+
+                .glyphicon {
+                    font-size: 20px;
+                }
             }
-            #profileNav {
+            #marketName {
+                display: flex;
+                align-items: center;
+                padding-bottom: 3px;
+
+                &> .glyphicon {
+                    margin-right: 5px;
+                }
+            }
+            #profileNav, #marketNav {
                 position: absolute;
-                top: 35px;
-                right: -5px;
+                top: 30px;
+                left: -22px;
                 display: none;
                 flex-direction: column;
                 min-width: 155px;
@@ -119,10 +134,18 @@ header {
                 z-index: 12;
 
                 a {
+                    display: flex;
                     padding: 8px 10px;
 
                     &:hover {
                         background-color: #444;
+                    }
+
+                    img, .glyphicon {
+                        margin-right: 5px;
+                    }
+                    .glyphicon {
+                        font-size: 25px;
                     }
                 }
             }
@@ -432,7 +455,7 @@ footer {
     color: #AAA;
     font-size: 20px;
 }
-.phone {
+.phone, .contacts {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
@@ -485,12 +508,26 @@ footer {
 // Version for a smartphone
 @media (max-width: 767px) {
     header article .leaderLinks {
-        &>a span {
+        .signature {
             display: none;
+        }
+
+        #marketName {
+            padding-bottom: 5px;
+
+            &> .glyphicon {
+                margin: 0 !important;
+            }
         }
 
         #search {
             display: flex;
+        }
+
+        #profileNav, #marketNav {
+            position: absolute;
+            left: inherit;
+            right: -5px;
         }
     }
     nav {

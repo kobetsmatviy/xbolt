@@ -171,16 +171,6 @@
     $('#apply').mouseout(function() {
         $(this).css('animation-duration', '3s');
     });
-
-    $('#profileName').mouseenter(function() {
-        $('#profileNav').css('display', 'flex');
-    });
-    $('#profileNav').mouseleave(function() {
-        $(this).delay(500).queue(function(next) { 
-            $(this).css('display', 'none'); 
-            next();
-        });
-    });
 });
 
 // Розміщення блоку деталей під кнопкою (адаптивно для всіх екранів) 
