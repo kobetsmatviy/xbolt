@@ -1,57 +1,57 @@
 $(function () {
-    var $uploadCrop = $('#photoCrop');    
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();          
-            reader.onload = function (e) {
-                $uploadCrop.croppie('bind', {
-                    url: e.target.result
-                });
-                $('.crop').css('display', 'flex');
-                $('#overlay').css('display', 'block');
-            }           
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+    // var $uploadCrop = $('#photoCrop');    
+    // function readFile(input) {
+    //     if (input.files && input.files[0]) {
+    //         var reader = new FileReader();          
+    //         reader.onload = function (e) {
+    //             $uploadCrop.croppie('bind', {
+    //                 url: e.target.result
+    //             });
+    //             $('.crop').css('display', 'flex');
+    //             $('#overlay').css('display', 'block');
+    //         }           
+    //         reader.readAsDataURL(input.files[0]);
+    //     }
+    // }
 
-    $uploadCrop.croppie({
-        viewport: {
-            width: 150,
-            height: 150,
-            type: 'circle'
-        },
-        boundary: {
-            width: 300,
-            height: 300
-        }
-    });
+    // $uploadCrop.croppie({
+    //     viewport: {
+    //         width: 150,
+    //         height: 150,
+    //         type: 'circle'
+    //     },
+    //     boundary: {
+    //         width: 300,
+    //         height: 300
+    //     }
+    // });
 
-    $('#uploadPhoto').on('change', function () { readFile(this); });
-    $('#getPhoto').on('click', function (ev) {
-        $uploadCrop.croppie('result', {
-            type: 'canvas',
-            size: 'original'
-        }).then(function (resp) {
-            $('#readyPhoto').css('background-size', 'cover');
-            $('#readyPhoto').css('background-image', 'url('+resp+')');
-        });
+    // $('#uploadPhoto').on('change', function () { readFile(this); });
+    // $('#getPhoto').on('click', function (ev) {
+    //     $uploadCrop.croppie('result', {
+    //         type: 'canvas',
+    //         size: 'original'
+    //     }).then(function (resp) {
+    //         $('#readyPhoto').css('background-size', 'cover');
+    //         $('#readyPhoto').css('background-image', 'url('+resp+')');
+    //     });
 
-        $('.crop').css('display', 'none');
-        $('#overlay').css('display', 'none');
+    //     $('.crop').css('display', 'none');
+    //     $('#overlay').css('display', 'none');
 
-        resetInputFile();
-    });
-    $('#cancelCrop, #overlay').on('click', function() {
-        $('.crop').css('display', 'none');
-        $('#overlay').css('display', 'none');
-        resetInputFile();
-    });
+    //     resetInputFile();
+    // });
+    // $('#cancelCrop, #overlay').on('click', function() {
+    //     $('.crop').css('display', 'none');
+    //     $('#overlay').css('display', 'none');
+    //     resetInputFile();
+    // });
 
-    function resetInputFile() {
-        var $el = $('#uploadPhoto');
-        $el.wrap('<form>').closest('form').get(0).reset();
-        $el.unwrap();
-    }
+    // function resetInputFile() {
+    //     var $el = $('#uploadPhoto');
+    //     $el.wrap('<form>').closest('form').get(0).reset();
+    //     $el.unwrap();
+    // }
 
     //#### АВТОМОБІЛЬ :selected, зберігаємо його
     $('select[name="model"]').change(function() {        
@@ -74,13 +74,16 @@ $(function () {
 
         // Додаємо авто і заповняємо його атрибути для відправки
         $('.selectedAutos').append('<span class="auto"></span>');
-        $('.selectedAutos .auto:last').append('<span id='+$('select[name="transport"] option:selected').val()+'></span>');
+        $('.selectedAutos .auto:last').append('<span id='+$('select[name="mtype"] option:selected').val()+'></span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="brand"] option:selected').val()+'>' +$('select[name="brand"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span id='+$('select[name="model"] option:selected').val()+'>' +$('select[name="model"] option:selected').text()+ '</span>');
         $('.selectedAutos .auto:last').append('<span class="remove"></span>');
+        $('.selectedInputs').append('<input type="text" name="mtype_send" readonly value="'+$('select[name="mtype"] option:selected').val()+'" data-select="'+$('.selectedAutos .auto').length+'" />');
+        $('.selectedInputs').append('<input type="text" name="brand_send" readonly value="'+$('select[name="brand"] option:selected').val()+'" data-select="'+$('.selectedAutos .auto').length+'" />');
+        $('.selectedInputs').append('<input type="text" name="model_send" readonly value="'+$('select[name="model"] option:selected').val()+'" data-select="'+$('.selectedAutos .auto').length+'" />');
 
         $(this).removeClass('mark');
-        $('.automobiles select').hide();
+        $('.automobiles select').removeClass('error').hide();
         CheckAutoExist();
     });
     $('#addAuto').on('click', function(e) {
@@ -90,12 +93,21 @@ $(function () {
     });
     // Видаляємо авто при кліку на його блок
     $('.selectedAutos').delegate('.auto', 'click', function() {
+        $('.selectedInputs input[data-select="'+($(this).closest('.auto').index() + 1)+'"]').remove();
         $(this).remove();
         CheckAutoExist();
+
+        if ($('.selectedAutos .auto').length <= 0) {
+            $('#addAuto').trigger('click');
+            $('select[name="model"]').removeClass('mark').addClass('error').css('box-shadow', '0 0 0 2px rgba(255,0,0,.3)');
+        }
+    });
+    $('.automobiles select').on('change', function() {
+        $('.automobiles select').closest('.interaction').next().find('.error').remove();
     });
     // Перевірка існування блоку .auto
     function CheckAutoExist() {
-        if ($('.selectedAutos .auto').length < 5) {
+        if ($('.selectedAutos .auto').length < 3) {
             $('#addAuto').css('display', 'flex');
         }
         else {
