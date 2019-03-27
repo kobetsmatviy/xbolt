@@ -25,27 +25,35 @@ $(function () {
 
 
 $(function () {
+    $(document).ready(function() {
+        SwitchDisable();
+    });
+
     $('input[name=email]').keyup(function(e) {        
-        if( $(this).val() ) {
-            $('input[name=phone]').prop({required: false, readonly: true}).addClass('disabled');
-        }
-        else {
-            $('input[name=phone]').prop({required: true, readonly: false}).removeClass('disabled');
-        }
+        SwitchDisable();
     });
     $('input[name=phone]').keyup(function(e) {
         var res = /[^0-9+]/g.exec(this.value);
         this.value = this.value.replace(res, '');
 
-        if( $(this).val() ) {
-            $('input[name=email]').prop({required: false, readonly: true}).addClass('disabled');
-        }
-        else {
-            $('input[name=email]').prop({required: true, readonly: false}).removeClass('disabled');
-        }
+        SwitchDisable();
     });
     $('input[name=first_name]').keyup(function(e) {
         var res = /[^а-яА-Яa-zA-ZїЇєЄіІёЁґ ]/g.exec(this.value);
         this.value = this.value.replace(res, '');
     });
+
+    // Валідація
+    $('#formLogin, #formRegistration').submit(function(e) {
+        SwitchDisable();
+    });
 });
+
+function SwitchDisable() {
+    if( $('input[name=email]').val() ) {
+        $('input[name=phone]').prop({required: false, readonly: true}).addClass('disabled');
+    }
+    else if( $('input[name=phone]').val() ) {
+        $('input[name=email]').prop({required: false, readonly: true}).addClass('disabled');
+    }
+}

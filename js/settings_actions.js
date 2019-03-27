@@ -53,6 +53,10 @@ $(function () {
     //     $el.unwrap();
     // }
 
+    $('input[type=tel]').change(function() {
+        $('input[type=submit]').removeClass('disabled');
+    });
+
     //#### АВТОМОБІЛЬ :selected, зберігаємо його
     $('select[name="model"]').change(function() {        
         $('.selectedAutos .auto').each(function(e) {
@@ -85,6 +89,9 @@ $(function () {
         $(this).removeClass('mark');
         $('.automobiles select').removeClass('error').hide();
         CheckAutoExist();
+
+        // Дозволити Зберігання форми
+        $('input[type=submit]').removeClass('disabled');
     });
     $('#addAuto').on('click', function(e) {
         $('.automobiles select').show();
@@ -101,6 +108,9 @@ $(function () {
             $('#addAuto').trigger('click');
             $('select[name="model"]').removeClass('mark').addClass('error').css('box-shadow', '0 0 0 2px rgba(255,0,0,.3)');
         }
+
+        // Дозволити Зберігання форми
+        $('input[type=submit]').removeClass('disabled');
     });
     $('.automobiles select').on('change', function() {
         $('.automobiles select').closest('.interaction').next().find('.error').remove();
@@ -115,16 +125,28 @@ $(function () {
         }
     }
 
+    // Зберігання при зміні місця знаходження
+    $('select[name=town]').change(function() {
+        $('input[type=submit]').removeClass('disabled');
+    });
+
     //#### Показуємо блок зі зміною пароля
     $('#showPswdBlock').on('click', function(e) {
         $('.hidePassword').css('display', 'flex');
         $(this).hide();
         e.preventDefault();
     });
-    
     //++++ Якщо select значення змінено, позначаємо mark
     $('select').change(function () {
         $(this).addClass('mark');
         $(this).next().removeClass('disabled').prop('disabled', false);
+    });
+
+    //#### FORM SUBMIT validation
+    $('#formSettings').submit(function(e) {
+        //#### Якщо якесь submit містить клас disabled, то забороняємо відправку форми
+        if ($('input[type=submit]').hasClass('disabled')) {
+            e.preventDefault();
+        }
     });
 });

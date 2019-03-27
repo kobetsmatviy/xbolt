@@ -155,12 +155,14 @@ form:not([id='filter']) {
     #list {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
         min-width: 225px;
-        height: 50px;
+        min-height: 80px;
         margin: 5px;
         margin-right: 0;
         padding: 5px;
+        padding-top: 0;
         background-color: #DDD;
         background-image: url('../images/camera.svg');
         background-repeat: no-repeat;
@@ -172,20 +174,37 @@ form:not([id='filter']) {
         cursor: pointer;
 
         li {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-width: 40px;
-            width: 40px;
-            min-height: 40px;
-            height: 40px;
+            // min-width: 70px;
+            width: 70px;
+            // min-height: 70px;
+            height: 70px;
+            margin-top: 5px;
             margin-right: 5px;
+            border-radius: 3px;
             overflow: hidden;
+
+
+            .glyphicon-remove {
+                top: 0;
+                right: 0;
+                background-color: #339933;
+                
+                &:hover {
+                    transform: rotate(360deg);
+                    transition: transform 1s;
+                }
+            }
         }
 
-        img {
-            height: 40px;
-            margin-right: 5px;
+        .photoH {
+            max-height: 100%;
+        }
+        .photoV {
+            max-width: 100%;
         }
     }
     #uploadImg {

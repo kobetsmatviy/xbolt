@@ -5,24 +5,70 @@ $(function () {
     });
 
     //#### Показуємо завантажені файли
-    function showFile(e) {
+    var rank = $('#list li').length + 1;
+    function ShowFile(e) {
         var files = e.target.files;
         for (var i = 0, f; f = files[i]; i++) {
             if (!f.type.match('image.*')) continue;
             var fr = new FileReader();
             fr.onload = (function(theFile) {
                 return function(e) {
-                    var li = document.createElement('li');
-                    li.innerHTML = "<img src='" + e.target.result + "' />";
-                    document.getElementById('list').insertBefore(li, null);
-                    document.getElementById('list').style.backgroundImage = 'none';
+                    $('#list').append('<li><img src="' +e.target.result+ '" data-rank="' +rank+ '" /><span class="glyphicon glyphicon-remove icons"></span></li>').css('background-image', 'none');
+                    $('#photoInputs').append('<input type="file" name="photos" value="' +e.target.result+ '" data-rank="' +rank+ '" disabled />');
+                    rank++;
+                    
+                    FillImage();
                 };
             })(f);
         
             fr.readAsDataURL(f);
         }
     }
-    document.getElementById('uploadImg').addEventListener('change', showFile, false);
+    function FillImage() {
+        $('#list img').each(function() {
+            if ($(this).width() < $(this).height()) {
+                $(this).addClass('photoV');
+            }
+            else {
+                $(this).addClass('photoH');
+            }
+        })
+    }
+    // $('#list').on('click', '.icons', function(e) {
+    //     var itemIndex = $(this).closest('li').index();
+    //     if ($('#photoInputs input:eq('+itemIndex+')').attr('type') == 'file') {
+    //         $('#photoInputs input:eq('+itemIndex+')').remove();
+    //     }
+    //     else {
+    //         $('#photoInputs input:eq('+itemIndex+')').prop('checked', true);
+    //     }
+    //     $(this).closest('li').hide();
+
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    // });
+    $('#list').on('click', '.icons', function(e) {
+        var rankImg = $(this).prev().attr('data-rank');
+        if ($('#photoInputs input[data-rank="' +rankImg+ '"]').attr('type') == 'file') {
+            $('#photoInputs input[data-rank="' +rankImg+ '"]').remove();
+            alert('FILE');
+        }
+        else {
+            $('#photoInputs input[data-rank="' +rankImg+ '"]').prop('checked', true);
+            alert('CHECK');
+        }
+        $(this).closest('li').remove();
+
+        e.preventDefault();
+        e.stopPropagation();
+    });
+    $(document).ready(function() {
+        if ($('#list li').length) {
+            $('#list').css('background-image', 'none');
+            FillImage();
+        }
+    });
+    document.getElementById('uploadImg').addEventListener('change', ShowFile, false);
 
     //#### КАТЕГОРІЯ перемикач
     $('#toggleCategory').on('click', function(e) {
@@ -192,6 +238,8 @@ $(function () {
         if ($(itemImg).length > 5) {
             $(itemImg).each(function() {
                 if ($(this).index() >= 5) {
+                    var rankDel = $(this).find('img').attr('data-rank');
+                    $('#photoInputs input[data-rank="' +rankDel+ '"]').remove();
                     $(this).remove();
                 }
             });
