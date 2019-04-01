@@ -77,39 +77,23 @@
                             <span class="advice">Завантажте до 5 фото</span>
                         </div>
                         <div class="interaction">
-                            <ul id="list">
-                                <li>
-                                    <span class="glyphicon glyphicon-remove icons"></span>
-                                    <label>
+                            <label>
+                                <ul id="list">
+                                    <li>
                                         <img src="images/photos/fari-ford-mustang.jpg" data-rank="1" />
-                                        <input type="file" name="photos" accept="image/*" />
-                                        <input type="checkbox" name="delPhotos" />
-                                    </label>
-                                </li>
-                                <li>
-                                    <span class="glyphicon glyphicon-remove icons"></span>
-                                    <label>
+                                        <span class="glyphicon glyphicon-remove icons"></span>
+                                    </li>
+                                    <li>
                                         <img src="images/photos/fari-ford-mustang7.jpg" data-rank="2" />
-                                        <input type="file" name="photos" accept="image/*" />
-                                        <input type="checkbox" name="delPhotos" />
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="file" name="photos" accept="image/*" title="" />
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="file" name="photos" accept="image/*" title="" />
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="file" name="photos" accept="image/*" title="" />
-                                    </label>
-                                </li>
-                            </ul>
+                                        <span class="glyphicon glyphicon-remove icons"></span>
+                                    </li>
+                                </ul>
+                                <input type="file" accept="image/*" id="uploadImg" name="tmp" value="Фотографії" multiple />
+                                <div id="photoInputs">
+                                    <input type="checkbox" name="delPhotos" data-rank="1" />
+                                    <input type="checkbox" name="delPhotos" data-rank="2" />
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="formRow">
@@ -619,6 +603,7 @@
     </footer>
     <!-- JS and CSS files -->
     <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <link rel="stylesheet" type="text/css" href="styles/post.css">
     <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" async></script>
     <script src="js/post_validation.js" async></script>

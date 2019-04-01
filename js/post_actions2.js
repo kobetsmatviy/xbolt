@@ -5,6 +5,29 @@ $(function () {
     });
 
     //#### Показуємо завантажені файли
+    var rank = $('#list li').length + 1;
+    function ShowFile(e) {
+        var files = e.target.files;
+        for (var i = 0, f; f = files[i]; i++) {
+            if (!f.type.match('image.*')) continue;
+            var fr = new FileReader();
+            fr.onload = (function(theFile) {
+                return function(e) {
+                    $('#list').append('<li><img src="' +e.target.result+ '" data-rank="' +rank+ '" /><span class="glyphicon glyphicon-remove icons"></span></li>').css('background-image', 'none');
+                    $('#photoInputs').append('<input type="file" name="photos" data-rank="' +rank+ '" />');
+                    rank++;
+
+                    $('#photoInputs input[name="photos"]').last().files = theFile;
+                    console.log($('#photoInputs input[name="photos"]').last().files);
+                    // console.log(theFile);
+                    
+                    FillImage();
+                };
+            })(f);
+            
+            fr.readAsDataURL(f);
+        }
+    }
     function FillImage() {
         $('#list img').each(function() {
             if ($(this).width() > $(this).height()) {
@@ -15,47 +38,26 @@ $(function () {
             }
         })
     }
-    $(document).ready(function() {
-        if ($('#list li').length) {
-            FillImage();
-        }
-    });
     $('#list').on('click', '.icons', function(e) {
-        $(this).next().find('img').remove();
-        $(this).next().find('input[name="photos"]').replaceWith('<input type="file" name="photos" accept="image/*" />');
-        $(this).next().find('input[name="delPhotos"]').prop('checked', true);
-        $(this).remove();
+        var rankImg = $(this).prev().attr('data-rank');
+        if ($('#photoInputs input[data-rank="' +rankImg+ '"]').attr('type') == 'file') {
+            $('#photoInputs input[data-rank="' +rankImg+ '"]').remove();
+        }
+        else {
+            $('#photoInputs input[data-rank="' +rankImg+ '"]').prop('checked', true);
+        }
+        $(this).closest('li').remove();
 
         e.preventDefault();
         e.stopPropagation();
     });
-    function ShowFile(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                var image = new Image();
-                image.src = e.target.result;
-                image.onload = function() {
-                    theInput.closest('label').find('img').remove();
-                    theInput.closest('li').find('span').remove();
-                    if (this.width > this.height) {
-                        theInput.closest('label').prepend('<img src="' +image.src+ '" class="photoH" />');
-                    }
-                    else {
-                        theInput.closest('label').prepend('<img src="' +image.src+ '" class="photoV" />');
-                    }
-                    theInput.closest('li').prepend('<span class="glyphicon glyphicon-remove icons"></span>');
-                };                
-            };
-    
-            reader.readAsDataURL(input.files[0]);
+    $(document).ready(function() {
+        if ($('#list li').length) {
+            $('#list').css('background-image', 'none');
+            FillImage();
         }
-    }
-    $('#list').on('change', 'input[name="photos"]', function(){
-        theInput = $(this);
-        ShowFile(this);
     });
+    document.getElementById('uploadImg').addEventListener('change', ShowFile, false);
 
     //#### КАТЕГОРІЯ перемикач
     $('#toggleCategory').on('click', function(e) {
