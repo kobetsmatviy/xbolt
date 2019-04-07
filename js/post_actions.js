@@ -193,6 +193,11 @@ $(function () {
             $('.chooseCondition').closest('.interaction').next().find('.error').remove();
         }
     });
+    // Ініціалізація
+    $(".rateYo").rateYo("option", "onInit", function () {
+        $('#rateInput').attr('value', $('.rateYo').rateYo("rating"));
+    });
+    // Встановлення
     $(".rateYo").rateYo("option", "onSet", function () {
         if (newItem.prop('checked') && $('.rateYo').rateYo("rating") < 10 && $('.rateYo').rateYo("rating") > 0) {
             usedItem.prop('checked', true);
@@ -202,6 +207,7 @@ $(function () {
         }
         $('#rateInput').attr('value', $('.rateYo').rateYo("rating"));
     });
+    
 
     //#### SELECT при зміні
     $('select').change(function() {
