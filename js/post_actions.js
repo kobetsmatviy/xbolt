@@ -180,30 +180,22 @@ $(function () {
     //#### СТАН деталі
     var usedItem = $('.chooseCondition input[value="usedItem"]').on('change', function() {
         $('.chooseCondition').removeClass('error');
-
-        if ($('.rateYo').rateYo("rating") > 0) {
-            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
-        }
     });
     var newItem = $('.chooseCondition input[value="newItem"]').on('change', function() {
         $('.rateYo').rateYo("rating", 10);
         $('.chooseCondition').removeClass('error');
-
-        if ($('.rateYo').rateYo("rating") > 0) {
-            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
-        }
     });
     // Ініціалізація
-    $(".rateYo").rateYo("option", "onInit", function () {
-        $('#rateInput').attr('value', $('.rateYo').rateYo("rating"));
-    });
+    $('#rateInput').attr('value', $('.rateYo').rateYo("rating"));
+    
     // Встановлення
     $(".rateYo").rateYo("option", "onSet", function () {
-        if (newItem.prop('checked') && $('.rateYo').rateYo("rating") < 10 && $('.rateYo').rateYo("rating") > 0) {
+        if ($('.rateYo').rateYo("rating") > 0 && $('.rateYo').rateYo("rating") < 10) {
             usedItem.prop('checked', true);
         }
         if ($('.rateYo').rateYo("rating") > 0) {
             $('.rateYo').removeClass('error');
+            $('.chooseCondition').closest('.interaction').next().find('.error').remove();
         }
         $('#rateInput').attr('value', $('.rateYo').rateYo("rating"));
     });
