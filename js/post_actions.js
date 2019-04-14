@@ -45,6 +45,7 @@ $(function () {
                     else {
                         theInput.closest('label').prepend('<img src="' +image.src+ '" class="photoV" />');
                     }
+                    theInput.closest('label').find('input[name="newPhotos"]').prop('checked', true);
                     theInput.closest('li').prepend('<span class="glyphicon glyphicon-remove icons"></span>');
                 };                
             };
@@ -54,6 +55,9 @@ $(function () {
     }
     $('#list').on('change', 'input[name="photos"]', function(){
         theInput = $(this);
+        $(this).closest('li').find('img').remove();
+        $(this).closest('li').find('span').remove();
+        $(this).closest('li').find('input[name="delPhotos"]').prop('checked', true);
         ShowFile(this);
     });
 
