@@ -99,9 +99,12 @@ $(function () {
         e.preventDefault();
     });
     // Видаляємо авто при кліку на його блок
-    $('.selectedAutos').delegate('.auto', 'click', function() {
+    $('.selectedAutos').delegate('.auto .remove', 'click', function() {
         $('.selectedInputs input[data-select="'+($(this).closest('.auto').index() + 1)+'"]').remove();
-        $(this).remove();
+        for (var i = $(this).closest('.auto').index() + 1; i < 3; i++) {
+            $(this).closest('.automobiles').find('input[data-select="'+(i+1)+'"]').attr('data-select', i);
+        }
+        $(this).closest('.auto').remove();
         CheckAutoExist();
 
         if ($('.selectedAutos .auto').length <= 0) {

@@ -65,6 +65,7 @@
             $(this).find('select').removeClass('mark');
             $(this).find('select').prop('selectedIndex', 0);
             $(this).find('select:not(:first)').addClass('disabled').prop('disabled', true);
+            $(this).find('#mtype').removeClass('disabled').prop('disabled', false);
 
             $(this).find('input').removeClass('active mark activeMark');
             $(this).find('input').prop('checked', false);

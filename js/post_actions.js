@@ -23,6 +23,7 @@ $(function () {
     $('#list').on('click', '.icons', function(e) {
         $(this).next().find('img').remove();
         $(this).next().find('input[name="photos"]').replaceWith('<input type="file" name="photos" accept="image/*" />');
+        $(this).next().find('input[name="newPhotos"]').prop('checked', false);
         $(this).next().find('input[name="delPhotos"]').prop('checked', true);
         $(this).remove();
 
@@ -220,6 +221,12 @@ $(function () {
 
 
 
+    $('input[name="draft"]').on('click', function() {
+        $('input[name="offerStatus"]').attr('value', 0);
+    });
+    $('input[name="publish"]').on('click', function() {
+        $('input[name="offerStatus"]').attr('value', 1);
+    });
     //#### FORM SUBMIT validation
     $('#formPost, #formEdit').submit(function(e) {
         //#### Валідація загрузки фото

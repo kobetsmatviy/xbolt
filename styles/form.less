@@ -138,9 +138,17 @@ form:not([id='filter']) {
     input[type="submit"] {
         margin: 0;
         margin-top: 5px;
-        background-color: @button_mark;
-        color: @color_white;
         text-align: center;
+    }
+    input[name="publish"] {
+        color: @color_white;
+        background-color: @button_mark;
+    }
+    input[name="draft"] {
+        width: 150px;
+        margin-right: 5px;
+        color: @color_select;
+        background-color: @button_color;
     }
 
     .error, .error:focus {
@@ -452,10 +460,16 @@ form:not([id='filter']) {
             display: flex;
             flex-direction: row;
         }
+
+        &:last-child .interaction {
+            display: flex;
+            flex-direction: row-reverse;
+        }
         
         .message {
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
             align-items: flex-end;
             max-width: 150px;
             width: 100%;
@@ -466,6 +480,7 @@ form:not([id='filter']) {
             color: #999;
             
             .caption {
+                margin-right: 10px;
                 font-size: 14px;
                 font-weight: bold;
                 color: #000;
@@ -601,6 +616,15 @@ form:not([id='filter']) {
         .formShape .formRow {
             flex-direction: column;
             margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+
+                .interaction {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
             
             .interaction {
                 flex-direction: column;
@@ -609,10 +633,6 @@ form:not([id='filter']) {
                 max-width: 100%;
                 flex-direction: row;
                 justify-content: space-between;
-
-                .advice {
-                    margin-left: 10px;
-                }
             }
         }
 
@@ -629,9 +649,16 @@ form:not([id='filter']) {
         }
 
         input:not([type=button]), select, textarea, #list {
-            // width: 100%;
-            // min-width: inherit;
             margin: 0;
+        }
+        input[type="submit"] {
+            margin-top: 5px;
+        }
+        input[name="draft"] {
+            width: 100%;
+            height: 25px;
+            padding: 0;
+            margin-right: 0;
         }
         select {
             margin-bottom: 5px;
