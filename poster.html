@@ -461,6 +461,11 @@
                         <span class="title">СТАН</span>
                     </div>
                     <div class="filterCategory">
+                        <select name="offerStatus" id="offerStatus">
+                            <option selected disabled hidden>Все запчасти</option>
+                            <option value="0">Активные</option>
+                            <option value="1">Не активные</option>
+                        </select>
                         <div class="chooseCondition">
                             <label class="conditionUsedItem">
                                 <input type="checkbox" name="cond" value="1" />
@@ -544,7 +549,7 @@
                                 <span>Профіль</span>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="poster.html">
                             <li class="actually">
                                 <span class="glyphicon glyphicon-inbox"></span>
                                 <span>Каталог</span>

@@ -1,57 +1,57 @@
 $(function () {
-    // var $uploadCrop = $('#photoCrop');    
-    // function readFile(input) {
-    //     if (input.files && input.files[0]) {
-    //         var reader = new FileReader();          
-    //         reader.onload = function (e) {
-    //             $uploadCrop.croppie('bind', {
-    //                 url: e.target.result
-    //             });
-    //             $('.crop').css('display', 'flex');
-    //             $('#overlay').css('display', 'block');
-    //         }           
-    //         reader.readAsDataURL(input.files[0]);
-    //     }
-    // }
+    var $uploadCrop = $('#photoCrop');    
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();          
+            reader.onload = function (e) {
+                $uploadCrop.croppie('bind', {
+                    url: e.target.result
+                });
+                $('.crop').css('display', 'flex');
+                $('#overlay').css('visibility', 'visible');
+            }           
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
-    // $uploadCrop.croppie({
-    //     viewport: {
-    //         width: 150,
-    //         height: 150,
-    //         type: 'circle'
-    //     },
-    //     boundary: {
-    //         width: 300,
-    //         height: 300
-    //     }
-    // });
+    $uploadCrop.croppie({
+        viewport: {
+            width: 150,
+            height: 150,
+            type: 'circle'
+        },
+        boundary: {
+            width: 300,
+            height: 300
+        }
+    });
 
-    // $('#uploadPhoto').on('change', function () { readFile(this); });
-    // $('#getPhoto').on('click', function (ev) {
-    //     $uploadCrop.croppie('result', {
-    //         type: 'canvas',
-    //         size: 'original'
-    //     }).then(function (resp) {
-    //         $('#readyPhoto').css('background-size', 'cover');
-    //         $('#readyPhoto').css('background-image', 'url('+resp+')');
-    //     });
+    $('#uploadPhoto').on('change', function () { readFile(this); });
+    $('#getPhoto').on('click', function (ev) {
+        $uploadCrop.croppie('result', {
+            type: 'canvas',
+            size: 'original'
+        }).then(function (resp) {
+            $('#readyPhoto').css('background-size', 'cover');
+            $('#readyPhoto').css('background-image', 'url('+resp+')');
+        });
 
-    //     $('.crop').css('display', 'none');
-    //     $('#overlay').css('display', 'none');
+        $('.crop').css('display', 'none');
+        $('#overlay').css('visibility', 'hidden');
 
-    //     resetInputFile();
-    // });
-    // $('#cancelCrop, #overlay').on('click', function() {
-    //     $('.crop').css('display', 'none');
-    //     $('#overlay').css('display', 'none');
-    //     resetInputFile();
-    // });
+        resetInputFile();
+    });
+    $('#cancelCrop, #overlay').on('click', function() {
+        $('.crop').css('display', 'none');
+        $('#overlay').css('visibility', 'hidden');
+        resetInputFile();
+    });
 
-    // function resetInputFile() {
-    //     var $el = $('#uploadPhoto');
-    //     $el.wrap('<form>').closest('form').get(0).reset();
-    //     $el.unwrap();
-    // }
+    function resetInputFile() {
+        var $el = $('#uploadPhoto');
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+    }
 
     $('input[type=tel]').change(function() {
         $('input[type=submit]').removeClass('disabled');

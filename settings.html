@@ -72,7 +72,7 @@
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <div id="menu">
                 <div id="review">
-                    <img src="images/crop-user.jpeg" />
+                    <img src="images/user.svg" />
                     <h2>Семен Болт</h2>
                 </div>
                 <div class="userContacts">
@@ -80,25 +80,31 @@
                         <a href="profile.html">
                             <li>
                                 <span class="glyphicon glyphicon-user"></span>
-                                <span class="phoneNumber">Профіль</span>
-                            </li>
-                        </a>
-                        <a href="notifies.html">
-                            <li>
-                                <span class="glyphicon glyphicon-send"></span>
-                                <span class="phoneNumber">Сповіщення</span>
+                                <span>Профіль</span>
                             </li>
                         </a>
                         <a href="poster.html">
                             <li>
-                                <span class="glyphicon glyphicon-briefcase"></span>
-                                <span class="phoneNumber">Постер</span>
+                                <span class="glyphicon glyphicon-inbox"></span>
+                                <span>Каталог</span>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li>
+                                <span class="glyphicon glyphicon-download-alt"></span>
+                                <span>Замовлення</span>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li>
+                                <span class="glyphicon glyphicon-scissors"></span>
+                                <span>Розборка</span>
                             </li>
                         </a>
                         <a href="settings.html">
-                            <li>
+                            <li class="actually">
                                 <span class="glyphicon glyphicon-cog"></span>
-                                <span class="phoneNumber">Налаштування</span>
+                                <span>Налаштування</span>
                             </li>
                         </a>
                     </ul>
@@ -109,10 +115,10 @@
                 <h1>Налаштування профілю</h1>
                 <form id="formSettings" method="GET" action="">
                     <div class="formShape">
-                        <!-- <div class="formRow">
+                        <div class="formRow">
                             <div class="message">
                                 <span class="caption">Оберіть фото:</span>
-                                <span class="advice">Вас будуть впізнавати по фото чи логотипі</span>
+                                <span class="advice">зображення профілю</span>
                             </div>
                             <div class="interaction">
                                 <label>
@@ -128,8 +134,7 @@
                                 </div>
                                 <div id="overlay"></div>
                             </div>
-                        </div> -->
-
+                        </div>
                         <div class="formRow">
                             <div class="message">
                                 <span class="caption">Номери:</span>
@@ -242,31 +247,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="formRow">
-                            <div class="interaction">
-                                <span class="interactionName"></span>
-                                <button id="showPswdBlock">Змінити пароль</button>
-                            </div>
-                        </div>
-                        <div class="formRow hidePassword">
-                            <div class="message">
-                                <span class="caption">Пароль:</span>
-                                <span class="advice">працюючий пароль від акаунту</span>
-                            </div>
-                            <div class="interaction">
-                                <input type="password" name="password" autocomplete="off" placeholder="******" />
-                            </div>
-                        </div>
-                        <div class="formRow hidePassword">
-                            <div class="message">
-                                <span class="caption">Новий пароль:</span>
-                                <span class="advice">введіть новий пароль</span>
-                            </div>
-                            <div class="interaction">
-                                <input type="password" name="newPassword" autocomplete="off" placeholder="******" />
-                            </div>
-                        </div> -->
                         <input type="submit" value="Зберегти" />
                     </div>
                 </form>
