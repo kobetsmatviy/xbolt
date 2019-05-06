@@ -104,7 +104,7 @@ header {
                 }
             }
 
-            #profileName, #marketName {
+            #profileItem, #marketItem {
                 position: relative;
                 cursor: pointer;
 
@@ -112,7 +112,7 @@ header {
                     font-size: 20px;
                 }
             }
-            #marketName {
+            #marketItem {
                 display: flex;
                 align-items: center;
                 padding-bottom: 3px;
@@ -483,11 +483,11 @@ footer {
         font-weight: bold;
     }
 }
-.sold, .archive {
+.sold, .archive, .draft {
     position: relative;
     opacity: .7;
 }
-.sold::after, .archive::after {
+.sold::after, .archive::after, .draft::after {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -504,6 +504,9 @@ footer {
 }
 .archive::after {
     content: 'В АРХИВЕ';
+}
+.draft::after {
+    content: 'ЧЕРНОВИК';
 }
 
 .validation-summary-errors {

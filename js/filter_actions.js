@@ -1,10 +1,4 @@
 ﻿$(function () {
-    // Автоматично відкриваємо фільтр, якщо це /catalog/
-    var thisURL = window.location.href;
-    if (thisURL.substr(thisURL.indexOf('/catalog') + 1).length <= 8) {
-        $('#filterArea, #overlay').addClass('visible');
-    }
-
     $(window).resize(function() {
         AdaptiveFilter();
     });

@@ -1,19 +1,33 @@
 $(function () {
+    var market = false;
     $('#marketName').mousedown(function() {
-        $('#marketNav').css('display', 'flex');
+        if (market == false) {
+            $('#marketNav').css('display', 'flex');
+            market = true;
+        }
+        else if (market == true) {
+            $('#marketNav').css('display', 'none');
+            market = false;
+        }
     });
-    // $('#marketNav').mousedown(function() {
-    //     $(this).css('display', 'none'); 
-    // });
+
+    var profile = false;
     $('#profileName').mousedown(function() {
-        $('#profileNav').css('display', 'flex');
+        if (profile == false) {
+            $('#profileNav').css('display', 'flex');
+            profile = true;
+        }
+        else if (profile == true) {
+            $('#profileNav').css('display', 'none');
+            profile = false;
+        }
     });
-    // $('#profileNav').mousedown(function() {
-    //     $(this).css('display', 'none'); 
-    // });
     $(document).click(function(event) {
         if ($(event.target).closest('#marketName, #profileName, #marketNav, #profileNav').length) return;
         $('#marketNav, #profileNav').css('display', 'none');
+
+        market = false;
+        profile = false;
         event.stopPropagation();
     });
 });
