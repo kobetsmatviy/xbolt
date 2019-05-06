@@ -87,65 +87,50 @@ header {
                 }
             }
 
-            #saleIco {
-                span {
-                    position: relative;
-                    top: -3px;
-                    
-                    &::before {
-                        content: 'без реєстрації';
-                        position: absolute;
-                        top: 18px;
-                        left: 0;
-                        display: block;
-                        font-size: 9px;
-                        color: #DDD;
-                    }
-                }
-            }
-
-            #profileItem, #marketItem {
+            #marketItem {
                 position: relative;
                 cursor: pointer;
 
                 .glyphicon {
                     font-size: 20px;
                 }
-            }
-            #marketItem {
-                display: flex;
-                align-items: center;
-                padding-bottom: 3px;
-
-                &> .glyphicon {
-                    margin-right: 5px;
-                }
-            }
-            #profileNav, #marketNav {
-                position: absolute;
-                top: 30px;
-                left: -22px;
-                display: none;
-                flex-direction: column;
-                min-width: 155px;
-                background-color: #555;
-                border: 1px solid #333;
-                border-radius: 5px;
-                z-index: 12;
-
-                a {
+                
+                #marketName {
                     display: flex;
-                    padding: 8px 10px;
-
-                    &:hover {
-                        background-color: #444;
-                    }
-
-                    img, .glyphicon {
+                    align-items: center;
+                    padding-bottom: 3px;
+    
+                    &> .glyphicon {
                         margin-right: 5px;
                     }
-                    .glyphicon {
-                        font-size: 25px;
+                }
+
+                #marketNav {
+                    position: absolute;
+                    top: 30px;
+                    left: -22px;
+                    display: none;
+                    flex-direction: column;
+                    min-width: 155px;
+                    background-color: #555;
+                    border: 1px solid #333;
+                    border-radius: 5px;
+                    z-index: 12;
+    
+                    a {
+                        display: flex;
+                        padding: 8px 10px;
+    
+                        &:hover {
+                            background-color: #444;
+                        }
+    
+                        img, .glyphicon {
+                            margin-right: 5px;
+                        }
+                        .glyphicon {
+                            font-size: 25px;
+                        }
                     }
                 }
             }
@@ -487,7 +472,7 @@ footer {
     position: relative;
     opacity: .7;
 }
-.sold::after, .archive::after, .draft::after {
+.sold::after, .draft::after {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -501,9 +486,6 @@ footer {
 }
 .sold::after {
     content: 'ПРОДАНО';
-}
-.archive::after {
-    content: 'В АРХИВЕ';
 }
 .draft::after {
     content: 'ЧЕРНОВИК';

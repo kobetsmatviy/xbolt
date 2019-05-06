@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Постер</title>
+    <title>Мій Каталог</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -41,34 +41,10 @@
                     <img src="images/give_bolt.svg" />
                     <span class="signature">Продати</span>
                 </a>
-                <div id="profileItem">
-                    <div id="profileName">
-                        <img src="images/user.svg" />
-                        <span class="signature">Семен Болт</span>
-                    </div>
-                    <div id="profileNav">
-                        <a href="profile.html">
-                            <img src="images/user.svg" />
-                            <span>Профіль</span>
-                        </a>
-                        <a href="notifies.html">
-                            <img src="images/notify.svg" />
-                            <span>Сповіщення</span>
-                        </a>
-                        <a href="profile.html">
-                            <span class="glyphicon glyphicon-briefcase"></span>
-                            <span>Постер</span>
-                        </a>
-                        <a href="settings.html">
-                            <span class="glyphicon glyphicon-cog"></span>
-                            <span>Налаштування</span>
-                        </a>
-                        <a href="logout.html">
-                            <span class="glyphicon glyphicon-log-out"></span>
-                            <span>Вийти</span>
-                        </a>
-                    </div>
-                </div>
+                <a href="profile.html">
+                    <img src="images/user.svg" />
+                    <span class="signature">Семен Болт</span>
+                </a>
             </div>
         </article>
     </header>
@@ -550,25 +526,25 @@
                         <a href="profile.html">
                             <li>
                                 <span class="glyphicon glyphicon-user"></span>
-                                <span>Профіль</span>
+                                <span>Мій Профіль</span>
                             </li>
                         </a>
-                        <a href="poster.html">
+                        <a href="workzone_catalog.html">
                             <li class="actually">
                                 <span class="glyphicon glyphicon-inbox"></span>
-                                <span>Каталог</span>
+                                <span>Мій Каталог</span>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="workzone_seek.html">
                             <li>
                                 <span class="glyphicon glyphicon-download-alt"></span>
-                                <span>Замовлення</span>
+                                <span>Мої Замовлення</span>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="workzone_dis.html">
                             <li>
                                 <span class="glyphicon glyphicon-scissors"></span>
-                                <span>Розборка</span>
+                                <span>Моя Розборка</span>
                             </li>
                         </a>
                         <a href="settings.html">
@@ -583,6 +559,52 @@
             </div>
             <div id="posts">
                 <div class="cards">
+                    <div class="partCard">
+                        <a href="post.html">
+                            <div class="photo">
+                                <img src="images/give_bolt_act.svg" />
+                            </div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                    <div class="parts">
+                                        <span>група</span>
+                                        <span>детали</span>
+                                    </div>
+                                    <div class="primary">
+                                        <div class="title">
+                                            <span class="triangle"></span>
+                                            <a href="post.html">
+                                                <h3>
+                                                    НАЗВАНИЕ ЗАПЧАСТИ
+                                                </h3>
+                                            </a>
+                                        </div>
+                                        <span class="price">
+                                            <div>
+                                                цена <sup>грн</sup>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="secondary">
+                                        <div class="state">
+                                            <div class="rateYo" data-rateyo-rating="0"></div>
+                                        </div>
+                                        <div class="automobiles">
+                                            <span>Выбраное Авто</span>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="tertiary">
+                                <div class="additionalInfo">
+                                    <span class="icon icon-clock"></span>
+                                    <span class="date">Дата</span>
+                                    <span class="icon icon-location"></span>
+                                    <span class="location">Локация</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="partCard" itemscope itemtype="http://schema.org/Product">
                         <a href="part.html" itemprop="url">
                             <div class="photo sold">
@@ -633,7 +655,6 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="glyphicon glyphicon-paperclip icons"></span>
                         <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
                         <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
@@ -683,7 +704,6 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="glyphicon glyphicon-paperclip icons"></span>
                         <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
                         <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
@@ -732,7 +752,6 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="glyphicon glyphicon-paperclip icons"></span>
                         <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
                         <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
@@ -783,6 +802,8 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
                     <div class="partCard">
                         <a href="part.html">
@@ -829,6 +850,8 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
                     <div class="partCard">
                         <a href="part.html">
@@ -875,10 +898,12 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
                     <div class="partCard">
                         <a href="part.html">
-                            <div class="photo">
+                            <div class="photo draft">
                                 <img src="images/minimals/7.jpg" />
                             </div>
                         </a>
@@ -921,6 +946,8 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="edit.html"><span class="glyphicon glyphicon-wrench icons"></span></a>
+                        <span class="glyphicon glyphicon-remove icons"></span>
                     </div>
                 </div>
                 <div id="pagination">
