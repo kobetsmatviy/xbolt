@@ -67,6 +67,10 @@ header {
 
             &>* {
                 margin-left: 15px;
+
+                .glyphicon {
+                    font-size: 20px;
+                }
             }
             
             #search {
@@ -82,28 +86,23 @@ header {
             }
 
             #profile {
+
+
                 img {
                     border-radius: 50%;
+                }
+
+                .signature {
+                    display: inline-block;
+                    max-width: 80px;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
             }
 
             #marketItem {
                 position: relative;
                 cursor: pointer;
-
-                .glyphicon {
-                    font-size: 20px;
-                }
-                
-                #marketName {
-                    display: flex;
-                    align-items: center;
-                    padding-bottom: 3px;
-    
-                    &> .glyphicon {
-                        margin-right: 5px;
-                    }
-                }
 
                 #marketNav {
                     position: absolute;
@@ -128,10 +127,17 @@ header {
                         img, .glyphicon {
                             margin-right: 5px;
                         }
-                        .glyphicon {
-                            font-size: 25px;
-                        }
                     }
+                }
+            }
+
+            #marketName, #notifies, #profile {
+                display: flex;
+                align-items: center;
+                padding-bottom: 3px;
+
+                &> .glyphicon, &> img {
+                    margin-right: 5px;
                 }
             }
         }
@@ -523,10 +529,10 @@ footer {
             display: flex;
         }
 
-        #profileNav, #marketNav {
+        #marketNav {
             position: absolute;
-            left: inherit;
-            right: -5px;
+            left: inherit !important;
+            right: -50px;
         }
     }
     nav {
