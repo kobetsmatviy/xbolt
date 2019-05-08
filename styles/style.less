@@ -474,11 +474,11 @@ footer {
         font-weight: bold;
     }
 }
-.sold, .archive, .draft {
+.sold, .remove, .draft {
     position: relative;
     opacity: .7;
 }
-.sold::after, .draft::after {
+.sold::after, .remove::after, .draft::after {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -492,6 +492,9 @@ footer {
 }
 .sold::after {
     content: 'ПРОДАНО';
+}
+.remove::after {
+    content: 'УДАЛЕНО';
 }
 .draft::after {
     content: 'ЧЕРНОВИК';

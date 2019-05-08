@@ -21,15 +21,25 @@ $(document).ready(function(){
                     '<span class="no">Ні<span class="glyphicon glyphicon-thumbs-down"></span></span>'+
                 '</div>'+
             '</div>'+
-            '<div id="overlayModal"></div>');
+            '<div id="overlayModal"></div>'+
+            '<form id="formDelete" method="POST" enctype="multipart/form-data" action="/Offer/MarkCatalog">'+
+                '<input type="hidden" name="offerID" value="'+$(this).closest('.partCard').attr('data-code')+'" />'+
+                '<input type="hidden" name="offerVote" value="" />'+
+            '</form>');
     });
 
+    var overlay = true;
     $('.partCard').delegate('#overlayModal', 'click', function() {
-        $(this).remove();
-        $('.deletePost').remove();        
+        if (overlay) {
+            $(this).remove();
+            $('.deletePost').remove(); 
+            $('#formDelete').remove();       
+        }
     });
 
     $('.partCard').delegate('.yes, .no', 'click', function() {
+        overlay = false;
+
         $(this).css({
             'width': '100%',
             'transition': 'all 1s'
@@ -44,10 +54,19 @@ $(document).ready(function(){
             'opacity': '0',
             'transition': 'all 1s'
         });
+    });
+    $('.partCard').delegate('.yes', 'click', function() {
+        $('input[name="offerVote"]').attr('value', 1);
         
         setTimeout(function() {
-            $('.partCard #overlayModal').remove();  
-            $('.deletePost').remove();
+            $('#formDelete').submit();
+        }, 1000);
+    });
+    $('.partCard').delegate('.no', 'click', function() {
+        $('input[name="offerVote"]').attr('value', 0);
+        
+        setTimeout(function() {
+            $('#formDelete').submit();
         }, 1000);
     });
 });
