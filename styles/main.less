@@ -121,7 +121,7 @@ main {
         }
     }
 
-    #categories {
+    #wishes {
         .categoriesChoose {
             display: flex;
             flex-direction: row;
@@ -274,93 +274,11 @@ main {
     #stories {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
+        // align-items: center;
+        // margin-bottom: 200px;
+
         &> * {
             z-index: 3;
-        }
-
-        .owl-carousel {
-            width: 600px;
-            height: 200px;
-            cursor: -webkit-grab;
-            border-radius: 15px;
-            box-shadow: 0 15px 25px -5px #DDD;
-
-            .item {
-                width: 100%;
-                height: 200px;
-            }
-        }
-    
-        .story {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            background-color: #EEE;
-            border-radius: 15px;
-    
-            img {
-                display: block;
-                width: 170px;
-                margin: 15px;
-                border-radius: 50%;
-            }
-    
-            .contentData {
-                margin: 15px 0;
-
-                h3 {
-                    display: block;
-                    font-size: 20px;
-                    color: #333;
-                }
-
-                p {
-                    margin-top: 5px;
-                    font-size: 16px;
-                    color: #555;
-                }
-            }
-
-            &:hover {
-                &::after {
-                    animation: mouseMove 2s linear 2;
-                }
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 15px;
-                display: block;
-                width: 30px;
-                height: 30px;
-                margin-top: -15px;
-                background-image: url('../images/mouse.svg');
-                background-repeat: no-repeat;
-                background-position: 50%;
-                background-size: 25px;
-                
-
-                @keyframes mouseMove {
-                    0% {
-                        transform: translateX(0);
-                        background-image: url('../images/mouse.svg');
-                    }
-                    10% {
-                        background-image: url('../images/mouse_active.svg');
-                    }
-                    90% {
-                        transform: translateX(-20px);
-                        background-image: url('../images/mouse.svg');
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-            }
         }
     }
 
@@ -368,11 +286,8 @@ main {
         position: absolute;
         bottom: -30px;
         width: 100%;
-        height: 350px;
+        height: 250px;
         background-color: @color_white;
-        background-image: url('../images/dotsPattern.png');
-        background-repeat: repeat-y;
-        background-size: contain;
         transform: skewY(1.5deg);
         z-index: 1;
     }

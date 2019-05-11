@@ -12,6 +12,16 @@ $(document).ready(function(){
         $(".partCard").css('max-width', itemWidth);
     }
 
+    var dataURL = (window.location.href).toLowerCase();
+    var categoryResult = 0;
+    function GetCategory() {
+        if (dataURL.indexOf('/workzone/catalog') > 0) categoryResult = 1;
+        else if (dataURL.indexOf('/workzone/seek') > 0) categoryResult = 2;
+        else if (dataURL.indexOf('/workzone/dis') > 0) categoryResult = 3;
+
+        return categoryResult;
+    }
+
     $('.glyphicon-remove').on('click', function() {
         $(this).parent().append(
             '<div class="deletePost">'+
@@ -22,9 +32,10 @@ $(document).ready(function(){
                 '</div>'+
             '</div>'+
             '<div id="overlayModal"></div>'+
-            '<form id="formDelete" method="POST" enctype="multipart/form-data" action="/Offer/MarkCatalog">'+
+            '<form id="formDelete" method="POST" enctype="multipart/form-data" action="/Offer/DelOffer?returnUrl=/workzone/'+(dataURL.split("workzone/")[1]).split("#")[0]+'">'+
                 '<input type="hidden" name="offerID" value="'+$(this).closest('.partCard').attr('data-code')+'" />'+
-                '<input type="hidden" name="offerVote" value="" />'+
+                '<input type="hidden" name="offerStatus" value="" />'+
+                '<input type="hidden" name="offerType" value="'+GetCategory()+'" />'+
             '</form>');
     });
 
@@ -56,14 +67,14 @@ $(document).ready(function(){
         });
     });
     $('.partCard').delegate('.yes', 'click', function() {
-        $('input[name="offerVote"]').attr('value', 1);
+        $('input[name="offerStatus"]').attr('value', 1);
         
         setTimeout(function() {
             $('#formDelete').submit();
         }, 1000);
     });
     $('.partCard').delegate('.no', 'click', function() {
-        $('input[name="offerVote"]').attr('value', 0);
+        $('input[name="offerStatus"]').attr('value', 0);
         
         setTimeout(function() {
             $('#formDelete').submit();

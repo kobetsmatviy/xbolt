@@ -474,11 +474,11 @@ footer {
         font-weight: bold;
     }
 }
-.sold, .remove, .draft {
+.sold, .deleted, .draft {
     position: relative;
     opacity: .7;
 }
-.sold::after, .remove::after, .draft::after {
+.sold::after, .deleted::after, .draft::after {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -493,7 +493,7 @@ footer {
 .sold::after {
     content: 'ПРОДАНО';
 }
-.remove::after {
+.deleted::after {
     content: 'УДАЛЕНО';
 }
 .draft::after {
