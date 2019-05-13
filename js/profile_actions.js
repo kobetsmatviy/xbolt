@@ -36,6 +36,7 @@ $(document).ready(function(){
                 '<input type="hidden" name="offerID" value="'+$(this).closest('.partCard').attr('data-code')+'" />'+
                 '<input type="hidden" name="offerStatus" value="" />'+
                 '<input type="hidden" name="offerType" value="'+GetCategory()+'" />'+
+                '<input type="hidden" name="anchor" value="'+$(this).closest('.partCard').attr('id')+'" />'+
             '</form>');
     });
 
