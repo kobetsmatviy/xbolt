@@ -56,4 +56,8 @@ function SwitchDisable() {
     else if( $('input[name=phone]').val() ) {
         $('input[name=email]').prop({required: false, readonly: true}).addClass('disabled');
     }
+    else {
+        $('input[name=phone]').prop({required: true, readonly: false}).removeClass('disabled');
+        $('input[name=email]').prop({required: true, readonly: false}).removeClass('disabled');
+    }
 }

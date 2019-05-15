@@ -2,324 +2,326 @@
 @import "variables";
 
 // Version for a PK
-#preview {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    background-image: url('../images/earth.png'), radial-gradient(circle, #0073dd, #043351 90%);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 50%, 50%;
-    background-size: 355px, 100%;
-
-    article {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .intro {
-            text-align: center;
-            z-index: 3;
-
-            img {
-                width: 250px;
-            }
-
-            h1 {
-                margin-top: 50px;
-                font-size: 28px;
-                color: @color_white;
-                text-shadow: 0 1px 0 #02486b;
-            }
-            
-            span {
-                color: @color_white;
-            }
-        }
-
-        .boltsSystem{
-            position: absolute;
-            width: 600px;
-            height: 400px;
-            z-index: 1;
-
-            .bolt {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 40px;
-                height: 40px;
-                background-image: url('../images/bolt_dark_blue.svg');
-                background-repeat: no-repeat;
-                background-position: 50%;
-            }
-            .b1 {
-                margin-left: -200px;
-                margin-top: -25px;
-                background-size: 40px;
-                transform-origin: 200px 25px;
-            }
-            .b2 {
-                margin-left: 180px;
-                margin-top: 120px;
-                background-size: 35px;
-                transform-origin: -180px -120px;
-                opacity: .5;
-            }
-            .b3 {
-                margin-left: -215px;
-                margin-top: 80px;
-                background-size: 25px;
-                transform-origin: 215px -80px;
-                opacity: .3;
-            }
-            .b4 {
-                margin-left: 220px;
-                margin-top: -150px;
-                background-size: 20px;
-                transform-origin: -220px 150px;
-                opacity: .3;
-            }
-            .b5 {
-                margin-left: -250px;
-                margin-top: -120px;
-                background-size: 40px;
-                transform-origin: 250px 120px;
-                opacity: .2;
-            }
-        }
-    }
-
-    .previewCover {
-        position: absolute;
-        bottom: -30px;
-        width: 100%;
-        height: 50px;
-        background-color: #EEE;
-        transform: skewY(-1.5deg);
-        z-index: 3;
-    }
-}
-
 main {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-image: url('../images/bolt_grey.svg'), url('../images/bolt_grey.svg');
-    background-repeat: no-repeat, no-repeat;
-    background-size: 400px, 250px;
-    background-position: 10% 5%, 90% 60%;
     overflow: hidden;
-    
+
     article > div {
         padding: 50px 10px;
+    }
     
-        h2 {
-            margin: 0 auto;
-            margin-bottom: 15px;
-            text-align: left;
-            font-size: 24px;
-        }
-
-        .reduceWidth {
-            width: 250px;
-        }
+    h2 {
+        min-width: 250px;
+        max-width: 350px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        text-align: left;
+        font-size: 24px;
     }
 
-    #wishes {
-        .categoriesChoose {
+    #preview {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        background-image: url('../images/earth.png'), radial-gradient(circle, #0073dd, #043351 90%);
+        background-repeat: no-repeat, no-repeat;
+        background-position: 50%, 50%;
+        background-size: 355px, 100%;
+    
+        article {
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        
-            a {
-                padding: 5px;
-                margin-bottom: 5px;
+            justify-content: center;
+            align-items: center;
+    
+            .intro {
                 text-align: center;
-                color: @color_white;
-                border-radius: 20px;
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
-                transition: all .2s ease-in-out;
+                z-index: 3;
+    
+                img {
+                    width: 250px;
+                }
+    
+                h1 {
+                    margin-top: 50px;
+                    font-size: 28px;
+                    color: @color_white;
+                    text-shadow: 0 1px 0 #02486b;
+                }
                 
                 span {
-                    position: relative;
-                    margin-left: 25px;
-                    font-size: 20px;
-                    font-weight: bold;
-                    vertical-align: middle;
-        
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 2px;
-                        left: -25px;
-                        display: block;
-                        width: 20px;
-                        height: 20px;
-                        background-size: 20px;
-                    }
-                }
-        
-                &:hover {
-                    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-                    transition: all .2s ease-in-out;
+                    color: @color_white;
                 }
             }
-        
-            #buy {
-                background-color: #339933;
-                background-image: linear-gradient(to right, #339933, #237d23);
-        
-                span::before {
-                    background-image: url('../images/search.svg');
-                }
-            }
-            #sale {
-                background-color: #ff6600;
-                background-image: linear-gradient(to right, #ff6600, #d95700);
-        
-                span::before {
-                    background-image: url('../images/give_bolt.svg');
-                }
-            }
-        }
-    }
     
-    #benefits {
-        background-color: @color_white;
-        border-radius: 15px;
-        box-shadow: 0 15px 25px -5px #DDD;
-        margin: 0 10px;
-        margin-bottom: 50px;
+            .boltsSystem{
+                position: absolute;
+                width: 600px;
+                height: 400px;
+                z-index: 1;
     
-        .benefitChoose {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-    
-            .column {
-                width: 300px;
-    
-                .benefit {
-                    position: relative;
-                    height: 110px;
-                    margin-bottom: 10px;
-                    padding-left: 110px;
-
-                    h3 {
-                        font-size: 20px;
-                        color: #333;
-                    }
-    
-                    p {
-                        font-size: 14px;
-                        color: #999;
-                    }
-    
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        left: 10px;
-                        bottom: 0;
-                        display: block;
-                        width: 80px;
-                        height: 30px;
-                        background-color: #E8E8E8;
-                        border-radius: 50%;
-                        filter: blur(5px);
-                        transform: translateY(0);
-                        transition: all .5s ease-in-out;
-                    }
-                    &:hover::before {
-                        filter: blur(10px);
-                        transform: translateY(5px);
-                        transition: all .5s ease-in-out;
-                    }
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        display: block;
-                        width: 100px;
-                        height: 100px;
-                        transform: translateY(0);
-                        transition: all .5s ease-in-out;
-                    }
-                    &:hover::after {
-                        transform: translateY(-5px);
-                        transition: all .5s ease-in-out;
-                    }
+                .bolt {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url('../images/bolt_dark_blue.svg');
+                    background-repeat: no-repeat;
+                    background-position: 50%;
                 }
-    
-                .comfortable::after {
-                    background-image: url('../images/comfortable.svg');
+                .b1 {
+                    margin-left: -200px;
+                    margin-top: -25px;
+                    background-size: 40px;
+                    transform-origin: 200px 25px;
                 }
-                .speedSearch::after {
-                    background-image: url('../images/speedSearch.svg');
+                .b2 {
+                    margin-left: 180px;
+                    margin-top: 120px;
+                    background-size: 35px;
+                    transform-origin: -180px -120px;
+                    opacity: .5;
                 }
-                .trashFilter::after {
-                    background-image: url('../images/trashFilter.svg');
+                .b3 {
+                    margin-left: -215px;
+                    margin-top: 80px;
+                    background-size: 25px;
+                    transform-origin: 215px -80px;
+                    opacity: .3;
                 }
-                .sale::after {
-                    background-image: url('../images/sale.svg');
+                .b4 {
+                    margin-left: 220px;
+                    margin-top: -150px;
+                    background-size: 20px;
+                    transform-origin: -220px 150px;
+                    opacity: .3;
                 }
-                .reserve::after {
-                    background-image: url('../images/reserve.svg');
-                }
-                .targetAudience::after {
-                    background-image: url('../images/targetAudience.svg');
+                .b5 {
+                    margin-left: -250px;
+                    margin-top: -120px;
+                    background-size: 40px;
+                    transform-origin: 250px 120px;
+                    opacity: .2;
                 }
             }
         }
-    }
-}
-
-.mainCover {
-    width: 100%;
-    height: 100%;
-    margin-top: 25px;
-    background-color: @color_white;
-    box-shadow: 0 30px 0 0 @color_white;
-    transform: skewY(1.5deg);
-    z-index: 1;
-
-    #about {
-        display: flex;
-        flex-direction: column;
-        margin-top: 25px;
-        transform: skewY(-1.5deg);
-
-        &> * {
+    
+        #previewCover {
+            position: absolute;
+            bottom: -30px;
+            width: 100%;
+            height: 50px;
+            background-color: @color_white;
+            transform: skewY(-1.5deg);
             z-index: 3;
         }
+    }
 
-        #categories {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 25px;
-
-            .item {
-                width: 300px;
-                min-height: 400px;
-                padding: 10px 20px;
-                
-                .picture {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 300px;
-                }
-                
-                h3 {
-                    margin: 15px auto;
-                    font-size: 20px;
+    #guide {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: @color_white;
+        overflow: hidden;
+    
+        #wishes {
+            .categoriesChoose {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+            
+                a {
+                    padding: 5px;
+                    margin-bottom: 5px;
                     text-align: center;
+                    color: @color_white;
+                    border-radius: 20px;
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+                    transition: all .2s ease-in-out;
+                    
+                    span {
+                        position: relative;
+                        margin-left: 25px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        vertical-align: middle;
+            
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 2px;
+                            left: -25px;
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            background-size: 20px;
+                        }
+                    }
+            
+                    &:hover {
+                        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            
+                #buy {
+                    background-color: #339933;
+            
+                    span::before {
+                        background-image: url('../images/search.svg');
+                    }
+                }
+                #sale {
+                    background-color: #ff6600;
+            
+                    span::before {
+                        background-image: url('../images/give_bolt.svg');
+                    }
+                }
+            }
+        }
+        
+        #about {
+            display: flex;
+            flex-direction: column;
+            margin: 50px auto;
+            padding: 0 10px;
+    
+            #categories {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 25px;
+    
+                .item {
+                    width: 300px;
+                    min-height: 400px;
+                    padding: 10px 20px;
+                    
+                    .picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 230px;
+                    }
+                    
+                    h3 {
+                        margin: 15px auto;
+                        font-size: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        #guidCover {
+            position: absolute;
+            bottom: -30px;
+            width: 100%;
+            height: 50px;
+            background-color: #EEE;
+            transform: skewY(1.5deg);
+            z-index: 3;
+        }
+    }
+
+    #benefits {
+        display: flex;
+        background-color: #EEE;
+        background-image: url('../images/bolt_grey.svg'), url('../images/bolt_grey.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-size: 400px, 250px;
+        background-position: 10% 5%, 90% 60%;
+
+        #priorities {
+            background-color: @color_white;
+            border-radius: 15px;
+            box-shadow: 0 15px 25px -5px #DDD;
+            margin: 50px 10px;
+        
+            .benefitChoose {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+        
+                .column {
+                    width: 300px;
+        
+                    .benefit {
+                        position: relative;
+                        height: 110px;
+                        margin-bottom: 10px;
+                        padding-left: 110px;
+    
+                        h3 {
+                            font-size: 20px;
+                            color: #333;
+                        }
+        
+                        p {
+                            font-size: 14px;
+                            color: #999;
+                        }
+        
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 10px;
+                            bottom: 0;
+                            display: block;
+                            width: 80px;
+                            height: 30px;
+                            background-color: #E8E8E8;
+                            border-radius: 50%;
+                            filter: blur(5px);
+                            transform: translateY(0);
+                            transition: all .5s ease-in-out;
+                        }
+                        &:hover::before {
+                            filter: blur(10px);
+                            transform: translateY(5px);
+                            transition: all .5s ease-in-out;
+                        }
+    
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: block;
+                            width: 100px;
+                            height: 100px;
+                            transform: translateY(0);
+                            transition: all .5s ease-in-out;
+                        }
+                        &:hover::after {
+                            transform: translateY(-5px);
+                            transition: all .5s ease-in-out;
+                        }
+                    }
+        
+                    .comfortable::after {
+                        background-image: url('../images/comfortable.svg');
+                    }
+                    .speedSearch::after {
+                        background-image: url('../images/speedSearch.svg');
+                    }
+                    .trashFilter::after {
+                        background-image: url('../images/trashFilter.svg');
+                    }
+                    .sale::after {
+                        background-image: url('../images/sale.svg');
+                    }
+                    .reserve::after {
+                        background-image: url('../images/reserve.svg');
+                    }
+                    .targetAudience::after {
+                        background-image: url('../images/targetAudience.svg');
+                    }
                 }
             }
         }
@@ -355,13 +357,22 @@ main {
         }
     }
 
-    main {
-        background: none;
-        background-image: linear-gradient(to bottom, #EEE, #d8e1e4);
+    #about {
+        #categories {
+            .item {
+                padding: 10px 0 !important;
+                max-width: 300px;
+                width: 100% !important;
+            }
+        }
+    }
 
-        #benefits {
+    #benefits {
+        background-image: none !important;
+
+        #priorities {
             box-shadow: 0 15px 25px -10px #CCC;
-
+    
             .benefitChoose {
                 flex-direction: column !important;
                 align-items: center !important;
