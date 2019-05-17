@@ -22,6 +22,17 @@ $(document).ready(function(){
         return categoryResult;
     }
 
+    $('.glyphicon-wrench').on('click', function() {
+        $(this).parent().append(
+            '<form id="formEdit" method="POST" enctype="multipart/form-data" action="/Offer/EditOffer?returnUrl=/workzone/'+(dataURL.split("workzone/")[1]).split("#")[0]+'">'+
+                '<input type="hidden" name="offerID" value="'+$(this).closest('.partCard').attr('data-code')+'" />'+
+                '<input type="hidden" name="offerStatus" value="" />'+
+                '<input type="hidden" name="offerType" value="'+GetCategory()+'" />'+
+                '<input type="hidden" name="anchor" value="'+$(this).closest('.partCard').attr('id')+'" />'+
+            '</form>');
+        $('#formEdit').submit();
+    });
+
     $('.glyphicon-remove').on('click', function() {
         $(this).parent().append(
             '<div class="deletePost">'+
@@ -68,14 +79,14 @@ $(document).ready(function(){
         });
     });
     $('.partCard').delegate('.yes', 'click', function() {
-        $('input[name="offerStatus"]').attr('value', 1);
+        $('input[name="offerStatus"]').attr('value', 10);
         
         setTimeout(function() {
             $('#formDelete').submit();
         }, 1000);
     });
     $('.partCard').delegate('.no', 'click', function() {
-        $('input[name="offerStatus"]').attr('value', 0);
+        $('input[name="offerStatus"]').attr('value', 20);
         
         setTimeout(function() {
             $('#formDelete').submit();

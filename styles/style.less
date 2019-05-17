@@ -426,15 +426,55 @@ form {
 }
 
 footer {
+    display: flex;
     width: 100%;
-    height: 100px;
     background-color: @background_footer;
 
     article {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
+
+        #footerContent {
+            width: 100%;
+
+            #mainLinks {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+                padding: 30px 10px;
+    
+                img {
+                    width: 100px;
+                    height: 30px;
+                }
+                #footerLinks {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+
+                    ul {
+                        margin: 0;
+                        margin-left: 75px;
+                        padding: 0;
+                        list-style: none;
+                        
+                        a {
+                            display: block;
+                            padding: 5px;
+                            color: #555;
+                        }
+                    }
+                }
+            }
+            #copyright {
+                margin: 0 10px;
+                margin-bottom: 30px;
+                color: #555;
+            }
+        }
+
     }
 }
 
@@ -538,6 +578,7 @@ footer {
             right: -50px;
         }
     }
+
     nav {
         display: none;
 
@@ -549,9 +590,11 @@ footer {
             display: none;
         }
     }
+
     a > #back {
         display: none;
     }
+
     #pagination {
         margin-bottom: 0 !important;
         padding: 15px 10px !important;
@@ -572,6 +615,27 @@ footer {
         }
         .numerator {
             margin: auto;
+        }
+    }
+
+    footer {
+        #mainLinks {
+            flex-direction: column !important;
+
+            img {
+                width: 100%;
+            }
+
+            #footerLinks {
+                margin: 0 !important;
+                margin-top: 20px !important;
+                width: 100%;
+
+                ul {
+                    margin-left: 0 !important;
+                    margin-right: 30px !important;
+                }
+            }
         }
     }
 }
