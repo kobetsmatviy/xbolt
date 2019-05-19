@@ -222,7 +222,7 @@ $(function () {
 
 
     $('input[name="draft"]').on('click', function() {
-        $('input[name="offerStatus"]').attr('value', 0);
+        $('input[name="offerStatus"]').attr('value', 2);
     });
     $('input[name="publish"]').on('click', function() {
         $('input[name="offerStatus"]').attr('value', 1);

@@ -24,11 +24,12 @@ $(document).ready(function(){
 
     $('.glyphicon-wrench').on('click', function() {
         $(this).parent().append(
-            '<form id="formEdit" method="POST" enctype="multipart/form-data" action="/Offer/EditOffer?returnUrl=/workzone/'+(dataURL.split("workzone/")[1]).split("#")[0]+'">'+
+            '<form id="formEdit" method="POST" enctype="multipart/form-data" action="/Offer/EditOffer">'+
                 '<input type="hidden" name="offerID" value="'+$(this).closest('.partCard').attr('data-code')+'" />'+
                 '<input type="hidden" name="offerStatus" value="" />'+
                 '<input type="hidden" name="offerType" value="'+GetCategory()+'" />'+
                 '<input type="hidden" name="anchor" value="'+$(this).closest('.partCard').attr('id')+'" />'+
+                '<input type="hidden" name="returnUrl" value="/workzone/'+(dataURL.split("workzone/")[1]).split("#")[0]+'" />'+
             '</form>');
         $('#formEdit').submit();
     });
@@ -43,11 +44,12 @@ $(document).ready(function(){
                 '</div>'+
             '</div>'+
             '<div id="overlayModal"></div>'+
-            '<form id="formDelete" method="POST" enctype="multipart/form-data" action="/Offer/DelOffer?returnUrl=/workzone/'+(dataURL.split("workzone/")[1]).split("#")[0]+'">'+
+            '<form id="formDelete" method="POST" enctype="multipart/form-data" action="/Offer/DelOffer">'+
                 '<input type="hidden" name="offerID" value="'+$(this).closest('.partCard').attr('data-code')+'" />'+
                 '<input type="hidden" name="offerStatus" value="" />'+
                 '<input type="hidden" name="offerType" value="'+GetCategory()+'" />'+
                 '<input type="hidden" name="anchor" value="'+$(this).closest('.partCard').attr('id')+'" />'+
+                '<input type="hidden" name="returnUrl" value="/workzone/'+(dataURL.split("workzone/")[1]).split("#")[0]+'" />'+
             '</form>');
     });
 

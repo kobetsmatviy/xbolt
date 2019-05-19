@@ -2,8 +2,9 @@
 @import "variables";
 
 // Version for a PK
-body {
+html, body {
     margin: 0;
+    height: 100%;
     background-color: #EEE;
     font-family: 'PT Sans', sans-serif;
 }
@@ -34,7 +35,6 @@ h3 {
 }
 article {
     width: 100%;
-    height: 100%;
 }
 
 header {
@@ -52,6 +52,7 @@ header {
 
     article {
         display: flex;
+        height: 100%;
         justify-content: space-between;
         align-items: center;
         
@@ -215,6 +216,10 @@ nav {
             padding-top: 3px;
         }
     }
+}
+
+main {
+    min-height: 70%;
 }
 
 #back {
@@ -402,6 +407,42 @@ form {
             border-color: inherit;
             color: inherit;
         }
+    }
+}
+
+.equalizer {
+    height: 100%;
+    margin: 10px;
+}
+#warning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+    border-radius: 10px;
+    border: 1px solid #DDD;
+    background-color: #FFF;
+    box-shadow: 0 0 25px 0 #ddd;
+
+    img {
+        width: 45px;
+        margin-bottom: 20px;
+    }
+
+    a {
+        margin-top: 5px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        background-color: @button_mark;
+        color: #FFF;
     }
 }
 

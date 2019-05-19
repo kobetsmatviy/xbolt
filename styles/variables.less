@@ -19,7 +19,7 @@
 
 // Mixins for transparent colors
 .box_shadow_white(@value, @width: 10px) {
-    box-shadow: 0 0 0 @width rgba(255, 255, 255, @value);
+    border: @width solid rgba(255, 255, 255, @value);
 }
 .background_color_black(@value) {
     background-color: rgba(0, 0, 0, @value);

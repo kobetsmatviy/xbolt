@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Мої Замовлення</title>
+    <title>Dis</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
                             <span class="glyphicon glyphicon-download-alt"></span>
                             <span>Замовити</span>
                         </a>
-                        <a href="">
+                        <a href="dis.html">
                             <span class="glyphicon glyphicon-scissors"></span>
                             <span>Розборка</span>
                         </a>
@@ -41,7 +41,7 @@
                     <img src="images/give_bolt.svg" />
                     <span class="signature">Продати</span>
                 </a>
-                <a href="profile.html" id="profile">
+                <a href="profile.html">
                     <img src="images/user.svg" />
                     <span class="signature">Семен Болт</span>
                 </a>
@@ -53,39 +53,23 @@
             <section>
                 <div id="filterName" class="choice">ФІЛЬТР</div>
                 <div id="filterCategories">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <span>легкові</span>
-                    <span>Audi</span>
-                    <span>80 B2 1979-1986</span>
-                    <span class="boltIcon"></span>
-                    <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
-                    <span class="glyphicon glyphicon-map-marker"></span>
                 </div>
             </section>
         </article>
     </nav>
-    <div id="filterArea">
+    <div id="filterArea" class="visible">
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
             <form id="filter" action="" method="post">
-                <aside class="filterType">
-                    <div class="filterName">
-                        <span class="remove opacityFull"></span>
-                        <span class="title">ОБЪЯВЛЕНИЯ ПОЛЬЗОВАТЕЛЯ</span>
-                    </div>
-                    <div class="filterCategory">
-                        <select name="postsUser" id="postsUser" class="mark">
-                            <option selected disabled hidden>Пользователь</option>
-                            <option value="1" selected>Василь Супер Барига</option>
-                        </select>
-                    </div>
-                </aside>
                 <aside class="filterType">
                     <div class="filterName">
                         <span class="remove"></span>
                         <span class="title">МАРКА, МОДЕЛЬ</span>
                     </div>
                     <div class="filterCategory">
-                        <select name="trasnport" id="trasnport" class="trasnport">
+                        <select name="favorite" id="favorite" class="favorite">
+                            <option selected disabled hidden>Мои авто</option>
+                        </select>
+                        <select name="mtype" id="mtype" class="mtype">
                             <option selected disabled hidden>Транспорт</option>
                             <option value="cars">Легкові</option>
                             <option value="trucks">Вантажівки</option>
@@ -441,11 +425,6 @@
                         <span class="title">СТАН</span>
                     </div>
                     <div class="filterCategory">
-                        <select name="offerStatus" id="offerStatus">
-                            <option selected disabled hidden>Все запчасти</option>
-                            <option value="0">Активные</option>
-                            <option value="1">Не активные</option>
-                        </select>
                         <div class="chooseCondition">
                             <label class="conditionUsedItem">
                                 <input type="checkbox" name="cond" value="1" />
@@ -513,110 +492,14 @@
             </form>
         </article>
     </div>
-    <div id="overlay"></div>
-    <main class="clearfix">
+    <div id="overlay" class="visible"></div>
+    <main>
         <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 no-padding">
-            <div id="menu">
-                <div id="review">
-                    <img src="images/user.svg" />
-                    <h2>Семен Болт</h2>
-                </div>
-                <div class="userContacts">
-                    <ul class="contacts">     
-                        <a href="profile.html">
-                            <li>
-                                <span class="glyphicon glyphicon-user"></span>
-                                <span>Мій Профіль</span>
-                            </li>
-                        </a>
-                        <a href="notifies.html">
-                            <li>
-                                <span class="glyphicon glyphicon-send"></span>
-                                <span>Сповіщення</span>
-                            </li>
-                        </a>
-                        <a href="workzone_catalog.html">
-                            <li>
-                                <span class="glyphicon glyphicon-inbox"></span>
-                                <span>Мій Каталог</span>
-                            </li>
-                        </a>
-                        <a href="workzone_seek.html">
-                            <li class="actually">
-                                <span class="glyphicon glyphicon-download-alt"></span>
-                                <span>Мої Замовлення</span>
-                            </li>
-                        </a>
-                        <a href="workzone_dis.html">
-                            <li>
-                                <span class="glyphicon glyphicon-scissors"></span>
-                                <span>Моя Розборка</span>
-                            </li>
-                        </a>
-                        <a href="settings.html">
-                            <li>
-                                <span class="glyphicon glyphicon-cog"></span>
-                                <span>Налаштування</span>
-                            </li>
-                        </a>
-                        <a href="logout.html">
-                            <li>
-                                <span class="glyphicon glyphicon-log-out"></span>
-                                <span>Выход</span>
-                            </li>
-                        </a>
-                    </ul>
-                    <div class="dateRegister">На сайте с <time datetime="2019-02-07">февраля 2019</time></div>
-                </div>
-            </div>
-            <div id="posts">
-                <div class="cards">
-                    <div class="partCard">
-                        <a href="post.html">
-                            <div class="photo">
-                                <img src="images/give_bolt_act.svg" />
-                            </div>
-                        </a>
-                        <div class="content">
-                            <div class="description">
-                                    <div class="parts">
-                                        <span>група</span>
-                                        <span>детали</span>
-                                    </div>
-                                    <div class="primary">
-                                        <div class="title">
-                                            <span class="triangle"></span>
-                                            <a href="post.html">
-                                                <h3>
-                                                    НАЗВАНИЕ ЗАПЧАСТИ
-                                                </h3>
-                                            </a>
-                                        </div>
-                                        <span class="price">
-                                            <div>
-                                                цена <sup>грн</sup>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <div class="secondary">
-                                        <div class="state">
-                                            <div class="rateYo" data-rateyo-rating="0"></div>
-                                        </div>
-                                        <div class="automobiles">
-                                            <span>Выбраное Авто</span>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="tertiary">
-                                <div class="additionalInfo">
-                                    <span class="icon icon-clock"></span>
-                                    <span class="date">Дата</span>
-                                    <span class="icon icon-location"></span>
-                                    <span class="location">Локация</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="equalizer">
+                <div id="warning">
+                    <img src="images/full.svg" />
+                    <span>Змініть фільтр пошуку<br>або</span>
+                    <a href="post.html">Замовте деталь</a>
                 </div>
             </div>
         </article>
@@ -630,7 +513,7 @@
                         <ul>
                             <a href="catalog.html"><li>Каталог</li></a>
                             <a href=""><li>Замовлення</li></a>
-                            <a href=""><li>Розборка</li></a>
+                            <a href="dis.html"><li>Розборка</li></a>
                         </ul>
                         <ul>
                             <a href="post.html"><li>Подати оголошення</li></a>
@@ -645,14 +528,13 @@
             </div>
         </article>
     </footer>
-    <!-- JS and CSS files -->
+    <!-- JS & CSS files -->
     <link rel="stylesheet" type="text/css" href="styles/filter.css">
     <link rel="stylesheet" type="text/css" href="styles/cards.css">
-    <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="libraries/jquery.rateyo.min.css">
     <script src="js/filter_actions.js" async></script>
+    <script src="js/filter_data.js" async></script>
     <script src="js/adaptive_cards.js" async></script>
-    <script src="js/profile_actions.js" async></script>
     <script src="js/header_actions.js" async></script>
     <script src="libraries/jquery.rateyo.min.js" async></script>
 </body>
