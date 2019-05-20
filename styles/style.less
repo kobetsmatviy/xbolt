@@ -411,6 +411,7 @@ form {
 }
 
 .equalizer {
+    width: 100%;
     height: 100%;
     margin: 10px;
 }
@@ -598,7 +599,7 @@ footer {
 @media (max-width: 767px) {
     header article .leaderLinks {
         .signature {
-            display: none;
+            display: none !important;
         }
 
         #marketName {
@@ -634,6 +635,10 @@ footer {
 
     a > #back {
         display: none;
+    }
+
+    .equalizer {
+        width: auto !important;
     }
 
     #pagination {
