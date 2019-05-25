@@ -491,12 +491,6 @@ form:not([id='filter']) {
 }
 .doneMessage {
     margin: 75px auto;
-    // position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // margin: 0 10px;
-    // margin-top: -225px;
-    // margin-left: -205px;
     max-width: 420px;
     width: 100%;
     padding: 30px;
@@ -520,7 +514,6 @@ form:not([id='filter']) {
 
     p {
         margin: 30px auto;
-        // font-size: 16px;
         color: #555;
 
         .registration {
@@ -534,15 +527,27 @@ form:not([id='filter']) {
         }
     }
 
-    .addButton {
-        display: block;  
-        width: 100%;
-        padding: 5px 8px;
-        background-color: @button_mark;
-        color: @color_white;
-        font-size: 16px;
-        border-radius: 3px;
-        text-align: center;
+    .nextAction {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            display: block;  
+            width: 100%;
+            padding: 5px 8px;
+            background-color: @button_mark;
+            color: @color_white;
+            font-size: 16px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .turnAround {
+            max-width: 100px;
+            margin-right: 5px;
+            background-color: #DDD;
+            color: #333;
+        }
     }
 }
 
@@ -655,6 +660,19 @@ form:not([id='filter']) {
 
         #list {
             min-width: 100%;
+        }
+    }
+
+    .doneMessage {
+        .nextAction {
+            flex-direction: column-reverse;
+        }
+
+        .turnAround {
+            margin-top: 5px;
+            padding: 0 !important;
+            max-width: inherit !important;
+            height: 25px;
         }
     }
 }

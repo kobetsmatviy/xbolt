@@ -87,7 +87,7 @@ header {
             }
 
             #profile {
-
+                position: relative;
 
                 img {
                     border-radius: 50%;
@@ -466,6 +466,17 @@ form {
     transition: background-color .2s ease-in-out;
     cursor: pointer;
 }
+.remind::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+    width: 8px;
+    background-color: #FF6600;
+    border-radius: 50%;
+    z-index: 10;
+}
 
 footer {
     display: flex;
@@ -639,6 +650,9 @@ footer {
 
     .equalizer {
         width: auto !important;
+    }
+    #warning {
+        margin-top: 0 !important;
     }
 
     #pagination {
